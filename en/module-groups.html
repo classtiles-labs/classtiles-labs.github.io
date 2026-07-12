@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m4);padding:38px 0 0">
       <div class="fgroup"><h2>Groups in three steps</h2><ul><li><b>Attendance</b> — who is here today? With first names only, if you want to hold the tablet up to the class.</li><li><b>Configuration</b> — the number of groups, the distribution mode, and optionally <b>balance gender</b> so that no group tips over.</li><li><b>Result</b> — every group shows its average, spread and range. If something doesn't fit, roll <b>another variant</b> or move individual children by hand. There is a presentation mode for the lesson itself.</li></ul></div><div class="fgroup"><h2>Three distribution modes</h2><ul><li><b>Random</b> — pure draw.</li><li><b>Homogeneous</b> — children of similar attainment together.</li><li><b>Heterogeneous</b> — mixed levels of attainment.</li><li>As the <b>data basis</b> you pick a grade tab and, within it, either the overall grade or a single column. Individual children can additionally be marked as <b>high achiever</b> or <b>needs support</b>.</li></ul></div><div class="fgroup"><h2>Seating plans</h2><ul><li>Build the room from <b>single desks</b>, <b>double desks</b> (vertical ones too) and a <b>teacher's desk</b>.</li><li>Assign a class, then distribute: <b>randomly</b>, by <b>gender</b>, <b>heterogeneously</b> or <b>homogeneously</b> — the attainment-based variants again read a grade tab.</li><li>Define <b>exclusions</b>: which two children should not sit next to each other.</li><li><b>Presentation mode</b> for the class, plus PDF and sharing.</li></ul></div>
+      <div class="shots"><figure class="shot"><img src="../assets/anwesenheit.webp" alt="Attendance list for class 9b with a switch per child, 17 present, 3 absent" loading="lazy"><figcaption><span class="stepnum">1</span>Attendance: who is here today? With first names only, if you like — the selection applies to this assignment and is not stored.</figcaption></figure><figure class="shot"><img src="../assets/gruppen-konfiguration.webp" alt="Configuration view with the number of groups, the three distribution modes and the gender balancing switch" loading="lazy"><figcaption><span class="stepnum">2</span>Configuration: the number of groups, the distribution mode — random, homogeneous or heterogeneous — and gender balancing if you want it.</figcaption></figure><figure class="shot"><img src="../assets/sitzplan.webp" alt="Seating plan editor with single and double desks, distributed first names and the distribution modes" loading="lazy"><figcaption><span class="stepnum">3</span>Seating plan: place the desks, assign the class, let it distribute — the app honours your exclusions while doing so.</figcaption></figure></div>
       <div class="box">
         <h2>How it connects</h2>
         <p>This module <b>creates no data of its own</b> — it reads classes, students and the grades of a tab from <b>Grades</b>. That is why importing the class list once is enough for everything.</p>

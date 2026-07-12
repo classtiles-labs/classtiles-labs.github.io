@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m2);padding:38px 0 0">
       <div class="fgroup"><h2>Sechs Ansichten</h2><ul><li><b>Lehrkraft</b> · <b>Tag</b> · <b>KW</b> · <b>Monat</b> · <b>Jahr</b> · <b>Liste</b> — mit Suche über alle Termine und Tastaturkürzeln zum Blättern.</li></ul></div><div class="fgroup"><h2>Drei Kalenderquellen</h2><ul><li><b>Eigene Kalender</b> in der App anlegen, mit Name und Farbe.</li><li><b>Abonnieren</b> — eine <b>ICS-URL</b> eintragen, etwa vom Schulserver, und den Aktualisierungs-Abstand in Stunden festlegen. Die App zeigt an, wann zuletzt synchronisiert wurde und wie viele Termine sich geändert haben.</li><li><b>Datei importieren</b> — eine ICS-Datei einmalig einlesen; der Import wird als Momentaufnahme gespeichert.</li></ul></div><div class="fgroup"><h2>Termine</h2><ul><li>Titel, Ort, Notizen, ganztägig, Start und Ende, Zuordnung zu einem Kalender, eigene Farbe.</li><li><b>Wiederholungen</b>: täglich oder wöchentlich, Intervall 1 bis 30, mit oder ohne Enddatum.</li><li>Bei Serien fragt die App sauber nach: nur dieses Vorkommen oder alle Termine.</li><li>Sechs Termintypen: <b>Unterricht</b>, <b>Prüfung</b>, <b>Besprechung</b>, <b>Frist</b>, <b>Ferien</b>, <b>Sonstiges</b> — und ein Filter über Typ, Verknüpfung und Quelle.</li></ul></div><div class="fgroup"><h2>Farbregeln — fünf Geltungsbereiche</h2><ul><li><b>Nur diesen Termin</b> — die Ausnahme.</li><li><b>Diese Wochenstunde</b> — gleicher Wochentag, gleiche Uhrzeit, jede Woche.</li><li><b>Alle mit diesem Titel</b> — etwa jede „Konferenz“.</li><li><b>Fach und Klasse</b> — Deutsch in der 9b immer in derselben Farbe.</li><li><b>Die ganze Quelle</b> — ein komplettes Abo einheitlich einfärben.</li></ul></div><div class="fgroup"><h2>Wochennotizen</h2><ul><li>In der Lehrkraft-Ansicht gehört zu jeder Kalenderwoche eine Notizfläche: einmal als <b>Text</b>, einmal als <b>Handschrift</b> — auf dem iPad mit dem Apple Pencil.</li><li>Der Wochenplan lässt sich als PDF sichern.</li></ul></div>
+      
       <div class="box">
         <h2>Zusammenspiel</h2>
         <p>Termine sind mit <b>Klasse, Kurs und Fach</b> verknüpft. Die <b>Planung</b> zieht ihre Unterrichtsstunden direkt aus diesen Terminen — verschiebt die Schule eine Stunde, merkt die Planung das.</p>

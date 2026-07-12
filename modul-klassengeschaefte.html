@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m6);padding:38px 0 0">
       <div class="fgroup"><h2>Boards</h2><ul><li>Board anlegen mit Name, deinem <b>Anzeigenamen</b> (den die anderen sehen) und einer von zwölf Farben.</li><li>Boards <b>duplizieren</b>, <b>verlassen</b> oder <b>löschen</b>. Wer ein geteiltes Board verlässt, entfernt es nur vom eigenen Gerät — die anderen behalten ihre Daten, und man kann später wieder beitreten.</li></ul></div><div class="fgroup"><h2>Aufgaben</h2><ul><li>Titel und Details, <b>Verantwortlich</b> (ein Board-Mitglied oder niemand), <b>Priorität</b> — Normal, Wichtig, Dringend —, <b>Fälligkeitsdatum</b> und eine <b>Erinnerung</b> als Mitteilung auf deinem Gerät.</li><li>Das Board trennt <b>Offen</b> und <b>Erledigt</b>. Jede Kachel zeigt, wer sie angelegt hat, wer verantwortlich ist und wer sie abgehakt hat.</li></ul></div><div class="fgroup"><h2>Teilen</h2><ul><li>Die Freigabe läuft über einen <b>Link nach dem Prinzip „Jeder mit dem Link“</b> — so wie bei Apple Notizen oder Erinnerungen.</li><li>Der Sync-Status ist jederzeit sichtbar: synchronisiert, in Arbeit, oder wie viele Änderungen noch ausstehen.</li><li>Ohne iCloud läuft das Modul weiter — mit dem Hinweis <b>Lokal</b>: die Daten bleiben dann auf diesem Gerät.</li></ul></div>
+      
       <div class="box">
         <h2>Zusammenspiel</h2>
         <p><b>Bewusst gar keins.</b> Die Boards liegen in einer eigenen Datenbank und in einem eigenen iCloud-Bereich. Übertragen werden ausschließlich Aufgabenfelder — <b>strukturell keine Noten, keine Schülerdatensätze, keine Anhänge</b>. Was du hier teilst, kann gar nicht versehentlich Schülerdaten enthalten.</p>

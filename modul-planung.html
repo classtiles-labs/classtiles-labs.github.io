@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m3);padding:38px 0 0">
       <div class="fgroup"><h2>Stunden</h2><ul><li><b>Aus dem Kalender</b> übernehmen oder <b>manuell anlegen</b> (Wochentag, Beginn, Ende, Fach, Klasse, Raum, Farbe).</li><li>Drei Planungsstände auf einen Blick: <b>Offen</b>, <b>In Planung</b>, <b>Geplant</b>.</li></ul></div><div class="fgroup"><h2>Sieben Bausteine je Stunde</h2><ul><li><b>Textblock</b> und <b>Überschrift</b> — mit Formatierung: fett, kursiv, unterstrichen, Hervorhebung, Titel- und Zwischenüberschriften, Aufzählungen und nummerierte Listen.</li><li><b>Bild</b> und <b>PDF</b> als Anhang.</li><li><b>Video</b> und <b>Material</b> als Link.</li><li><b>Handschrift</b> — eine Zeichenfläche mit Werkzeugauswahl und Hintergrund, auf dem iPad mit dem Apple Pencil.</li></ul></div><div class="fgroup"><h2>Reihen</h2><ul><li>Mehrere Stunden zu einer <b>Reihe</b> verbinden — mit einer Fokus-Ansicht, die nur diese Reihe zeigt.</li><li>Planungen, denen noch kein Termin zugewiesen ist, werden sichtbar gemacht — samt Knopf <b>Termin zuweisen</b>. So geht keine vorbereitete Stunde verloren.</li></ul></div><div class="fgroup"><h2>Wenn die Schule den Stundenplan ändert</h2><ul><li>Verschiebt sich ein Kalendertermin, meldet sich die <b>Stundenplan-Synchronisation</b>: Du siehst die verschobenen Termine und entscheidest — <b>alle mitwandern</b> lassen, einzeln mitwandern, oder die Planung <b>behalten und lösen</b>.</li><li>Wird ein Termin gelöscht, wird die Planung <b>entkoppelt, nicht gelöscht</b> — sie bleibt vollständig in ihrer Reihe erhalten.</li><li>Beim Zuordnen erlaubt die App 15 Minuten Toleranz, damit eine leicht verschobene Stunde trotzdem erkannt wird.</li></ul></div><div class="fgroup"><h2>Ausgeben</h2><ul><li>Die Planung einer Stunde lässt sich als PDF exportieren.</li></ul></div>
+      
       <div class="box">
         <h2>Zusammenspiel</h2>
         <p>Die Planung hat <b>keine eigenen Termine</b> — sie lebt vom <b>Kalender</b> und von den <b>Klassen und Fächern</b> der gemeinsamen Datenbank. Genau deshalb bemerkt sie, wenn sich der Stundenplan ändert.</p>

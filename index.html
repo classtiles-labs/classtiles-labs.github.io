@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -294,6 +301,28 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section class="rev">
       <div class="head">
+        <h2>Der Notenbaum: Gewichtung, die man sieht</h2>
+        <p>Schriftlich 40 %, mündlich 60 %, darunter die einzelnen Arbeiten — die Struktur deiner Note steht sichtbar über der Tabelle, statt in einer Formel zu verschwinden. Jede Ebene lässt sich zuklappen.</p>
+      </div>
+      <figure class="shot">
+        <img src="assets/notentabelle.webp" alt="Notentabelle der Klasse 9b in ClassTiles auf dem Mac, mit Notenbaum: Schuljahr, darunter Schriftliche Leistungen (40 %) und Mündliche Mitarbeit (60 %) mit ihren einzelnen Spalten" loading="lazy">
+        <figcaption>Eine echte, native Mac-App — keine übertragene iPad-Version. Beispieldaten.</figcaption>
+      </figure>
+    </section>
+
+    <section class="rev">
+      <div class="head">
+        <h2>Auswerten statt raten</h2>
+        <p>Ein Tipp auf eine Berechnungsspalte, und die Klasse liegt vor dir: Durchschnitt, Median, Streuung, Notenverteilung und die Bestehensquote. Die Schwelle leitet die App aus der Skala ab — überschreiben kannst du sie jederzeit.</p>
+      </div>
+      <figure class="shot">
+        <img src="assets/statistik.webp" alt="Statistik-Fenster in ClassTiles: Durchschnitt 3,4, Median 3,2, Standardabweichung 0,8, Minimum 2,2, Maximum 5,0, dazu ein Balkendiagramm der Notenverteilung, ein Streuungsdiagramm und die Bestehensquote von 80 Prozent" loading="lazy">
+        <figcaption>Notenverteilung, Streuung und Bestehensquote — plus die enthaltenen Bereiche mit ihrem jeweiligen Schnitt.</figcaption>
+      </figure>
+    </section>
+
+    <section class="rev">
+      <div class="head">
         <h2>Aus Noten werden Gruppen und Sitzpläne</h2>
         <p>Die Daten, die du ohnehin schon hast, erledigen die Arbeit.</p>
       </div>
@@ -308,12 +337,10 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
           <p>Kein langes Bauen: Nimm einfach deine Noten und lass die Klasse sinnvoll platzieren. Raum aus Einzel- und Doppelplätzen aufbauen, unerwünschte Nachbarschaften ausschließen, im Präsentationsmodus zeigen.</p>
         </div>
       </div>
-      <figure class="device" style="margin:34px 0 0">
-        <div class="screen">
-          <img src="assets/mac-notentabelle.png" alt="ClassTiles auf dem Mac: Notentabelle der Klasse 9b mit Notenbaum und gewichteten Bereichen für schriftliche Leistungen und mündliche Mitarbeit" loading="lazy">
-        </div>
+      <figure class="shot" style="margin-top:34px">
+        <img src="assets/sitzplan.webp" alt="Sitzplan-Editor in ClassTiles: ein Raum aus Einzel- und Doppelplätzen mit verteilten Vornamen, darunter die Verteilungsmodi Zufällig, Geschlecht, Heterogen und Homogen" loading="lazy">
+        <figcaption>Der Sitzplan-Editor: Tische setzen, Klasse zuweisen, verteilen lassen — und mit „Andere Variante“ so lange würfeln, bis es passt.</figcaption>
       </figure>
-      <figcaption>Notentabelle auf dem Mac — eine echte, native Mac-App, keine übertragene iPad-Version. Gewichtete Bereiche, aufklappbarer Notenbaum, Beispieldaten.</figcaption>
     </section>
 
   </div>

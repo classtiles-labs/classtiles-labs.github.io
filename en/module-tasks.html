@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m6);padding:38px 0 0">
       <div class="fgroup"><h2>Boards</h2><ul><li>Create a board with a name, your <b>display name</b> (which the others see) and one of twelve colours.</li><li><b>Duplicate</b>, <b>leave</b> or <b>delete</b> boards. Leaving a shared board removes it from your device only — the others keep their data, and you can rejoin later.</li></ul></div><div class="fgroup"><h2>Tasks</h2><ul><li>Title and details, an <b>assignee</b> (a board member or nobody), a <b>priority</b> — normal, important, urgent —, a <b>due date</b> and a <b>reminder</b> as a notification on your device.</li><li>The board separates <b>open</b> from <b>done</b>. Every tile shows who created it, who is responsible and who ticked it off.</li></ul></div><div class="fgroup"><h2>Sharing</h2><ul><li>Sharing works via a <b>link on the “anyone with the link” principle</b> — just as in Apple Notes or Reminders.</li><li>The sync status is always visible: synchronised, in progress, or how many changes are still pending.</li><li>Without iCloud the module keeps working — marked <b>local</b>: the data then stays on this device.</li></ul></div>
+      
       <div class="box">
         <h2>How it connects</h2>
         <p><b>Deliberately none.</b> The boards live in their own database and their own iCloud area. Only task fields are transferred — <b>structurally no grades, no student records, no attachments</b>. What you share here cannot accidentally contain student data.</p>

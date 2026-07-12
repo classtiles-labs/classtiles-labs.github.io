@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -270,6 +277,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section style="--c:var(--m4);padding:38px 0 0">
       <div class="fgroup"><h2>Gruppen in drei Schritten</h2><ul><li><b>Anwesenheit</b> — wer ist heute da? Auf Wunsch nur mit Vornamen, damit du das Tablet herumzeigen kannst.</li><li><b>Konfiguration</b> — Anzahl der Gruppen, Verteilungsmodus, und optional <b>Geschlecht gleichverteilen</b>, damit keine Gruppe kippt.</li><li><b>Ergebnis</b> — jede Gruppe zeigt Durchschnitt, Streuung und Spanne. Passt etwas nicht, würfelst du eine <b>andere Variante</b> oder hängst einzelne Kinder von Hand um. Für den Unterricht gibt es einen Präsentationsmodus.</li></ul></div><div class="fgroup"><h2>Drei Verteilungsmodi</h2><ul><li><b>Zufällig</b> — reine Losung.</li><li><b>Homogen</b> — gleichstarke Kinder zusammen.</li><li><b>Heterogen</b> — gemischte Leistungsniveaus.</li><li>Als <b>Datenbasis</b> wählst du einen Notenreiter und darin entweder die Gesamtnote oder eine einzelne Spalte. Einzelne Kinder lassen sich zusätzlich als <b>Leistungsträger</b> oder <b>Braucht Unterstützung</b> markieren.</li></ul></div><div class="fgroup"><h2>Sitzpläne</h2><ul><li>Den Raum baust du aus <b>Einzelplätzen</b>, <b>Doppelplätzen</b> (auch vertikal) und einem <b>Lehrerpult</b>.</li><li>Klasse zuweisen, dann verteilen: <b>zufällig</b>, nach <b>Geschlecht</b>, <b>heterogen</b> oder <b>homogen</b> — die leistungsbasierten Varianten greifen wieder auf einen Notenreiter zu.</li><li><b>Ausschlüsse</b> festlegen: welche zwei Kinder nicht nebeneinander sitzen sollen.</li><li><b>Präsentationsmodus</b> für die Klasse, dazu PDF und Teilen.</li></ul></div>
+      <div class="shots"><figure class="shot"><img src="assets/anwesenheit.webp" alt="Anwesenheitsliste der Klasse 9b mit Schaltern je Kind, 17 anwesend, 3 abwesend" loading="lazy"><figcaption><span class="stepnum">1</span>Anwesenheit: wer ist heute da? Auf Wunsch nur mit Vornamen — die Auswahl gilt nur für diese Einteilung und wird nicht gespeichert.</figcaption></figure><figure class="shot"><img src="assets/gruppen-konfiguration.webp" alt="Konfigurationsansicht mit Anzahl der Gruppen, den drei Verteilungsmodi und dem Schalter Geschlecht gleichverteilen" loading="lazy"><figcaption><span class="stepnum">2</span>Konfiguration: Anzahl der Gruppen, Verteilungsmodus — zufällig, homogen oder heterogen — und auf Wunsch Geschlecht gleichverteilen.</figcaption></figure><figure class="shot"><img src="assets/sitzplan.webp" alt="Sitzplan-Editor mit Einzel- und Doppelplätzen, verteilten Vornamen und den Verteilungsmodi" loading="lazy"><figcaption><span class="stepnum">3</span>Sitzplan: Tische setzen, Klasse zuweisen, verteilen lassen — Ausschlüsse berücksichtigt die App dabei.</figcaption></figure></div>
       <div class="box">
         <h2>Zusammenspiel</h2>
         <p>Dieses Modul <b>erzeugt keine eigenen Daten</b> — es liest Klassen, Schülerinnen und Schüler und die Noten eines Reiters aus der <b>Notenverwaltung</b>. Deshalb genügt ein Import der Klassenliste für alles.</p>

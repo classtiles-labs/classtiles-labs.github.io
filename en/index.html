@@ -142,6 +142,13 @@ section{padding:76px 0}
 .chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
   background:var(--navy-soft);color:var(--navy)}
 figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
 
 /* Modul-Detailseite */
 .back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
@@ -294,6 +301,28 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 
     <section class="rev">
       <div class="head">
+        <h2>The grade tree: weighting you can see</h2>
+        <p>Written 40 %, oral 60 %, and the individual assessments below — the structure of the grade sits visibly above the table instead of disappearing into a formula. Every level can be collapsed.</p>
+      </div>
+      <figure class="shot">
+        <img src="../assets/notentabelle.webp" alt="Grade table for class 9b in ClassTiles on the Mac, showing the grade tree: school year, then written performance (40 %) and oral participation (60 %) with their individual columns" loading="lazy">
+        <figcaption>A real, native Mac app — not a ported iPad version. Sample data.</figcaption>
+      </figure>
+    </section>
+
+    <section class="rev">
+      <div class="head">
+        <h2>Evaluate, don&#x27;t guess</h2>
+        <p>One tap on a calculation column and the class is laid out in front of you: average, median, spread, grade distribution and the pass rate. The app derives the pass mark from the scale — you can override it at any time.</p>
+      </div>
+      <figure class="shot">
+        <img src="../assets/statistik.webp" alt="Statistics window in ClassTiles: average 3.4, median 3.2, standard deviation 0.8, minimum 2.2, maximum 5.0, plus a bar chart of the grade distribution, a spread chart and a pass rate of 80 per cent" loading="lazy">
+        <figcaption>Grade distribution, spread and pass rate — plus the sections included, each with its own average.</figcaption>
+      </figure>
+    </section>
+
+    <section class="rev">
+      <div class="head">
         <h2>Grades become groups and seating plans</h2>
         <p>The data you already have does the work for you.</p>
       </div>
@@ -308,12 +337,10 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
           <p>No tedious building: take the grades you already have and let the class be seated sensibly. Build the room from single and double desks, rule out unwanted neighbours, show it in presentation mode.</p>
         </div>
       </div>
-      <figure class="device" style="margin:34px 0 0">
-        <div class="screen">
-          <img src="../assets/mac-notentabelle.png" alt="ClassTiles on the Mac: grade table for class 9b with the grade tree and weighted sections for written and oral performance" loading="lazy">
-        </div>
+      <figure class="shot" style="margin-top:34px">
+        <img src="../assets/sitzplan.webp" alt="Seating plan editor in ClassTiles: a room of single and double desks with first names distributed across them, and the distribution modes random, gender, heterogeneous and homogeneous below" loading="lazy">
+        <figcaption>The seating plan editor: place the desks, assign the class, let it distribute — and keep rolling “another variant” until it fits.</figcaption>
       </figure>
-      <figcaption>The grade table on the Mac — a real, native Mac app, not a ported iPad version. Weighted sections, an expandable grade tree, sample data.</figcaption>
     </section>
 
   </div>
