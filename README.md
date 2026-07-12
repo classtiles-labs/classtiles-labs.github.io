@@ -1,20 +1,25 @@
-# ClassTiles — öffentliche Rechtsseiten
+# ClassTiles — öffentliche Website
 
-Öffentlich gehostete Rechtstexte der App **ClassTiles** (via GitHub Pages).
+Landing-Page + Rechtstexte der App **ClassTiles**, gehostet über GitHub Pages.
 
 **Deutsch (maßgeblich):**
 
-- Datenschutzerklärung: `index.html`
+- Start: `index.html`
+- Datenschutzerklärung: `datenschutz.html`
 - Impressum: `impressum.html`
 - Nutzungsbedingungen: `nutzungsbedingungen.html`
 - Support & FAQ: `support.html`
 
 **English (convenience translation):**
 
-- Privacy Policy: `en/index.html`
+- Start: `en/index.html`
+- Privacy Policy: `en/privacy.html`
 - Legal Notice: `en/imprint.html`
 - Terms of Use: `en/terms.html`
 - Support & FAQ: `en/support.html`
 
-Quelle der Inhalte: privates App-Repo `docs/legal/` (+ `docs/legal/en/`), erzeugt mit
-`scripts/legal-pages/build.py`. Maßgeblich ist die deutsche Fassung.
+`assets/` enthält Video, Standbild und Screenshots (sprachneutral).
+
+Alles wird generiert — **nicht hier von Hand bearbeiten.** Quelle ist das private App-Repo:
+`docs/legal/` (+ `docs/legal/en/`) und `scripts/legal-pages/build.py`.
+Maßgeblich ist die deutsche Fassung.
