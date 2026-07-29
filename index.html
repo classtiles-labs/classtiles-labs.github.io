@@ -78,6 +78,14 @@ h1{margin:0 0 14px;font-size:3.4rem;line-height:1.04;letter-spacing:-.033em;font
 .soon{display:inline-flex;align-items:center;padding:11px 16px;border-radius:11px;font-size:.86rem;
   color:var(--ink-3);border:1px dashed var(--hair-2)}
 
+/* App-Store-Badges (Apple-Originalartwork, nicht verändern/einfärben) */
+.storelinks{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.storelinks a{display:inline-flex;border-radius:9px;
+  transition:opacity .2s ease, transform .15s ease}
+.storelinks a:hover{opacity:.82}
+.storelinks a:active{transform:translateY(1px)}
+.storelinks img{display:block;height:44px;width:auto}
+
 /* Geräterahmen */
 .device{position:relative;border-radius:20px;padding:9px;
   background:linear-gradient(160deg,#e9e6df,#cfcabe);box-shadow:var(--sh-3)}
@@ -249,7 +257,7 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .rev,.rev.pre{opacity:1;transform:none;transition:none}
-  .mod,.btn,.play span,.arrow{transition:none}
+  .mod,.btn,.play span,.arrow,.storelinks a{transition:none}
 }
 </style>
 </head>
@@ -274,7 +282,22 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
         <div class="cta">
           <button class="btn b-solid" id="playcta" type="button">Intro ansehen · 2 Min.</button>
           <a class="btn b-line" href="support.html">Support &amp; FAQ</a>
-          <span class="soon">Bald im App Store</span>
+        </div>
+        <div class="storelinks">
+          <a href="https://apps.apple.com/app/id6760907554?platform=ipad">
+            <picture>
+              <source srcset="assets/badge-appstore-de-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="assets/badge-appstore-de-black.svg" width="120" height="40"
+                   alt="Laden im App Store — für iPad und iPhone">
+            </picture>
+          </a>
+          <a href="https://apps.apple.com/app/id6760907554?platform=mac">
+            <picture>
+              <source srcset="assets/badge-macappstore-de-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="assets/badge-macappstore-de-black.svg" width="156" height="40"
+                   alt="Laden im Mac App Store">
+            </picture>
+          </a>
         </div>
       </div>
       <figure class="device" id="player" data-src="assets/classtiles-intro.mp4" style="margin:0">
