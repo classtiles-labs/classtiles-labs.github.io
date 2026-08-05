@@ -226,6 +226,8 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
   color:var(--ink-3)}
 .fcols a{display:block;color:var(--ink-2);text-decoration:none;font-size:.93rem;margin-bottom:7px}
 .fcols a:hover{color:var(--ink)}
+.fcols .fsocial{display:inline-flex;align-items:center;gap:9px;margin-top:16px;font-size:.9rem;margin-bottom:0}
+.fcols .fsocial svg{width:17px;height:17px;flex:none}
 .fcols p{margin:0;color:var(--ink-3);font-size:.9rem;max-width:36ch}
 .fnote{margin-top:28px;color:var(--ink-3);font-size:.84rem}
 
@@ -283,6 +285,10 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
       <div>
         <h4>ClassTiles</h4>
         <p>Grade management for teachers. Runs locally on your device — no user account, no tracking, no ads.</p>
+        <!-- Plain profile link: the icon is inline in the document, nothing is loaded from Meta
+             when the page opens. No embed and no follow button — those would require consent
+             under § 25 TDDDG and thus a cookie banner. -->
+        <a class="fsocial" href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/></svg><span>ClassTiles on Instagram</span></a>
       </div>
       <div>
         <h4>Modules</h4>
