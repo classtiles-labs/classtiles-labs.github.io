@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handbuch Notenverwaltung — ClassTiles</title>
+  <meta name="description" content="Benutzerhandbuch zum ClassTiles-Modul Notenverwaltung: Noten erfassen und auswerten. 12 Kapitel mit 48 Abbildungen, online lesbar und als PDF.">
+  <link rel="alternate" hreflang="en" href="en/index.html">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <style>
+:root{
+  color-scheme: light dark;
+  --paper:#faf7f2; --tile:#ffffff; --sunk:#f2eee7;
+  --ink:#141833; --ink-2:#565b73; --ink-3:#8b8fa3;
+  --hair:#e6e0d5; --hair-2:#d6cfc2;
+  --navy:#1f2547; --navy-soft:#e8eaf3;
+  --sh-1:0 1px 2px rgba(20,24,51,.05);
+  --sh-2:0 2px 6px rgba(20,24,51,.05), 0 12px 28px -8px rgba(20,24,51,.12);
+  --sh-3:0 2px 8px rgba(20,24,51,.06), 0 28px 60px -18px rgba(20,24,51,.22);
+  --r:18px;
+  --m1:#c9d8f5; --m2:#d8cff2; --m3:#c7e6d3; --m4:#f7d9bf; --m5:#f2cdd9; --m6:#c6e4ee;
+  --hb-warn:#d9a441; --hb-tip:#4f8f5b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0f1016; --tile:#191b24; --sunk:#20222c;
+    --ink:#f2f2f7; --ink-2:#a9adbd; --ink-3:#767a8c;
+    --hair:#282a35; --hair-2:#383b48;
+    --navy:#b9c4e6; --navy-soft:#232739;
+    --sh-1:0 1px 2px rgba(0,0,0,.3);
+    --sh-2:0 2px 6px rgba(0,0,0,.3), 0 12px 28px -8px rgba(0,0,0,.5);
+    --sh-3:0 2px 8px rgba(0,0,0,.35), 0 28px 60px -18px rgba(0,0,0,.6);
+    --m1:#2c3a5c; --m2:#332d52; --m3:#264132; --m4:#4a3524; --m5:#472b39; --m6:#22414c;
+    --hb-warn:#e0b45c; --hb-tip:#6aa87a;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+
+/* Kopfleiste */
+.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.6) blur(14px);
+  -webkit-backdrop-filter:saturate(1.6) blur(14px);
+  background:color-mix(in srgb, var(--paper) 84%, transparent);
+  border-bottom:1px solid transparent;transition:border-color .25s, box-shadow .25s}
+.bar.stuck{border-bottom-color:var(--hair);box-shadow:0 1px 16px rgba(20,24,51,.06)}
+.bar-in{max-width:1140px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;margin-right:auto}
+.brand img{width:34px;height:34px;border-radius:9px;box-shadow:var(--sh-1)}
+.brand b{font-size:1.02rem;letter-spacing:-.01em}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{padding:7px 13px;border-radius:9px;font-size:.88rem;color:var(--ink-2);text-decoration:none}
+.tabs a:hover{background:var(--sunk);color:var(--ink)}
+.tabs a.active{background:var(--navy-soft);color:var(--navy);font-weight:600}
+.tabs a.lang{color:var(--ink-3);border:1px solid var(--hair)}
+.tabs a.ig{display:inline-flex;align-items:center;padding:6px;margin-left:11px}
+.tabs a.ig img{width:29px;height:29px;display:block}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center;padding:72px 0 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:650;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--hair-2)}
+h1{margin:0 0 14px;font-size:3.4rem;line-height:1.04;letter-spacing:-.033em;font-weight:700;
+  text-wrap:balance}
+.kicker{margin:0 0 20px;font-size:1.2rem;color:var(--ink-2);text-wrap:balance}
+.hero p{margin:0;color:var(--ink-2);max-width:46ch}
+.hero p strong{color:var(--ink)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:11px;
+  font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;
+  font-family:inherit;transition:transform .15s ease, box-shadow .2s ease, border-color .2s}
+.btn:active{transform:translateY(1px)}
+.b-solid{background:var(--navy);color:var(--paper);box-shadow:var(--sh-2)}
+.b-solid:hover{box-shadow:var(--sh-3)}
+.b-line{background:var(--tile);color:var(--ink);border-color:var(--hair-2);box-shadow:var(--sh-1)}
+.b-line:hover{border-color:var(--ink-3)}
+.soon{display:inline-flex;align-items:center;padding:11px 16px;border-radius:11px;font-size:.86rem;
+  color:var(--ink-3);border:1px dashed var(--hair-2)}
+
+/* App-Store-Badges (Apple-Originalartwork, nicht verändern/einfärben) */
+.storelinks{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.storelinks a{display:inline-flex;border-radius:9px;
+  transition:opacity .2s ease, transform .15s ease}
+.storelinks a:hover{opacity:.82}
+.storelinks a:active{transform:translateY(1px)}
+.storelinks img{display:block;height:44px;width:auto}
+.herosocial{display:inline-flex;align-items:center;gap:15px;margin-top:20px;color:var(--ink-2);text-decoration:none;font-size:.95rem}
+.herosocial:hover{color:var(--ink)}
+.herosocial img{width:29px;height:29px;flex:none;display:block}
+
+/* Geräterahmen */
+.device{position:relative;border-radius:20px;padding:9px;
+  background:linear-gradient(160deg,#e9e6df,#cfcabe);box-shadow:var(--sh-3)}
+@media (prefers-color-scheme: dark){.device{background:linear-gradient(160deg,#3a3d49,#22242c)}}
+.screen{position:relative;border-radius:12px;overflow:hidden;background:var(--sunk);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.screen img,.screen video{display:block;width:100%;height:auto}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;
+  background:transparent;cursor:pointer}
+.play span{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.97);
+  display:grid;place-items:center;transition:transform .2s ease;
+  box-shadow:0 14px 38px rgba(16,20,40,.36),0 0 0 1px rgba(16,20,40,.05)}
+.play:hover span{transform:scale(1.07)}
+.play:focus-visible{outline:3px solid #fff;outline-offset:-8px}
+
+/* Kennzahlen */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair)}
+.stats div{padding:24px 8px;text-align:center;border-left:1px solid var(--hair)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font-size:1.9rem;letter-spacing:-.03em;line-height:1.1;
+  font-variant-numeric:tabular-nums}
+.stats span{font-size:.86rem;color:var(--ink-3)}
+
+/* Abschnitte */
+section{padding:76px 0}
+.head{max-width:64ch;margin:0 0 38px}
+.head h2{margin:0 0 10px;font-size:2.1rem;line-height:1.15;letter-spacing:-.027em;font-weight:700;
+  text-wrap:balance}
+.head p{margin:0;color:var(--ink-2);font-size:1.06rem}
+
+/* Modul-Kacheln */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mod{position:relative;display:flex;flex-direction:column;gap:6px;padding:24px 22px 20px;
+  background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);text-decoration:none;
+  color:inherit;box-shadow:var(--sh-1);overflow:hidden;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s, border-color .22s}
+.mod::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--c)}
+.mod:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--hair-2)}
+.glyph{width:40px;height:40px;border-radius:11px;background:var(--c);display:grid;place-items:center;
+  color:#141833;margin-bottom:12px;flex:0 0 auto}
+.glyph svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.72}
+.mod b{font-size:1.05rem;letter-spacing:-.01em}
+.mod span{font-size:.93rem;color:var(--ink-2)}
+.mod em{margin-top:auto;padding-top:14px;font-style:normal;font-size:.85rem;font-weight:600;
+  color:var(--ink-3);display:flex;align-items:center;gap:5px}
+.mod:hover em{color:var(--navy)}
+.mod:hover .arrow{transform:translateX(3px)}
+.arrow{transition:transform .2s ease}
+
+.note{margin:26px 0 0;padding:22px 24px;border-radius:var(--r);background:var(--sunk);
+  border:1px solid var(--hair);font-size:1rem}
+
+/* Zwei Panels */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{padding:28px;border:1px solid var(--hair);border-radius:var(--r);background:var(--tile);
+  box-shadow:var(--sh-1)}
+.panel h3{margin:0 0 8px;font-size:1.15rem;letter-spacing:-.015em}
+.panel p{margin:0;color:var(--ink-2);font-size:.97rem}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
+  background:var(--navy-soft);color:var(--navy)}
+figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
+
+/* Modul-Detailseite */
+.back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
+  color:var(--ink-3);text-decoration:none}
+.back:hover{color:var(--ink)}
+.mhero{display:flex;gap:22px;align-items:flex-start;padding:24px 0 4px}
+.mhero .glyph{width:56px;height:56px;border-radius:15px;margin:8px 0 0}
+.mhero .glyph svg{width:27px;height:27px}
+.mhero h1{font-size:2.7rem;margin:0}
+.mlead{max-width:62ch;font-size:1.12rem;color:var(--ink-2);margin:14px 0 0}
+.fgroup{border-top:1px solid var(--hair);padding-top:34px;margin-top:34px}
+.fgroup:first-of-type{border-top:0;margin-top:8px;padding-top:0}
+.fgroup h2{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}
+.fgroup ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.fgroup li{position:relative;padding-left:26px;color:var(--ink-2)}
+.fgroup li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;
+  border-radius:2px;background:var(--c)}
+.fgroup li b{color:var(--ink);font-weight:600}
+.box{margin-top:34px;padding:26px 28px;border-radius:var(--r);border:1px solid var(--hair);
+  background:var(--tile);box-shadow:var(--sh-1)}
+.box h2{margin:0 0 10px;font-size:1.15rem;letter-spacing:-.015em}
+.box p{margin:0;color:var(--ink-2)}
+.box li{color:var(--ink-2)}
+.box b{color:var(--ink)}
+.box ul{margin:0;padding-left:1.2em;display:grid;gap:10px}
+.box.limits{background:var(--sunk)}
+.prevnext{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  border-top:1px solid var(--hair);margin-top:56px;padding-top:24px}
+.prevnext a{display:inline-flex;flex-direction:column;text-decoration:none;color:var(--ink);
+  font-size:.95rem}
+.prevnext small{color:var(--ink-3);font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:2px}
+.prevnext a:hover{color:var(--navy)}
+
+/* Rechtstexte (Fließtext) */
+.pagetitle{max-width:820px;margin:48px auto 0;padding:0 4px}
+.pagetitle h1{font-size:2.2rem;margin:0 0 6px}
+.pagetitle p{margin:0;color:var(--ink-3);font-size:.95rem}
+.prose{background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);
+  box-shadow:var(--sh-1);padding:40px 44px 34px;max-width:820px;margin:26px auto 0}
+.prose h2{font-size:1.28rem;margin:1.9em 0 .5em;letter-spacing:-.015em}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.03rem;margin:1.5em 0 .4em}
+.prose a{color:var(--navy);text-underline-offset:2px}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li{margin:.3em 0}
+.prose blockquote{margin:1em 0;padding:14px 18px;background:var(--sunk);
+  border-left:3px solid var(--navy);border-radius:0 10px 10px 0}
+.prose hr{border:0;border-top:1px solid var(--hair);margin:1.9em 0}
+.prose code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.86em;
+  background:var(--navy-soft);color:var(--navy);padding:.1em .4em;border-radius:5px}
+.tablewrap{overflow-x:auto;margin:1em 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border:1px solid var(--hair)}
+th{background:var(--sunk);font-weight:600}
+.footnote{color:var(--ink-3);font-size:.9rem;font-style:italic}
+details{border:1px solid var(--hair);border-radius:12px;margin:8px 0;background:var(--paper)}
+details[open]{background:var(--tile);border-color:var(--hair-2)}
+summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:.98rem;list-style:none;
+  display:flex;align-items:flex-start;gap:10px;border-radius:12px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";flex:0 0 auto;width:1.1em;color:var(--navy);font-weight:700;line-height:1.5}
+details[open] summary::before{content:"–"}
+summary:hover{color:var(--navy)}
+summary:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.answer{padding:0 16px 14px 42px}
+.answer p:first-child{margin-top:0}
+.answer p,.answer li{font-size:.97rem}
+.lead{color:var(--ink-2)}
+
+/* Fuß */
+footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3)}
+.fcols a{display:block;color:var(--ink-2);text-decoration:none;font-size:.93rem;margin-bottom:7px}
+.fcols a:hover{color:var(--ink)}
+.fcols .fsocial{display:inline-block;margin-top:16px;font-size:.9rem;margin-bottom:0}
+.fcols p{margin:0;color:var(--ink-3);font-size:.9rem;max-width:36ch}
+.fnote{margin-top:28px;color:var(--ink-3);font-size:.84rem}
+
+/* Einblenden — Inhalt ist per Default SICHTBAR; das Skript versteckt ihn nur kurz. */
+.rev{transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+.rev.pre{opacity:0;transform:translateY(14px)}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr;gap:34px;padding:44px 0 36px}
+  h1{font-size:2.4rem}
+  .mhero h1{font-size:2rem}
+  .mhero{gap:16px}
+  .grid,.two{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(n+3){border-top:1px solid var(--hair)}
+  .fcols{grid-template-columns:1fr}
+  section{padding:52px 0}
+  .prose{padding:28px 24px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rev,.rev.pre{opacity:1;transform:none;transition:none}
+  .mod,.btn,.play span,.arrow,.storelinks a{transition:none}
+}
+
+/* ---------- Handbuch ---------- */
+.hblayout{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start;
+  padding:8px 0 40px}
+.hbnav{position:sticky;top:78px;font-size:.9rem}
+.hbnav h4{margin:0 0 10px;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3)}
+.hbnav ol{margin:0;padding:0;list-style:none;counter-reset:hb}
+.hbnav li{counter-increment:hb;margin:0 0 2px}
+.hbnav a{display:flex;gap:8px;padding:5px 9px;border-radius:8px;text-decoration:none;
+  color:var(--ink-2);line-height:1.35}
+.hbnav a::before{content:counter(hb) ".";color:var(--ink-3);font-variant-numeric:tabular-nums;
+  flex:0 0 1.4em}
+.hbnav a:hover{background:var(--sunk);color:var(--ink)}
+.hbtoc{display:none}
+
+.hbhead{padding:26px 0 4px;display:flex;gap:22px;align-items:flex-start}
+.hbhead .glyph{width:56px;height:56px;border-radius:15px;margin:6px 0 0}
+.hbhead .glyph svg{width:27px;height:27px}
+.hbhead h1{margin:0;font-size:2.5rem}
+.hbhead .claim{margin:6px 0 0;font-size:1.12rem;color:var(--ink-2)}
+.hbmeta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;font-size:.86rem;
+  color:var(--ink-3)}
+.hbmeta b{color:var(--ink-2);font-weight:600}
+
+.hb{max-width:70ch;font-size:1rem}
+.hb h2.chapter{scroll-margin-top:86px;margin:52px 0 14px;padding-bottom:10px;font-size:1.5rem;
+  letter-spacing:-.02em;border-bottom:2px solid var(--c);display:flex;gap:12px;align-items:baseline}
+.hb h2.chapter:first-child{margin-top:24px}
+.hb h2.chapter .num{color:var(--ink-3);font-weight:400;font-variant-numeric:tabular-nums}
+.hb h3{margin:34px 0 8px;font-size:1.1rem;letter-spacing:-.012em}
+.hb p{margin:0 0 12px}
+.hb ul,.hb ol{margin:0 0 12px;padding-left:1.3em}
+.hb li{margin:.3em 0;color:var(--ink-2)}
+.hb .lead{font-size:1.08rem;color:var(--ink-2);margin-bottom:22px}
+.hb .ui{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85em;
+  background:var(--navy-soft);color:var(--navy);padding:.1em .4em;border-radius:5px;
+  white-space:nowrap}
+
+.hb figure{margin:24px 0 30px;border:1px solid var(--hair);border-radius:var(--r);
+  overflow:hidden;background:var(--tile);box-shadow:var(--sh-1)}
+.hb figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--hair);
+  background:var(--sunk)}
+.hb figcaption{padding:16px 20px 18px;font-size:.94rem;color:var(--ink-2)}
+.hb .figtitle{font-weight:650;color:var(--ink);margin-bottom:8px;font-size:.95rem}
+.hb figcaption p{margin:0 0 8px}
+.hb figcaption p:last-child{margin-bottom:0}
+.hb .lbl{font-weight:650;color:var(--ink)}
+.hb .sehen .lbl::before,.hb .tun .lbl::before{content:"▸ ";color:var(--c)}
+
+.hb .box{margin:22px 0;padding:16px 20px;border-radius:0 12px 12px 0;background:var(--sunk);
+  border-left:3px solid var(--navy);font-size:.96rem;color:var(--ink-2)}
+.hb .box .t{display:block;font-weight:650;color:var(--ink);margin-bottom:5px}
+.hb .box p:last-child{margin-bottom:0}
+.hb .box.warn{border-left-color:var(--hb-warn)}
+.hb .box.tip{border-left-color:var(--hb-tip)}
+
+.hb table{margin:20px 0;font-size:.93rem}
+.hb th,.hb td{border:0;border-bottom:1px solid var(--hair)}
+.hb th{background:transparent;border-bottom:2px solid var(--hair-2)}
+
+.hbfoot{border-top:1px solid var(--hair);margin-top:48px;padding-top:22px;display:flex;
+  gap:16px;flex-wrap:wrap;justify-content:space-between}
+
+@media (max-width:920px){
+  .hblayout{grid-template-columns:1fr;gap:0}
+  .hbnav{display:none}
+  .hbtoc{display:block;margin:22px 0 8px}
+  .hbhead h1{font-size:1.9rem}
+  .hb h2.chapter{scroll-margin-top:70px}
+}
+</style>
+</head>
+<body>
+  <div class="bar" id="bar">
+    <div class="bar-in">
+      <a class="brand" href="index.html">
+        <img src="data:image/png;base64,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" alt="" width="34" height="34">
+        <b>ClassTiles</b>
+      </a>
+      <nav class="tabs"><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="support.html">Support</a><a class="lang" href="en/index.html" hreflang="en" rel="alternate">English</a><a class="ig" href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer" aria-label="ClassTiles auf Instagram" title="ClassTiles auf Instagram"><picture><source srcset="assets/instagram-white.svg" media="(prefers-color-scheme: dark)"><img src="assets/instagram-black.svg" width="29" height="29" alt=""></picture></a></nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <a class="back" href="handbuecher.html">← Alle Handbücher</a>
+    <div class="hbhead" style="--c:var(--m1)">
+      <span class="glyph"><svg viewBox="0 0 24 24"><path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="3.2" rx="1.1"/></svg></span>
+      <div>
+        <div class="eyebrow">Benutzerhandbuch · Modul 1 von 6</div>
+        <h1>Notenverwaltung</h1>
+        <p class="claim">Noten erfassen und auswerten</p>
+      </div>
+    </div>
+    <div class="hbmeta"><span><b>Stand</b> 7. August 2026</span><span><b>App-Version</b> 1.0.6 (157)</span><span><b>Abbildungen</b> iPad, Querformat</span><span><b>Beispielklasse</b> 8a · Deutsch · 7 Schüler:innen</span></div>
+    <div class="cta" style="margin-top:20px">
+      <a class="btn b-line" href="assets/handbuch/ClassTiles-Handbuch-Notenverwaltung.pdf" download>PDF laden</a>
+    </div>
+    <details class="hbtoc"><summary>Inhalt · 12 Kapitel</summary><div class="answer"><ol><li><a href="#kapitel-1">Überblick und Aufbau der Oberfläche</a></li><li><a href="#kapitel-2">Klassen und Kategorien organisieren</a></li><li><a href="#kapitel-3">Schüler:innen hinzufügen und entfernen</a></li><li><a href="#kapitel-4">Reiter: mehrere Notentabellen je Klasse</a></li><li><a href="#kapitel-5">Struktur und Gewichtung</a></li><li><a href="#kapitel-6">Noten eingeben</a></li><li><a href="#kapitel-7">Notenskalen und Berechnungsmethode</a></li><li><a href="#kapitel-8">Auswerten: Statistik</a></li><li><a href="#kapitel-9">Ansicht anpassen</a></li><li><a href="#kapitel-10">Import und Export</a></li><li><a href="#kapitel-11">Einstellungen mit Bezug zur Notenverwaltung</a></li><li><a href="#kapitel-12">Rückgängig und Papierkorb</a></li></ol></div></details>
+
+    <div class="hblayout" style="--c:var(--m1)">
+      <nav class="hbnav" aria-label="Kapitel">
+        <h4>Kapitel</h4>
+        <ol><li><a href="#kapitel-1">Überblick und Aufbau der Oberfläche</a></li><li><a href="#kapitel-2">Klassen und Kategorien organisieren</a></li><li><a href="#kapitel-3">Schüler:innen hinzufügen und entfernen</a></li><li><a href="#kapitel-4">Reiter: mehrere Notentabellen je Klasse</a></li><li><a href="#kapitel-5">Struktur und Gewichtung</a></li><li><a href="#kapitel-6">Noten eingeben</a></li><li><a href="#kapitel-7">Notenskalen und Berechnungsmethode</a></li><li><a href="#kapitel-8">Auswerten: Statistik</a></li><li><a href="#kapitel-9">Ansicht anpassen</a></li><li><a href="#kapitel-10">Import und Export</a></li><li><a href="#kapitel-11">Einstellungen mit Bezug zur Notenverwaltung</a></li><li><a href="#kapitel-12">Rückgängig und Papierkorb</a></li></ol>
+      </nav>
+      <article class="hb">
+<h2 class="chapter" id="kapitel-1"><span class="num">1</span>Überblick und Aufbau der Oberfläche</h2>
+
+<p class="lead">Die Notenverwaltung ist das Kernmodul von ClassTiles. Sie erfassen darin Noten,
+gliedern sie in beliebig tief verschachtelte Bereiche, gewichten diese Bereiche und lassen
+ClassTiles daraus Durchschnitte bis hin zur Jahresnote berechnen.</p>
+
+<h3>Beim ersten Start</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/01-erstlauf-datenschutz.webp" width="1800" height="1257" loading="lazy" alt="Dialog „Datenschutz zuerst“ beim ersten Start">
+  <figcaption>
+    <div class="figtitle">Abb. 1: Datenschutz-Abfrage beim ersten Start</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Nach der Installation – und nach einem
+    vollständigen Zurücksetzen – fragt ClassTiles einmalig, wo Ihre Daten liegen sollen.
+    Die empfohlene Variante speichert alles ausschließlich auf diesem Gerät;
+    <span class="ui">iCloud-Sync aktivieren</span> gleicht die Daten zusätzlich zwischen Ihren
+    Apple-Geräten ab.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Wählen Sie eine der beiden
+    Schaltflächen – ohne Auswahl geht es nicht weiter. Für Schuldaten ist
+    <span class="ui">Nur auf diesem Gerät verwenden</span> die datenschutzfreundlichste Wahl.
+    Die Entscheidung ist nicht endgültig: Sie können den iCloud-Sync später jederzeit unter
+    <span class="ui">Einstellungen → Synchronisation</span> umstellen.</p>
+  </figcaption>
+</figure>
+
+<h3>Das Dashboard</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/02-dashboard.webp" width="1800" height="1257" loading="lazy" alt="Dashboard mit allen Modulkacheln">
+  <figcaption>
+    <div class="figtitle">Abb. 2: Das Dashboard als Einstiegspunkt</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Die Startseite mit je einer Kachel pro
+    Modul: <span class="ui">Notenverwaltung</span>, <span class="ui">Kalender</span>,
+    <span class="ui">Planung</span>, <span class="ui">Gruppen &amp; Sitzordnung</span>,
+    <span class="ui">Dokumentation</span> und <span class="ui">Klassengeschäfte</span>.
+    Oben rechts liegen das Zahnrad für die <span class="ui">Einstellungen</span> und die
+    Feedback-Schaltfläche.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie auf
+    <span class="ui">Notenverwaltung</span>, um in das Modul zu wechseln. Sobald Sie in einem Modul
+    sind, erscheint am oberen Bildschirmrand eine Leiste mit allen Modulnamen – ab dann wechseln Sie
+    direkt zwischen den Modulen, ohne über das Dashboard zu gehen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/03-notenverwaltung-leer.webp" width="1800" height="1257" loading="lazy" alt="Notenverwaltung ohne Klassen">
+  <figcaption>
+    <div class="figtitle">Abb. 3: Die Notenverwaltung im Auslieferungszustand</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Solange noch keine Klasse existiert,
+    zeigt das Modul den Hinweis <span class="ui">Keine Klassen</span> und schlägt den ersten Schritt
+    gleich vor.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Tippen Sie auf
+    <span class="ui">Kategorie erstellen</span>. Klassen werden in ClassTiles immer innerhalb einer
+    Kategorie geführt – typischerweise ein Schuljahr. Alternativ erreichen Sie dieselben Befehle
+    jederzeit über das <span class="ui">+</span>-Symbol oben rechts.</p>
+  </figcaption>
+</figure>
+
+<h3>Die drei Bereiche einer Notentabelle</h3>
+
+<p>Eine geöffnete Notentabelle ist immer gleich aufgebaut. Wenn Sie sich diese drei Bereiche
+einprägen, finden Sie sich in jeder Klasse sofort zurecht:</p>
+
+<table>
+  <tr><th style="width:32mm">Bereich</th><th>Inhalt und Bedeutung</th></tr>
+  <tr>
+    <td><strong>Werkzeugleiste</strong><br>ganz oben</td>
+    <td>Klassenname, <span class="ui">Rückgängig</span>, CSV-Import, <span class="ui">Teilen</span>
+        (Export), Vollbild, Umschalter für den Spaltenkopf, <span class="ui">Tabellenoptionen</span>
+        und <span class="ui">Neuer Reiter</span>.</td>
+  </tr>
+  <tr>
+    <td><strong>Reiterleiste</strong><br>darunter</td>
+    <td>Eine Klasse kann mehrere unabhängige Notentabellen enthalten – zum Beispiel eine für die
+        Fachnoten und eine für die Kopfnoten. Jede davon ist ein Reiter.</td>
+  </tr>
+  <tr>
+    <td><strong>Tabelle</strong></td>
+    <td>Links die feststehende Namensspalte, rechts der Notenbaum: oben die Kopfzeilen mit
+        Bereichen und Gewichtungen, darunter die Zellen. Beide Bereiche scrollen unabhängig
+        voneinander.</td>
+  </tr>
+</table>
+
+
+<h2 class="chapter" id="kapitel-2"><span class="num">2</span>Klassen und Kategorien organisieren</h2>
+
+<p class="lead">Kategorien sind Ordner für Klassen. Sie fassen üblicherweise ein Schuljahr
+zusammen, können aber auch nach Schule, Jahrgang oder Fachbereich geschnitten werden.</p>
+
+<h3>Kategorie anlegen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/04-kategorie-anlegen.webp" width="1800" height="1257" loading="lazy" alt="Dialog „Neue Kategorie“">
+  <figcaption>
+    <div class="figtitle">Abb. 4: Neue Kategorie</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein schlanker Dialog mit einem einzigen
+    Eingabefeld. Der graue Text <span class="ui">z. B. Schuljahr 2025/2026</span> ist nur ein
+    Platzhalter, kein Inhalt.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Tragen Sie einen Namen ein und
+    bestätigen Sie mit <span class="ui">Erstellen</span>. Solange das Feld leer ist – oder nur
+    Leerzeichen enthält – bleibt <span class="ui">Erstellen</span> wirkungslos. Namen dürfen bis zu 80 Zeichen lang
+    sein; längere Eingaben werden mit einem Hinweis gekürzt.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/05-hinzufuegen-menue.webp" width="1800" height="1257" loading="lazy" alt="Menü hinter dem Plus-Symbol">
+  <figcaption>
+    <div class="figtitle">Abb. 5: Das <span class="ui">+</span>-Menü der Klassenliste</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Hinter dem <span class="ui">+</span>
+    oben rechts liegen beide Anlagebefehle: <span class="ui">Neue Klasse</span> und
+    <span class="ui">Neue Kategorie</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Über diesen Weg legen Sie
+    jederzeit weitere Kategorien an – etwa wenn im Februar ein zweites Halbjahr dazukommt.
+    Für die erste Klasse wählen Sie <span class="ui">Neue Klasse</span>.</p>
+  </figcaption>
+</figure>
+
+<h3>Klasse anlegen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/06-neue-klasse-leer.webp" width="1800" height="1257" loading="lazy" alt="Leeres Formular „Neue Klasse“">
+  <figcaption>
+    <div class="figtitle">Abb. 6: Das Formular <span class="ui">Neue Klasse</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Vier Angaben bilden eine Klasse:
+    Klassenbezeichnung, Fach, Farbe und Kategorie. <span class="ui">Erstellen</span> oben rechts ist
+    zunächst ausgegraut, und unter <span class="ui">Kategorie</span> steht noch
+    <span class="ui">Ohne Kategorie</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Füllen Sie mindestens
+    <span class="ui">Klasse</span> und <span class="ui">Fach</span> aus – erst dann wird
+    <span class="ui">Erstellen</span> aktiv. Die Farbe ist reine Orientierungshilfe: Sie lässt
+    Klassen im Schulalltag schneller auseinanderhalten.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/07-neue-klasse-ausgefuellt.webp" width="1800" height="1257" loading="lazy" alt="Ausgefülltes Formular „Neue Klasse“">
+  <figcaption>
+    <div class="figtitle">Abb. 7: Dasselbe Formular, vollständig ausgefüllt</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> <span class="ui">8a</span> und
+    <span class="ui">Deutsch</span> stehen in den Feldern, unter <span class="ui">Kategorie</span>
+    steht jetzt <span class="ui">Schuljahr 2025/2026</span>, und
+    <span class="ui">Erstellen</span> ist aktiv.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie auf die Zeile
+    <span class="ui">Zu Kategorie hinzufügen</span>, um die Kategorie zu wechseln. Vergessen Sie das,
+    landet die Klasse unter <span class="ui">Ohne Kategorie</span> – das lässt sich später über
+    <span class="ui">Verschieben nach…</span> im Kontextmenü korrigieren.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/08-klassenliste.webp" width="1800" height="1257" loading="lazy" alt="Klassenliste mit einer Klasse">
+  <figcaption>
+    <div class="figtitle">Abb. 8: Die Klassenliste</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Die Klasse steht unter ihrer Kategorie.
+    Die Zeile nennt Klassenbezeichnung, Fach, die Zahl der Schüler:innen und die Zahl der
+    Notentabellen. Rechts neben dem Kategorienamen steht eine Ziffer: die Zahl der Klassen
+    darin.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Ein Tipp auf die Zeile öffnet
+    die Notentabelle. Über <span class="ui">Sortieren</span> ordnen Sie die Liste um, über den
+    Pfeil links neben dem Kategorienamen klappen Sie eine ganze Kategorie zu.</p>
+  </figcaption>
+</figure>
+
+<h3>Klasse bearbeiten, verschieben oder löschen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/35-klasse-kontextmenue.webp" width="1800" height="1257" loading="lazy" alt="Kontextmenü einer Klasse">
+  <figcaption>
+    <div class="figtitle">Abb. 9: Kontextmenü einer Klasse</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein längerer Fingerdruck auf eine
+    Klassenzeile öffnet vier Befehle: <span class="ui">Bearbeiten</span>,
+    <span class="ui">Schülerliste aus anderer Klasse übernehmen…</span>,
+    <span class="ui">Verschieben nach…</span> und <span class="ui">Löschen</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Besonders nützlich ist
+    <span class="ui">Schülerliste aus anderer Klasse übernehmen…</span>: Unterrichten Sie dieselbe
+    Lerngruppe in zwei Fächern, sparen Sie sich damit das erneute Eintippen aller Namen.
+    <span class="ui">Verschieben nach…</span> ordnet die Klasse einer anderen Kategorie zu.</p>
+  </figcaption>
+</figure>
+
+<div class="box warn">
+  <span class="t">Kategorien löschen Sie an anderer Stelle</span>
+  <p>Ein längerer Fingerdruck funktioniert nur auf Klassen, nicht auf Kategoriezeilen. Um eine
+  Kategorie umzubenennen oder zu löschen, tippen Sie auf das Drei-Punkte-Symbol am rechten Rand der
+  Kategoriezeile – dort stehen <span class="ui">Umbenennen</span> und
+  <span class="ui">Kategorie löschen</span>.</p>
+</div>
+
+
+<h2 class="chapter" id="kapitel-3"><span class="num">3</span>Schüler:innen hinzufügen und entfernen</h2>
+
+<p class="lead">Namen werden einmal zentral gepflegt: ClassTiles führt eine geräteweite
+Schülerdatenbank. Dieselbe Person kann in mehreren Klassen sitzen, behält dort aber getrennte
+Noten. Wird der Name korrigiert, ändert er sich überall zugleich.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/12-schueler-hinzufuegen-wege.webp" width="1800" height="1257" loading="lazy" alt="Vier Wege, Schüler:innen hinzuzufügen">
+  <figcaption>
+    <div class="figtitle">Abb. 10: Vier Wege zur Klassenliste</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Nach einem Tipp auf
+    <span class="ui">Schüler/in</span> am unteren Rand der Namensspalte stehen vier Verfahren zur
+    Wahl: manuelle Eingabe, <span class="ui">CSV-Datei importieren</span>,
+    <span class="ui">PDF importieren</span> und <span class="ui">Liste scannen</span> mit der
+    Kamera.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Für einzelne Nachzügler nehmen
+    Sie <span class="ui">Einzeln hinzufügen</span>. Für eine ganze Klasse lohnt der Import: CSV
+    braucht zwingend die Spalten <span class="ui">Vorname</span> und
+    <span class="ui">Nachname</span> – eine einzelne Spalte <span class="ui">Name</span> wird
+    abgelehnt. Der PDF- und der Scan-Weg lesen Klassenlisten aus dem Sekretariat ein.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/13-schueler-einzeln.webp" width="1800" height="1257" loading="lazy" alt="Formular mit Vorname und Nachname">
+  <figcaption>
+    <div class="figtitle">Abb. 11: Einzelne Person eintragen</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Zwei getrennte Felder für Vor- und
+    Nachname. Der Cursor steht bereits im Vornamen.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie den Vornamen, gehen
+    Sie mit <span class="ui">Weiter</span> auf der Tastatur ins zweite Feld, und bestätigen Sie mit
+    <span class="ui">Hinzufügen</span>. Ein Feld genügt: Personen mit nur einem Namen sind
+    möglich. Nach dem Hinzufügen schließt sich das Fenster; für die nächste Person beginnen Sie
+    erneut bei <span class="ui">Schüler/in</span>.</p>
+  </figcaption>
+</figure>
+
+<div class="box">
+  <span class="t">Doppelte Namen erkennt ClassTiles selbst</span>
+  <p>Existiert der Name bereits in der Datenbank, erscheint die Rückfrage
+  <span class="ui">Name bereits vorhanden</span>. Sie entscheiden dann, ob die vorhandene Person
+  übernommen oder ein neuer Datensatz angelegt wird. Der Abgleich verzeiht Groß- und Kleinschreibung,
+  Umlautschreibweisen (<span class="ui">Mueller</span> ≙ <span class="ui">Müller</span>) und kleine
+  Tippfehler. Sitzt die Person bereits in dieser Klasse, ist <span class="ui">Bestätigen</span>
+  gesperrt – eine versehentliche Doppelzeile kann so nicht entstehen.</p>
+</div>
+
+<h3>Reihenfolge und Namensanzeige</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/44-sortieren-anzeige.webp" width="1800" height="1257" loading="lazy" alt="Sortier- und Anzeigeoptionen">
+  <figcaption>
+    <div class="figtitle">Abb. 12: Sortierung und Namensdarstellung</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Das Menü hinter dem Pfeilsymbol neben
+    <span class="ui">Name Schüler/in</span>. Oben die Sortierung – <span class="ui">Manuell</span>,
+    nach <span class="ui">Vorname</span> oder nach <span class="ui">Nachname</span>, jeweils
+    <span class="ui">A → Z</span> oder <span class="ui">Z → A</span>. Unten unter
+    <span class="ui">Anzeige</span> die Schreibweise in der Spalte.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> <span class="ui">Vorname +
+    Initial</span> ist praktisch, wenn die Tabelle projiziert wird und vollständige Nachnamen nicht
+    zu sehen sein sollen. <span class="ui">Manuell</span> behält Ihre eigene Reihenfolge bei; diese
+    ändern Sie, indem Sie einen Namen länger gedrückt halten und ihn verschieben.</p>
+  </figcaption>
+</figure>
+
+<div class="box warn">
+  <span class="t">Entfernen aus der Klasse ist nicht dasselbe wie Löschen</span>
+  <p>Ein längerer Fingerdruck auf einen Namen bietet <span class="ui">Aus Klasse entfernen</span>.
+  Damit verschwinden die Noten dieser Person <em>in dieser Klasse</em>, die Person selbst bleibt
+  aber in der Schülerdatenbank erhalten und taucht dort gegebenenfalls als „verwaist“ auf. Die Noten
+  landen als Schülerzeile im Papierkorb und lassen sich von dort zurückholen (Kapitel 12).</p>
+</div>
+
+
+<h2 class="chapter" id="kapitel-4"><span class="num">4</span>Reiter: mehrere Notentabellen je Klasse</h2>
+
+<p class="lead">Jede Klasse kann mehrere voneinander unabhängige Notentabellen enthalten. Jede davon
+hat eine eigene Struktur, eine eigene Notenskala und optional eine eigene Rundung – die
+Schüler:innen sind in allen Reitern dieselben.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/09-reiter-leer.webp" width="1800" height="1257" loading="lazy" alt="Leerer Reiter">
+  <figcaption>
+    <div class="figtitle">Abb. 13: Ein frisch angelegter, noch leerer Reiter</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Die neue Klasse bringt automatisch einen
+    ersten Reiter mit. Er trägt den Namen der Kategorie – hier
+    <span class="ui">Schuljahr 2025/2026</span> – und ist noch ohne Struktur.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Tippen Sie auf
+    <span class="ui">Struktur hinzufügen</span>. Ohne Struktur gibt es keine Spalten und damit auch
+    keine Zellen, in die Noten eingetragen werden könnten. Den Reiternamen ändern Sie jederzeit
+    (Abb. 18).</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/40-reiter-kontextmenue.webp" width="1800" height="1257" loading="lazy" alt="Kontextmenü eines Reiters">
+  <figcaption>
+    <div class="figtitle">Abb. 14: Kontextmenü eines Reiters</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein längerer Fingerdruck auf einen
+    Reiter zeigt <span class="ui">Umbenennen</span>, <span class="ui">Bearbeiten</span>,
+    <span class="ui">Kopieren</span> und <span class="ui">Löschen</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span>
+    <span class="ui">Umbenennen</span> ändert nur den Namen, <span class="ui">Bearbeiten</span>
+    öffnet die vollständigen Reitereinstellungen. <span class="ui">Kopieren</span> legt die
+    <em>Struktur</em> des Reiters in die Zwischenablage – wie Sie sie weiterverwenden, zeigt der
+    nächste Abschnitt. <span class="ui">Löschen</span> fragt nach und legt den Reiter anschließend in
+    den Papierkorb.</p>
+  </figcaption>
+</figure>
+
+<h3>Eine Struktur auf weitere Reiter übertragen</h3>
+
+<p>Haben Sie eine Gliederung einmal sauber aufgebaut, müssen Sie sie kein zweites Mal von Hand
+anlegen. <span class="ui">Kopieren</span> und <span class="ui">Einfügen</span> übertragen die
+komplette Struktur samt Gewichtungen auf einen anderen Reiter – die Noten bleiben dabei außen vor.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/46-reiter-einfuegen.webp" width="1800" height="1257" loading="lazy" alt="Kontextmenü mit zusätzlichem Eintrag „Einfügen“">
+  <figcaption>
+    <div class="figtitle">Abb. 15: <span class="ui">Einfügen</span> erscheint erst nach dem Kopieren</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Dasselbe Kontextmenü wie in Abb. 14,
+    jetzt aber mit einem fünften Eintrag: <span class="ui">Einfügen</span>. Er taucht nur auf,
+    solange eine kopierte Struktur in der Zwischenablage liegt.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Halten Sie zuerst den
+    <em>Quell</em>-Reiter gedrückt und wählen <span class="ui">Kopieren</span>. Halten Sie danach den
+    <em>Ziel</em>-Reiter gedrückt – erst dort steht <span class="ui">Einfügen</span> zur Verfügung.
+    Die Reihenfolge ist entscheidend; unmittelbar nach dem Kopieren passiert sichtbar nichts, das ist
+    normal.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/48-reiter-struktur-uebernommen.webp" width="1800" height="1257" loading="lazy" alt="Neuer Reiter mit übernommener Struktur">
+  <figcaption>
+    <div class="figtitle">Abb. 16: Die übernommene Struktur im neuen Reiter</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Der zuvor leere Reiter
+    <span class="ui">Halbjahr 2</span> hat jetzt dieselbe Gliederung wie der Hauptreiter –
+    einschließlich der angepassten Gewichtungen 60 % und 40 %. Die Zellen sind leer.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Genau dafür ist die Funktion
+    gedacht: Legen Sie für das zweite Halbjahr, ein weiteres Fach oder eine Parallelklasse einen
+    neuen Reiter an, fügen Sie die Struktur ein und benennen Sie anschließend nur noch die Spalten
+    um. Der Weg über <span class="ui">Struktur hinzufügen</span> entfällt damit vollständig.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/47-reiter-ersetzen-dialog.webp" width="1800" height="1257" loading="lazy" alt="Rückfrage vor dem Ersetzen einer Struktur">
+  <figcaption>
+    <div class="figtitle">Abb. 17: Einfügen in einen Reiter, der schon eine Struktur hat</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ist der Zielreiter nicht leer, fragt
+    ClassTiles nach: <span class="ui">Bestehenden Reiter ersetzen?</span> – „Die bestehende Struktur
+    dieses Reiters wird durch die kopierte Struktur ersetzt.“</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Lesen Sie diese Rückfrage
+    genau. Mit
+    <span class="ui">Ersetzen</span> verliert der Zielreiter seine bisherige Gliederung. Wollen Sie
+    das nicht, tippen Sie neben das Fenster – es schließt sich folgenlos. Bei einem leeren Reiter
+    erscheint diese Rückfrage gar nicht erst.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/31-reiter-bearbeiten.webp" width="1800" height="1257" loading="lazy" alt="Reitereinstellungen">
+  <figcaption>
+    <div class="figtitle">Abb. 18: Reitereinstellungen</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Name, Reiterfarbe und – besonders
+    wichtig – der Schalter <span class="ui">Von globaler Einstellung abweichen</span> unter
+    <span class="ui">Notenrundung</span>. Der Text darunter nennt die aktuell geltende globale
+    Vorgabe.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Lassen Sie den Schalter aus,
+    gilt für diesen Reiter die Einstellung aus Kapitel 11. Schalten Sie ihn ein, wenn ausgerechnet
+    dieser Reiter anders gerundet werden soll – etwa ein Kopfnoten-Reiter ohne Nachkommastellen.
+    Sichern Sie mit <span class="ui">Sichern &amp; Schließen</span>.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-5"><span class="num">5</span>Struktur und Gewichtung</h2>
+
+<p class="lead">Die Struktur ist das Herzstück der Notenverwaltung. Sie besteht aus nur zwei
+Bausteinen: <strong>Berechnungsbereiche</strong> fassen zusammen und rechnen, <strong>Notenspalten</strong>
+nehmen die eigentlichen Noten auf. Beide lassen sich beliebig tief schachteln und prozentual
+gewichten.</p>
+
+<h3>Struktur anlegen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/10-struktur-auswahl.webp" width="1800" height="1257" loading="lazy" alt="Vier Wege zur Struktur">
+  <figcaption>
+    <div class="figtitle">Abb. 19: Vier Wege zu einer Struktur</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> <span class="ui">Intelligente
+    Notentabelle</span> führt Schritt für Schritt durch einen Assistenten.
+    <span class="ui">Fertige Vorlage</span> erzeugt sofort Halbjahre mit schriftlichem und
+    mündlichem Bereich. <span class="ui">Einfache Notenliste</span> legt nur Notenspalten ohne
+    Bereiche an. <span class="ui">Leere Tabelle</span> überlässt Ihnen den kompletten Aufbau.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Für den klassischen
+    Fachunterricht ist <span class="ui">Fertige Vorlage</span> der schnellste Weg – sie liefert
+    genau die Struktur, die in den folgenden Abbildungen zu sehen ist, und lässt sich danach frei
+    anpassen. <span class="ui">Einfache Notenliste</span> genügt für Vertretungs- oder AG-Stunden,
+    in denen nur eine Handvoll Noten anfällt.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/11-struktur-konfiguration-skala.webp" width="1800" height="1257" loading="lazy" alt="Konfiguration mit Notenskala">
+  <figcaption>
+    <div class="figtitle">Abb. 20: Notenskala und Reiterfarbe festlegen</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Vor dem Erzeugen der Struktur wählen Sie
+    die Notenskala: <span class="ui">Notenskala 1–6</span>,
+    <span class="ui">Notenskala 1–6 (±)</span>, <span class="ui">Oberstufenskala 0–15</span> oder
+    <span class="ui">Gesamtschulenskala (E, TE, NE)</span>. Darunter lässt sich die Reiterfarbe
+    setzen.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Wählen Sie die Skala bewusst –
+    ein späterer Wechsel ist möglich, aber aufwendig und verändert alle bereits eingetragenen Werte
+    (siehe Warnung in Kapitel 7). Mit <span class="ui">Erstellen</span> ganz unten schließen Sie den
+    Vorgang ab; scrollen Sie gegebenenfalls, um die Schaltfläche zu erreichen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/14-tabelle-struktur-leer.webp" width="1800" height="1257" loading="lazy" alt="Fertige Struktur mit Namen, ohne Noten">
+  <figcaption>
+    <div class="figtitle">Abb. 21: Die fertige Struktur mit eingetragenen Namen</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Der Kopfbereich zeigt die Hierarchie von
+    oben nach unten: <span class="ui">Schuljahr</span> → <span class="ui">Schulhalbjahr 1</span>
+    (50 %) → <span class="ui">Schriftliche Leistungen</span> und
+    <span class="ui">Mündliche Leistungen</span> → darunter die einzelnen Notenspalten. Jeder Kasten
+    trägt seinen Prozentanteil an der Ebene, zu der er gehört. Die Striche in den Zellen bedeuten:
+    noch kein Wert vorhanden.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Klappen Sie mit dem kleinen
+    Pfeil in einem Bereichskopf ganze Äste zu, wenn die Tabelle zu breit wird – etwa das
+    Halbjahr, das gerade nicht unterrichtet wird. Das ist reine Ansichtssache und verändert weder
+    Noten noch Export.</p>
+  </figcaption>
+</figure>
+
+<h3>Bereiche und Spalten ergänzen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/15-inline-leiste-bereich.webp" width="1800" height="1257" loading="lazy" alt="Inline-Leiste an einem Bereichskopf">
+  <figcaption>
+    <div class="figtitle">Abb. 22: Die Inline-Leiste – der zentrale Bedienweg</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein <em>einfacher</em> Tipp auf einen
+    Bereichskopf blendet drei kleine Schaltflächen ein: den Gewichtungswert mit Pfeil
+    (<span class="ui">50 % ⌄</span>), ein <span class="ui">+</span> und ein Reglersymbol.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Über den Prozentwert ändern Sie
+    die Gewichtung (Abb. 24), über <span class="ui">+</span> fügen Sie ein untergeordnetes Element
+    ein, über das Reglersymbol erreichen Sie Einstellungen und Statistik. Merken Sie sich diese
+    Leiste – sie ist der Zugang zu fast allen Struktur-Befehlen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/16-struktur-hinzufuegen-menue.webp" width="1800" height="1257" loading="lazy" alt="Menü zum Hinzufügen">
+  <figcaption>
+    <div class="figtitle">Abb. 23: Was sich hinzufügen lässt</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Vier Möglichkeiten:
+    <span class="ui">Bereich gleiche Ebene</span> legt einen Geschwisterbereich an,
+    <span class="ui">Bereich Ebene darunter</span> einen untergeordneten,
+    <span class="ui">Zusammenführen</span> vereint Bereiche, und
+    <span class="ui">Notenspalte</span> erzeugt eine Spalte für echte Noten.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Achten Sie auf den Unterschied
+    zwischen „gleiche Ebene“ und „Ebene darunter“ – er entscheidet darüber, ob der neue Bereich
+    neben oder unter dem angetippten liegt. Neue Elemente heißen zunächst
+    <span class="ui">Neue Notenspalte</span> beziehungsweise <span class="ui">Neuer Bereich</span>
+    und sollten gleich umbenannt werden.</p>
+  </figcaption>
+</figure>
+
+<div class="box tip">
+  <span class="t">Wurzelebene oder Unterebene?</span>
+  <p>Das <span class="ui">+</span> ganz rechts am Rand der Kopfzeile fügt immer auf oberster Ebene
+  ein. Wollen Sie etwas <em>innerhalb</em> eines Bereichs anlegen, tippen Sie erst diesen Bereich an
+  und benutzen dann das <span class="ui">+</span> aus seiner Inline-Leiste. Notenspalten haben keine
+  eigene Inline-Ergänzung: Eine zweite Spalte legen Sie immer über den übergeordneten Bereich an.</p>
+</div>
+
+<h3>Gewichtung festlegen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/24-gewichtung-popover.webp" width="1800" height="1257" loading="lazy" alt="Gewichtungs-Popover">
+  <figcaption>
+    <div class="figtitle">Abb. 24: Gewichtung eines Bereichs</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein Raster gängiger Prozentwerte von
+    0 % bis 100 %, darunter <span class="ui">Eigene Eingabe…</span> für krumme Werte und
+    <span class="ui">Gleichverteilen</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie einen Wert an –
+    ClassTiles normiert die Geschwister automatisch auf zusammen 100 %. Setzen Sie
+    <span class="ui">Schriftliche Leistungen</span> auf 60 %, springt
+    <span class="ui">Mündliche Leistungen</span> von selbst auf 40 %. Sie müssen also nie beide
+    Werte von Hand pflegen. <span class="ui">Gleichverteilen</span> verteilt eine Ebene gleichmäßig
+    und legt den Rest auf das letzte Element (etwa 33,33 / 33,33 / 33,34).</p>
+  </figcaption>
+</figure>
+
+<div class="box warn">
+  <span class="t">Wenn die Summe nicht 100 % ergibt</span>
+  <p>Nur über <span class="ui">Eigene Eingabe…</span> lässt sich eine Ebene erzeugen, deren Summe von
+  100 % abweicht. In diesem Fall zeigt der übergeordnete Bereich ein orangefarbenes Warndreieck;
+  VoiceOver nennt es <span class="ui">Gewichtung unvollständig</span>. Gerechnet wird trotzdem – ClassTiles
+  normiert intern auf die tatsächliche Summe. Das Dreieck ist also ein Hinweis, kein Fehler; Sie
+  sollten die Werte aber prüfen. Beachten Sie außerdem, dass das Eingabefeld ein Dezimal<em>komma</em>
+  erwartet.</p>
+</div>
+
+<h3>Notenspalte einrichten</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/17-spalte-kontextmenue.webp" width="1800" height="1257" loading="lazy" alt="Kontextmenü einer Notenspalte">
+  <figcaption>
+    <div class="figtitle">Abb. 25: Kontextmenü einer Notenspalte</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein längerer Fingerdruck auf einen
+    Spaltenkopf zeigt <span class="ui">Bearbeiten</span>, <span class="ui">Statistik</span>,
+    <span class="ui">Verschieben</span> und <span class="ui">Löschen</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span>
+    <span class="ui">Verschieben</span> schaltet in einen Modus, in dem Sie mit Einfügepfeilen die
+    Zielposition wählen – auch über Ebenen hinweg. Ziehen mit dem Finger ist dafür nicht vorgesehen.
+    Nach einem Ebenenwechsel prüfen Sie am besten kurz die Prozentwerte der beteiligten Bereiche.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/18-spalte-einstellungen.webp" width="1800" height="1257" loading="lazy" alt="Einstellungen einer Notenspalte">
+  <figcaption>
+    <div class="figtitle">Abb. 26: Einstellungen einer Notenspalte</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> <span class="ui">Titel</span>,
+    <span class="ui">Spaltenbreite</span>, <span class="ui">Farbe</span>, der Schalter
+    <span class="ui">Punkte statt Noten eingeben</span>, der Schalter
+    <span class="ui">Datum anzeigen</span> und ein Feld für eine
+    <span class="ui">Notiz</span> zur ganzen Spalte.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Geben Sie der Spalte einen
+    sprechenden Namen – er erscheint später auch im Export. <span class="ui">Punkte statt Noten
+    eingeben</span> ist für Klassenarbeiten gedacht, bei denen Sie Rohpunkte erfassen und ClassTiles
+    daraus die Note ableiten lässt. Über <span class="ui">Datum anzeigen</span> halten Sie fest, wann
+    die Leistung erbracht wurde. Abschließen mit <span class="ui">Sichern &amp; Schließen</span>.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-6"><span class="num">6</span>Noten eingeben</h2>
+
+<p class="lead">Alle Eingaben laufen über ein einziges Fenster, den Notenfeld-Editor. Er öffnet sich
+mit einem Tipp auf eine Zelle und bietet drei Eingabearten: Note, Text und Symbol.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/19-notenfeld-editor.webp" width="1800" height="1257" loading="lazy" alt="Notenfeld-Editor im Modus „Note“">
+  <figcaption>
+    <div class="figtitle">Abb. 27: Der Notenfeld-Editor</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Oben stehen Name und Spalte, damit klar
+    ist, welche Zelle bearbeitet wird. Darunter der Umschalter
+    <span class="ui">Note | Text | Symbole</span>, ein app-eigenes Ziffernfeld, ein Feld für eine
+    <span class="ui">Notiz</span> und drei Schaltflächen: <span class="ui">Leeren</span>,
+    <span class="ui">Übernehmen</span> und <span class="ui">Übernehmen &amp; weiter</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Nutzen Sie
+    <span class="ui">Übernehmen &amp; weiter</span>, um eine ganze Spalte zügig zu erfassen: Der
+    Editor speichert und springt sofort in die nächste Zeile derselben Spalte. Beim letzten
+    Eintrag nehmen Sie <span class="ui">Übernehmen</span>, sonst öffnet sich das Fenster erneut.</p>
+  </figcaption>
+</figure>
+
+<div class="box tip">
+  <span class="t">Zwei nützliche Eigenheiten</span>
+  <p>Der Editor <em>ergänzt</em> die vorhandene Eingabe, statt sie zu ersetzen: Steht in der Zelle
+  eine 1 und Sie tippen 6, entsteht 16. Tippen Sie deshalb zuerst auf
+  <span class="ui">Leeren</span>, wenn Sie eine Note korrigieren wollen. Umgekehrt gilt: Eine leere
+  Eingabe überschreibt einen bestehenden Wert <em>nicht</em>.</p>
+</div>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/20-tendenznote-vorzeichen.webp" width="1800" height="1257" loading="lazy" alt="Vorzeichen-Popover für Tendenznoten">
+  <figcaption>
+    <div class="figtitle">Abb. 28: Tendenznoten wie 2+</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Die Taste <span class="ui">+-</span>
+    öffnet das kleine Fenster <span class="ui">VORZEICHEN</span> mit den Tasten
+    <span class="ui">+</span> und <span class="ui">-</span> sowie dem Hinweis, dass dieses Vorzeichen
+    mathematisch nicht verrechnet wird.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Erst die Ziffer, dann
+    <span class="ui">+-</span>, dann das gewünschte Vorzeichen – in dieser Reihenfolge. In der Zelle
+    steht anschließend etwa <span class="ui">2+</span>, gerechnet wird jedoch mit glatt 2. Wenn die
+    Tendenz rechnerisch wirken soll, wählen Sie für den Reiter die Skala
+    <span class="ui">Notenskala 1–6 (±)</span>; dort ist <span class="ui">2+</span> ein echter
+    Zahlwert.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/22-notenfeld-text.webp" width="1800" height="1257" loading="lazy" alt="Textmodus mit Bausteinen">
+  <figcaption>
+    <div class="figtitle">Abb. 29: Textmodus für Sonderfälle</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein Freitextfeld und vorgefertigte
+    Bausteine: <span class="ui">fehlt</span>, <span class="ui">mündlich</span>,
+    <span class="ui">Hausaufgabe</span>, <span class="ui">entschuldigt</span>,
+    <span class="ui">nachreichen</span> und <span class="ui">ok</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Verwenden Sie diese Einträge für
+    alles, was keine Note ist. Solche Zellen werden aus der Berechnung genommen, und die übrigen
+    Werte des Bereichs werden automatisch neu normiert – eine fehlende Leistung verschlechtert den
+    Schnitt also nicht. Ergänzen Sie im Feld <span class="ui">Notiz</span> gern den Grund; die Notiz
+    bleibt auch dann erhalten, wenn Sie den Wert später durch eine echte Note ersetzen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/21-notenfeld-symbole.webp" width="1800" height="1257" loading="lazy" alt="Symbolpalette">
+  <figcaption>
+    <div class="figtitle">Abb. 30: Symbole statt Noten</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Eine Palette aus Sternen, Daumen,
+    Gesichtern und Zeichen wie <span class="ui">✅</span> oder <span class="ui">❌</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Symbole eignen sich für
+    Rückmeldungen ohne Notencharakter – abgegebene Hausaufgaben, mitgebrachtes Material,
+    Beteiligungshäufigkeit. Auch sie fließen nicht in die Berechnung ein.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/23-tabelle-gefuellt.webp" width="1800" height="1257" loading="lazy" alt="Gefüllte Notentabelle">
+  <figcaption>
+    <div class="figtitle">Abb. 31: Die gefüllte Tabelle</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Links die Namen, rechts die
+    eingetragenen Werte – darunter <span class="ui">2+</span> bei Lena Bergmann und
+    <span class="ui">entschuldigt</span> bei Elias Schneider. In den farblich abgesetzten Spalten
+    stehen die berechneten Durchschnitte je Ebene, ganz links der Wert für
+    <span class="ui">Schuljahr</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Lesen Sie die berechneten
+    Spalten von rechts nach links wie eine Zusammenfassung: aus den Einzelnoten wird der Bereichsschnitt, aus
+    den Bereichen das Halbjahr, aus den Halbjahren die Jahresnote. Ändern Sie irgendwo eine Note,
+    rechnet ClassTiles alle betroffenen Werte sofort neu.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-7"><span class="num">7</span>Notenskalen und Berechnungsmethode</h2>
+
+<p class="lead">Die Notenskala legt fest, welche Werte in einem Reiter überhaupt zulässig sind und
+wie sie verrechnet werden. Sie gilt jeweils für einen ganzen Reiter – nicht für einzelne Spalten.</p>
+
+<h3>Eingebaute und eigene Skalen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/38-notenskalen-verwalten.webp" width="1800" height="1257" loading="lazy" alt="Notenskalen verwalten">
+  <figcaption>
+    <div class="figtitle">Abb. 32: <span class="ui">Einstellungen → Notenskalen verwalten</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Oben Vorlagen für andere Notensysteme –
+    <span class="ui">USA (A+–F)</span>, <span class="ui">Frankreich (0–20)</span>,
+    <span class="ui">Schweiz (1–6)</span> und <span class="ui">Österreich (1–5)</span>. In der Mitte
+    Ihre eigenen Skalen, unten die fest eingebauten.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie eine Vorlage an, um
+    daraus eine eigene, frei veränderbare Skala zu machen – nützlich für Punktesysteme oder
+    schulinterne Bewertungsraster. Über <span class="ui">Neue Skala erstellen</span> bauen Sie eine
+    Skala von Grund auf. Die eingebauten Skalen selbst lassen sich nicht verändern.</p>
+  </figcaption>
+</figure>
+
+<h3>Verbalskalen und die Berechnungsmethode</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/32-berechnungsmethode.webp" width="1800" height="1257" loading="lazy" alt="Auswahl der Berechnungsmethode">
+  <figcaption>
+    <div class="figtitle">Abb. 33: Berechnungsmethode bei der Gesamtschulenskala</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Sobald Sie
+    <span class="ui">Gesamtschulenskala (E, TE, NE)</span> auswählen, erscheint der zusätzliche
+    Abschnitt <span class="ui">BERECHNUNGSMETHODE</span> mit zwei Optionen:
+    <span class="ui">Psychometrisch (Gewichteter Durchschnitt)</span> und
+    <span class="ui">Modus (Häufigster Wert)</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Entscheiden Sie, wie aus
+    mehreren Verbalurteilen ein Gesamturteil wird. <span class="ui">Psychometrisch</span> rechnet
+    intern mit Zahlwerten und berücksichtigt Ihre Gewichtungen.
+    <span class="ui">Modus</span> nimmt schlicht den häufigsten Wert – dann sind die Prozentangaben
+    wirkungslos und die Gewichtungsbedienung wird ausgeblendet. Der Abschnitt liegt unterhalb des
+    sichtbaren Bereichs; scrollen Sie im Fenster nach unten.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/33-notenfeld-verbalskala.webp" width="1800" height="1257" loading="lazy" alt="Notenfeld-Editor mit E, TE, NE">
+  <figcaption>
+    <div class="figtitle">Abb. 34: Eingabe auf einer Verbalskala</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Statt des Ziffernfelds bietet der Editor
+    hier drei beschriftete Tasten: <span class="ui">E – erreicht</span>,
+    <span class="ui">TE – teilweise erreicht</span> und
+    <span class="ui">NE – nicht erreicht</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Die Bedienung ist identisch zur
+    Zifferneingabe, inklusive <span class="ui">Übernehmen &amp; weiter</span>. Auch Notiz-, Text- und
+    Symbolfeld stehen zur Verfügung.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/34-reiter-kopfnoten.webp" width="1800" height="1257" loading="lazy" alt="Reiter Kopfnoten mit Verbalnoten">
+  <figcaption>
+    <div class="figtitle">Abb. 35: Ein zweiter Reiter mit eigener Skala</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Der Reiter
+    <span class="ui">Kopfnoten</span> derselben Klasse 8a arbeitet mit E/TE/NE, während der Reiter
+    <span class="ui">Schuljahr 2025/2026</span> daneben weiter mit 1–6 rechnet. Dieselben sieben
+    Namen, völlig getrennte Bewertungssysteme.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Nutzen Sie diese Trennung für
+    alles, was neben der Fachnote steht: Kopfnoten, Arbeitsverhalten, Kompetenzraster. Wechseln Sie
+    einfach über die Reiterleiste hin und her.</p>
+  </figcaption>
+</figure>
+
+<div class="box warn">
+  <span class="t">Ein Skalenwechsel schreibt vorhandene Noten um</span>
+  <p>Wenn Sie über <span class="ui">Notenskala ändern</span> die Skala eines Reiters mit bereits
+  eingetragenen Noten wechseln, folgt zwingend der Schritt <span class="ui">Werte zuordnen</span>:
+  Jeder vorhandene Wert wird auf die neue Skala übersetzt und damit dauerhaft überschrieben. Ein
+  Abbruch vorher kostet nichts, ein Durchlauf ist nicht umkehrbar. Legen Sie zum Ausprobieren lieber
+  einen Testreiter an. Steht ein Reiter erst einmal auf E/TE/NE, lässt sich die Berechnungsmethode
+  nur über den Umweg einer anderen Skala wieder umstellen.</p>
+</div>
+
+
+<h2 class="chapter" id="kapitel-8"><span class="num">8</span>Auswerten: Statistik</h2>
+
+<p class="lead">Zu jeder Notenspalte und zu jedem Berechnungsbereich liefert ClassTiles eine
+Auswertung – für den Elternabend, die Zeugniskonferenz oder die eigene Einschätzung, ob eine Arbeit
+zu schwer war.</p>
+
+<div class="box tip">
+  <span class="t">So kommen Sie zur Statistik</span>
+  <p><strong>Notenspalte:</strong> Spaltenkopf länger gedrückt halten →
+  <span class="ui">Statistik</span>.<br>
+  <strong>Berechnungsbereich:</strong> Bereichskopf <em>einfach antippen</em> → in der Inline-Leiste
+  das Reglersymbol rechts neben dem <span class="ui">+</span> → <span class="ui">Statistik</span>.
+  Der längere Fingerdruck bietet bei Bereichen je nach Ebene nur
+  <span class="ui">Verschieben</span> und <span class="ui">Löschen</span> an – die Statistik fehlt
+  dort, ist über die Inline-Leiste aber erreichbar.</p>
+</div>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/25-statistik-bereich.webp" width="1800" height="1257" loading="lazy" alt="Statistik eines Bereichs">
+  <figcaption>
+    <div class="figtitle">Abb. 36: Auswertung eines Berechnungsbereichs</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Kopfzeile mit Anzahl der Schüler:innen
+    und der Gewichtung des Bereichs. Darunter die Kennzahlen – Mittelwert
+    <span class="ui">Ø</span>, <span class="ui">Median</span>, Standardabweichung
+    <span class="ui">σ</span>, <span class="ui">Min</span>/<span class="ui">Max</span>,
+    <span class="ui">Modus</span> und die Quartile <span class="ui">Q1–Q3</span>. Es folgen das
+    Balkendiagramm <span class="ui">Notenverteilung</span>, ein Streuungsdiagramm mit Median und
+    Quartilen sowie der Anteil <span class="ui">Bestanden</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Über
+    <span class="ui">Schwelle: 4.0</span> stellen Sie ein, ab welcher Note eine Leistung als
+    bestanden gilt – die Prozentzahl darüber passt sich sofort an. Ein Blick auf σ und die Streuung
+    zeigt, ob die Klasse homogen ist oder ob die Ergebnisse weit auseinanderliegen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/26-statistik-enthaltene-bereiche.webp" width="1800" height="1257" loading="lazy" alt="Enthaltene Bereiche in der Statistik">
+  <figcaption>
+    <div class="figtitle">Abb. 37: Untergeordnete Bereiche im Vergleich</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Am Fuß der Auswertung listet
+    <span class="ui">Enthaltene Bereiche</span> alle untergeordneten Bereiche mit ihrem jeweiligen
+    Durchschnitt – hier <span class="ui">Schriftliche Leistungen Ø 2.4</span> gegen
+    <span class="ui">Mündliche Leistungen Ø 2.2</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Tippen Sie eine Zeile an, um in
+    deren eigene Auswertung zu springen. So arbeiten Sie sich von der Jahresnote bis zur einzelnen
+    Klassenarbeit hinunter und sehen unmittelbar, welcher Bereich einen Schnitt nach oben oder unten
+    zieht.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-9"><span class="num">9</span>Ansicht anpassen</h2>
+
+<p class="lead">Wie viel auf den Bildschirm passt, bestimmen Sie selbst – wichtig, wenn Sie die
+Tabelle im Unterricht projizieren oder mit vielen Spalten arbeiten.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/27-tabellenoptionen.webp" width="1800" height="1257" loading="lazy" alt="Tabellenoptionen">
+  <figcaption>
+    <div class="figtitle">Abb. 38: <span class="ui">Tabellenoptionen</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Drei Schieberegler für
+    <span class="ui">Zoom</span>, <span class="ui">Zeilenhöhe</span> und
+    <span class="ui">Kopfzeilenhöhe</span>, dazu <span class="ui">Breiten zurücksetzen</span> und der
+    Hinweis, dass Zoomen auch per Fingergeste funktioniert.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Für die Projektion erhöhen Sie
+    Zoom und Zeilenhöhe, damit die Klasse mitlesen kann; für die eigene Übersicht verkleinern Sie
+    beides. <span class="ui">Breiten zurücksetzen</span> stellt von Hand veränderte Spaltenbreiten
+    wieder auf den Standard. Alle Werte sind reine Anzeigeeinstellungen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/28-flacher-spaltenkopf.webp" width="1800" height="1257" loading="lazy" alt="Flacher Spaltenkopf">
+  <figcaption>
+    <div class="figtitle">Abb. 39: Notenbaum oder flacher Spaltenkopf</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Dieselbe Tabelle wie in Abb. 31, aber
+    mit zusammengefasstem Kopfbereich: Statt der verschachtelten Kästen steht über jeder Spalte nur
+    noch eine kompakte Zeile. Dadurch sind deutlich mehr Zeilen gleichzeitig sichtbar.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Schalten Sie mit dem
+    Tabellensymbol in der Werkzeugleiste zwischen beiden Darstellungen um. Der flache Kopf eignet
+    sich zum schnellen Eintragen, der Notenbaum zum Bearbeiten der Struktur – im flachen Modus stehen
+    die Struktur-Befehle nur eingeschränkt zur Verfügung. Welche Ansicht beim Öffnen voreingestellt
+    ist, legen Sie in den Einstellungen fest (Kapitel 11).</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-10"><span class="num">10</span>Import und Export</h2>
+
+<h3>Noten aus einer CSV-Datei übernehmen</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/45-noten-csv-import.webp" width="1800" height="1257" loading="lazy" alt="Noten importieren">
+  <figcaption>
+    <div class="figtitle">Abb. 40: <span class="ui">Noten importieren</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Der Einstieg über das
+    Pfeil-nach-unten-Symbol in der Werkzeugleiste. ClassTiles erwartet eine CSV-Datei mit Namen und
+    Noten.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Wählen Sie über
+    <span class="ui">Datei auswählen…</span> die Datei aus. Danach ordnen Sie die Spalten der Datei
+    den Zielspalten der Tabelle zu und sehen eine Vorschau mit der Zahl der neuen, überschriebenen,
+    übersprungenen und ungültigen Werte. Sie entscheiden dort auch, ob vorhandene Noten erhalten
+    bleiben oder überschrieben werden.</p>
+  </figcaption>
+</figure>
+
+<div class="box warn">
+  <span class="t">Zielspalten vorher anlegen</span>
+  <p>Der Import kann nur in bestehende Spalten oder in einen bestehenden Bereich schreiben. Hat der
+  Reiter die Struktur <span class="ui">Einfache Notenliste</span> ohne Bereiche, läuft die Option
+  <span class="ui">Neue Zielspalte</span> ins Leere. Legen Sie in diesem Fall vorher einen Bereich
+  oder die gewünschten Spalten an.</p>
+</div>
+
+<h3>Exportieren</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/29-export-menue.webp" width="1800" height="1257" loading="lazy" alt="Exportmenü">
+  <figcaption>
+    <div class="figtitle">Abb. 41: Das Menü <span class="ui">Teilen</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Vier Varianten, gruppiert nach Format:
+    <span class="ui">Aktueller Reiter (Excel)</span>, <span class="ui">Alle Reiter (Excel)</span>,
+    <span class="ui">Aktueller Reiter (PDF)</span> und
+    <span class="ui">Alle Reiter (PDF)</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Nehmen Sie PDF für alles, was
+    gedruckt, archiviert oder weitergegeben wird – die Kopfzeilen-Hierarchie und Tendenznoten wie
+    <span class="ui">2+</span> bleiben zeichengetreu erhalten. Excel eignet sich, wenn Sie die Werte
+    weiterverarbeiten wollen. Eingeklappte Bereiche wirken sich nicht auf den Export aus: Exportiert
+    wird immer die vollständige Struktur.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/30-export-sharesheet.webp" width="1800" height="1257" loading="lazy" alt="Share-Sheet mit erzeugtem PDF">
+  <figcaption>
+    <div class="figtitle">Abb. 42: Die erzeugte Datei weitergeben</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Das System-Teilen-Fenster mit der
+    fertigen Datei. Oben steht der automatisch vergebene Name nach dem Muster
+    <span class="ui">Klasse_Fach_Reitername</span>, darunter Format und Größe.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Über
+    <span class="ui">In Dateien sichern</span> legen Sie die Datei lokal oder in einer Cloud ab,
+    über <span class="ui">Drucken</span> geht sie direkt zum Drucker, über
+    <span class="ui">Markierung</span> sehen Sie das Ergebnis vor dem Versand noch einmal an.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-11"><span class="num">11</span>Einstellungen mit Bezug zur Notenverwaltung</h2>
+
+<p class="lead">Die folgenden Einstellungen erreichen Sie über das Zahnrad auf dem Dashboard. Sie
+gelten für alle Klassen, sofern ein einzelner Reiter nichts Abweichendes festlegt.</p>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/36-einstellungen-notenrundung.webp" width="1800" height="1257" loading="lazy" alt="Einstellungen: Darstellung und Notenrundung">
+  <figcaption>
+    <div class="figtitle">Abb. 43: <span class="ui">Darstellung</span> und
+    <span class="ui">Notenrundung</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Unter
+    <span class="ui">Darstellung</span> legen Sie die Standardansicht fest –
+    <span class="ui">Notenbaum</span> oder flache Spaltenzeile. Unter
+    <span class="ui">Notenrundung</span> stehen die <span class="ui">Nachkommastellen</span> und die
+    Frage, <em>wann</em> gerundet wird.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun müssen:</span> Entscheiden Sie zwischen
+    <span class="ui">Nur am Ende</span> und <span class="ui">Schrittweise</span>.
+    <span class="ui">Nur am Ende</span> rechnet intern voll genau und rundet erst das angezeigte
+    Ergebnis – mathematisch sauberer. <span class="ui">Schrittweise</span> rundet jede Zwischennote
+    und rechnet mit dem gerundeten Wert weiter; das entspricht dem Vorgehen mancher Schulordnungen.
+    Die Wahl kann Endnoten um eine Nachkommastelle verschieben – prüfen Sie, was Ihre Schule
+    vorschreibt.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/37-einstellungen-daten.webp" width="1800" height="1257" loading="lazy" alt="Einstellungen: Datenbereich">
+  <figcaption>
+    <div class="figtitle">Abb. 44: Der Abschnitt <span class="ui">Daten</span></div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span>
+    <span class="ui">Backup &amp; Wiederherstellen</span>,
+    <span class="ui">Daten der Schüler/innen verwalten</span>,
+    <span class="ui">Notenskalen verwalten</span>, <span class="ui">Farbregeln</span> und
+    <span class="ui">Papierkorb</span> – letzterer mit einem Zähler, sobald etwas darin liegt.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Unter
+    <span class="ui">Daten der Schüler/innen verwalten</span> pflegen Sie die geräteweite
+    Schülerdatenbank: umbenennen, zusammenführen, Datenauskunft nach DSGVO exportieren und
+    Personen löschen, die keiner Klasse mehr zugeordnet sind. Ein Backup vor größeren Umbauten –
+    etwa einem Skalenwechsel – ist in einer Sekunde erstellt und erspart im Zweifel viel Arbeit.</p>
+  </figcaption>
+</figure>
+
+
+<h2 class="chapter" id="kapitel-12"><span class="num">12</span>Rückgängig und Papierkorb</h2>
+
+<p class="lead">ClassTiles kennt zwei getrennte Sicherheitsnetze: <strong>Rückgängig</strong> für den
+letzten Handgriff und den <strong>Papierkorb</strong> für alles Gelöschte.</p>
+
+<h3>Rückgängig</h3>
+
+<p>Der Pfeil links in der Werkzeugleiste der Notentabelle nimmt die jeweils letzte Änderung zurück –
+eine eingetragene Note, eine verschobene Spalte, eine geänderte Gewichtung. Er ist ausgegraut,
+solange es nichts zurückzunehmen gibt.</p>
+
+<div class="box warn">
+  <span class="t">Der Verlauf endet beim Modulwechsel</span>
+  <p>Verlassen Sie die Notenverwaltung und kehren zurück, landen Sie wieder in der Klassenliste –
+  und der Rückgängig-Verlauf ist leer. Nehmen Sie einen Fehlgriff also zurück, bevor Sie das Modul
+  wechseln. Für alles Weitere ist der Papierkorb zuständig.</p>
+</div>
+
+<h3>Papierkorb</h3>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/41-reiter-loeschen-dialog.webp" width="1800" height="1257" loading="lazy" alt="Löschdialog eines Reiters">
+  <figcaption>
+    <div class="figtitle">Abb. 45: Löschen wird angekündigt</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Die Rückfrage
+    <span class="ui">Reiter löschen?</span> sagt ausdrücklich zu, dass der Reiter in den Papierkorb
+    wandert und dort wiederhergestellt werden kann.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Bestätigen Sie mit
+    <span class="ui">Löschen</span>. Möchten Sie doch nicht löschen, tippen Sie neben das Fenster –
+    es schließt sich folgenlos. Dasselbe gilt für Klassen, Spalten, Bereiche und Schülerzeilen.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/42-papierkorb-eintrag.webp" width="1800" height="1257" loading="lazy" alt="Papierkorb mit einem Eintrag">
+  <figcaption>
+    <div class="figtitle">Abb. 46: Der Papierkorb</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Jeder Eintrag nennt Bezeichnung,
+    zugehörige Klasse, Art des Elements und die verbleibende Aufbewahrungszeit – hier
+    <span class="ui">Probe-Reiter · 8a · Reiter · 29 Tage verbleibend</span>. Oben stehen die
+    <span class="ui">Aufbewahrungsdauer</span> und die Schaltfläche
+    <span class="ui">Alle löschen</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Nach Ablauf der
+    Aufbewahrungsdauer – standardmäßig 30 Tage – werden Einträge automatisch endgültig entfernt.
+    Einzelne Einträge löschen Sie vorzeitig, indem Sie die Zeile nach links wischen.
+    <span class="ui">Alle löschen</span> leert den gesamten Papierkorb ohne Auswahlmöglichkeit;
+    sehen Sie die Liste vorher durch.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/43-papierkorb-wiederherstellen.webp" width="1800" height="1257" loading="lazy" alt="Dialog Wiederherstellen">
+  <figcaption>
+    <div class="figtitle">Abb. 47: Wiederherstellen</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ein Tipp auf einen Eintrag fragt nach
+    und nennt dabei ausdrücklich das Ziel: <span class="ui">„Probe-Reiter“ wird in die Klasse „8a“
+    wiederhergestellt.</span></p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Bestätigen Sie mit
+    <span class="ui">Wiederherstellen</span>. Zurück kommt das vollständige Element – bei einer
+    gelöschten Klasse also samt Fach, Reitern, Struktur, Schüler:innen und deren Noten. Wurde die
+    zugehörige Klasse selbst gelöscht, ist eine einzelne Schülerzeile nicht wiederherstellbar; der
+    Eintrag ist dann ausgegraut und weist darauf hin.</p>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="assets/handbuch/notenverwaltung/39-papierkorb-leer.webp" width="1800" height="1257" loading="lazy" alt="Leerer Papierkorb">
+  <figcaption>
+    <div class="figtitle">Abb. 48: Der leere Papierkorb</div>
+    <p class="sehen"><span class="lbl">Was Sie sehen:</span> Ist nichts gelöscht, steht hier nur
+    <span class="ui">Papierkorb leer</span> – und die Einstellung
+    <span class="ui">Aufbewahrungsdauer</span>.</p>
+    <p class="tun"><span class="lbl">Was Sie hier tun können:</span> Passen Sie die
+    Aufbewahrungsdauer an Ihre Gewohnheiten an. Eine längere Frist gibt Ihnen mehr Zeit, ein
+    versehentliches Löschen zu bemerken.</p>
+  </figcaption>
+</figure>
+
+<h3>Zusammenfassung: Welches Netz fängt was?</h3>
+
+<table>
+  <tr><th style="width:38mm">Situation</th><th>Das hilft</th></tr>
+  <tr><td>Falsche Note eingetragen</td>
+      <td>Zelle erneut antippen, <span class="ui">Leeren</span>, neuen Wert eingeben – oder sofort
+          <span class="ui">Rückgängig</span></td></tr>
+  <tr><td>Gewichtung verstellt</td>
+      <td><span class="ui">Rückgängig</span>, solange Sie das Modul nicht verlassen haben</td></tr>
+  <tr><td>Spalte, Reiter oder Klasse gelöscht</td>
+      <td>Papierkorb – standardmäßig 30 Tage</td></tr>
+  <tr><td>Person aus der Klasse entfernt</td>
+      <td>Papierkorb (Eintragsart <span class="ui">Schülerzeile</span>) – die Person selbst bleibt in
+          der Datenbank</td></tr>
+  <tr><td>Skalenwechsel hat Noten überschrieben</td>
+      <td>Nur ein Backup hilft – deshalb vorher eines anlegen</td></tr>
+</table>
+        <div class="hbfoot">
+          <a href="handbuecher.html">← Alle Handbücher</a>
+          <a href="modul-notenverwaltung.html">Notenverwaltung im Überblick →</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="wrap fcols">
+      <div>
+        <h4>ClassTiles</h4>
+        <p>Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät — kein Nutzerkonto, kein Tracking, keine Werbung.</p>
+        <!-- Reiner Profillink: Das Icon liegt inline im Dokument, beim Seitenaufruf wird nichts
+             von Meta geladen. Kein Embed und kein Follow-Button — die würden eine Einwilligung
+             nach § 25 TDDDG auslösen und damit ein Cookie-Banner erzwingen. -->
+        <a class="fsocial" href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer"><span>ClassTiles auf Instagram</span></a>
+      </div>
+      <div>
+        <h4>Module</h4>
+        <a href="modul-notenverwaltung.html">Notenverwaltung</a><a href="modul-kalender.html">Kalender</a><a href="modul-planung.html">Planung</a><a href="modul-gruppen.html">Gruppen &amp; Sitzordnung</a><a href="modul-dokumentation.html">Dokumentation</a><a href="modul-klassengeschaefte.html">Klassengeschäfte</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="support.html">Support &amp; FAQ</a>
+        <a href="mailto:classtiles@icloud.com">classtiles@icloud.com</a>
+      </div>
+    </div>
+    <div class="wrap"><p class="fnote">Diese Seite setzt keine Cookies. Besucherzahlen werden anonym und Cookie-frei mit Cloudflare Web Analytics gemessen — Details in der Datenschutzerklärung.</p></div>
+  </footer>
+  <script>
+(function(){
+  var bar=document.getElementById('bar');
+  if(bar){addEventListener('scroll',function(){bar.classList.toggle('stuck',scrollY>8)},{passive:true});}
+
+  // Einblenden beim Scrollen ist Kür. Der Inhalt ist per Default sichtbar; das Skript versteckt ihn
+  // nur, um ihn danach einzublenden — und eine Sicherheitsleine macht ihn nach 1 s in JEDEM Fall
+  // wieder sichtbar. Sonst könnte eine Umgebung, in der der IntersectionObserver nicht feuert,
+  // die halbe Seite verschlucken.
+  var els=document.querySelectorAll('.rev');
+  if(els.length && !matchMedia('(prefers-reduced-motion: reduce)').matches
+     && 'IntersectionObserver' in window){
+    els.forEach(function(el){el.classList.add('pre')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+    setTimeout(function(){els.forEach(function(el){el.classList.remove('pre')})},1000);
+  }
+
+  // Das Video wird erst geladen, wenn jemand auf Play tippt — bis dahin steht nur das Standbild.
+  // Spart Ladezeit; kein YouTube-Embed, damit kein Fremd-Tracker lädt.
+  var player=document.getElementById('player');
+  if(!player) return;
+  var started=false;
+  function start(){
+    if(started) return;
+    started=true;
+    var v=document.createElement('video');
+    v.src=player.dataset.src; v.controls=true; v.autoplay=true; v.playsInline=true;
+    var screen=player.querySelector('.screen');
+    screen.innerHTML=''; screen.appendChild(v);
+    v.scrollIntoView({block:'center'});
+  }
+  var o=document.getElementById('playoverlay'); if(o) o.addEventListener('click',start);
+  var c=document.getElementById('playcta');     if(c) c.addEventListener('click',start);
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7b45f2b83d574c8987ad43343d41f3c4"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

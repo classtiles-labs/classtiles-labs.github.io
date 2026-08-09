@@ -36,7 +36,13 @@ MODULE_META = {
 
 
 def strip_tags(s):
-    return re.sub(r"<[^>]+>", "", s).replace("&shy;", "").replace("\xad", "").strip()
+    # <br> trennt im Druck nur eine Zeile, steht aber für ein Leerzeichen (z. B. im
+    # Deckblatt-Titel "Gruppen &<br>Sitzordnung"). Entitäten (z. B. "&amp;") werden
+    # aufgelöst, sonst würde der Aufrufer sie beim erneuten html.escape() verdoppeln.
+    s = re.sub(r"<br\s*/?>", " ", s)
+    s = re.sub(r"<[^>]+>", "", s)
+    s = html.unescape(s).replace("\xad", "")
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def parse(folder):
