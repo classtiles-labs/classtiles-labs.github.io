@@ -111,6 +111,17 @@ CF_BEACON = ('<!-- Cloudflare Web Analytics --><script type=\'module\' '
              '<!-- End Cloudflare Web Analytics -->')
 
 
+# Modul-Glyphen (Inline-SVG, kein externer Request). Aus index.html gezogen, damit
+# Handbuchkopf und Modulkachel garantiert dasselbe Symbol zeigen.
+GLYPHS = {
+    "grades": '<svg viewBox="0 0 24 24"><path d="M9 4H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="3.2" rx="1.1"/></svg>',
+    "calendar": '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+    "planning": '<svg viewBox="0 0 24 24"><path d="M12 6.5c-1.6-1.1-4-1.7-6.5-1.7v13c2.5 0 4.9.6 6.5 1.7"/><path d="M12 6.5c1.6-1.1 4-1.7 6.5-1.7v13c-2.5 0-4.9.6-6.5 1.7"/><path d="M12 6.5v12.3"/></svg>',
+    "groups": '<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 19c0-2.8 2.7-4.5 6-4.5s6 1.7 6 4.5M17 14.6c2.4.3 4 1.9 4 4.4"/></svg>',
+    "documentation": '<svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 12.5h6M9 16h6M9 9h3"/></svg>',
+    "tasks": '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>',
+}
+
 # ---------- Ableitungen aus dem Pfad ----------
 
 def lang_of(path):

@@ -256,3 +256,74 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
   .rev,.rev.pre{opacity:1;transform:none;transition:none}
   .mod,.btn,.play span,.arrow,.storelinks a{transition:none}
 }
+
+/* ---------- Handbuch ---------- */
+.hblayout{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start;
+  padding:8px 0 40px}
+.hbnav{position:sticky;top:78px;font-size:.9rem}
+.hbnav h4{margin:0 0 10px;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3)}
+.hbnav ol{margin:0;padding:0;list-style:none;counter-reset:hb}
+.hbnav li{counter-increment:hb;margin:0 0 2px}
+.hbnav a{display:flex;gap:8px;padding:5px 9px;border-radius:8px;text-decoration:none;
+  color:var(--ink-2);line-height:1.35}
+.hbnav a::before{content:counter(hb) ".";color:var(--ink-3);font-variant-numeric:tabular-nums;
+  flex:0 0 1.4em}
+.hbnav a:hover{background:var(--sunk);color:var(--ink)}
+.hbtoc{display:none}
+
+.hbhead{padding:26px 0 4px;display:flex;gap:22px;align-items:flex-start}
+.hbhead .glyph{width:56px;height:56px;border-radius:15px;margin:6px 0 0}
+.hbhead .glyph svg{width:27px;height:27px}
+.hbhead h1{margin:0;font-size:2.5rem}
+.hbhead .claim{margin:6px 0 0;font-size:1.12rem;color:var(--ink-2)}
+.hbmeta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;font-size:.86rem;
+  color:var(--ink-3)}
+.hbmeta b{color:var(--ink-2);font-weight:600}
+
+.hb{max-width:70ch;font-size:1rem}
+.hb h2.chapter{scroll-margin-top:86px;margin:52px 0 14px;padding-bottom:10px;font-size:1.5rem;
+  letter-spacing:-.02em;border-bottom:2px solid var(--c);display:flex;gap:12px;align-items:baseline}
+.hb h2.chapter:first-child{margin-top:24px}
+.hb h2.chapter .num{color:var(--ink-3);font-weight:400;font-variant-numeric:tabular-nums}
+.hb h3{margin:34px 0 8px;font-size:1.1rem;letter-spacing:-.012em}
+.hb p{margin:0 0 12px}
+.hb ul,.hb ol{margin:0 0 12px;padding-left:1.3em}
+.hb li{margin:.3em 0;color:var(--ink-2)}
+.hb .lead{font-size:1.08rem;color:var(--ink-2);margin-bottom:22px}
+.hb .ui{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85em;
+  background:var(--navy-soft);color:var(--navy);padding:.1em .4em;border-radius:5px;
+  white-space:nowrap}
+
+.hb figure{margin:24px 0 30px;border:1px solid var(--hair);border-radius:var(--r);
+  overflow:hidden;background:var(--tile);box-shadow:var(--sh-1)}
+.hb figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--hair);
+  background:var(--sunk)}
+.hb figcaption{padding:16px 20px 18px;font-size:.94rem;color:var(--ink-2)}
+.hb .figtitle{font-weight:650;color:var(--ink);margin-bottom:8px;font-size:.95rem}
+.hb figcaption p{margin:0 0 8px}
+.hb figcaption p:last-child{margin-bottom:0}
+.hb .lbl{font-weight:650;color:var(--ink)}
+.hb .sehen .lbl::before,.hb .tun .lbl::before{content:"▸ ";color:var(--c)}
+
+.hb .box{margin:22px 0;padding:16px 20px;border-radius:0 12px 12px 0;background:var(--sunk);
+  border-left:3px solid var(--navy);font-size:.96rem;color:var(--ink-2)}
+.hb .box .t{display:block;font-weight:650;color:var(--ink);margin-bottom:5px}
+.hb .box p:last-child{margin-bottom:0}
+.hb .box.warn{border-left-color:#d9a441}
+.hb .box.tip{border-left-color:#4f8f5b}
+
+.hb table{margin:20px 0;font-size:.93rem}
+.hb th,.hb td{border:0;border-bottom:1px solid var(--hair)}
+.hb th{background:transparent;border-bottom:2px solid var(--hair-2)}
+
+.hbfoot{border-top:1px solid var(--hair);margin-top:48px;padding-top:22px;display:flex;
+  gap:16px;flex-wrap:wrap;justify-content:space-between}
+
+@media (max-width:920px){
+  .hblayout{grid-template-columns:1fr;gap:0}
+  .hbnav{display:none}
+  .hbtoc{display:block;margin:22px 0 8px}
+  .hbhead h1{font-size:1.9rem}
+  .hb h2.chapter{scroll-margin-top:70px}
+}
