@@ -14,19 +14,19 @@ CSS = open(os.path.join(HERE, "shell", "site.css"), encoding="utf-8").read()
 ICON = open(os.path.join(HERE, "shell", "app-icon.datauri.txt"), encoding="utf-8").read().strip()
 
 # ---------- Navigation ----------
-# (href, Beschriftung) der Kopfleiste. Heute sind das die vier Rechtstexte — Modul/Support-Tabs
-# kommen erst mit Task 5. Der href ist relativ zur jeweiligen Sprachfassung: eine deutsche Seite
-# liegt in der Wurzel, eine englische in /en/ — beide verlinken „ihre" Dateien ohne Präfix.
+# (href, Beschriftung) der Kopfleiste. Sie zeigt, was Besucher suchen; die Rechtstexte stehen
+# vollständig im Fuß jeder Seite — das Impressum bleibt damit von überall einen Klick entfernt.
+# Der href ist relativ zur jeweiligen Sprachfassung: eine deutsche Seite liegt in der Wurzel,
+# eine englische in /en/ — beide verlinken „ihre" Dateien ohne Präfix.
 NAV = {
-    "de": [("datenschutz.html", "Datenschutz"), ("impressum.html", "Impressum"),
-           ("nutzungsbedingungen.html", "Nutzungsbedingungen"), ("support.html", "Support")],
-    "en": [("privacy.html", "Privacy"), ("imprint.html", "Legal notice"),
-           ("terms.html", "Terms of use"), ("support.html", "Support")],
+    "de": [("index.html#module", "Module"), ("handbuecher.html", "Handbücher"),
+           ("digitalisierung-ki.html", "Digitalisierung &amp; KI"), ("support.html", "Support")],
+    "en": [("index.html#module", "Modules"), ("manuals.html", "Manuals"),
+           ("digitalisation-ai.html", "Digitalisation &amp; AI"), ("support.html", "Support")],
 }
 
-# Welcher Navigationseintrag wird auf welcher Seite hervorgehoben — für die Kopfleiste ab Task 5
-# (Modul/Support-Tabs). Bis dahin markiert bar_block() die aktive Seite direkt gegen NAV, ohne
-# diese Zuordnung zu benutzen.
+# Welcher Navigationseintrag wird auf welcher Seite hervorgehoben. Eine Modulseite hebt „Module"
+# hervor, eine Handbuchseite „Handbücher" — der Reiter steht für den Bereich, nicht für die Datei.
 ACTIVE = {
     "support.html": "support.html",
     "en/support.html": "support.html",
@@ -37,6 +37,12 @@ for _f in ("index.html", "modul-notenverwaltung.html", "modul-kalender.html", "m
 for _f in ("index.html", "module-grades.html", "module-calendar.html", "module-planning.html",
            "module-groups.html", "module-documentation.html", "module-tasks.html"):
     ACTIVE["en/" + _f] = "index.html#module"
+ACTIVE["handbuecher.html"] = "handbuecher.html"
+ACTIVE["handbuch-notenverwaltung.html"] = "handbuecher.html"
+ACTIVE["handbuch-gruppen-sitzordnung.html"] = "handbuecher.html"
+ACTIVE["digitalisierung-ki.html"] = "digitalisierung-ki.html"
+ACTIVE["en/manuals.html"] = "manuals.html"
+ACTIVE["en/digitalisation-ai.html"] = "digitalisation-ai.html"
 
 # Sprachpaare. Schlüssel ist der Dateiname ohne Sprachverzeichnis.
 TWIN = {
@@ -51,8 +57,14 @@ TWIN = {
     "modul-gruppen.html": "module-groups.html",
     "modul-dokumentation.html": "module-documentation.html",
     "modul-klassengeschaefte.html": "module-tasks.html",
+    "handbuecher.html": "manuals.html",
+    "digitalisierung-ki.html": "digitalisation-ai.html",
 }
 TWIN.update({v: k for k, v in TWIN.items() if k not in ("index.html", "support.html")})
+
+# Die Handbücher selbst gibt es nur auf Deutsch; die englische Fassung ist die Hinweisseite.
+TWIN["handbuch-notenverwaltung.html"] = "manuals.html"
+TWIN["handbuch-gruppen-sitzordnung.html"] = "manuals.html"
 
 LANG_LABEL = {"de": ("English", "en"), "en": ("Deutsch", "de")}
 
@@ -76,17 +88,28 @@ LEGAL = {
            ("terms.html", "Terms of use"), ("support.html", "Support &amp; FAQ")],
 }
 
+# Die Handbuchseiten liegen alle in der Wurzel; aus /en/ heraus brauchen sie deshalb „../".
+MANUALS = {
+    "de": [("handbuch-notenverwaltung.html", "Notenverwaltung"),
+           ("handbuch-gruppen-sitzordnung.html", "Gruppen &amp; Sitzordnung"),
+           ("handbuecher.html", "Alle Handbücher")],
+    "en": [("../handbuch-notenverwaltung.html", "Notenverwaltung (DE)"),
+           ("../handbuch-gruppen-sitzordnung.html", "Gruppen &amp; Sitzordnung (DE)"),
+           ("manuals.html", "All manuals")],
+}
+
 FOOTER_TEXT = {
     "de": dict(
         blurb="Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät — kein Nutzerkonto, "
               "kein Tracking, keine Werbung.",
-        social="ClassTiles auf Instagram", modules="Module", legal="Rechtliches",
+        social="ClassTiles auf Instagram", modules="Module", manuals="Handbücher",
+        legal="Rechtliches",
         note="Diese Seite setzt keine Cookies. Besucherzahlen werden anonym und Cookie-frei mit "
              "Cloudflare Web Analytics gemessen — Details in der Datenschutzerklärung."),
     "en": dict(
         blurb="Grade management for teachers. Runs locally on your device — no user account, "
               "no tracking, no ads.",
-        social="ClassTiles on Instagram", modules="Modules", legal="Legal",
+        social="ClassTiles on Instagram", modules="Modules", manuals="Manuals", legal="Legal",
         note="This site sets no cookies. Visitor numbers are measured anonymously and cookie-free "
              "with Cloudflare Web Analytics — see the privacy policy for details. English is a "
              "convenience translation — the German version is the legally binding one."),
@@ -155,9 +178,9 @@ def style_block():
 
 def bar_block(path):
     lang = lang_of(path)
-    own = base_of(path)
+    active = active_of(path)
     tabs = "".join(
-        f'<a href="{href}"{" class=\"active\"" if href == own else ""}>{label}</a>'
+        f'<a href="{href}"{" class=\"active\"" if href == active else ""}>{label}</a>'
         for href, label in NAV[lang])
     label, code = LANG_LABEL[lang]
     tabs += (f'<a class="lang" href="{twin_of(path)}" hreflang="{code}" rel="alternate">'
@@ -184,6 +207,7 @@ def footer_block(path):
     lang = lang_of(path)
     t = FOOTER_TEXT[lang]
     mods = "".join(f'<a href="{h}">{l}</a>' for h, l in MODULES[lang])
+    manuals = "".join(f'<a href="{h}">{l}</a>' for h, l in MANUALS[lang])
     legal = "".join(f'<a href="{h}">{l}</a>' for h, l in LEGAL[lang])
     return f'''<footer>
     <div class="wrap fcols">
@@ -195,6 +219,10 @@ def footer_block(path):
       <div>
         <h4>{t["modules"]}</h4>
         {mods}
+      </div>
+      <div>
+        <h4>{t["manuals"]}</h4>
+        {manuals}
       </div>
       <div>
         <h4>{t["legal"]}</h4>

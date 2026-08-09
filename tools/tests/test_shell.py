@@ -49,6 +49,19 @@ class TestShellFacts(unittest.TestCase):
         self.assertEqual(shell.active_of("modul-kalender.html"), "index.html#module")
         self.assertIsNone(shell.active_of("impressum.html"))
 
+    def test_active_marks_the_new_sections(self):
+        self.assertEqual(shell.active_of("handbuecher.html"), "handbuecher.html")
+        self.assertEqual(shell.active_of("handbuch-notenverwaltung.html"), "handbuecher.html")
+        self.assertEqual(shell.active_of("digitalisierung-ki.html"), "digitalisierung-ki.html")
+        self.assertEqual(shell.active_of("en/manuals.html"), "manuals.html")
+
+    def test_new_pages_are_language_paired(self):
+        self.assertEqual(shell.twin_of("handbuecher.html"), "en/manuals.html")
+        self.assertEqual(shell.twin_of("en/manuals.html"), "../handbuecher.html")
+        self.assertEqual(shell.twin_of("digitalisierung-ki.html"), "en/digitalisation-ai.html")
+        # Die Handbücher selbst gibt es nur auf Deutsch — sie zeigen auf die Hinweisseite.
+        self.assertEqual(shell.twin_of("handbuch-notenverwaltung.html"), "en/manuals.html")
+
     def test_bar_contains_instagram_and_language_switch(self):
         bar = shell.bar_block("index.html")
         self.assertIn('href="https://www.instagram.com/classtiles/"', bar)
@@ -83,15 +96,28 @@ class TestApplyShell(unittest.TestCase):
         with open(os.path.join(self.tmp, name), encoding="utf-8") as f:
             return f.read()
 
-    def test_bar_and_footer_are_reproduced_byte_for_byte(self):
-        before = {n: self.read(n) for n in pages(self.tmp)}
+    def test_navigation_is_the_new_one_on_every_page(self):
         self.run_apply()
-        for name, old in before.items():
-            new = self.read(name)
-            self.assertEqual(BAR.search(old).group(0), BAR.search(new).group(0),
-                             f"Kopfleiste von {name} hat sich geändert")
-            self.assertEqual(FOOTER.search(old).group(0), FOOTER.search(new).group(0),
-                             f"Fußzeile von {name} hat sich geändert")
+        for name in pages(self.tmp):
+            bar = BAR.search(self.read(name)).group(0)
+            lang = "en" if name.startswith("en/") else "de"
+            erwartet = (["Modules", "Manuals", "Digitalisation &amp; AI", "Support"]
+                        if lang == "en" else
+                        ["Module", "Handbücher", "Digitalisierung &amp; KI", "Support"])
+            for label in erwartet:
+                self.assertIn(f">{label}</a>", bar, f"{name}: {label} fehlt")
+            for weg in ("Datenschutz</a>", "Impressum</a>", "Privacy</a>", "Legal notice</a>"):
+                self.assertNotIn(weg, bar, f"{name}: {weg} steht noch in der Kopfleiste")
+
+    def test_footer_has_a_manuals_column_and_keeps_the_legal_links(self):
+        """Die Rechtstexte verlassen die Kopfleiste — im Fuß müssen sie vollständig bleiben,
+        sonst wäre das Impressum nicht mehr von jeder Seite aus erreichbar."""
+        self.run_apply()
+        for name in pages(self.tmp):
+            foot = FOOTER.search(self.read(name)).group(0)
+            lang = "en" if name.startswith("en/") else "de"
+            self.assertIn("<h4>Handbücher</h4>" if lang == "de" else "<h4>Manuals</h4>", foot)
+            self.assertIn("impressum.html" if lang == "de" else "imprint.html", foot)
 
     def test_body_content_is_untouched(self):
         """Alles zwischen Kopfleiste und Fußzeile bleibt, wie es war."""
