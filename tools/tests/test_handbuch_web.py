@@ -24,8 +24,18 @@ class TestParse(unittest.TestCase):
         self.meta = handbuch_web.parse(FIXTURE)
 
     def test_title_and_claim_come_from_the_cover(self):
-        self.assertEqual(self.meta["titel"], "Probe")          # &shy; wird entfernt
+        # Der Deckblatt-Titel steht im Druck mit weichem Trennstrich und Zeilenumbruch:
+        # "Pro&shy;be<br>&amp; Muster". Erwartet wird der Klartext — genau daran ist der
+        # echte Titel "Gruppen &amp;<br>Sitzordnung" einmal zerbrochen und als
+        # "Gruppen &amp;amp; Sitzordnung" auf der Seite gelandet.
+        self.assertEqual(self.meta["titel"], "Probe & Muster")
         self.assertEqual(self.meta["claim"], "Nur zum Testen")
+
+    def test_title_survives_line_break_and_entity_without_double_escaping(self):
+        titel = self.meta["titel"]
+        self.assertNotIn("&amp;", titel)
+        self.assertNotIn("<br", titel)
+        self.assertNotIn("\xad", titel)
         self.assertEqual(self.meta["modul"], 2)
 
     def test_colophon_is_read(self):
@@ -85,6 +95,10 @@ class TestBuild(unittest.TestCase):
         self.assertIn('<div class="bar" id="bar">', self.page)
         self.assertIn("<footer>", self.page)
         self.assertIn("cloudflareinsights.com/beacon.min.js", self.page)
+
+    def test_title_is_escaped_exactly_once_on_the_page(self):
+        self.assertIn("Probe &amp; Muster", self.page)
+        self.assertNotIn("&amp;amp;", self.page)
 
     def test_chapter_navigation_links_every_chapter(self):
         self.assertIn('href="#kapitel-1"', self.page)

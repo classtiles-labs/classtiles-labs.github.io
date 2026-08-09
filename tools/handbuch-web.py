@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """Übersetzt ein Druck-Handbuch aus ~/mobai in eine Seite der Website.
 
-    python3 tools/handbuch-web.py ~/mobai/handbuch --slug notenverwaltung --modul 1 [--pdf]
+    python3 tools/handbuch-web.py ~/mobai/handbuch --slug notenverwaltung --modul 1
 
 Die Quelle bleibt unverändert. Deckblatt und Inhaltsverzeichnis sind Druck-Logik und entfallen;
 den Rest der Auszeichnung übernimmt das Skript unverändert — die Klassennamen der Quelle
 (.figtitle, .sehen, .tun, .box, .ui) werden vom Handbuch-CSS unter `.hb` gestylt. Dadurch
 funktioniert der Konverter auch für die kommenden Handbücher, ohne dass er ihren Inhalt kennt.
 
-Die PNG-Screenshots werden nach WebP gewandelt (rund ein Fünftel der Größe, gleiche Optik).
-Mit --pdf wird zusätzlich das PDF aus denselben WebP-Dateien neu gebaut (rund 3 statt 14 MB);
-dafür werden Google Chrome und ~/mobai/build-handbuch.py gebraucht.
+Die PNG-Screenshots werden für die Webseite nach WebP gewandelt (rund ein Fünftel der Größe).
+Das PDF wird unverändert übernommen: ein Neubau aus den WebP-Dateien wurde versucht und wieder
+verworfen — Chrome rastert beim Drucken jedes Bild in Druckauflösung neu, das Ergebnis war
+größer als das Original (16,2 statt 14 MB) statt kleiner.
 """
 import argparse
 import html
@@ -132,38 +133,6 @@ def convert_images(body, folder, slug, root, max_px=1800):
     return body
 
 
-def rebuild_pdf(folder, slug, root, dst):
-    """Das PDF aus den WebP-Bildern neu rendern — rund ein Fünftel der Größe, gleiche Optik.
-
-    Benutzt den vorhandenen Renderer ~/mobai/build-handbuch.py; er erwartet neben sich ein
-    Verzeichnis mit handbuch.html und screenshots/. Deshalb wird beides in einem temporären
-    Verzeichnis nachgebaut — die Quelle in ~/mobai bleibt unangetastet.
-    """
-    builder = os.path.expanduser("~/mobai/build-handbuch.py")
-    if not os.path.exists(builder):
-        print("  --pdf übersprungen: ~/mobai/build-handbuch.py nicht gefunden")
-        return False
-    with tempfile.TemporaryDirectory() as tmp:
-        work = os.path.join(tmp, "handbuch")
-        with open(os.path.join(folder, "handbuch.html"), encoding="utf-8") as f:
-            src = f.read()
-        src = re.sub(r'src="screenshots/([^"]+)\.png"', r'src="screenshots/\1.webp"', src)
-        shutil.copytree(os.path.join(root, "assets", "handbuch", slug),
-                        os.path.join(work, "screenshots"))
-        with open(os.path.join(work, "handbuch.html"), "w", encoding="utf-8") as f:
-            f.write(src)
-        shutil.copyfile(builder, os.path.join(tmp, "build-handbuch.py"))
-        r = subprocess.run([sys.executable, os.path.join(tmp, "build-handbuch.py"),
-                            "handbuch", os.path.basename(dst)], capture_output=True, text=True)
-        if r.returncode != 0:
-            print("  --pdf fehlgeschlagen, Original-PDF bleibt liegen:")
-            print("   ", (r.stderr or r.stdout).strip().splitlines()[-1] if (r.stderr or r.stdout)
-                  else "keine Meldung")
-            return False
-        shutil.copyfile(os.path.join(work, os.path.basename(dst)), dst)
-    return True
-
-
 def build_page(meta, slug, pdf_name):
     farbe, ikone, modulseite, modulname = MODULE_META[meta["modul"]]
 
@@ -218,7 +187,6 @@ def main():
     ap.add_argument("folder")
     ap.add_argument("--slug", required=True)
     ap.add_argument("--modul", type=int, required=True, choices=range(1, 7))
-    ap.add_argument("--pdf", action="store_true")
     ap.add_argument("--root", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     a = ap.parse_args()
 
@@ -236,8 +204,6 @@ def main():
     os.makedirs(os.path.join(a.root, "assets", "handbuch"), exist_ok=True)
     ziel_pdf = os.path.join(a.root, "assets", "handbuch", pdf_name)
     shutil.copyfile(os.path.join(folder, pdf_name), ziel_pdf)
-    if a.pdf:
-        rebuild_pdf(folder, a.slug, a.root, ziel_pdf)
 
     page = build_page(meta, a.slug, pdf_name)
     out = os.path.join(a.root, f"handbuch-{a.slug}.html")
