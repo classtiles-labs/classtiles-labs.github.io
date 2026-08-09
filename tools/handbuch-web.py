@@ -144,7 +144,8 @@ def rebuild_pdf(folder, slug, root, dst):
         src = re.sub(r'src="screenshots/([^"]+)\.png"', r'src="screenshots/\1.webp"', src)
         shutil.copytree(os.path.join(root, "assets", "handbuch", slug),
                         os.path.join(work, "screenshots"))
-        open(os.path.join(work, "handbuch.html"), "w", encoding="utf-8").write(src)
+        with open(os.path.join(work, "handbuch.html"), "w", encoding="utf-8") as f:
+            f.write(src)
         shutil.copyfile(builder, os.path.join(tmp, "build-handbuch.py"))
         r = subprocess.run([sys.executable, os.path.join(tmp, "build-handbuch.py"),
                             "handbuch", os.path.basename(dst)], capture_output=True, text=True)
@@ -234,7 +235,8 @@ def main():
 
     page = build_page(meta, a.slug, pdf_name)
     out = os.path.join(a.root, f"handbuch-{a.slug}.html")
-    open(out, "w", encoding="utf-8").write(page)
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(page)
 
     mb = os.path.getsize(ziel_pdf) / 1048576
     print(f'{a.slug}: {len(meta["kapitel"])} Kapitel, {meta["abbildungen"]} Abbildungen, '

@@ -98,6 +98,14 @@ class TestBuild(unittest.TestCase):
         for regel in (".hb .lead{", ".hb .ui{", ".hb figcaption{"):
             self.assertIn(regel, css, regel)
 
+    def test_warn_and_tip_boxes_use_design_tokens_not_raw_hex(self):
+        """Farben nur über Tokens, sonst bricht der Dunkelmodus für diese eine Kante."""
+        css = self.page.split("<style>", 1)[1].split("</style>", 1)[0]
+        self.assertIn(".hb .box.warn{border-left-color:var(--hb-warn)}", css)
+        self.assertIn(".hb .box.tip{border-left-color:var(--hb-tip)}", css)
+        self.assertNotIn(".hb .box.warn{border-left-color:#", css)
+        self.assertNotIn(".hb .box.tip{border-left-color:#", css)
+
     def test_summary_line_is_printed(self):
         self.assertIn("2 Kapitel", self.out)
         self.assertIn("1 Abbildungen", self.out)
