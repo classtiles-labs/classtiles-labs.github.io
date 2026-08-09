@@ -80,7 +80,8 @@ class TestApplyShell(unittest.TestCase):
         return r.stdout
 
     def read(self, name):
-        return open(os.path.join(self.tmp, name), encoding="utf-8").read()
+        with open(os.path.join(self.tmp, name), encoding="utf-8") as f:
+            return f.read()
 
     def test_bar_and_footer_are_reproduced_byte_for_byte(self):
         before = {n: self.read(n) for n in pages(self.tmp)}

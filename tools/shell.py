@@ -9,7 +9,6 @@ import html
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(HERE)
 
 CSS = open(os.path.join(HERE, "shell", "site.css"), encoding="utf-8").read()
 ICON = open(os.path.join(HERE, "shell", "app-icon.datauri.txt"), encoding="utf-8").read().strip()

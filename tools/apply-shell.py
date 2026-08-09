@@ -47,7 +47,9 @@ def main():
         for pattern, build in BLOCKS:
             if not pattern.search(text):
                 sys.exit(f"{name}: Block {pattern.pattern[:30]}… nicht gefunden")
-            text = pattern.sub(lambda m: build(name).replace("\\", "\\\\"), text, count=1)
+            # Ersatz als Funktion: re.sub deutet in deren Rückgabewert keine \1-/\g-Sequenzen
+            # aus — der Block geht unverändert in die Seite, Backslashes inklusive.
+            text = pattern.sub(lambda m: build(name), text, count=1)
         if text != original:
             changed.append(name)
             if not a.check:
