@@ -122,8 +122,8 @@ def de():
       <div class="grid">{themen}</div>
       <div class="two" style="margin-top:26px">{formate}</div>
       <p class="note"><b>Noch gibt es nichts zu buchen.</b> Wenn eines der Themen für dich oder
-      dein Kollegium interessant ist, schreib mir — dann melde ich mich, sobald es so weit ist,
-      und weiß, woran wirklich Bedarf besteht.</p>
+      dein Kollegium interessant ist, schreib uns — dann melden wir uns, sobald es so weit ist,
+      und wissen, woran wirklich Bedarf besteht.</p>
       <div class="cta">
         <a class="btn b-solid" href="{MAILTO}">Interesse anmelden</a>
         <a class="btn b-line" href="ki-handbuecher.html">Zu den KI-Handbüchern</a>
