@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Workflows für Lehrkräfte — ClassTiles</title>
+  <meta name="description" content="KI-Workflows für Lehrkräfte: Vormachen. Prüfen. Als Skill sichern. Praxis-Handbuch, Band 1 — 19 Kapitel, online lesbar und als PDF. Für Lehrkräfte, die KI im Unterricht verlässlich einsetzen wollen.">
+  <link rel="alternate" hreflang="en" href="en/digitalisation-ai.html">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <style>
+:root{
+  color-scheme: light dark;
+  --paper:#faf7f2; --tile:#ffffff; --sunk:#f2eee7;
+  --ink:#141833; --ink-2:#565b73; --ink-3:#8b8fa3;
+  --hair:#e6e0d5; --hair-2:#d6cfc2;
+  --navy:#1f2547; --navy-soft:#e8eaf3;
+  --sh-1:0 1px 2px rgba(20,24,51,.05);
+  --sh-2:0 2px 6px rgba(20,24,51,.05), 0 12px 28px -8px rgba(20,24,51,.12);
+  --sh-3:0 2px 8px rgba(20,24,51,.06), 0 28px 60px -18px rgba(20,24,51,.22);
+  --r:18px;
+  --m1:#c9d8f5; --m2:#d8cff2; --m3:#c7e6d3; --m4:#f7d9bf; --m5:#f2cdd9; --m6:#c6e4ee;
+  --hb-warn:#d9a441; --hb-tip:#4f8f5b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0f1016; --tile:#191b24; --sunk:#20222c;
+    --ink:#f2f2f7; --ink-2:#a9adbd; --ink-3:#767a8c;
+    --hair:#282a35; --hair-2:#383b48;
+    --navy:#b9c4e6; --navy-soft:#232739;
+    --sh-1:0 1px 2px rgba(0,0,0,.3);
+    --sh-2:0 2px 6px rgba(0,0,0,.3), 0 12px 28px -8px rgba(0,0,0,.5);
+    --sh-3:0 2px 8px rgba(0,0,0,.35), 0 28px 60px -18px rgba(0,0,0,.6);
+    --m1:#2c3a5c; --m2:#332d52; --m3:#264132; --m4:#4a3524; --m5:#472b39; --m6:#22414c;
+    --hb-warn:#e0b45c; --hb-tip:#6aa87a;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+
+/* Kopfleiste */
+.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.6) blur(14px);
+  -webkit-backdrop-filter:saturate(1.6) blur(14px);
+  background:color-mix(in srgb, var(--paper) 84%, transparent);
+  border-bottom:1px solid transparent;transition:border-color .25s, box-shadow .25s}
+.bar.stuck{border-bottom-color:var(--hair);box-shadow:0 1px 16px rgba(20,24,51,.06)}
+.bar-in{max-width:1140px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;margin-right:auto}
+.brand img{width:34px;height:34px;border-radius:9px;box-shadow:var(--sh-1)}
+.brand b{font-size:1.02rem;letter-spacing:-.01em}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{padding:7px 13px;border-radius:9px;font-size:.88rem;color:var(--ink-2);text-decoration:none}
+.tabs a:hover{background:var(--sunk);color:var(--ink)}
+.tabs a.active{background:var(--navy-soft);color:var(--navy);font-weight:600}
+.tabs a.lang{color:var(--ink-3);border:1px solid var(--hair)}
+.tabs a.ig{display:inline-flex;align-items:center;padding:6px;margin-left:11px}
+.tabs a.ig img{width:29px;height:29px;display:block}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center;padding:72px 0 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:650;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--hair-2)}
+h1{margin:0 0 14px;font-size:3.4rem;line-height:1.04;letter-spacing:-.033em;font-weight:700;
+  text-wrap:balance}
+.kicker{margin:0 0 20px;font-size:1.2rem;color:var(--ink-2);text-wrap:balance}
+.hero p{margin:0;color:var(--ink-2);max-width:46ch}
+.hero p strong{color:var(--ink)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:11px;
+  font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;
+  font-family:inherit;transition:transform .15s ease, box-shadow .2s ease, border-color .2s}
+.btn:active{transform:translateY(1px)}
+.b-solid{background:var(--navy);color:var(--paper);box-shadow:var(--sh-2)}
+.b-solid:hover{box-shadow:var(--sh-3)}
+.b-line{background:var(--tile);color:var(--ink);border-color:var(--hair-2);box-shadow:var(--sh-1)}
+.b-line:hover{border-color:var(--ink-3)}
+.soon{display:inline-flex;align-items:center;padding:11px 16px;border-radius:11px;font-size:.86rem;
+  color:var(--ink-3);border:1px dashed var(--hair-2)}
+
+/* App-Store-Badges (Apple-Originalartwork, nicht verändern/einfärben) */
+.storelinks{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.storelinks a{display:inline-flex;border-radius:9px;
+  transition:opacity .2s ease, transform .15s ease}
+.storelinks a:hover{opacity:.82}
+.storelinks a:active{transform:translateY(1px)}
+.storelinks img{display:block;height:44px;width:auto}
+.herosocial{display:inline-flex;align-items:center;gap:15px;margin-top:20px;color:var(--ink-2);text-decoration:none;font-size:.95rem}
+.herosocial:hover{color:var(--ink)}
+.herosocial img{width:29px;height:29px;flex:none;display:block}
+
+/* Geräterahmen */
+.device{position:relative;border-radius:20px;padding:9px;
+  background:linear-gradient(160deg,#e9e6df,#cfcabe);box-shadow:var(--sh-3)}
+@media (prefers-color-scheme: dark){.device{background:linear-gradient(160deg,#3a3d49,#22242c)}}
+.screen{position:relative;border-radius:12px;overflow:hidden;background:var(--sunk);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.screen img,.screen video{display:block;width:100%;height:auto}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;
+  background:transparent;cursor:pointer}
+.play span{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.97);
+  display:grid;place-items:center;transition:transform .2s ease;
+  box-shadow:0 14px 38px rgba(16,20,40,.36),0 0 0 1px rgba(16,20,40,.05)}
+.play:hover span{transform:scale(1.07)}
+.play:focus-visible{outline:3px solid #fff;outline-offset:-8px}
+
+/* Kennzahlen */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair)}
+.stats div{padding:24px 8px;text-align:center;border-left:1px solid var(--hair)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font-size:1.9rem;letter-spacing:-.03em;line-height:1.1;
+  font-variant-numeric:tabular-nums}
+.stats span{font-size:.86rem;color:var(--ink-3)}
+
+/* Abschnitte */
+section{padding:76px 0}
+.head{max-width:64ch;margin:0 0 38px}
+.head h2{margin:0 0 10px;font-size:2.1rem;line-height:1.15;letter-spacing:-.027em;font-weight:700;
+  text-wrap:balance}
+.head p{margin:0;color:var(--ink-2);font-size:1.06rem}
+
+/* Modul-Kacheln */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mod{position:relative;display:flex;flex-direction:column;gap:6px;padding:24px 22px 20px;
+  background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);text-decoration:none;
+  color:inherit;box-shadow:var(--sh-1);overflow:hidden;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s, border-color .22s}
+.mod::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--c)}
+.mod:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--hair-2)}
+.glyph{width:40px;height:40px;border-radius:11px;background:var(--c);display:grid;place-items:center;
+  color:#141833;margin-bottom:12px;flex:0 0 auto}
+.glyph svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.72}
+.mod b{font-size:1.05rem;letter-spacing:-.01em}
+.mod span{font-size:.93rem;color:var(--ink-2)}
+.mod em{margin-top:auto;padding-top:14px;font-style:normal;font-size:.85rem;font-weight:600;
+  color:var(--ink-3);display:flex;align-items:center;gap:5px}
+.mod:hover em{color:var(--navy)}
+.mod:hover .arrow{transform:translateX(3px)}
+.arrow{transition:transform .2s ease}
+
+.note{margin:26px 0 0;padding:22px 24px;border-radius:var(--r);background:var(--sunk);
+  border:1px solid var(--hair);font-size:1rem}
+
+/* Zwei Panels */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{padding:28px;border:1px solid var(--hair);border-radius:var(--r);background:var(--tile);
+  box-shadow:var(--sh-1)}
+.panel h3{margin:0 0 8px;font-size:1.15rem;letter-spacing:-.015em}
+.panel p{margin:0;color:var(--ink-2);font-size:.97rem}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chips span{padding:6px 12px;border-radius:8px;font-size:.84rem;font-weight:600;
+  background:var(--navy-soft);color:var(--navy)}
+figcaption{margin-top:12px;color:var(--ink-3);font-size:.88rem}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:2px}
+.shots{display:grid;gap:34px;margin-top:34px}
+.stepnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:7px;background:var(--c);color:#141833;font-size:.75rem;font-weight:700;
+  margin-right:8px;vertical-align:1px}
+
+/* Modul-Detailseite */
+.back{display:inline-flex;align-items:center;gap:7px;margin-top:30px;font-size:.9rem;
+  color:var(--ink-3);text-decoration:none}
+.back:hover{color:var(--ink)}
+.mhero{display:flex;gap:22px;align-items:flex-start;padding:24px 0 4px}
+.mhero .glyph{width:56px;height:56px;border-radius:15px;margin:8px 0 0}
+.mhero .glyph svg{width:27px;height:27px}
+.mhero h1{font-size:2.7rem;margin:0}
+.mlead{max-width:62ch;font-size:1.12rem;color:var(--ink-2);margin:14px 0 0}
+.fgroup{border-top:1px solid var(--hair);padding-top:34px;margin-top:34px}
+.fgroup:first-of-type{border-top:0;margin-top:8px;padding-top:0}
+.fgroup h2{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}
+.fgroup ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.fgroup li{position:relative;padding-left:26px;color:var(--ink-2)}
+.fgroup li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;
+  border-radius:2px;background:var(--c)}
+.fgroup li b{color:var(--ink);font-weight:600}
+.box{margin-top:34px;padding:26px 28px;border-radius:var(--r);border:1px solid var(--hair);
+  background:var(--tile);box-shadow:var(--sh-1)}
+.box h2{margin:0 0 10px;font-size:1.15rem;letter-spacing:-.015em}
+.box p{margin:0;color:var(--ink-2)}
+.box li{color:var(--ink-2)}
+.box b{color:var(--ink)}
+.box ul{margin:0;padding-left:1.2em;display:grid;gap:10px}
+.box.limits{background:var(--sunk)}
+.prevnext{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  border-top:1px solid var(--hair);margin-top:56px;padding-top:24px}
+.prevnext a{display:inline-flex;flex-direction:column;text-decoration:none;color:var(--ink);
+  font-size:.95rem}
+.prevnext small{color:var(--ink-3);font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:2px}
+.prevnext a:hover{color:var(--navy)}
+
+/* Rechtstexte (Fließtext) */
+.pagetitle{max-width:820px;margin:48px auto 0;padding:0 4px}
+.pagetitle h1{font-size:2.2rem;margin:0 0 6px}
+.pagetitle p{margin:0;color:var(--ink-3);font-size:.95rem}
+.prose{background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);
+  box-shadow:var(--sh-1);padding:40px 44px 34px;max-width:820px;margin:26px auto 0}
+.prose h2{font-size:1.28rem;margin:1.9em 0 .5em;letter-spacing:-.015em}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.03rem;margin:1.5em 0 .4em}
+.prose a{color:var(--navy);text-underline-offset:2px}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li{margin:.3em 0}
+.prose blockquote{margin:1em 0;padding:14px 18px;background:var(--sunk);
+  border-left:3px solid var(--navy);border-radius:0 10px 10px 0}
+.prose hr{border:0;border-top:1px solid var(--hair);margin:1.9em 0}
+.prose code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.86em;
+  background:var(--navy-soft);color:var(--navy);padding:.1em .4em;border-radius:5px}
+.tablewrap{overflow-x:auto;margin:1em 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border:1px solid var(--hair)}
+th{background:var(--sunk);font-weight:600}
+.footnote{color:var(--ink-3);font-size:.9rem;font-style:italic}
+details{border:1px solid var(--hair);border-radius:12px;margin:8px 0;background:var(--paper)}
+details[open]{background:var(--tile);border-color:var(--hair-2)}
+summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:.98rem;list-style:none;
+  display:flex;align-items:flex-start;gap:10px;border-radius:12px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";flex:0 0 auto;width:1.1em;color:var(--navy);font-weight:700;line-height:1.5}
+details[open] summary::before{content:"–"}
+summary:hover{color:var(--navy)}
+summary:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.answer{padding:0 16px 14px 42px}
+.answer p:first-child{margin-top:0}
+.answer p,.answer li{font-size:.97rem}
+.lead{color:var(--ink-2)}
+
+/* Fuß */
+footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3)}
+.fcols a{display:block;color:var(--ink-2);text-decoration:none;font-size:.93rem;margin-bottom:7px}
+.fcols a:hover{color:var(--ink)}
+.fcols .fsocial{display:inline-block;margin-top:16px;font-size:.9rem;margin-bottom:0}
+.fcols p{margin:0;color:var(--ink-3);font-size:.9rem;max-width:36ch}
+.fnote{margin-top:28px;color:var(--ink-3);font-size:.84rem}
+
+/* Einblenden — Inhalt ist per Default SICHTBAR; das Skript versteckt ihn nur kurz. */
+.rev{transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1)}
+.rev.pre{opacity:0;transform:translateY(14px)}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr;gap:34px;padding:44px 0 36px}
+  h1{font-size:2.4rem}
+  .mhero h1{font-size:2rem}
+  .mhero{gap:16px}
+  .grid,.two{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(n+3){border-top:1px solid var(--hair)}
+  .fcols{grid-template-columns:1fr}
+  section{padding:52px 0}
+  .prose{padding:28px 24px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rev,.rev.pre{opacity:1;transform:none;transition:none}
+  .mod,.btn,.play span,.arrow,.storelinks a{transition:none}
+}
+
+/* ---------- Handbuch ---------- */
+.hblayout{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start;
+  padding:8px 0 40px}
+.hbnav{position:sticky;top:78px;font-size:.9rem}
+.hbnav h4{margin:0 0 10px;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3)}
+.hbnav ol{margin:0;padding:0;list-style:none;counter-reset:hb}
+.hbnav li{counter-increment:hb;margin:0 0 2px}
+.hbnav a{display:flex;gap:8px;padding:5px 9px;border-radius:8px;text-decoration:none;
+  color:var(--ink-2);line-height:1.35}
+.hbnav a::before{content:counter(hb) ".";color:var(--ink-3);font-variant-numeric:tabular-nums;
+  flex:0 0 1.4em}
+.hbnav a:hover{background:var(--sunk);color:var(--ink)}
+.hbtoc{display:none}
+
+.hbhead{padding:26px 0 4px;display:flex;gap:22px;align-items:flex-start}
+.hbhead .glyph{width:56px;height:56px;border-radius:15px;margin:6px 0 0}
+.hbhead .glyph svg{width:27px;height:27px}
+.hbhead h1{margin:0;font-size:2.5rem}
+.hbhead .claim{margin:6px 0 0;font-size:1.12rem;color:var(--ink-2)}
+.hbmeta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 0;font-size:.86rem;
+  color:var(--ink-3)}
+.hbmeta b{color:var(--ink-2);font-weight:600}
+
+.hb{max-width:70ch;font-size:1rem}
+.hb h2.chapter{scroll-margin-top:86px;margin:52px 0 14px;padding-bottom:10px;font-size:1.5rem;
+  letter-spacing:-.02em;border-bottom:2px solid var(--c);display:flex;gap:12px;align-items:baseline}
+.hb h2.chapter:first-child{margin-top:24px}
+.hb h2.chapter .num{color:var(--ink-3);font-weight:400;font-variant-numeric:tabular-nums}
+.hb h3{margin:34px 0 8px;font-size:1.1rem;letter-spacing:-.012em}
+.hb p{margin:0 0 12px}
+.hb ul,.hb ol{margin:0 0 12px;padding-left:1.3em}
+.hb li{margin:.3em 0;color:var(--ink-2)}
+.hb .lead{font-size:1.08rem;color:var(--ink-2);margin-bottom:22px}
+.hb .ui{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85em;
+  background:var(--navy-soft);color:var(--navy);padding:.1em .4em;border-radius:5px;
+  white-space:nowrap}
+
+.hb figure{margin:24px 0 30px;border:1px solid var(--hair);border-radius:var(--r);
+  overflow:hidden;background:var(--tile);box-shadow:var(--sh-1)}
+.hb figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--hair);
+  background:var(--sunk)}
+.hb figcaption{padding:16px 20px 18px;font-size:.94rem;color:var(--ink-2)}
+.hb .figtitle{font-weight:650;color:var(--ink);margin-bottom:8px;font-size:.95rem}
+.hb figcaption p{margin:0 0 8px}
+.hb figcaption p:last-child{margin-bottom:0}
+.hb .lbl{font-weight:650;color:var(--ink)}
+.hb .sehen .lbl::before,.hb .tun .lbl::before{content:"▸ ";color:var(--c)}
+
+.hb .box{margin:22px 0;padding:16px 20px;border-radius:0 12px 12px 0;background:var(--sunk);
+  border-left:3px solid var(--navy);font-size:.96rem;color:var(--ink-2)}
+.hb .box .t{display:block;font-weight:650;color:var(--ink);margin-bottom:5px}
+.hb .box p:last-child{margin-bottom:0}
+.hb .box.warn{border-left-color:var(--hb-warn)}
+.hb .box.tip{border-left-color:var(--hb-tip)}
+
+.hb table{margin:20px 0;font-size:.93rem}
+.hb th,.hb td{border:0;border-bottom:1px solid var(--hair)}
+.hb th{background:transparent;border-bottom:2px solid var(--hair-2)}
+
+.hbfoot{border-top:1px solid var(--hair);margin-top:48px;padding-top:22px;display:flex;
+  gap:16px;flex-wrap:wrap;justify-content:space-between}
+
+/* KI-Handbücher. Sie tragen keine Modulfarbe, sondern Navy: die Modulfarben gehören dem
+   Produkt, die redaktionelle Reihe ist erkennbar etwas anderes. Sie enthalten außerdem
+   keine Abbildungen, dafür Merksätze und wörtliche Prompts. */
+.hb blockquote{margin:22px 0;padding:3px 0 3px 18px;border-left:3px solid var(--c);
+  font-size:1.06rem;color:var(--ink)}
+.hb pre.prompt{margin:20px 0;padding:15px 18px;background:var(--sunk);
+  border:1px solid var(--hair);border-radius:12px;white-space:pre-wrap;overflow-x:auto;
+  font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.55;
+  color:var(--ink-2)}
+/* Die Kapitel zählen ab 00, der CSS-Zähler von .hbnav zählt ab 1 — deshalb steht die
+   Nummer hier im Markup. */
+.hbnav.ki a::before{content:attr(data-nr)}
+.hbhead.ki{padding-top:18px}
+/* Die Quellenkapitel führen ausgeschriebene URLs. Ohne Umbruchregel schiebt eine einzige
+   davon die Seite auf dem Handy waagerecht auf (gemessen: 690 px Inhalt in 330 px Spalte). */
+.hb.ki{overflow-wrap:break-word}
+
+/* Das Cowork-Heft ist das einzige mit Bildschirmfotos. Seine Legenden nummerieren, was im
+   Bild markiert ist — die Ziffern stehen deshalb auch hier und nicht nur in der Abbildung. */
+.hb .legend{margin:0;padding:14px 20px 4px;list-style:none;
+  border-top:1px solid var(--hair);display:grid;gap:6px 18px;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.hb .legend li{display:flex;gap:9px;align-items:baseline;margin:0;font-size:.92rem}
+.hb .legend .ln{flex:none;width:20px;height:20px;border-radius:50%;background:var(--navy);
+  color:var(--paper);font-size:.72rem;font-weight:700;display:inline-flex;
+  align-items:center;justify-content:center}
+.hb figure .legend+figcaption{padding-top:10px}
+.hb .box.kolophon{margin-top:44px;border-left-color:var(--ink-3)}
+.hb .box.kolophon .t{display:block;font-weight:650;color:var(--ink);margin-bottom:8px;
+  font-size:1.02rem}
+.hb .box.kolophon p{margin:0 0 8px;font-size:.92rem}
+
+/* Glossar. Zwei Spalten auf breiten Schirmen, weil ein Eintrag kurz ist und eine einspaltige
+   Liste aus 29 Einträgen sonst nur Scrollweg erzeugt. */
+.glossaz{display:flex;flex-wrap:wrap;gap:6px;margin:26px 0 4px;position:sticky;top:64px;
+  z-index:5;background:var(--paper);padding:10px 0}
+.glossaz a{min-width:30px;text-align:center;padding:5px 8px;border-radius:8px;font-size:.86rem;
+  font-weight:600;color:var(--ink-2);text-decoration:none;border:1px solid var(--hair)}
+.glossaz a:hover{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.glossletter{grid-column:1/-1;margin:26px 0 2px;font-size:1.05rem;letter-spacing:.1em;
+  color:var(--ink-3);border-bottom:1px solid var(--hair);padding-bottom:6px}
+.gloss{scroll-margin-top:130px;padding:16px 0 4px;border-top:1px solid var(--hair)}
+.gloss:first-of-type{border-top:0}
+.gloss h3{margin:0 0 5px;font-size:1.08rem;letter-spacing:-.012em}
+.gloss p{margin:0 0 9px;color:var(--ink-2);font-size:.97rem;max-width:60ch}
+/* Der Merksatz ist eine Eselsbrücke, keine Definition — er steht darunter und leiser. */
+.gloss .merk{padding-left:12px;border-left:2px solid var(--hair-2);color:var(--ink-3);
+  font-size:.92rem}
+.glossziele{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 10px}
+.glossziele a{font-size:.85rem;color:var(--ink-2);text-decoration:none;padding:3px 9px;
+  border-radius:7px;background:var(--sunk)}
+.glossziele a:hover{color:var(--ink);background:var(--navy-soft)}
+.gloss .auch{margin:8px 0 0;font-size:.85rem;color:var(--ink-3)}
+.gloss .auch a{color:var(--ink-2)}
+
+/* Kurzfassung. Die .zitat-Blöcke sind wörtlich aus dem Band geschnitten — sie sehen deshalb
+   anders aus als der geschriebene Teil, damit erkennbar bleibt, was Quelle ist und was nicht. */
+.kurz{max-width:72ch;margin-top:38px;--c:var(--navy)}
+.kurz h2{margin:44px 0 12px;font-size:1.35rem;letter-spacing:-.015em}
+.kurz>blockquote{margin:0;padding:3px 0 3px 18px;border-left:3px solid var(--navy);
+  font-size:1.15rem;color:var(--ink)}
+.kurz .zitat{background:var(--sunk);border-radius:14px;padding:18px 22px 14px;
+  border:1px solid var(--hair)}
+.kurz .zitat.warn{border-left:3px solid var(--hb-warn)}
+.kurz .zitat p{margin:0 0 10px;color:var(--ink-2)}
+.kurz .zitat ul,.kurz .zitat ol{margin:0 0 10px;padding-left:1.25em;color:var(--ink-2)}
+.kurz .zitat li{margin:.25em 0}
+.kurz .zitat b{color:var(--ink)}
+.kurz .zitat table{font-size:.92rem}
+.kurz .quelle{margin:10px 0 0;font-size:.85rem}
+.kurz .quelle a{color:var(--ink-3);text-decoration:none}
+.kurz .quelle a:hover{color:var(--navy)}
+.mitnehmen{margin:0;padding-left:1.4em}
+.mitnehmen li{margin:.7em 0;padding-left:4px}
+.mitnehmen .beleg{margin-left:6px;font-size:.78rem;white-space:nowrap;color:var(--ink-3);
+  text-decoration:none;background:var(--sunk);padding:2px 8px;border-radius:6px}
+.mitnehmen .beleg:hover{color:var(--ink);background:var(--navy-soft)}
+.kapitelkarte{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
+.kapitelkarte li{break-inside:avoid;margin:0 0 3px}
+.kapitelkarte a{display:flex;gap:9px;padding:5px 9px;border-radius:8px;text-decoration:none;
+  color:var(--ink-2);font-size:.92rem}
+.kapitelkarte a::before{content:attr(data-nr);color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.kapitelkarte a:hover{background:var(--sunk);color:var(--ink)}
+@media (max-width:700px){.kapitelkarte{columns:1}}
+
+/* Neues. Ein Eintrag ist kurz; die Datumsspalte links hält die Liste scanbar. */
+.neues{max-width:74ch;padding:30px 0 0}
+.neujahr{margin:44px 0 0;font-size:1.1rem;letter-spacing:.1em;color:var(--ink-3)}
+.neu{padding:24px 0;border-top:1px solid var(--hair)}
+.neu:first-child{border-top:0;padding-top:6px}
+.neukopf{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.neukopf time{font-size:.86rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.art{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;background:var(--sunk);color:var(--ink-2)}
+.art-neu{background:var(--navy);color:var(--paper)}
+.art-tipp{background:var(--m3);color:var(--ink)}
+.neu h3{margin:0 0 10px;font-size:1.3rem;letter-spacing:-.015em}
+.neu h3 a{color:inherit;text-decoration:none}
+.neu h3 a:hover{color:var(--navy)}
+.neu p{margin:0 0 11px;color:var(--ink-2)}
+.neu ul,.neu ol{margin:0 0 11px;padding-left:1.3em;color:var(--ink-2)}
+.neu li{margin:.35em 0}
+.neu b{color:var(--ink)}
+.neuweiter{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.neuweiter a{font-size:.86rem;text-decoration:none;color:var(--ink-2);padding:6px 12px;
+  border-radius:8px;background:var(--sunk)}
+.neuweiter a:hover{color:var(--ink);background:var(--navy-soft)}
+
+@media (max-width:920px){
+  .hblayout{grid-template-columns:1fr;gap:0}
+  .hbnav{display:none}
+  .hbtoc{display:block;margin:22px 0 8px}
+  .hbhead h1{font-size:1.9rem}
+  .hb h2.chapter{scroll-margin-top:70px}
+}
+
+/* Handbuch-Übersicht */
+.hbfacts{font-size:.84rem;color:var(--ink-3);margin-top:10px}
+.hblinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.hblinks .btn{padding:9px 15px;font-size:.88rem}
+.soon-tile{opacity:.62}
+.soon-tile em{color:var(--ink-3)}
+</style>
+</head>
+<body>
+  <div class="bar" id="bar">
+    <div class="bar-in">
+      <a class="brand" href="index.html">
+        <img src="data:image/png;base64,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" alt="" width="34" height="34">
+        <b>ClassTiles</b>
+      </a>
+      <nav class="tabs"><a href="index.html#module">Module</a><a href="handbuecher.html">Handbücher</a><a href="digitalisierung-ki.html" class="active">Digitalisierung &amp; KI</a><a href="support.html">Support</a><a class="lang" href="en/digitalisation-ai.html" hreflang="en" rel="alternate">English</a><a class="ig" href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer" aria-label="ClassTiles auf Instagram" title="ClassTiles auf Instagram"><picture><source srcset="assets/instagram-white.svg" media="(prefers-color-scheme: dark)"><img src="assets/instagram-black.svg" width="29" height="29" alt=""></picture></a></nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <a class="back" href="digitalisierung-ki.html">← Digitalisierung &amp; KI</a>
+    <div class="hbhead ki" style="--c:var(--navy)">
+      <div>
+        <div class="eyebrow">Praxis-Handbuch · Band 1</div>
+        <h1>KI-Workflows für Lehrkräfte</h1>
+        <p class="claim">Vormachen. Prüfen. Als Skill sichern.</p>
+      </div>
+    </div>
+    <div class="hbmeta"><span><b>Stand</b> 10. August 2026</span><span><b>Ausgabe</b> Band 1 · Ausgabe 1</span><span><b>Umfang</b> 19 Kapitel</span></div>
+    <div class="cta" style="margin-top:20px">
+      <a class="btn b-line" href="ki-kurzfassung-workflows.html">Kurzfassung · 5 Min</a>
+      <a class="btn b-line" href="assets/ki/KI-Workflows-fuer-Lehrkraefte.pdf" download>PDF laden</a>
+      <a class="btn b-line" href="ki-glossar.html">Glossar</a>
+    </div>
+    <details class="hbtoc"><summary>Inhalt · 19 Kapitel</summary><div class="answer"><ol><li><a href="#kapitel-00" data-nr="00">Die sechs Begriffe</a></li><li><a href="#kapitel-01" data-nr="01">Was du hier entwickelst</a></li><li><a href="#kapitel-02" data-nr="02">Relevanter Kontext statt maximaler Kontext</a></li><li><a href="#kapitel-03" data-nr="03">Der Kontextfilter</a></li><li><a href="#kapitel-04" data-nr="04">Sicherheitsgrenze: was der Workflow nie lernen soll</a></li><li><a href="#kapitel-05" data-nr="05">Welche Aufgabe lohnt sich?</a></li><li><a href="#kapitel-06" data-nr="06">Beschreibe zuerst, wie Erfolg aussieht</a></li><li><a href="#kapitel-07" data-nr="07">Phase 1: Mach den Workflow einmal gemeinsam</a></li><li><a href="#kapitel-08" data-nr="08">Phase 2: Halt den Durchlauf fest, der geklappt hat</a></li><li><a href="#kapitel-09" data-nr="09">Phase 3: Aus dem Erfolg wird ein Skill</a></li><li><a href="#kapitel-10" data-nr="10">Der Skill-Bauplan</a></li><li><a href="#kapitel-11" data-nr="11">Der Dreifach-Test</a></li><li><a href="#kapitel-12" data-nr="12">Fehler sind Material, kein Grund zum Löschen</a></li><li><a href="#kapitel-13" data-nr="13">Besser werden, ohne im Regelchaos zu landen</a></li><li><a href="#kapitel-14" data-nr="14">Durchgespielt: der Arbeitsauftrag-Check</a></li><li><a href="#kapitel-15" data-nr="15">Der fertige Skill-Entwurf</a></li><li><a href="#kapitel-16" data-nr="16">Erst stabil, dann mehr</a></li><li><a href="#kapitel-17" data-nr="17">Wie es weitergeht</a></li><li><a href="#kapitel-18" data-nr="18">Quellen, Grenzen, Aktualität</a></li></ol></div></details>
+
+    <div class="hblayout" style="--c:var(--navy)">
+      <nav class="hbnav ki" aria-label="Kapitel">
+        <h4>Kapitel</h4>
+        <ol><li><a href="#kapitel-00" data-nr="00">Die sechs Begriffe</a></li><li><a href="#kapitel-01" data-nr="01">Was du hier entwickelst</a></li><li><a href="#kapitel-02" data-nr="02">Relevanter Kontext statt maximaler Kontext</a></li><li><a href="#kapitel-03" data-nr="03">Der Kontextfilter</a></li><li><a href="#kapitel-04" data-nr="04">Sicherheitsgrenze: was der Workflow nie lernen soll</a></li><li><a href="#kapitel-05" data-nr="05">Welche Aufgabe lohnt sich?</a></li><li><a href="#kapitel-06" data-nr="06">Beschreibe zuerst, wie Erfolg aussieht</a></li><li><a href="#kapitel-07" data-nr="07">Phase 1: Mach den Workflow einmal gemeinsam</a></li><li><a href="#kapitel-08" data-nr="08">Phase 2: Halt den Durchlauf fest, der geklappt hat</a></li><li><a href="#kapitel-09" data-nr="09">Phase 3: Aus dem Erfolg wird ein Skill</a></li><li><a href="#kapitel-10" data-nr="10">Der Skill-Bauplan</a></li><li><a href="#kapitel-11" data-nr="11">Der Dreifach-Test</a></li><li><a href="#kapitel-12" data-nr="12">Fehler sind Material, kein Grund zum Löschen</a></li><li><a href="#kapitel-13" data-nr="13">Besser werden, ohne im Regelchaos zu landen</a></li><li><a href="#kapitel-14" data-nr="14">Durchgespielt: der Arbeitsauftrag-Check</a></li><li><a href="#kapitel-15" data-nr="15">Der fertige Skill-Entwurf</a></li><li><a href="#kapitel-16" data-nr="16">Erst stabil, dann mehr</a></li><li><a href="#kapitel-17" data-nr="17">Wie es weitergeht</a></li><li><a href="#kapitel-18" data-nr="18">Quellen, Grenzen, Aktualität</a></li></ol>
+      </nav>
+      <article class="hb ki">
+        <blockquote>Baue nicht sofort einen Skill. Zeig erst, wie es geht.</blockquote>
+        <p><b>Band 1 des Praxis-Handbuchs für verlässliche, wiederholbare KI-Abläufe</b></p><p>Du machst der KI einmal vor, wie ein gutes Ergebnis entsteht. Du prüfst es. Und erst dann sicherst du den Ablauf, damit du ihn nicht jedes Mal von Neuem erklären musst.</p>
+<h2 class="chapter" id="kapitel-00"><span class="num">00</span> Die sechs Begriffe</h2><p>Sechs Wörter tauchen in diesem Handbuch immer wieder auf, und wenn sie einmal sitzen, liest sich der Rest fast von selbst. Zu jedem findest du hier einen Vergleich aus dem Schulalltag, ein Beispiel und eine Abgrenzung — also eine Klärung dessen, was der Begriff nicht ist. Gerade die Abgrenzungen räumen die Missverständnisse aus, mit denen die meisten ankommen.</p><h3 id="kapitel-00-prompt">1 · Prompt</h3><blockquote>Ein Arbeitsauftrag. Kein Suchbegriff.</blockquote><p><b>Der Vergleich.</b> In eine Suchmaschine tippst du Stichwörter, und die Trefferliste macht den Rest. Ein Prompt funktioniert anders: Er ist der Arbeitsauftrag, den du an die Tafel schreibst — was ist zu tun, womit, in welcher Form, und woran erkennt man, dass es fertig ist.</p><p><b>Ein Beispiel.</b> Deutsch, Jahrgang 8, eine Gedichteinheit. Der Suchbegriff wäre „Gedichtanalyse Arbeitsblatt“. Der Arbeitsauftrag lautet:</p><pre class="prompt">Schreibe fünf Leitfragen zu dem Gedicht unten.
+Jahrgang 8, erste Stunde zum Thema. Jede Frage in
+einem Satz. Verwende nur Fachbegriffe, die im
+Gedicht selbst vorkommen. Keine Frage nach der
+Epoche.</pre><p><b>Die Abgrenzung.</b> Ein Prompt ist keine Zauberformel. Es gibt keine Liste der fünfzig besten Prompts, die dir die Arbeit abnimmt, denn der brauchbare Teil ist genau der, den nur du kennst: dein Jahrgang, deine Stunde, dein Material. Länger ist dabei auch nicht besser. Der Satz „Keine Frage nach der Epoche“ steuert mehr als drei Absätze über guten Deutschunterricht.</p><h3 id="kapitel-00-kontext">2 · Kontext</h3><blockquote>Die Einweisung für die Vertretung. Nicht alles, was du weißt.</blockquote><p><b>Der Vergleich.</b> Kontext ist das, was du jemandem sagst, der morgen deine Stunde übernimmt. Nicht alles, was du über die Klasse weißt, sondern nur das, was er ohne dich nicht herausfinden kann.</p><p><b>Ein Beispiel.</b> Mathematik, Klasse 7, Doppelstunde über 90 Minuten. Der Kontext lautet: „Wir sind bei linearen Gleichungen. Klammern hatten wir noch nicht. Taschenrechner ist erlaubt.“ Das sind fünfzehn Wörter, und sie verändern das Ergebnis stärker als jede Aufforderung, motivierend zu schreiben.</p><p><b>Die Abgrenzung.</b> Hier kursieren drei Irrtümer. Der erste: mehr Kontext sei besserer Kontext. Was für die Aufgabe egal ist, verdünnt das, was zählt. Der zweite: Kontext bleibe irgendwo hängen. In einem neuen Chat ist er weg, sofern dein Werkzeug ihn nicht ausdrücklich speichert. Der dritte ist der teuerste: Namen, Noten oder Diagnosen seien auch nur Kontext. Sie sind ein Datenschutzproblem, und Kapitel 04 handelt davon.</p><h3 id="kapitel-00-modell">3 · Modell</h3><blockquote>Sehr belesen. Kein Gedächtnis. Kennt deine Schule nicht.</blockquote><p><b>Der Vergleich.</b> Das Modell ist der Kollege, der alles gelesen hat, der aber jedes Gespräch bei null beginnt und dich anschließend nicht wiedererkennt. Er kennt deine Schule nicht, deinen Lehrplan nur ungefähr und deine Lerngruppe gar nicht.</p><p><b>Ein Beispiel.</b> Erdkunde, Jahrgang 6. Du fragst nach den Kompetenzen, die dein Kerncurriculum für „Wetter und Klima“ vorsieht, und bekommst eine flüssige, plausible Liste. Sie kann im Detail von dem abweichen, was in deinem Bundesland gilt — und genau das siehst du ihr nicht an. Nachschlagen bleibt deine Aufgabe.</p><p><b>Die Abgrenzung.</b> Wer ein Nachschlagewerk mit geprüften Einträgen erwartet, erwartet das Falsche; eine Suchmaschine ist es ebenfalls nicht. Meinungen und Absichten hat es keine, auch wenn der Ton danach klingt. Und aus deinen Korrekturen von gestern lernt es nichts: Was du am Montag richtiggestellt hast, ist am Dienstag im neuen Chat nicht mehr da — es sei denn, dein Werkzeug hat eine Gedächtnisfunktion, die du selbst gefüllt hast. Genau deshalb gibt es Skills.</p><h3 id="kapitel-00-halluzination">4 · Halluzination</h3><blockquote>Erfindet im selben Ton, in dem es zitiert.</blockquote><p><b>Der Vergleich.</b> Denk an jemanden, der im Fachgespräch nie „weiß ich nicht“ sagt. Das Problem ist nicht, dass er manchmal falsch liegt. Das Problem ist, dass richtig und falsch bei ihm gleich klingen.</p><p><b>Ein Beispiel.</b> Biologie, Jahrgang 10. Du bittest um drei Fachartikel zur Fotosynthese und bekommst drei Einträge mit Autor, Zeitschrift, Jahrgang und Seitenzahl. Zwei der Titel gibt es wirklich, einen nicht — und bei einem der echten stimmt das Jahr nicht. Die Form ist tadellos, der Inhalt nicht.</p><p><b>Die Abgrenzung.</b> Eine Halluzination ist keine Lüge; dazu bräuchte es Absicht. Sie ist auch kein Bedienfehler, den du mit „Sei ehrlich und erfinde nichts“ abstellst — der Satz hilft ein wenig, eine Garantie ist er nicht. Vor allem gilt: Wie sicher eine Antwort klingt, sagt nichts darüber, ob sie stimmt. Was wirklich hilft, ist die Aufgabe kleiner zu machen. Lass die KI an dem Material arbeiten, das du mitgibst, und verlange für jede Tatsachenbehauptung die Stelle dazu.</p><h3 id="kapitel-00-skill">5 · Skill</h3><blockquote>Ein Ablauf, den du einmal erklärst statt jedes Mal.</blockquote><p><b>Der Vergleich.</b> Der Zettel an der Sammlungstür: „So läuft die Materialausgabe in der Chemie.“ Er hängt einmal da und gilt für jeden — niemand erklärt das Verfahren jedes Mal neu.</p><p><b>Ein Beispiel.</b> Der Arbeitsauftrag-Check aus Kapitel 15. Acht Schritte, jedes Mal dieselben: Bestandteile herausziehen, fehlende Angaben melden, Lernzielbezug prüfen, und so weiter. Was wechselt, ist nur das Thema — von der Kurvendiskussion in Jahrgang 11 bis zum Steckbrief in Jahrgang 5. Der Ablauf bleibt.</p><p><b>Die Abgrenzung.</b> Code brauchst du keinen; ein Skill ist kein Programm. Mit einem längeren Prompt hat er ebenfalls wenig zu tun — eher mit dem Gegenteil: Ein Prompt sammelt, ein Skill verdichtet. Hinein kommt nur, was sich über mehrere Durchläufe als nötig erwiesen hat. Und von allein läuft er nie: Er wartet auf deinen Aufruf und käme nie auf die Idee, dass jetzt der richtige Zeitpunkt wäre.</p><h3 id="kapitel-00-agent">6 · Agent</h3><blockquote>Darf selbst handeln. Deshalb die Stoppregeln.</blockquote><p><b>Der Vergleich.</b> Es ist der Unterschied zwischen dem Ablaufplan an der Wand und der Kollegin, der du den Schlüssel zum Materialraum gibst. Der Plan tut nichts. Die Kollegin trifft Entscheidungen, während du nicht dabei bist.</p><p><b>Ein Beispiel.</b> Du sagst: „Prüf mir die Arbeitsaufträge für nächste Woche.“ Ein Agent öffnet den Ordner selbst, findet zwölf Dateien, liest sie, schreibt zu jeder eine Rückmeldung und legt sie ab — ohne dass du die zwölf Schritte einzeln freigibst. Steht in einer Datei ein Klarname, ist er verarbeitet, bevor du davon weißt.</p><p><b>Die Abgrenzung.</b> Einen eigenen Willen hat er nicht, und klüger ist er auch nicht — es ist dasselbe Modell, bloß mit Werkzeugen und einer Erlaubnis in der Hand. Gefährlich ist daran nur eines, und das genügt: Seine Fehler passieren, während niemand zusieht.</p><h3 id="kapitel-00-der-unterschied-auf-den-es-ankommt">Der Unterschied, auf den es ankommt</h3><blockquote>Beim Skill schaust du zwischen den Schritten hin. Beim Agenten nicht.</blockquote><p>Wenn du aus diesem Kapitel einen Gedanken mitnimmst, dann diesen: Beide können denselben Text erzeugen. Der Unterschied liegt nicht im Ergebnis, sondern darin, wer zwischen den Schritten hinschaut. Beim Skill bist das du — du rufst ihn auf, liest das Ergebnis und entscheidest. Ein Agent arbeitet innerhalb eines Laufs mehrere Schritte selbstständig ab, und damit fällt die Zwischenkontrolle weg. Mit ihr fällt die Stelle weg, an der du den Fehler bemerkt hättest.</p><p>Deshalb steht in jedem Bauplan dieses Handbuchs eine Stoppregel. Der Grund ist nicht, dass KI besonders gefährlich wäre. Er ist einfacher: Eine Anweisung, die ohne Aufsicht läuft, muss ihre Grenzen selbst kennen. Ein Ablauf, den du begleitest, darf unvollständig sein — du merkst es ja. Ein Ablauf, der allein arbeitet, darf es nicht.</p><p>Aus demselben Grund verdient die Aufregung um Agenten weder Panik noch Euphorie. Die Frage ist nie „Agent: ja oder nein“, sondern: Welche Schritte darf er ohne Rückfrage tun, und wo muss er anhalten.</p><h3 id="kapitel-00-die-grenze">Die Grenze</h3><p>Was hier steht, sind Arbeitsdefinitionen für dieses Handbuch und keine Fachterminologie. Die Produkte verwenden die Wörter unterschiedlich: Was hier „Skill“ heißt, heißt anderswo „Anweisung“, „Projekt“, „Assistent“ oder „GPT“. Prüfe deshalb bei jedem Werkzeug die eine Frage: Wie viele Schritte tut es, bevor es mich wieder fragt?</p><p><b>Die Stolperstelle.</b> Verwirrung zeigt sich selten als Frage. Sie zeigt sich daran, dass zwei Leute dasselbe Wort benutzen und Verschiedenes bauen: Der eine legt einen gespeicherten Prompt an, der andere richtet etwas ein, das eine ganze Ordnerladung durcharbeitet — und beide nennen es Skill. Wer prüfen will, ob ein Begriff sitzt, fragt deshalb nicht nach der Definition, sondern: Wo hältst du an?</p>
+<h2 class="chapter" id="kapitel-01"><span class="num">01</span> Was du hier entwickelst</h2><p>Ein guter KI-Workflow entsteht nicht dadurch, dass du viele Regeln in einen langen Prompt schreibst. Er entsteht, wenn du eine echte Aufgabe einmal gemeinsam mit der KI löst und erst danach sicherst, was funktioniert hat.</p><p>Nimm dafür eine Aufgabe, die jede Woche wiederkommt: etwa den Arbeitsauftrag, den du montags für Politik in Jahrgang 10 schreibst, vier Sätze für 20 Minuten Stillarbeit. Das ist klein genug zum Überblicken und häufig genug, dass sich die Mühe lohnt.</p><p>Wenn du durch bist, liegt auf deinem Rechner:</p><ol><li>ein Workflow, der zu deinem Fach passt und ohne Schülerdaten auskommt,</li><li>eine Beschreibung, woran du hier ein gutes Ergebnis erkennst,</li><li>das Protokoll eines Durchlaufs, der geklappt hat,</li><li>daraus ein Skill-Bauplan,</li><li>drei Tests: Normalfall, fehlende Angabe, Grenzfall,</li><li>ein Verfahren, Fehler einzuarbeiten, ohne den Skill zuzumüllen.</li></ol><h3 id="kapitel-01-die-methode">Die Methode</h3><p><b>Auswählen → vormachen → begründen → sichern → testen → verbessern</b></p><p>Die Reihenfolge trägt alles. Wer sofort automatisiert, gießt einen Ablauf in Beton, den er selbst noch nicht durchschaut hat. Wer dagegen erst einen guten Durchlauf hinbekommt, kann daran ablesen, welche Schritte wirklich nötig waren und an welchen Stellen die KI anhalten muss.</p><h3 id="kapitel-01-was-hier-nicht-versprochen-wird">Was hier nicht versprochen wird</h3><ul><li>keine guten Ergebnisse auf Knopfdruck</li><li>keine pädagogische Entscheidung, die dir jemand abnimmt</li><li>keine Freigabe für personenbezogene oder vertrauliche Schuldaten</li><li>keine Garantie, dass ein Skill nach einem Produkt-Update noch läuft</li></ul><h3 id="kapitel-01-die-grenze">Die Grenze</h3><p>Die ersten Durchläufe kosten mehr Zeit, als sie sparen. Du bezahlst die Qualitätsarbeit vorher, statt sie aus jedem Ergebnis einzeln herauszuprüfen. Wie viel du später sparst, kann dieses Handbuch nicht beziffern — wer dir dafür eine Prozentzahl nennt, hat sie geraten.</p><blockquote>Erst ein Durchlauf, der klappt. Dann die Regel.</blockquote><p><b>Die Stolperstelle.</b> Ob sich ein Workflow lohnt, zeigt sich erst nach dem Aufwand, nie davor — der Aufbau ist bezahlt, bevor die erste Wiederholung kommt. Am teuersten sind Abläufe, bei denen das Zusammensuchen der Eingaben so lange dauert wie die Aufgabe selbst. Das sieht man nicht am ersten Durchlauf, sondern am dritten, wenn das Sammeln immer noch genauso lange dauert.</p>
+<h2 class="chapter" id="kapitel-02"><span class="num">02</span> Relevanter Kontext statt maximaler Kontext</h2><p>Die KI weiß schon eine Menge. Sie braucht nicht erklärt zu bekommen, dass eine Stunde ein Lernziel hat. Wertvoll ist der Kontext, den sie ohne dich nicht haben kann — und der kommt in vier Sorten, von dauerhaft bis einmalig.</p><h3 id="kapitel-02-allgemein-bekannt">Allgemein bekannt</h3><p>Eine Stunde braucht ein Lernziel. Ein Auftrag soll verständlich sein. Lösungen müssen stimmen. Das alles musst du nicht mitschreiben — es sei denn, du willst eine bestimmte Auslegung erzwingen.</p><h3 id="kapitel-02-fuer-dich-dauerhaft">Für dich dauerhaft</h3><p>Deine Verlaufsplantabelle. Die Operatoren, die in deinem Bundesland gelten. Deine Art zu differenzieren. Der Materialstandard deiner Schule. All das kann die KI nicht erraten, und es ändert sich selten — genau diese Kombination rechtfertigt einen Skill.</p><h3 id="kapitel-02-fuer-ein-projekt">Für ein Projekt</h3><p>Thema und Lernziel einer Reihe, deine Quellen, das Material, der Zeitumfang, das Lernprodukt. Das gehört in das Projekt, nicht dauerhaft in jeden Ablauf.</p><h3 id="kapitel-02-nur-fuer-heute">Nur für heute</h3><p>„Es sind nur 35 Minuten.“ „Mach ausschließlich eine Hilfekarte.“ Solche Angaben gehören in den aktuellen Auftrag und nirgendwo sonst.</p><h3 id="kapitel-02-ein-beispiel">Ein Beispiel</h3><p>Chemie, Jahrgang 9, Redoxreaktionen. Was gehört wohin?</p><div class="tablewrap"><table><thead><tr><th>Angabe</th><th>Wohin</th></tr></thead><tbody><tr><td>„Ich unterrichte an einer Gesamtschule“</td><td>Profil, dauerhaft</td></tr><tr><td>„Sechs Stunden, Lernprodukt ist ein Erklärvideo“</td><td>Projekt</td></tr><tr><td>„Prüfe jedes Blatt gegen die Operatorenliste“</td><td>Skill</td></tr><tr><td>„Heute nur der Einstieg, 15 Minuten“</td><td>Auftrag</td></tr><tr><td>„Marek braucht mehr Zeit“ (fiktiv)</td><td>gar nicht — Personenbezug</td></tr></tbody></table></div><blockquote>Braucht die Vertretung das jedes Mal — oder nur heute?</blockquote><p>Je sauberer du hier trennst, desto leichter findest du später den Fehler.</p><h3 id="kapitel-02-die-grenze">Die Grenze</h3><p>Die vier Sorten sind nicht immer trennscharf. „Ich arbeite überwiegend mit Doppelstunden“ ist bei dir vielleicht Profil, bei wechselndem Stundenplan dagegen Projektsache. Ordne im Zweifel tiefer ein: Etwas zu oft zu wiederholen ist billiger, als es dauerhaft am falschen Platz zu haben.</p><p><b>Die Stolperstelle.</b> Ins Profil rutscht, was gerade stimmt, aber nicht dauerhaft gilt: der Stundenplan dieses Halbjahres, das Lehrwerk dieser Reihe, die Lerngruppe dieses Jahres. Weil die Angabe ja richtig war, fällt der Fehler zunächst nicht auf. Er fällt auf, wenn sie in einem Zusammenhang mitwirkt, für den sie nie gedacht war — und dann sucht man den Grund im Auftrag, nicht im Profil.</p>
+<h2 class="chapter" id="kapitel-03"><span class="num">03</span> Der Kontextfilter</h2><p>Ordne jede Information an die kleinste Stelle, an der sie noch ihren Zweck erfüllt.</p><div class="tablewrap"><table><thead><tr><th>Kontextart</th><th>Bleibt wie lange</th><th>Geeignet für</th><th>Nicht geeignet für</th></tr></thead><tbody><tr><td>Profil</td><td>langfristig</td><td>Schulform, Fächer, Arbeitsprinzipien</td><td>einzelne Klassen, Namen, heutige Stunde</td></tr><tr><td>Projekt</td><td>für eine Reihe</td><td>Lernziele, Quellen, Material, Zeitrahmen</td><td>Regeln, die immer gelten</td></tr><tr><td>Skill</td><td>bei passender Aufgabe</td><td>Ablauf, Ausgabeformat, Prüfkriterien</td><td>wechselnde Themen, Tagesangaben</td></tr><tr><td>Auftrag</td><td>einmalig</td><td>heutiges Thema, Dauer, Umfang</td><td>dauerhafte Standards</td></tr><tr><td>Nirgends</td><td>—</td><td>—</td><td>personenbezogene und vertrauliche Daten</td></tr></tbody></table></div><h3 id="kapitel-03-fuenf-fragen-vor-jeder-angabe">Fünf Fragen vor jeder Angabe</h3><ol><li>Braucht die Aufgabe sie überhaupt?</li><li>Gilt sie immer, für diese Reihe oder nur heute?</li><li>Steckt Personenbezug drin?</li><li>Könnte die KI sie aus dem Material selbst erkennen?</li><li>Würde das Ergebnis ohne sie sichtbar schlechter?</li></ol><p>Nur wenn Frage 5 ein Ja ergibt, gehört die Angabe hinein.</p><h3 id="kapitel-03-der-haeufigste-fehler">Der häufigste Fehler</h3><p>Physik, Jahrgang 8, Arbeitsblatt zum Hebelgesetz.</p><p><b>Zu viel:</b> „Erstelle gute, ansprechende, moderne, motivierende, pädagogisch sinnvolle Materialien, die alle Lernenden abholen.“</p><p><b>Besser:</b> „Verwende nur Operatoren aus der Liste unten. Höchstens vier Aufgaben. Jede zahlt auf das Lernziel ein. Lernendenblatt und Lösung getrennt.“</p><p>Der zweite Auftrag ist kürzer und steuert trotzdem mehr, weil man an jedem Satz nachsehen kann, ob er eingehalten wurde. „Motivierend“ kann man nicht nachsehen.</p><blockquote>Sag, woran du es erkennst. Nicht, dass es gut sein soll.</blockquote><h3 id="kapitel-03-die-grenze">Die Grenze</h3><p>Der Filter macht deinen Aufbau übersichtlich, verhindert aber keine falschen Inhalte. Eine sauber einsortierte Angabe kann sachlich falsch sein, und die KI merkt es nicht. Ordnung ersetzt das Prüfen nicht.</p><p><b>Die Stolperstelle.</b> Am schwersten einzuordnen sind nicht die Angaben, die nirgends passen, sondern die, die auf zwei Ebenen zugleich stimmen. Die Operatorenliste deines Bundeslandes gilt immer — gebraucht wird sie aber nur, wenn Aufgaben formuliert werden. „Gilt immer“ ist der lautere Grund und zieht sie ins Profil; hinein gehört sie in den Skill, weil dort die Aufgabe steht, die sie braucht.</p>
+<h2 class="chapter" id="kapitel-04"><span class="num">04</span> Sicherheitsgrenze: was der Workflow nie lernen soll</h2><p>Ein Skill sammelt Kontext über viele Einsätze, und was einmal drinsteht, ist bei jedem Aufruf dabei. Deshalb gehören Datenschutz und Zugriffsrechte in den Bauplan, nicht in eine Fußnote.</p><h3 id="kapitel-04-gruen-als-beispielmaterial-geeignet">GRÜN · als Beispielmaterial geeignet</h3><ul><li>erfundene oder belastbar anonymisierte Aufgaben</li><li>öffentliche Lehrpläne und Primärquellen</li><li>eigenes Material ohne Personenbezug</li><li>Angaben zu Fach, Jahrgang und Zeit</li><li>erfundene Grenzfälle für die Tests</li><li>Qualitätskriterien und Ausgabevorlagen</li></ul><h3 id="kapitel-04-gelb-vorher-klaeren-schriftlich">GELB · vorher klären, schriftlich</h3><ul><li>schulinterne Vorlagen und Dokumente</li><li>urheberrechtlich geschützte Texte</li><li>dienstliche Postfächer, Kalender, Clouds</li><li>nicht öffentliche Prüfungs- und Lösungsmaterialien</li><li>Werkzeuge mit Zugriff auf Dateien, Browser oder Code</li></ul><h3 id="kapitel-04-rot-gehoert-nicht-hinein">ROT · gehört nicht hinein</h3><ul><li>Namen, Kontaktdaten, erkennbare Einzelfälle</li><li>Noten, Diagnosen, Förder- und Verhaltensdaten</li><li>Elternkommunikation</li><li>Zugangsdaten und Passwörter</li><li>Inhalte aus dem Notenprogramm oder der Schulverwaltung</li><li>automatische Entscheidungen über Leistung oder Förderung</li></ul><h3 id="kapitel-04-wo-die-grenze-in-der-praxis">Wo die Grenze in der Praxis reißt</h3><p>Deutsch, Jahrgang 7. Du willst zwölf Aufsätze auf Rechtschreibmuster prüfen lassen — an sich ein sinnvoller Gedanke. Aber auf jedem Blatt steht ein Name, drei Kinder schreiben über ihre Familie, und in einem Text steht ein Satz, den du so nicht weitergeben würdest. Anonymisieren heißt hier nicht, den Namen wegzustreichen. Es heißt, jeden Text zu lesen — und dann bist du bei zwölf Aufsätzen fast fertig mit der Arbeit, die du eigentlich auslagern wolltest.</p><p>Der ehrliche Befund lautet: Bei Schülertexten ist der Datenschutzaufwand oft größer als der Gewinn. Deshalb geht es in diesem Handbuch um dein eigenes Material, nicht um das der Lernenden.</p><p>Und die Ampel bleibt eine Arbeitshilfe. Eine Rechtsauskunft ist sie nicht. Was an deiner Schule erlaubt ist, steht in der Dienstanweisung, nicht hier. Frag die Schulleitung oder den Datenschutzbeauftragten, bevor du GELB für dich zu GRÜN erklärst.</p><h3 id="kapitel-04-die-stoppregel">Die Stoppregel</h3><p>Nimm sie wörtlich in jeden Skill auf:</p><pre class="prompt">Stoppe, wenn der Auftrag personenbezogene,
+vertrauliche oder nicht eindeutig freigegebene Daten
+enthält. Benenne die Datenkategorie, verarbeite sie
+nicht weiter und schlage eine fiktive oder
+datensparsame Alternative vor.</pre><blockquote>Ein guter Ablauf weiß auch, wann er nicht weitermachen darf.</blockquote><p><b>Die Stolperstelle.</b> Der Personenbezug steckt selten in der Aufgabe und fast immer im Material: das alte Arbeitsblatt mit dem Kürzel der Kollegin in der Fußzeile, die Elternmail, die nur als Kontext zitiert wird, der Screenshot mit der Klassenliste am Rand. Die Aufgabe bleibt harmlos, die Anlage nicht. Deshalb prüft die Ampel nicht, was du vorhast, sondern was du mitschickst.</p>
+<h2 class="chapter" id="kapitel-05"><span class="num">05</span> Welche Aufgabe lohnt sich?</h2><p>Nicht jede Tätigkeit sollte ein Skill werden. Was sich lohnt, kommt oft vor, läuft ähnlich ab, braucht keine Schülerdaten und lässt sich an Kriterien prüfen.</p><div class="tablewrap"><table><thead><tr><th>Wiederkehrende Aufgabe</th><th>Wie oft</th><th>Ablauf ähnlich?</th><th>Qualität prüfbar?</th><th>Datenrisiko</th></tr></thead><tbody><tr><td>1.</td><td></td><td>☐ ja ☐ nein</td><td>☐ ja ☐ nein</td><td>☐ grün ☐ gelb ☐ rot</td></tr><tr><td>2.</td><td></td><td>☐ ja ☐ nein</td><td>☐ ja ☐ nein</td><td>☐ grün ☐ gelb ☐ rot</td></tr><tr><td>3.</td><td></td><td>☐ ja ☐ nein</td><td>☐ ja ☐ nein</td><td>☐ grün ☐ gelb ☐ rot</td></tr></tbody></table></div><h3 id="kapitel-05-eignungstest">Eignungstest</h3><ul><li>☐ Die Aufgabe kommt regelmäßig vor.</li><li>☐ Der Ablauf bleibt ähnlich, auch wenn das Thema wechselt.</li><li>☐ Du kannst benennen, was vorliegen muss.</li><li>☐ Ein gutes Ergebnis hat sichtbare Merkmale.</li><li>☐ Fehler fallen vor dem Unterricht auf, nicht währenddessen.</li><li>☐ Die Aufgabe geht ohne personenbezogene Daten.</li></ul><p><b>5–6 Haken:</b> guter Kandidat. <b>3–4:</b> Aufgabe kleiner schneiden. <b>0–2:</b> von Hand machen.</p><p>Der Punktwert ist eine Sortierhilfe, keine Messung. Er hilft dir, aus fünf Ideen die eine auszuwählen, mit der du anfängst.</p><h3 id="kapitel-05-gute-startkandidaten">Gute Startkandidaten</h3><ul><li>Arbeitsaufträge auf Eindeutigkeit prüfen</li><li>Material gegen ein festes Raster kontrollieren</li><li>eine geplante Stunde in ein Vertretungsformat übertragen</li><li>eigene Lösungen auf Lücken und Widersprüche prüfen</li><li>aus Stichpunkten eine Verlaufsplantabelle bauen</li></ul><h3 id="kapitel-05-schlechte-startkandidaten">Schlechte Startkandidaten</h3><p>Leistungsbewertung, Förderentscheidungen, verwickelte Einzelfälle, schwierige Elterngespräche — und alles, wobei du selbst nicht sagen kannst, wie ein gutes Ergebnis aussieht. Das Letzte ist keine KI-Frage. Es ist Denkarbeit, die vorher kommt.</p><blockquote>Kein Skill für Aufgaben, deren gutes Ergebnis du selbst nicht beschreiben kannst.</blockquote><h3 id="kapitel-05-die-grenze">Die Grenze</h3><p>Bewertet wird hier die Aufgabe und nicht deine Lage. Etwas kann alle sechs Haken bekommen und sich trotzdem nicht lohnen, weil es nur viermal im Jahr vorkommt. Häufigkeit schlägt Eignung: lieber ein mittelguter Kandidat für jede Woche als ein perfekter für zweimal im Halbjahr.</p><p><b>Die Stolperstelle.</b> Was am meisten wehtut, drängt sich als Erstes auf: Korrekturen, Zeugnisbemerkungen, Förderberichte. Genau diese Aufgaben scheitern jedoch an beiden Bedingungen zugleich — sie hängen an personenbezogenen Daten, und ihr gutes Ergebnis lässt sich nicht an sichtbaren Merkmalen festmachen. Der Leidensdruck zeigt auf das Schwierige, nicht auf das Geeignete.</p>
+<h2 class="chapter" id="kapitel-06"><span class="num">06</span> Beschreibe zuerst, wie Erfolg aussieht</h2><p>Bevor du der KI etwas vormachst, musst du wissen, woran du Qualität erkennst. Ein Gefühl dafür genügt nicht: Was du nur spürst, kannst du weder nachsehen noch der KI erklären.</p><h3 id="kapitel-06-ergebnis-canvas">Ergebnis-Canvas</h3><ul><li><b>Name des Workflows:</b> _____________________________________________</li><li><b>Auslöser:</b> Wann brauche ich das? _________________________________</li><li><b>Eingaben:</b> Was muss vorliegen? ___________________________________</li><li><b>Endprodukt:</b> Was soll herauskommen? ______________________________</li><li><b>Wer nutzt es:</b> ___________________________________________________</li><li><b>Fünf Qualitätskriterien:</b> ________________________________________</li><li><b>Unzulässige Ergebnisse:</b> _________________________________________</li><li><b>Stoppgründe:</b> ____________________________________________________</li><li><b>Menschliche Freigabe:</b> Was entscheide am Ende ich? _______________</li></ul><h3 id="kapitel-06-kriterien-so-schreiben-dass-man-sie">Kriterien so schreiben, dass man sie nachsehen kann</h3><p><b>Unklar:</b> „Das Arbeitsblatt ist motivierend.“</p><p><b>Prüfbar:</b> „Der Einstieg stellt eine fachliche Frage, die ohne Zusatzmaterial verständlich ist und in drei Minuten bearbeitet werden kann.“</p><p><b>Unklar:</b> „Die Differenzierung ist gut.“</p><p><b>Prüfbar:</b> „Alle Varianten verfolgen dasselbe Kernlernziel. Die Hilfen verändern den Zugang, nicht die erwartete Leistung.“</p><p>Der Unterschied ist immer derselbe: Beim zweiten Satz kannst du auf das Blatt zeigen und Ja oder Nein sagen.</p><h3 id="kapitel-06-der-mindeststandard">Der Mindeststandard</h3><ol><li>Stimmt es fachlich?</li><li>Passt es zum Lernziel und zur geplanten Stunde?</li><li>Kann die Zielgruppe es ohne mündliche Zusatzerklärung nutzen?</li><li>Ist sichtbar, was noch von dir geprüft werden muss?</li></ol><blockquote>Was du nicht beschreiben kannst, kann die KI nicht treffen.</blockquote><h3 id="kapitel-06-die-grenze">Die Grenze</h3><p>Beobachtbare Kriterien machen ein Ergebnis prüfbar, nicht gut. Sie fangen ab, was schiefläuft. Die Idee, die eine Stunde trägt, erzeugen sie nicht — erwarte von ihnen Mängel, keine Einfälle.</p><p><b>Die Stolperstelle.</b> Prüfbar klingt jedes Kriterium, das auf eine Stelle im Text zeigt. Ob es prüfbar ist, entscheidet das Wort daneben: „in drei Minuten zu bearbeiten“ verlangt eine Schätzung, „ohne Zusatzmaterial verständlich“ verlangt ein Urteil. Der Test dafür ist einfach — zwei Leute prüfen dasselbe Blatt gegen dasselbe Kriterium; kommen sie zu verschiedenen Antworten, war es keins.</p>
+<h2 class="chapter" id="kapitel-07"><span class="num">07</span> Phase 1: Mach den Workflow einmal gemeinsam</h2><p>Jetzt noch kein Skill. Nimm eine echte Aufgabe ohne Personenbezug und geh sie mit der KI Schritt für Schritt durch, sodass nach jedem Schritt ein Zwischenergebnis dasteht, das du prüfen kannst. Wähle etwas Kleines: den Auftrag für die nächste Geschichtsstunde in Jahrgang 9, drei Sätze für 25 Minuten — klein genug für eine Freistunde.</p><h3 id="kapitel-07-der-startprompt">Der Startprompt</h3><pre class="prompt">Wir entwickeln gemeinsam einen wiederholbaren
+Workflow für folgende Aufgabe: [Aufgabe].
+
+Wichtig: Erstelle noch keinen Skill und
+automatisiere nichts.
+
+Arbeite mit mir schrittweise:
+1. Frage nach Ziel, Zielgruppe, notwendigen Eingaben
+und Qualitätskriterien.
+2. Schlage den ersten Arbeitsschritt vor und sag
+kurz, warum er nötig ist.
+3. Führe nur diesen Schritt aus.
+4. Warte auf meine Prüfung, Korrektur oder Freigabe.
+5. Halte nach jeder Freigabe fest:
+   - welche Eingabe verwendet wurde,
+   - welche Entscheidung getroffen wurde,
+   - welches Ergebnis akzeptiert wurde,
+   - welche Regel sich daraus ableiten lässt.
+6. Mach erst nach meiner ausdrücklichen Freigabe
+weiter.
+
+Stoppe bei fehlenden Schlüsselinformationen,
+fachlicher Unsicherheit, personenbezogenen Daten
+oder widersprüchlichen Anforderungen.</pre><h3 id="kapitel-07-deine-rolle">Deine Rolle</h3><ul><li>Sag nicht nur, <b>dass</b> etwas falsch ist, sondern <b>woran</b> du es siehst.</li><li>Liefere die korrigierte Fassung mit, nicht nur die Kritik.</li><li>Benenne Ausnahmen, sobald dir eine einfällt.</li><li>Verlang einen Beleg, wenn die KI etwas als Tatsache behauptet.</li><li>Stopp einen schlechten Zwischenschritt sofort. Später kaschieren kostet mehr.</li></ul><p>Das Ungewohnte daran ist, wie viel du selbst reden musst. Man geht in einen solchen Durchlauf mit der Erwartung hinein, etwas zu bekommen, und merkt nach zehn Minuten, dass man vor allem etwas hergibt: Begründungen für Entscheidungen, die man sonst im Vorbeigehen trifft. Warum vier Aufgaben und nicht sechs. Warum diese Reihenfolge. Warum an dieser Stelle ein Beispiel steht und an jener nicht. Für den Skill ist das der eigentliche Ertrag — dort landen später genau diese Begründungen als Regeln. Wer den Durchlauf abkürzt, weil das Fragen lästig wird, spart die Arbeit nicht ein, sondern verschiebt sie in jeden künftigen Einsatz.</p><h3 id="kapitel-07-der-unterschied-im-ton">Der Unterschied im Ton</h3><p><b>Nicht:</b> „Mach es besser.“</p><p><b>Sondern:</b> „Aufgabe 2 prüft nur Reproduktion. Ergänze einen Transfer: Die Lernenden wenden die Regel auf ein neues Beispiel an und begründen ihre Entscheidung.“</p><blockquote>Sag, woran du es siehst. Sonst rät die KI, was du gemeint hast.</blockquote><h3 id="kapitel-07-die-grenze">Die Grenze</h3><p>Der begleitete Durchlauf ist langsam. Für den Auftrag, den du heute brauchst, wärst du zu Fuß schneller — und das bleibt so, bis der Skill steht. Wenn keine halbe Stunde übrig ist, verschieb es lieber: Ein abgebrochener Probelauf liefert kein brauchbares Protokoll.</p><p><b>Die Stolperstelle.</b> Die Zahl der Anläufe sagt wenig, weil Anläufe aus zwei ganz verschiedenen Gründen abbrechen. Der eine liegt am Ablauf: Er war zu groß geschnitten, und nach dem dritten Schritt weiß niemand mehr, was eigentlich geprüft werden sollte. Der andere ist banal — die Freistunde war zu Ende. Nur der erste Grund ist ein Befund über deinen Workflow; der zweite verlangt bloß einen neuen Termin.</p>
+<h2 class="chapter" id="kapitel-08"><span class="num">08</span> Phase 2: Halt den Durchlauf fest, der geklappt hat</h2><p>Ein Chatverlauf ist voller Nebenwege und Sätze, die du hinterher nicht mehr so meinst. Für einen stabilen Skill brauchst du daraus eine saubere Spur.</p><h3 id="kapitel-08-erfolgsprotokoll">Erfolgsprotokoll</h3><div class="tablewrap"><table><thead><tr><th>Schritt</th><th>Eingabe</th><th>Entscheidung oder Regel</th><th>Akzeptiertes Ergebnis</th><th>Prüfkriterium</th></tr></thead><tbody><tr><td>1.</td><td></td><td></td><td></td><td></td></tr><tr><td>2.</td><td></td><td></td><td></td><td></td></tr><tr><td>3.</td><td></td><td></td><td></td><td></td></tr><tr><td>4.</td><td></td><td></td><td></td><td></td></tr><tr><td>5.</td><td></td><td></td><td></td><td></td></tr></tbody></table></div><h3 id="kapitel-08-entscheidungslog">Entscheidungslog</h3><ul><li><b>Welche Rückfrage war unverzichtbar?</b> ____________________________</li><li><b>Welche Annahme war zuerst falsch?</b> ______________________________</li><li><b>Welche Korrektur hat das Ergebnis besser gemacht?</b> ______________</li><li><b>Welche Reihenfolge darf nicht verändert werden?</b> ________________</li><li><b>Welche Regel gilt nur in diesem Projekt?</b> _______________________</li><li><b>Welche Regel gilt immer?</b> _______________________________________</li><li><b>Wann muss der Workflow abbrechen?</b> ______________________________</li></ul><p>Die Unterscheidung zwischen Projekt- und Dauerregel wird am häufigsten übersprungen. Hältst du eine projektbezogene Regel für eine allgemeine, baust du sie dauerhaft ein — und wunderst dich vier Wochen später, warum der Skill beim nächsten Thema seltsame Dinge tut.</p><h3 id="kapitel-08-der-verdichtungsprompt">Der Verdichtungsprompt</h3><pre class="prompt">Analysiere unseren erfolgreichen Probelauf, ohne
+schon einen Skill zu erstellen.
+
+Extrahiere ausschließlich:
+1. Auslöser des Workflows,
+2. zwingende Eingaben,
+3. Arbeitsschritte in der tatsächlich erfolgreichen
+Reihenfolge,
+4. Entscheidungskriterien,
+5. akzeptierte Ausgabeform,
+6. Stopp- und Rückfrageregeln,
+7. erkannte Fehler und ihre Korrektur,
+8. Regeln, die nur für dieses Beispiel galten und
+nicht verallgemeinert werden dürfen.
+
+Belege jeden Punkt mit einer konkreten Stelle aus
+unserem Verlauf. Markiere Unsicherheiten und frag
+nach, statt Lücken zu füllen.</pre><blockquote>Punkt 8 ist der wichtigste. Lies ihn zuerst.</blockquote><h3 id="kapitel-08-die-grenze">Die Grenze</h3><p>Die Verdichtung ist selbst ein KI-Ergebnis und kann Dinge behaupten, die so nicht im Verlauf stehen. Der Satz „Belege jeden Punkt mit einer konkreten Stelle“ hilft dagegen, weil du stichprobenartig nachsehen kannst. Nimm dir dafür Zeit — auf dieser Verdichtung baut alles Weitere auf.</p><p><b>Die Stolperstelle.</b> Was dir die Verdichtung unterschiebt, sind keine falschen Regeln. Es sind zu allgemein geratene: Aus „für Jahrgang 5 kürzere Sätze“ wird „Sprache an die Zielgruppe anpassen“. Das klingt richtiger als das Original und steuert nichts mehr. Verraten wird es von der Belegstelle: Sie zeigt auf einen Satz, der der Regel nur ähnelt, statt sie zu decken. Deshalb lohnt die Stichprobe gerade bei den Punkten, die selbstverständlich klingen.</p>
+<h2 class="chapter" id="kapitel-09"><span class="num">09</span> Phase 3: Aus dem Erfolg wird ein Skill</h2><p>Erst jetzt wird der Ablauf wiederverwendbar. Den Entwurf darf die KI schreiben — sie hat den Durchlauf und deine Korrekturen noch im Kontext, solange du im selben Chat bleibst.</p><h3 id="kapitel-09-der-prompt">Der Prompt</h3><pre class="prompt">Erstelle aus unserem geprüften Erfolgsprotokoll
+einen Skill für den Workflow [Name].
+
+Anforderungen:
+1. Der Skill löst genau eine wiederkehrende Aufgabe.
+2. Name und Beschreibung machen eindeutig, wann er
+eingesetzt wird.
+3. Nenne alle zwingenden Eingaben.
+4. Übernimm die Schritte in der erfolgreich
+getesteten Reihenfolge.
+5. Trenne allgemeine Regeln von projektbezogenen
+Beispielangaben.
+6. Definiere Ausgabeformat und beobachtbare
+Qualitätskriterien.
+7. Ergänze Rückfragen, Stoppregeln und
+Datenschutzgrenzen.
+8. Nimm ein kurzes positives Beispiel und einen
+Grenzfall auf.
+9. Erfinde keine Regel, die nicht aus dem Probelauf
+oder meiner Freigabe hervorgeht.
+10. Führe keinen ausführbaren Code ein, wenn der
+Workflow ihn nicht nachweislich braucht.
+
+Gib zuerst eine lesbare Entwurfsfassung aus. Eine
+technische Skill-Datei erst nach meiner Freigabe.</pre><h3 id="kapitel-09-prueffragen-vor-der-freigabe">Prüffragen vor der Freigabe</h3><ul><li>Löst der Skill wirklich nur eine Aufgabe?</li><li>Ist klar beschrieben, wann er dran ist?</li><li>Sind alle nötigen Eingaben benannt?</li><li>Ist versehentlich etwas Projektbezogenes dauerhaft eingebaut?</li><li>Sind Erfolg, Fehler und Stoppgründe beobachtbar formuliert?</li><li>Bleibt die pädagogische Entscheidung bei dir?</li></ul><blockquote>Ein Skill ist kein Archiv des Chats. Er ist die kurze Anleitung.</blockquote><h3 id="kapitel-09-die-grenze">Die Grenze</h3><p>Der Kontext hält nicht ewig. Bei langen Verläufen gerät der Anfang aus dem Blick, und in einem neuen Chat ist er ganz verschwunden. Halte das Erfolgsprotokoll aus Kapitel 08 deshalb außerhalb des Chats fest — in einer Datei, die du wieder mitgeben kannst.</p><p><b>Die Stolperstelle.</b> Der Entwurf zieht mit, woran er entstanden ist. Das Thema des Probelaufs steht plötzlich als Regel drin: „prüfe den Lernzielbezug zur Gedichtanalyse“ statt „prüfe den Lernzielbezug“. Dazu kommen Sätze über Tonfall und Motivation, die im ganzen Verlauf keine einzige Entscheidung ausgelöst haben. Beides findest du mit einer Frage: Hat dieser Satz im Probelauf irgendetwas verändert?</p>
+<h2 class="chapter" id="kapitel-10"><span class="num">10</span> Der Skill-Bauplan</h2><p>Der Bauplan gilt unabhängig davon, ob dein Werkzeug echte Skill-Dateien kennt, gespeicherte Prompts anbietet oder nur ein Feld für eigene Anweisungen hat.</p><div class="tablewrap"><table><thead><tr><th>Teil</th><th>Was hineingehört</th><th>Beispiel</th></tr></thead><tbody><tr><td>Name</td><td>kurz, unterscheidbar, eine Aufgabe</td><td>Arbeitsauftrag-Check</td></tr><tr><td>Beschreibung und Auslöser</td><td>was er tut, wann er dran ist</td><td>prüft einen Arbeitsauftrag vor dem Unterricht</td></tr><tr><td>Zwingende Eingaben</td><td>ohne die es nicht geht</td><td>Lernziel · Jahrgang · Auftrag · Zeit · Material</td></tr><tr><td>Ablauf</td><td>nummerierte Schritte in der getesteten Reihenfolge</td><td>siehe Kapitel 15</td></tr><tr><td>Entscheidungen</td><td>Wenn-dann-Regeln für Abzweigungen</td><td>wenn kein Produkt genannt: nachfragen</td></tr><tr><td>Ausgabe</td><td>feste Struktur, damit Durchläufe vergleichbar bleiben</td><td>Prüftabelle plus Vorschlagsfassung</td></tr><tr><td>Qualität</td><td>beobachtbare Kriterien</td><td>„jeder Befund mit Textbeleg“</td></tr><tr><td>Rückfragen und Stopp</td><td>wann fehlt etwas, wann ist Schluss</td><td>Personenbezug im Auftrag</td></tr><tr><td>Beispiele</td><td>ein Normalfall, ein Grenzfall</td><td>keine echten Daten</td></tr></tbody></table></div><p>Das Feld „Ablauf“ ist eine Liste von Schritten, keine Sammlung von Tipps. Schritte haben eine Reihenfolge, und man merkt, wenn einer übersprungen wurde.</p><h3 id="kapitel-10-minimalstruktur">Minimalstruktur</h3><pre class="prompt">Name:
+Beschreibung / Auslöser:
+Zwingende Eingaben:
+Nicht verwenden für:
+
+Ablauf:
+1. 2. 3.
+
+Ausgabeformat:
+Qualitätskriterien:
+Rückfragen:
+Stoppregeln:
+Positives Beispiel:
+Grenzfall:
+Menschliche Endprüfung:</pre><blockquote>„Nicht verwenden für“ ist das Feld, das am meisten spart.</blockquote><h3 id="kapitel-10-die-grenze">Die Grenze</h3><p>Nicht jede Aufgabe braucht alle Felder. Ein Skill mit drei Schritten wird durch acht ausgefüllte Zusatzfelder nicht besser. Lass leer, was nichts steuert — mit einer Ausnahme: Die Stoppregeln bleiben.</p><p><b>Die Stolperstelle.</b> Ein Feld lässt sich beim Bauen nicht ehrlich füllen: „Nicht verwenden für“. Wer den Skill schreibt, kennt den Fall, für den er gedacht war, und sonst keinen. Bezahlt wird das später, wenn jemand ihn auf die Nachbaraufgabe wirft — der Skill hält dann nicht an, sondern liefert etwas Plausibles, weil ihm nie gesagt wurde, wo sein Gebiet endet.</p>
+<h2 class="chapter" id="kapitel-11"><span class="num">11</span> Der Dreifach-Test</h2><p>Teste einen Skill nie nur mit dem Beispiel, aus dem er entstanden ist. Sonst weißt du nicht, ob er den Ablauf gelernt hat oder nur das Beispiel.</p><h3 id="kapitel-11-test-a-normalfall">Test A · Normalfall</h3><p>Vollständige, typische Eingaben. Er zeigt, ob der Kernablauf durchläuft.</p><h3 id="kapitel-11-test-b-fehlende-information">Test B · Fehlende Information</h3><p>Lass eine Pflichtangabe weg. Dieser Test zeigt, ob der Skill nachfragt oder sich etwas Plausibles ausdenkt.</p><h3 id="kapitel-11-test-c-grenzfall">Test C · Grenzfall</h3><p>Widersprüchliche Anforderungen, ungeeignetes Material oder ein Datenschutzkonflikt. Er zeigt, ob der Skill mit Begründung anhält. Zum Beispiel: ein Auftrag für Englisch, Jahrgang 6, der auf eine nicht mitgegebene Buchseite verweist und den Namen eines Kindes enthält. Das sind zwei Stoppgründe in einem Auftrag — ein guter Skill nennt beide.</p><h3 id="kapitel-11-bewertungsbogen">Bewertungsbogen</h3><p>0 = nicht erfüllt, 1 = teilweise, 2 = erfüllt.</p><div class="tablewrap"><table><thead><tr><th>Kriterium</th><th>Test A</th><th>Test B</th><th>Test C</th></tr></thead><tbody><tr><td>richtiger Auslöser erkannt</td><td></td><td></td><td></td></tr><tr><td>benötigte Eingaben geprüft</td><td></td><td></td><td></td></tr><tr><td>Schritte in richtiger Reihenfolge</td><td></td><td></td><td></td></tr><tr><td>Ausgabeformat eingehalten</td><td></td><td></td><td></td></tr><tr><td>Qualitätskriterien sichtbar geprüft</td><td></td><td></td><td></td></tr><tr><td>Unsicherheit gekennzeichnet</td><td></td><td></td><td></td></tr><tr><td>Stoppregel korrekt angewendet</td><td></td><td></td><td></td></tr><tr><td>menschliche Freigabe eingeholt</td><td></td><td></td><td></td></tr></tbody></table></div><h3 id="kapitel-11-freigaberegel">Freigaberegel</h3><ul><li>Bei Datenschutz und fachlicher Sicherheit ist eine 0 ein Ausschluss, kein Mangel.</li><li>Fehler im Normalfall werden vor dem Einsatz behoben.</li><li>Nach jeder strukturellen Änderung: alle drei Tests noch einmal.</li></ul><blockquote>Ein Skill ist einsatzbereit, wenn er auch nachfragt und stoppt.</blockquote><h3 id="kapitel-11-die-grenze">Die Grenze</h3><p>Drei Tests sind das Minimum. Einen Beweis liefern sie nicht: Sie zeigen, dass der Skill in drei Lagen lief, und sagen nichts über die vierte. Die Punktzahl ist deine Einschätzung, kein Messwert. Nutz den Bogen, um Lücken zu finden, nicht um eine Note zu vergeben.</p><p><b>Die Stolperstelle.</b> Test B ist der schwierige, weil man sein Misslingen so schlecht sieht. Lässt du den Zeitrahmen weg und der Skill fragt nicht nach, steht trotzdem eine vollständig ausgefüllte Prüftabelle da, mit einer Zeitschätzung, die auf nichts beruht. Es gibt keine Lücke, die dich stutzig macht. Der Fehler fällt dir nur auf, wenn du dir vorher aufgeschrieben hast, welche Angabe du weglässt — sonst prüfst du am Ende eine Antwort auf eine Frage, die du gar nicht gestellt hast.</p>
+<h2 class="chapter" id="kapitel-12"><span class="num">12</span> Fehler sind Material, kein Grund zum Löschen</h2><p>Wenn ein Durchlauf danebengeht, lösch den Skill nicht und häng auch nicht wahllos neue Regeln an. Sieh dir zuerst an, was eigentlich passiert ist.</p><h3 id="kapitel-12-die-lernschleife">Die Lernschleife</h3><p><b>Fehler sehen → Ursache erklären lassen → Korrektur vormachen → prüfen → Skill gezielt ändern → erneut testen</b></p><h3 id="kapitel-12-der-diagnoseprompt">Der Diagnoseprompt</h3><pre class="prompt">Der letzte Durchlauf hat dieses Problem erzeugt:
+[Problem und konkrete Stelle].
+
+Analysiere den Fehler, ohne ihn zu überdecken.
+
+1. Welcher Arbeitsschritt ist gescheitert?
+2. Fehlte eine Eingabe, eine Regel, ein
+Prüfkriterium oder eine Stoppbedingung?
+3. Welche Annahme hast du getroffen?
+4. Welche kleinste Änderung würde denselben Fehler
+künftig verhindern?
+5. Betrifft die Änderung den allgemeinen Ablauf oder
+nur diesen Einzelfall?
+6. Welche bestehende Regel könnte durch die Änderung
+schlechter werden?
+
+Schlag eine gezielte Korrektur vor. Ändere den Skill
+erst nach meiner Freigabe und wiederhole danach alle
+drei Tests.</pre><h3 id="kapitel-12-vier-ursachen-die-fast-alles-abdecken">Vier Ursachen, die fast alles abdecken</h3><ul><li><b>Eingabefehler:</b> Eine nötige Angabe wurde nicht abgefragt.</li><li><b>Prozessfehler:</b> Schritte wurden ausgelassen oder vertauscht.</li><li><b>Qualitätsfehler:</b> Ein Kriterium war zu vage.</li><li><b>Grenzfehler:</b> Rückfrage oder Stoppregel fehlte.</li></ul><h3 id="kapitel-12-nicht-jeder-fehler-braucht-eine-neue">Nicht jeder Fehler braucht eine neue Regel</h3><p>Mathematik, Jahrgang 5: Der Skill baut eine Aufgabe mit Dezimalzahlen, obwohl die Klasse dort noch gar nicht ist. Im Ablauf klafft deswegen keine Lücke — im Auftrag fehlte eine Angabe. Nimm nur auf, was mit einiger Sicherheit wiederkommt.</p><blockquote>Die dritte Regel gegen dasselbe Problem ist meist eine zu viel.</blockquote><h3 id="kapitel-12-die-grenze">Die Grenze</h3><p>Die KI erklärt ihre eigenen Fehler nicht zuverlässig. Auf Frage 3 bekommst du eine plausible Rekonstruktion, keinen Blick auf das, was wirklich passiert ist. Nimm die Antwort deshalb als Vorschlag, den du am Protokoll prüfst, nicht als Diagnose.</p><p><b>Die Stolperstelle.</b> Ein Verlauf, der sich wiederholt: Am Ergebnis wird dreimal nachgebessert, obwohl die Ursache eine Stufe früher liegt — bei einer Eingabe, die nie abgefragt wurde. Zu erkennen ist das Muster daran, dass jede Korrektur an einer anderen Stelle greift und der Fehler trotzdem wiederkommt. Wer dann eine vierte Regel anhängt, behandelt weiter das Symptom. Die Prüffrage steht oben in der Liste: Fehlte eine Eingabe — oder wirklich eine Regel?</p>
+<h2 class="chapter" id="kapitel-13"><span class="num">13</span> Besser werden, ohne im Regelchaos zu landen</h2><p>Mit jeder Korrektur wird ein Skill besser oder unübersichtlicher. Auch seine Weiterentwicklung braucht deshalb ein Verfahren.</p><h3 id="kapitel-13-aenderungsprotokoll">Änderungsprotokoll</h3><div class="tablewrap"><table><thead><tr><th>Version</th><th>Beobachteter Fehler</th><th>Ursache</th><th>Änderung</th><th>Tests bestanden</th></tr></thead><tbody><tr><td>0.1</td><td></td><td></td><td></td><td>☐ A ☐ B ☐ C</td></tr><tr><td>0.2</td><td></td><td></td><td></td><td>☐ A ☐ B ☐ C</td></tr><tr><td>1.0</td><td></td><td></td><td></td><td>☐ A ☐ B ☐ C</td></tr></tbody></table></div><h3 id="kapitel-13-vor-jeder-aenderung">Vor jeder Änderung</h3><ol><li>Tritt der Fehler wieder auf, wenn du es noch einmal versuchst?</li><li>Verstehst du die Ursache wirklich?</li><li>Kannst du eine vorhandene Regel schärfen, statt eine neue anzuhängen?</li><li>Gilt die Änderung allgemein oder nur für dieses Projekt?</li><li>Welcher Test beweist, dass die Korrektur wirkt?</li><li>Hat die Änderung einen Fall verschlechtert, der vorher lief?</li></ol><p>Frage 3 hält den Skill kurz. Frage 6 wird am häufigsten vergessen.</p><h3 id="kapitel-13-aufraeumen">Aufräumen</h3><p>Nach mehreren Änderungen:</p><pre class="prompt">Prüfe den Skill auf doppelte, widersprüchliche oder
+überholte Regeln. Erstelle eine Liste möglicher
+Vereinfachungen. Entferne oder verschmelze Regeln
+erst nach meiner Freigabe. Inhaltliche Anforderungen
+und Stoppregeln dürfen nicht stillschweigend
+abgeschwächt werden.</pre><p>Der letzte Satz ist nicht dekorativ. Beim Zusammenfassen verschwinden Einschränkungen zuerst, weil sie sich wie Wiederholung lesen.</p><h3 id="kapitel-13-versionsstufen">Versionsstufen</h3><p><b>Entwurf:</b> wird noch entwickelt. <b>Pilot:</b> drei Tests bestanden, Einsatz unter enger Kontrolle. <b>Freigegeben:</b> an mehreren Themen geprüft. <b>Überarbeiten:</b> Produktänderung oder wiederkehrender Fehler. <b>Archiviert:</b> wird nicht mehr gebraucht.</p><blockquote>Die beste Fassung ist die kürzeste, die alle drei Tests besteht.</blockquote><h3 id="kapitel-13-die-grenze">Die Grenze</h3><p>Das Protokoll zu führen fühlt sich nach Bürokratie an. Wenn du trotzdem dabei bleibst, findest du in acht Wochen den Grund für eine Regel, an die du dich sonst nicht mehr erinnern würdest. Wenn nicht, bau wenigstens Datum und einen Satz Begründung direkt in den Skill.</p><p><b>Die Stolperstelle.</b> Was einen funktionierenden Fall zerstört, sind fast nie neue Schritte. Es sind verschärfte Regeln, und zwar die, die aus einem Grenzfall stammen. Aus „frag nach, wenn das erwartete Produkt fehlt“ wird nach einmal Ärger „frag immer nach dem erwarteten Produkt“, und danach hält der Skill auch dann an, wenn alles dasteht. Die Änderung ist richtig für den Fall, der sie ausgelöst hat, und falsch für alle anderen. Genau dagegen steht Frage 6.</p>
+<h2 class="chapter" id="kapitel-14"><span class="num">14</span> Durchgespielt: der Arbeitsauftrag-Check</h2><p>Dieses Beispiel führt den ganzen Weg einmal vor: von einer wiederkehrenden Aufgabe zum getesteten Skill. Es ist konstruiert, nicht protokolliert — es zeigt die Form eines Probelaufs, nicht den Verlauf eines bestimmten.</p><h3 id="kapitel-14-die-ausgangslage">Die Ausgangslage</h3><p>Ein Arbeitsauftrag soll vor dem Unterricht geprüft werden. Der naheliegende Versuch „Prüfe, ob dieser Arbeitsauftrag gut ist“ führt zu freundlichem Lob und drei allgemeinen Vorschlägen — nutzlos, weil nichts davon an einer Stelle im Text hängt.</p><h3 id="kapitel-14-das-erfolgsbild">Das Erfolgsbild</h3><p>Ein brauchbarer Check muss:</p><ul><li>Lernziel und erwartetes Produkt gegeneinander halten,</li><li>fehlende Angaben benennen, statt sie zu ergänzen,</li><li>den Zeitbedarf schätzen und sagen, worauf die Schätzung beruht,</li><li>höchstens drei Fehldeutungen nennen,</li><li>nur beanstandete Stellen überarbeiten.</li></ul><h3 id="kapitel-14-der-begleitete-durchlauf">Der begleitete Durchlauf</h3><p><b>Lehrkraft:</b> „Markier Operator, erwartetes Produkt und Materialien. Beurteile noch nichts.“</p><p><b>KI:</b> zieht die drei Bestandteile heraus — und hängt eine Bewertung an („Der Auftrag ist klar formuliert und altersangemessen“).</p><p><b>Lehrkraft:</b> „Die Bewertung war nicht verlangt. Streich sie.“</p><p><b>KI:</b> liefert nur noch die Bestandteile.</p><p><b>Lehrkraft:</b> „Weiß ein Schüler ohne mündliche Erklärung, was zu tun und abzugeben ist?“</p><p><b>KI:</b> stellt fest, dass der Umfang des Produkts fehlt.</p><p><b>Lehrkraft:</b> „Formulier eine Rückfrage. Erfinde keinen Umfang.“</p><p><b>KI:</b> fragt nach der gewünschten Länge.</p><p>Der kleinste Zug ist hier der wichtigste: „Erfinde keinen Umfang.“ Ohne ihn hätte die KI eine Länge geschätzt, die plausibel klingt und nicht deine ist. Und der ungefragte Lobsatz am Anfang ist kein Schönheitsfehler — er ist der Grund für Regel 1: erst herausziehen, dann bewerten.</p><h3 id="kapitel-14-die-regeln-die-dabei-herausfallen">Die Regeln, die dabei herausfallen</h3><ol><li>Erst Bestandteile herausziehen, dann bewerten.</li><li>Fehlende Pflichtangaben führen zu einer Rückfrage.</li><li>Plausible Angaben werden nicht ergänzt.</li><li>Jeder Befund bekommt einen Textbeleg.</li><li>Nur beanstandete Stellen werden überarbeitet.</li><li>Über die Endfassung entscheidet die Lehrkraft.</li></ol><blockquote>Regel 3 ist die, die den Check von Lob unterscheidet.</blockquote><h3 id="kapitel-14-die-grenze">Die Grenze</h3><p>Der Check prüft die Form des Auftrags, nicht seine fachliche Richtigkeit und nicht seine Passung zu deiner Lerngruppe. Ob die Aufgabe für deine Klasse zu schwer ist, weiß nur, wer die Klasse kennt. Übersehen wird deshalb alles, was außerhalb des Textes liegt: dass die mitgegebene Quelle die verlangte Angabe gar nicht enthält, dass der Operator in deinem Bundesland eine andere Leistung verlangt, dass die Aufgabe eindeutig ist und trotzdem am Lernziel der Reihe vorbeigeht. Die Prüftabelle bleibt dabei vollständig ausgefüllt — sie meldet keine Lücke, für die sie kein Feld hat.</p><p><b>Die Stolperstelle.</b> Unter Zeitdruck wackelt zuerst Regel 2, die Rückfrage bei fehlenden Angaben. Wer das Blatt in der nächsten Pause braucht, will kein Gespräch und ergänzt die fehlende Angabe schnell selbst. Das ist zulässig, solange du es tust und nicht der Skill: Aufweichen heißt hier, die Angabe nachzureichen, nicht die Regel zu streichen. Verschwindet sie aus dem Skill, verschwindet mit ihr die Stelle, an der auffällt, dass etwas fehlte.</p>
+<h2 class="chapter" id="kapitel-15"><span class="num">15</span> Der fertige Skill-Entwurf</h2><h3 id="kapitel-15-name">Name</h3><p><b>Arbeitsauftrag-Check</b></p><h3 id="kapitel-15-beschreibung">Beschreibung</h3><p>Prüft Arbeitsaufträge vor dem Unterricht auf Lernzielbezug, Eindeutigkeit, Vollständigkeit, Zeitbedarf und mögliche Fehldeutungen.</p><h3 id="kapitel-15-eingaben">Eingaben</h3><p>Lernziel · Jahrgangsstufe · Arbeitsauftrag · erwartetes Produkt · Zeitrahmen · verfügbares Material</p><h3 id="kapitel-15-ablauf">Ablauf</h3><ol><li>Zieh Operator, erwartetes Produkt, Materialbasis und Zeit heraus.</li><li>Melde fehlende Pflichtangaben und warte auf Antwort.</li><li>Prüf, ob Lernziel, verlangte Tätigkeit und Produkt zusammenpassen.</li><li>Prüf, ob der Auftrag ohne mündliche Zusatzerklärung ausführbar ist.</li><li>Nenne höchstens drei wahrscheinliche Fehldeutungen.</li><li>Schätz den Zeitbedarf und sag, worauf die Schätzung beruht.</li><li>Überarbeite nur beanstandete Stellen.</li><li>Gib eine Prüftabelle und eine als Vorschlag markierte Fassung aus.</li></ol><h3 id="kapitel-15-ausgabeformat">Ausgabeformat</h3><div class="tablewrap"><table><thead><tr><th>Prüffeld</th><th>Befund mit Textbeleg</th><th>Priorität</th><th>Änderungsvorschlag</th></tr></thead><tbody><tr><td>Lernzielbezug</td><td></td><td></td><td></td></tr><tr><td>Eindeutigkeit</td><td></td><td></td><td></td></tr><tr><td>Vollständigkeit</td><td></td><td></td><td></td></tr><tr><td>Zeit</td><td></td><td></td><td></td></tr><tr><td>Fehldeutungen</td><td></td><td></td><td></td></tr></tbody></table></div><h3 id="kapitel-15-stoppregeln">Stoppregeln</h3><ul><li>Lernziel oder Arbeitsauftrag fehlt.</li><li>Der Auftrag setzt Material voraus, das nicht mitgegeben wurde.</li><li>Personenbezogene oder vertrauliche Daten sind enthalten.</li><li>Fachliche Richtigkeit ist ohne Quelle nicht beurteilbar.</li></ul><h3 id="kapitel-15-die-drei-testfaelle">Die drei Testfälle</h3><p><b>A Normalfall:</b> vollständiger Auftrag mit einer kleinen sprachlichen Unklarheit.</p><p><b>B Fehlende Information:</b> kein erwartetes Produkt angegeben.</p><p><b>C Grenzfall:</b> Der Auftrag verweist auf eine nicht mitgelieferte Schulbuchseite und enthält einen echten Namen.</p><p><b>Menschliche Endprüfung:</b> Fachlichkeit, Passung zur Lerngruppe und die endgültige Formulierung bleiben bei dir.</p><blockquote>Schritt 2 wartet. Das ist kein Höflichkeitsschritt.</blockquote><h3 id="kapitel-15-die-grenze">Die Grenze</h3><p>Der Entwurf ist ein Ausgangspunkt, keine Vorlage zum Übernehmen. Die Prüffelder passen zu einem schriftlichen Einzelauftrag. Für einen Stationenlauf, für Gruppenarbeit mit Rollen oder für eine Aufgabe im Fachraum brauchst du andere — und die findest du nur, indem du Kapitel 07 selbst durchgehst.</p><p><b>Die Stolperstelle.</b> Sobald Geräte, Stoffe oder ein Fachraum ins Spiel kommen, fehlt den fünf Feldern eines für die Voraussetzungen. In der Chemie entscheidet „Was muss bereitstehen, was ist verboten?“ mehr über die Stunde als die Eindeutigkeit der Formulierung. Umgekehrt streicht man ein Feld nicht, weil es unwichtig wäre, sondern weil es bei dieser Aufgabenform nie einen Befund erzeugt.</p>
+<h2 class="chapter" id="kapitel-16"><span class="num">16</span> Erst stabil, dann mehr</h2><p>Ein zweiter Skill, ein Agent oder eine Automation lohnt sich erst, wenn der erste Ablauf verlässlich läuft.</p><h3 id="kapitel-16-die-reihenfolge">Die Reihenfolge</h3><ol><li>eine klar begrenzte Aufgabe auswählen</li><li>einen Durchlauf erarbeiten, der klappt</li><li>daraus einen Skill machen</li><li>drei Tests bestehen</li><li>mehrere echte, datensichere Einsätze beobachten</li><li>Fehler gezielt einarbeiten</li><li>erst dann den zweiten Workflow</li></ol><h3 id="kapitel-16-bereit-fuer-den-naechsten-schritt">Bereit für den nächsten Schritt?</h3><ul><li>☐ Der erste Skill löst genau eine Aufgabe.</li><li>☐ Er fragt bei fehlenden Angaben nach.</li><li>☐ Er stoppt in sensiblen oder unklaren Fällen.</li><li>☐ Seine Ausgabe lässt sich schnell prüfen.</li><li>☐ Änderungen werden festgehalten und neu getestet.</li><li>☐ Der neue Workflow hat einen deutlich anderen Zweck.</li></ul><p>Wenn mehrere Skills irgendwann nur gemeinsam ein Ergebnis erzeugen, kann Koordination sinnvoll werden. Ein Ziel für sich ist sie nicht. Und sobald etwas ohne deine Zwischenfreigabe läuft, gilt Kapitel 00, Abschnitt 6.</p><h3 id="kapitel-16-ein-plan-fuer-zwei-wochen">Ein Plan für zwei Wochen</h3><p><b>Tag 1–2:</b> Workflow auswählen, Erfolgskriterien aufschreiben. <b>Tag 3–4:</b> begleiteten Durchlauf machen. <b>Tag 5:</b> Erfolgsprotokoll verdichten. <b>Tag 6:</b> ersten Skill-Entwurf erstellen. <b>Tag 7:</b> die drei Tests. <b>Tag 8–12:</b> an zwei weiteren Themen einsetzen, ohne Personenbezug. <b>Tag 13:</b> Fehler und überflüssige Regeln auswerten. <b>Tag 14:</b> freigeben, überarbeiten oder bewusst verwerfen.</p><blockquote>Verwerfen ist ein Ergebnis, kein Scheitern.</blockquote><h3 id="kapitel-16-die-grenze">Die Grenze</h3><p>Die vierzehn Tage sind eine Reihenfolge, keine gemessene Dauer. In einer Woche mit Elternsprechtag dauert Tag 3 eben drei Tage. Verbindlich ist die Reihenfolge, nicht das Datum.</p><p><b>Die Stolperstelle.</b> Die Dauer hängt nicht am Arbeitsaufwand. Sie hängt an Schritt 5. Die Tage 1 bis 7 sind Arbeit, die man am Stück erledigen kann; die weiteren Einsätze aus Tag 8–12 kommen dagegen erst, wenn die Aufgabe wiederkommt. Bei einem Arbeitsauftrag, den du montags schreibst, dauert der Weg zur freigegebenen Fassung deshalb mindestens so viele Wochen, wie du Einsätze sehen willst — unabhängig davon, wie schnell du schreibst.</p>
+<h2 class="chapter" id="kapitel-17"><span class="num">17</span> Wie es weitergeht</h2><p>Dieser Band endet bei einem Skill, der funktioniert. Damit ist ein Ablauf gesichert — der Kontext aber noch nicht: Vor jedem Einsatz erklärst du weiterhin, welche Klasse, welche Reihe, welches Buch und wie lang die Stunde ist.</p><p><b>Band 2 — „Unterrichtsmaterial selbst bauen“</b> setzt genau dort an. Er gibt dem Kontext einen Ort auf deinem Rechner: einen Ordner mit einer Ankerdatei, Reihenplänen, gespeicherten Abläufen und einem Freigabeordner, aus dem nichts von selbst herauskommt. Er baut auf den sechs Begriffen, dem Kontextfilter und der Datenampel dieses Bandes auf und wiederholt sie nicht.</p>
+<h2 class="chapter" id="kapitel-18"><span class="num">18</span> Quellen, Grenzen, Aktualität</h2><h3 id="kapitel-18-grundlagen">Grundlagen</h3><ul><li>Anthropic Help Center: <em>What are skills?</em> — Funktionsweise und progressive Offenlegung von Skill-Inhalten (2026). https://support.claude.com/en/articles/12512176-what-are-skills</li></ul><ul><li>Anthropic Help Center: <em>How to create custom skills</em> — Aufbau, Tests und Sicherheitshinweise (2026). https://support.claude.com/en/articles/12512198-how-to-create-custom-skills</li></ul><ul><li>Agent Skills: offene Spezifikation für portable Skill-Pakete. https://agentskills.io/</li></ul><ul><li>Kultusministerkonferenz: <em>Handlungsempfehlung für die Bildungsverwaltung zum Umgang mit Künstlicher Intelligenz in schulischen Bildungsprozessen</em> (2024). https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_10_10-Handlungsempfehlung-KI.pdf</li></ul><ul><li>Datenschutzkonferenz: <em>Künstliche Intelligenz und Datenschutz</em>, Version 1.0 vom 6. Mai 2024. https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf</li></ul><h3 id="kapitel-18-woher-die-methode-kommt">Woher die Methode kommt</h3><p>Der Dreischritt aus begleitetem Durchlauf, Verdichtung und schrittweiser Verbesserung stammt nicht aus der Fachdidaktik, sondern aus der eigenen Arbeit mit KI-Werkzeugen für die Unterrichtsvorbereitung. Er ist ein begründbares Verfahren, kein empirisch untersuchtes. Wenn du hier eine Zahl suchst, die belegt, dass es funktioniert, wirst du sie nicht finden. Das ist Absicht.</p><h3 id="kapitel-18-was-sich-aendern-wird">Was sich ändern wird</h3><p>Skills, gespeicherte Anweisungen und Agentenfunktionen unterscheiden sich je nach Produkt. Verfügbarkeit, Dateiformat, Sicherheitsfunktionen und Oberflächen ändern sich. Deshalb ist die Methode toolunabhängig beschrieben — und deshalb steht in Kapitel 13 die Stufe „Überarbeiten“ ausdrücklich für den Fall einer Produktänderung.</p><p>Dieses Handbuch ist keine Rechtsberatung und ersetzt keine schulische oder behördliche Freigabe. Entscheidungen über Leistung und Förderung bleiben bei der Lehrkraft.</p><h3 id="kapitel-18-die-idee-in-einem-satz">Die Idee in einem Satz</h3><p>Führ einen Workflow zuerst erfolgreich vor, verdichte ihn zu einem klaren Skill und verbessere ihn nur anhand von Fehlern, die du wirklich verstanden hast.</p><blockquote>Erst vormachen. Dann verdichten. Dann verbessern.</blockquote><p><b>Band 1 · Ausgabe 1 · Redaktionsstand: 10. August 2026</b></p>
+        <div class="hbfoot">
+          <a href="ki-handbuecher.html">← Alle KI-Handbücher</a>
+          <a href="digitalisierung-ki.html">Digitalisierung &amp; KI →</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="wrap fcols">
+      <div>
+        <h4>ClassTiles</h4>
+        <p>Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät — kein Nutzerkonto, kein Tracking, keine Werbung.</p>
+        <!-- Reiner Profillink: Das Icon liegt inline im Dokument, beim Seitenaufruf wird nichts
+             von Meta geladen. Kein Embed und kein Follow-Button — die würden eine Einwilligung
+             nach § 25 TDDDG auslösen und damit ein Cookie-Banner erzwingen. -->
+        <a class="fsocial" href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer"><span>ClassTiles auf Instagram</span></a>
+      </div>
+      <div>
+        <h4>Module</h4>
+        <a href="modul-notenverwaltung.html">Notenverwaltung</a><a href="modul-kalender.html">Kalender</a><a href="modul-planung.html">Planung</a><a href="modul-gruppen.html">Gruppen &amp; Sitzordnung</a><a href="modul-dokumentation.html">Dokumentation</a><a href="modul-klassengeschaefte.html">Klassengeschäfte</a>
+      </div>
+      <div>
+        <h4>Handbücher</h4>
+        <a href="handbuch-notenverwaltung.html">Notenverwaltung</a><a href="handbuch-gruppen-sitzordnung.html">Gruppen &amp; Sitzordnung</a><a href="handbuecher.html">Alle Handbücher</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="support.html">Support &amp; FAQ</a>
+        <a href="mailto:classtiles@icloud.com">classtiles@icloud.com</a>
+      </div>
+    </div>
+    <div class="wrap"><p class="fnote">Diese Seite setzt keine Cookies. Besucherzahlen werden anonym und Cookie-frei mit Cloudflare Web Analytics gemessen — Details in der Datenschutzerklärung.</p></div>
+  </footer>
+  <script>
+(function(){
+  var bar=document.getElementById('bar');
+  if(bar){addEventListener('scroll',function(){bar.classList.toggle('stuck',scrollY>8)},{passive:true});}
+
+  // Einblenden beim Scrollen ist Kür. Der Inhalt ist per Default sichtbar; das Skript versteckt ihn
+  // nur, um ihn danach einzublenden — und eine Sicherheitsleine macht ihn nach 1 s in JEDEM Fall
+  // wieder sichtbar. Sonst könnte eine Umgebung, in der der IntersectionObserver nicht feuert,
+  // die halbe Seite verschlucken.
+  var els=document.querySelectorAll('.rev');
+  if(els.length && !matchMedia('(prefers-reduced-motion: reduce)').matches
+     && 'IntersectionObserver' in window){
+    els.forEach(function(el){el.classList.add('pre')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+    setTimeout(function(){els.forEach(function(el){el.classList.remove('pre')})},1000);
+  }
+
+  // Das Video wird erst geladen, wenn jemand auf Play tippt — bis dahin steht nur das Standbild.
+  // Spart Ladezeit; kein YouTube-Embed, damit kein Fremd-Tracker lädt.
+  var player=document.getElementById('player');
+  if(!player) return;
+  var started=false;
+  function start(){
+    if(started) return;
+    started=true;
+    var v=document.createElement('video');
+    v.src=player.dataset.src; v.controls=true; v.autoplay=true; v.playsInline=true;
+    var screen=player.querySelector('.screen');
+    screen.innerHTML=''; screen.appendChild(v);
+    v.scrollIntoView({block:'center'});
+  }
+  var o=document.getElementById('playoverlay'); if(o) o.addEventListener('click',start);
+  var c=document.getElementById('playcta');     if(c) c.addEventListener('click',start);
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7b45f2b83d574c8987ad43343d41f3c4"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

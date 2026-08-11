@@ -331,6 +331,115 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 .hbfoot{border-top:1px solid var(--hair);margin-top:48px;padding-top:22px;display:flex;
   gap:16px;flex-wrap:wrap;justify-content:space-between}
 
+/* KI-Handbücher. Sie tragen keine Modulfarbe, sondern Navy: die Modulfarben gehören dem
+   Produkt, die redaktionelle Reihe ist erkennbar etwas anderes. Sie enthalten außerdem
+   keine Abbildungen, dafür Merksätze und wörtliche Prompts. */
+.hb blockquote{margin:22px 0;padding:3px 0 3px 18px;border-left:3px solid var(--c);
+  font-size:1.06rem;color:var(--ink)}
+.hb pre.prompt{margin:20px 0;padding:15px 18px;background:var(--sunk);
+  border:1px solid var(--hair);border-radius:12px;white-space:pre-wrap;overflow-x:auto;
+  font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.55;
+  color:var(--ink-2)}
+/* Die Kapitel zählen ab 00, der CSS-Zähler von .hbnav zählt ab 1 — deshalb steht die
+   Nummer hier im Markup. */
+.hbnav.ki a::before{content:attr(data-nr)}
+.hbhead.ki{padding-top:18px}
+/* Die Quellenkapitel führen ausgeschriebene URLs. Ohne Umbruchregel schiebt eine einzige
+   davon die Seite auf dem Handy waagerecht auf (gemessen: 690 px Inhalt in 330 px Spalte). */
+.hb.ki{overflow-wrap:break-word}
+
+/* Das Cowork-Heft ist das einzige mit Bildschirmfotos. Seine Legenden nummerieren, was im
+   Bild markiert ist — die Ziffern stehen deshalb auch hier und nicht nur in der Abbildung. */
+.hb .legend{margin:0;padding:14px 20px 4px;list-style:none;
+  border-top:1px solid var(--hair);display:grid;gap:6px 18px;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.hb .legend li{display:flex;gap:9px;align-items:baseline;margin:0;font-size:.92rem}
+.hb .legend .ln{flex:none;width:20px;height:20px;border-radius:50%;background:var(--navy);
+  color:var(--paper);font-size:.72rem;font-weight:700;display:inline-flex;
+  align-items:center;justify-content:center}
+.hb figure .legend+figcaption{padding-top:10px}
+.hb .box.kolophon{margin-top:44px;border-left-color:var(--ink-3)}
+.hb .box.kolophon .t{display:block;font-weight:650;color:var(--ink);margin-bottom:8px;
+  font-size:1.02rem}
+.hb .box.kolophon p{margin:0 0 8px;font-size:.92rem}
+
+/* Glossar. Zwei Spalten auf breiten Schirmen, weil ein Eintrag kurz ist und eine einspaltige
+   Liste aus 29 Einträgen sonst nur Scrollweg erzeugt. */
+.glossaz{display:flex;flex-wrap:wrap;gap:6px;margin:26px 0 4px;position:sticky;top:64px;
+  z-index:5;background:var(--paper);padding:10px 0}
+.glossaz a{min-width:30px;text-align:center;padding:5px 8px;border-radius:8px;font-size:.86rem;
+  font-weight:600;color:var(--ink-2);text-decoration:none;border:1px solid var(--hair)}
+.glossaz a:hover{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.glossletter{grid-column:1/-1;margin:26px 0 2px;font-size:1.05rem;letter-spacing:.1em;
+  color:var(--ink-3);border-bottom:1px solid var(--hair);padding-bottom:6px}
+.gloss{scroll-margin-top:130px;padding:16px 0 4px;border-top:1px solid var(--hair)}
+.gloss:first-of-type{border-top:0}
+.gloss h3{margin:0 0 5px;font-size:1.08rem;letter-spacing:-.012em}
+.gloss p{margin:0 0 9px;color:var(--ink-2);font-size:.97rem;max-width:60ch}
+/* Der Merksatz ist eine Eselsbrücke, keine Definition — er steht darunter und leiser. */
+.gloss .merk{padding-left:12px;border-left:2px solid var(--hair-2);color:var(--ink-3);
+  font-size:.92rem}
+.glossziele{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 10px}
+.glossziele a{font-size:.85rem;color:var(--ink-2);text-decoration:none;padding:3px 9px;
+  border-radius:7px;background:var(--sunk)}
+.glossziele a:hover{color:var(--ink);background:var(--navy-soft)}
+.gloss .auch{margin:8px 0 0;font-size:.85rem;color:var(--ink-3)}
+.gloss .auch a{color:var(--ink-2)}
+
+/* Kurzfassung. Die .zitat-Blöcke sind wörtlich aus dem Band geschnitten — sie sehen deshalb
+   anders aus als der geschriebene Teil, damit erkennbar bleibt, was Quelle ist und was nicht. */
+.kurz{max-width:72ch;margin-top:38px;--c:var(--navy)}
+.kurz h2{margin:44px 0 12px;font-size:1.35rem;letter-spacing:-.015em}
+.kurz>blockquote{margin:0;padding:3px 0 3px 18px;border-left:3px solid var(--navy);
+  font-size:1.15rem;color:var(--ink)}
+.kurz .zitat{background:var(--sunk);border-radius:14px;padding:18px 22px 14px;
+  border:1px solid var(--hair)}
+.kurz .zitat.warn{border-left:3px solid var(--hb-warn)}
+.kurz .zitat p{margin:0 0 10px;color:var(--ink-2)}
+.kurz .zitat ul,.kurz .zitat ol{margin:0 0 10px;padding-left:1.25em;color:var(--ink-2)}
+.kurz .zitat li{margin:.25em 0}
+.kurz .zitat b{color:var(--ink)}
+.kurz .zitat table{font-size:.92rem}
+.kurz .quelle{margin:10px 0 0;font-size:.85rem}
+.kurz .quelle a{color:var(--ink-3);text-decoration:none}
+.kurz .quelle a:hover{color:var(--navy)}
+.mitnehmen{margin:0;padding-left:1.4em}
+.mitnehmen li{margin:.7em 0;padding-left:4px}
+.mitnehmen .beleg{margin-left:6px;font-size:.78rem;white-space:nowrap;color:var(--ink-3);
+  text-decoration:none;background:var(--sunk);padding:2px 8px;border-radius:6px}
+.mitnehmen .beleg:hover{color:var(--ink);background:var(--navy-soft)}
+.kapitelkarte{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
+.kapitelkarte li{break-inside:avoid;margin:0 0 3px}
+.kapitelkarte a{display:flex;gap:9px;padding:5px 9px;border-radius:8px;text-decoration:none;
+  color:var(--ink-2);font-size:.92rem}
+.kapitelkarte a::before{content:attr(data-nr);color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.kapitelkarte a:hover{background:var(--sunk);color:var(--ink)}
+@media (max-width:700px){.kapitelkarte{columns:1}}
+
+/* Neues. Ein Eintrag ist kurz; die Datumsspalte links hält die Liste scanbar. */
+.neues{max-width:74ch;padding:30px 0 0}
+.neujahr{margin:44px 0 0;font-size:1.1rem;letter-spacing:.1em;color:var(--ink-3)}
+.neu{padding:24px 0;border-top:1px solid var(--hair)}
+.neu:first-child{border-top:0;padding-top:6px}
+.neukopf{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.neukopf time{font-size:.86rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.art{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;background:var(--sunk);color:var(--ink-2)}
+.art-neu{background:var(--navy);color:var(--paper)}
+.art-tipp{background:var(--m3);color:var(--ink)}
+.neu h3{margin:0 0 10px;font-size:1.3rem;letter-spacing:-.015em}
+.neu h3 a{color:inherit;text-decoration:none}
+.neu h3 a:hover{color:var(--navy)}
+.neu p{margin:0 0 11px;color:var(--ink-2)}
+.neu ul,.neu ol{margin:0 0 11px;padding-left:1.3em;color:var(--ink-2)}
+.neu li{margin:.35em 0}
+.neu b{color:var(--ink)}
+.neuweiter{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.neuweiter a{font-size:.86rem;text-decoration:none;color:var(--ink-2);padding:6px 12px;
+  border-radius:8px;background:var(--sunk)}
+.neuweiter a:hover{color:var(--ink);background:var(--navy-soft)}
+
 @media (max-width:920px){
   .hblayout{grid-template-columns:1fr;gap:0}
   .hbnav{display:none}

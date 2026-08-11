@@ -40,9 +40,20 @@ for _f in ("index.html", "module-grades.html", "module-calendar.html", "module-p
 ACTIVE["handbuecher.html"] = "handbuecher.html"
 ACTIVE["handbuch-notenverwaltung.html"] = "handbuecher.html"
 ACTIVE["handbuch-gruppen-sitzordnung.html"] = "handbuecher.html"
-ACTIVE["digitalisierung-ki.html"] = "digitalisierung-ki.html"
 ACTIVE["en/manuals.html"] = "manuals.html"
 ACTIVE["en/digitalisation-ai.html"] = "digitalisation-ai.html"
+
+# Der KI-Bereich ist ein Baum unter „Digitalisierung & KI": Regal, Bände und die Blätter für
+# die Klasse heben alle denselben Reiter hervor.
+KI_SEITEN = ["digitalisierung-ki.html", "ki-handbuecher.html", "ki-material.html",
+             "ki-glossar.html", "ki-neues.html"]
+KI_BAENDE = ("workflows", "materialwerkstatt", "ablauf", "assistent", "cowork")
+# Das Cowork-Heft hat keine Kurzfassung — siehe tools/pages/ki_kurzfassungen.py.
+KI_KURZFASSUNGEN = KI_BAENDE[:-1]
+KI_SEITEN += [f"ki-handbuch-{s}.html" for s in KI_BAENDE]
+KI_SEITEN += [f"ki-kurzfassung-{s}.html" for s in KI_KURZFASSUNGEN]
+for _f in KI_SEITEN:
+    ACTIVE[_f] = "digitalisierung-ki.html"
 
 # Sprachpaare. Schlüssel ist der Dateiname ohne Sprachverzeichnis.
 TWIN = {
@@ -65,6 +76,11 @@ TWIN.update({v: k for k, v in TWIN.items() if k not in ("index.html", "support.h
 # Die Handbücher selbst gibt es nur auf Deutsch; die englische Fassung ist die Hinweisseite.
 TWIN["handbuch-notenverwaltung.html"] = "manuals.html"
 TWIN["handbuch-gruppen-sitzordnung.html"] = "manuals.html"
+
+# Ebenso der KI-Bereich: Die Inhalte richten sich an deutschsprachige Schulen, der englische
+# Zwilling ist für alle Seiten die Hinweisseite.
+for _f in KI_SEITEN[1:]:
+    TWIN[_f] = "digitalisation-ai.html"
 
 LANG_LABEL = {"de": ("English", "en"), "en": ("Deutsch", "de")}
 
