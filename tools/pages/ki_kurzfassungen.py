@@ -44,13 +44,13 @@ KURZ = {
              "Skill, Agent. Sitzen die, liest sich der Rest fast von selbst.", "kapitel-00"),
             ("Mehr Kontext ist nicht besserer Kontext. Jede Angabe gehört an die kleinste "
              "Stelle, an der sie ihren Zweck noch erfüllt.", "kapitel-03"),
-            ("Namen, Noten und Diagnosen bleiben draußen — nicht als guter Vorsatz, sondern "
+            ("Namen, Noten und Diagnosen bleiben draußen, nicht als guter Vorsatz, sondern "
              "als Stoppregel, die wörtlich im Skill steht.", "kapitel-04-die-stoppregel"),
             ("Beschreibe zuerst, wie ein gelungenes Ergebnis aussieht. Ohne Kriterium lässt "
              "sich nichts prüfen, und ohne Prüfung ist der Skill wertlos.", "kapitel-06"),
             ("Drei Phasen statt einer: einmal gemeinsam durchlaufen, den geglückten Durchlauf "
              "festhalten, erst daraus den Skill verdichten.", "kapitel-07"),
-            ("Teste einen Skill nie nur mit dem Beispiel, aus dem er entstanden ist — sonst "
+            ("Teste einen Skill nie nur mit dem Beispiel, aus dem er entstanden ist; sonst "
              "weißt du nicht, ob er den Ablauf gelernt hat oder das Beispiel.", "kapitel-11"),
             ("Verbessere nur an Fehlern, die du verstanden hast. Jede Regel auf Verdacht ist "
              "der erste Schritt ins Regelchaos.", "kapitel-13"),
@@ -60,19 +60,19 @@ KURZ = {
         methode=("Die Methode", "kapitel-01-die-methode"),
         grenzen=("Was der Band nicht verspricht", "kapitel-01-was-hier-nicht-versprochen-wird"),
         mitnehmen=[
-            ("Gekauftes Material ist selten schlecht — es passt nur nicht. Die Arbeit steckt "
+            ("Gekauftes Material ist selten schlecht; es passt nur nicht. Die Arbeit steckt "
              "nicht im Blatt, sondern in der Beschreibung deines Unterrichts.", "kapitel-01"),
             ("Ein Chat ist ein Gespräch und danach weg. Eine Werkstatt ist ein Ort: Der "
              "Kontext liegt bereit, das Ergebnis bleibt liegen.", "kapitel-02"),
             ("Schulbuchinhalte bleiben draußen. Die Seitenangabe an der Aufgabe leistet "
              "dasselbe, ohne das Urheberrecht zu berühren.", "kapitel-04"),
-            ("Vier Orte im Ordner, je einer für eine Sorte Kontext — dauerhaft, für die "
+            ("Vier Orte im Ordner, je einer für eine Sorte Kontext: dauerhaft, für die "
              "Reihe, für die Aufgabe, für heute.", "kapitel-05"),
             ("Die Ankerdatei beschreibt einmal, was in deinem Unterricht immer gilt. Danach "
              "schreibt sich das einzelne Blatt schnell.", "kapitel-06"),
             ("Vier Verbote statt vieler Wünsche: „Erstelle gutes Material“ lässt sich nicht "
              "nachsehen, „Schreib nie außerhalb des Eingangs“ schon.", "kapitel-07"),
-            ("Nichts verlässt den Eingang von selbst. Nur du verschiebst — das ist der "
+            ("Nichts verlässt den Eingang von selbst. Nur du verschiebst; das ist der "
              "Handgriff, an dem die Verantwortung hängt.", "kapitel-11"),
         ]),
     "ablauf": dict(
@@ -81,7 +81,7 @@ KURZ = {
         grenzen=("Was der Band nicht behauptet", "kapitel-04-was-dieser-band-nicht-behauptet"),
         mitnehmen=[
             ("Ein langer Prompt ist keine Regel, sondern eine Regel, die du jedes Mal neu "
-             "tippst — und beim Tippen leicht veränderst.", "kapitel-01"),
+             "tippst, und beim Tippen leicht veränderst.", "kapitel-01"),
             ("Ein Teil der Schwankung, die man dem Modell zuschreibt, stammt aus der Eingabe. "
              "Was einmal geschrieben dasteht, schwankt nicht.", "kapitel-01-die-rechnung"),
             ("Vier Bausteine sortieren alles: Ankerdatei, was immer gilt · Skill, der "
@@ -99,11 +99,11 @@ KURZ = {
         methode=("Das Grundprinzip", "kapitel-01-das-grundprinzip"),
         grenzen=("Was KI nicht übernimmt", "kapitel-01-was-ki-nicht-uebernimmt"),
         mitnehmen=[
-            ("Fünf Ebenen tragen das Ganze: Profil, Projekt, Workflow, Entwurf, Prüfung — "
+            ("Fünf Ebenen tragen das Ganze: Profil, Projekt, Workflow, Entwurf, Prüfung; "
              "und die wichtigste Trennung liegt zwischen den letzten beiden.", "kapitel-03"),
             ("Die Datenampel kommt vor den ersten Prompt. Die Frage ist nicht, ob die KI es "
              "kann, sondern ob sie es sehen darf.", "kapitel-02"),
-            ("Das Lehrkräfteprofil ist datensparsam: Schulform, Fächer, Arbeitsprinzipien — "
+            ("Das Lehrkräfteprofil ist datensparsam: Schulform, Fächer, Arbeitsprinzipien, "
              "keine Klasse, kein Name, keine Diagnose.", "kapitel-04"),
             ("Fünf fertige Workflows liegen zum Übernehmen bereit, vom Unterrichtsarchitekten "
              "bis zum Vertretungs-Paket.", "kapitel-06-fuenf-workflows-in-diesem-workbook"),

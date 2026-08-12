@@ -116,12 +116,12 @@ MANUALS = {
 
 FOOTER_TEXT = {
     "de": dict(
-        blurb="Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät — kein Nutzerkonto, "
+        blurb="Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät. Kein Nutzerkonto, "
               "kein Tracking, keine Werbung.",
         social="ClassTiles auf Instagram", modules="Module", manuals="Handbücher",
         legal="Rechtliches",
         note="Diese Seite setzt keine Cookies. Besucherzahlen werden anonym und Cookie-frei mit "
-             "Cloudflare Web Analytics gemessen — Details in der Datenschutzerklärung."),
+             "Cloudflare Web Analytics gemessen. Details in der Datenschutzerklärung."),
     "en": dict(
         blurb="Grade management for teachers. Runs locally on your device — no user account, "
               "no tracking, no ads.",

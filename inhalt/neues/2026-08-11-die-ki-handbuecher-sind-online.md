@@ -7,7 +7,7 @@ weiter:
 ---
 
 Vier Bände liegen ab heute zum Lesen und Herunterladen bereit: die drei Bände des
-Praxis-Handbuchs und das Workbook. Sie stehen vollständig auf der Seite — kein Newsletter,
+Praxis-Handbuchs und das Workbook. Sie stehen vollständig auf der Seite. Kein Newsletter,
 keine Anmeldung, kein Konto.
 
 Wer sich nicht durch 7.000 Wörter arbeiten will, findet zu jedem Band eine **Kurzfassung**:

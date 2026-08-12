@@ -61,15 +61,15 @@ def kachel(h):
 BODY = '''    <div class="pagetitle" style="max-width:none">
       <div class="eyebrow">Handbücher</div>
       <h1>Ein Handbuch je Modul</h1>
-      <p class="mlead">Schritt für Schritt durch ClassTiles — mit Bildern aus der echten App,
+      <p class="mlead">Schritt für Schritt durch ClassTiles, mit Bildern aus der echten App,
       einer echten Beispielklasse und zu jeder Abbildung zwei Sätzen: was Sie sehen und was Sie
       hier tun können. Online lesen oder als PDF mitnehmen.</p>
     </div>
 
     <section style="padding:34px 0 0">
       <div class="grid">{kacheln}</div>
-      <p class="note">Die Handbücher entstehen nacheinander. Zwei sind fertig, die übrigen folgen —
-      wer wissen will, wann, findet die Ankündigungen
+      <p class="note">Die Handbücher entstehen nacheinander. Zwei sind fertig, die übrigen folgen.
+      Wer wissen will, wann, findet die Ankündigungen
       <a href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer">auf
       Instagram</a>.</p>
     </section>
@@ -80,7 +80,7 @@ def main():
     body = BODY.replace("{kacheln}", "".join(kachel(h) for h in HANDBUECHER))
     fertig = [h for h in HANDBUECHER if h["claim"]]
     desc = (f"Benutzerhandbücher zur Lehrer-App ClassTiles: "
-            f"{', '.join(h['titel'] for h in fertig)} — online lesbar und als PDF. "
+            f"{', '.join(h['titel'] for h in fertig)}, online lesbar und als PDF. "
             f"Ein Handbuch je Modul, weitere in Vorbereitung.")
     page = shell.page("handbuecher.html", "Handbücher — ClassTiles", desc, body)
     with open(os.path.join(REPO, "handbuecher.html"), "w", encoding="utf-8") as f:

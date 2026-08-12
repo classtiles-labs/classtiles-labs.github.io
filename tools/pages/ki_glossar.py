@@ -55,7 +55,7 @@ GLOSSAR = [
          ziele=[("ablauf", "kapitel-02-ankerdatei-der-rahmen-der-immer-gilt"),
                 ("materialwerkstatt", "kapitel-06")]),
     dict(begriff="Arbeitsauftrag-Check",
-         satz="Der Beispiel-Skill, an dem Band 1 den ganzen Weg einmal vorführt — von einer "
+         satz="Der Beispiel-Skill, an dem Band 1 den ganzen Weg einmal vorführt, von einer "
               "wiederkehrenden Aufgabe bis zum getesteten Skill. Er prüft einen Arbeitsauftrag, "
               "bevor er in den Unterricht geht.",
          ziele=[("workflows", "kapitel-14")]),
@@ -84,7 +84,7 @@ GLOSSAR = [
               "werden darf. Aus ihr entsteht später der Skill.",
          ziele=[("workflows", "kapitel-08-entscheidungslog")]),
     dict(begriff="Entwurf", auch="Prüfung",
-         satz="Das Zwischenergebnis, das die KI liefert — strukturiert und prüfbar, aber noch "
+         satz="Das Zwischenergebnis, das die KI liefert, strukturiert und prüfbar, aber noch "
               "keine pädagogische Entscheidung. Ein brauchbarer Entwurf macht seine Annahmen, "
               "Unsicherheiten und fehlenden Angaben sichtbar.",
          ziele=[("assistent", "kapitel-03-4-entwurf-was-liefert-die-ki")]),
@@ -94,7 +94,7 @@ GLOSSAR = [
               "ein gelungenes Ergebnis zu erkennen ist.",
          ziele=[("workflows", "kapitel-06-ergebnis-canvas")]),
     dict(begriff="Erfolgsprotokoll",
-         satz="Die Aufzeichnung eines Durchlaufs, der funktioniert hat — Schritt für Schritt "
+         satz="Die Aufzeichnung eines Durchlaufs, der funktioniert hat, Schritt für Schritt "
               "mit Eingabe, getroffener Entscheidung, akzeptiertem Ergebnis und Prüfkriterium. "
               "Sie ist das Rohmaterial, aus dem ein Skill verdichtet wird.",
          ziele=[("workflows", "kapitel-08-erfolgsprotokoll")]),
@@ -106,7 +106,7 @@ GLOSSAR = [
          ziele=[("materialwerkstatt", "kapitel-11")]),
     dict(begriff="Halluzination",
          satz="Eine erfundene Angabe, die das Modell im selben sicheren Ton vorträgt wie eine "
-              "belegte — eine Quelle, eine Zahl, eine Vorschrift, die es so nicht gibt. Der "
+              "belegte: eine Quelle, eine Zahl, eine Vorschrift, die es so nicht gibt. Der "
               "Ausgabe ist das nicht anzusehen; erkennbar wird es erst beim Nachschlagen.",
          merksatz="Erfindet im selben Ton, in dem es zitiert.",
          ziele=[("workflows", "kapitel-00-halluzination")]),
@@ -119,7 +119,7 @@ GLOSSAR = [
          ziele=[("workflows", "kapitel-00-kontext"), ("workflows", "kapitel-02")]),
     dict(begriff="Kontextfilter",
          satz="Fünf Fragen, die vor jeder Angabe klären, wohin sie gehört: dauerhaft ins "
-              "Profil, in das Projekt, in den Skill, nur in den heutigen Auftrag — oder gar "
+              "Profil, in das Projekt, in den Skill, nur in den heutigen Auftrag oder gar "
               "nicht hinein.",
          merksatz="Ordne jede Information an die kleinste Stelle, an der sie noch ihren "
                   "Zweck erfüllt.",
@@ -138,7 +138,7 @@ GLOSSAR = [
                 ("assistent", "kapitel-04"), ("workflows", "kapitel-02-fuer-dich-dauerhaft")]),
     dict(begriff="Projekt", auch="Reihenplan",
          satz="Der Kontext einer einzelnen Unterrichtsreihe: Thema, Zeitraum, Lernprodukt, "
-              "Rahmenbedingungen. Er gilt, solange die Reihe läuft, und wird danach abgelegt — "
+              "Rahmenbedingungen. Er gilt, solange die Reihe läuft, und wird danach abgelegt; "
               "darin unterscheidet er sich vom Profil.",
          ziele=[("assistent", "kapitel-03-2-projekt-woran-arbeite-ich-gerade"),
                 ("assistent", "kapitel-05"), ("workflows", "kapitel-02-fuer-ein-projekt")]),
@@ -197,7 +197,7 @@ GLOSSAR = [
          ziele=[("materialwerkstatt", "kapitel-08")]),
     dict(begriff="Verbote",
          satz="Negativ formulierte Regeln, die festlegen, was ein Ablauf nicht tun darf. Sie "
-              "werden Wünschen vorgezogen, weil ein Verbot überprüfbar ist — man sieht nach und "
+              "werden Wünschen vorgezogen, weil ein Verbot überprüfbar ist: man sieht nach und "
               "weiß es.",
          merksatz="Ein Wunsch ist nicht prüfbar, ein Verbot schon.",
          ziele=[("materialwerkstatt", "kapitel-07")]),
@@ -209,7 +209,7 @@ GLOSSAR = [
          ziele=[("materialwerkstatt", "kapitel-02")]),
     dict(begriff="Workflow", auch="Ablauf",
          satz="Die englische Bezeichnung für den Ablauf. Im Workbook meint Workflow zusätzlich "
-              "die einzelne festgelegte Arbeitsanweisung für eine wiederkehrende Aufgabe — mit "
+              "die einzelne festgelegte Arbeitsanweisung für eine wiederkehrende Aufgabe, mit "
               "Auslöser, Eingaben, Schritten und Prüfkriterien.",
          ziele=[("assistent", "kapitel-03-3-workflow-wie-soll-eine-aufgabe"),
                 ("assistent", "kapitel-06")]),
@@ -281,7 +281,7 @@ def seite():
       <div class="eyebrow">Glossar</div>
       <h1>Die Wörter, die überall vorausgesetzt werden</h1>
       <p class="mlead">{len(eintraege)} Begriffe aus den KI-Handbüchern, jeder so erklärt,
-      dass er ohne den Band verständlich ist — und darunter der Sprung an die Stelle, an der es
+      dass er ohne den Band verständlich ist, und darunter der Sprung an die Stelle, an der es
       ausführlich wird. Was hier steht, steht auch in einem Band; erfunden ist nichts.</p>
     </div>
 
@@ -292,12 +292,12 @@ def seite():
     </section>
 
     <section class="rev">
-      <p class="note">Ein Begriff fehlt? Die Bände sind die Quelle — was dort nicht vorkommt,
+      <p class="note">Ein Begriff fehlt? Die Bände sind die Quelle: Was dort nicht vorkommt,
       steht bewusst auch hier nicht. <a href="ki-handbuecher.html">Zu den Handbüchern</a></p>
     </section>
 '''
     desc = (f"Glossar zu KI im Unterricht: {len(eintraege)} Begriffe von Prompt bis Stoppregel, "
-            f"verständlich erklärt — mit Sprung an die Fundstelle im Handbuch.")
+            f"verständlich erklärt, mit Sprung an die Fundstelle im Handbuch.")
     return shell.page("ki-glossar.html", "Glossar — ClassTiles", desc, body)
 
 

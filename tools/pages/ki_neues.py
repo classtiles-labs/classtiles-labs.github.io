@@ -107,7 +107,7 @@ def seite(eintraege):
       <div class="eyebrow">Neues</div>
       <h1>Was sich getan hat</h1>
       <p class="mlead">Kurze Notizen zu Entwicklungen rund um KI in der Schule und Handgriffe,
-      die sich im Unterricht bewährt haben. Kein Newsletter, keine Anmeldung — die Seite
+      die sich im Unterricht bewährt haben. Kein Newsletter, keine Anmeldung. Die Seite
       steht hier, und wer mag, schaut vorbei.</p>
     </div>
 

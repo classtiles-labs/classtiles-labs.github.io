@@ -28,18 +28,18 @@ MAILTO = "mailto:classtiles@icloud.com?subject=Interesse%3A%20Digitalisierung%20
 THEMEN = [
     ("m2", "Unterricht mit KI vorbereiten",
      "Material und Aufgaben erstellen, differenzieren, Rückmeldungen formulieren. Konkret an "
-     "eigenen Beispielen — und ebenso ehrlich dort, wo KI mehr Arbeit macht als sie spart."),
+     "eigenen Beispielen, und ebenso ehrlich dort, wo KI mehr Arbeit macht als sie spart."),
     ("m4", "KI, Datenschutz und Recht",
      "Was an der Schule geht und was nicht: DSGVO, EU AI Act, Schülerdaten in KI-Diensten, "
      "Einwilligungen. Ohne Panik, aber mit klaren Linien."),
     ("m1", "Digitaler Lehreralltag",
      "iPad-Workflows, die den Papierstapel wirklich ersetzen: Noten, Planung und Dokumentation "
-     "an einer Stelle — unter anderem mit ClassTiles."),
+     "an einer Stelle, unter anderem mit ClassTiles."),
 ]
 
 FORMATE = [
     ("Fortbildungen und Workshops",
-     "Für Kollegien, Fachschaften oder pädagogische Tage — vor Ort oder online. Praxisnah, mit "
+     "Für Kollegien, Fachschaften oder pädagogische Tage, vor Ort oder online. Praxisnah, mit "
      "Zeit zum Ausprobieren am eigenen Gerät statt Folien zum Zusehen."),
     ("Material und Handreichungen",
      "Leitfäden, Vorlagen und erprobte Beispiele zum Mitnehmen. Damit nach der Fortbildung nicht "
@@ -59,16 +59,16 @@ FORMATE = [
 # Schönheitsfehler, sondern ein Fehler, den tools/check-links.py meldet.
 TUEREN = [
     ("ki-handbuecher.html", "Die Handbücher",
-     "Fünf Titel über verlässliche KI-Abläufe — von den sechs Begriffen bis zum "
+     "Fünf Titel über verlässliche KI-Abläufe, von den sechs Begriffen bis zum "
      "Unterrichtsmaterial, das zu deiner Stunde passt. Zu jedem Band eine Kurzfassung."),
     ("ki-material.html", "Material für die Klasse",
      "KI-Ampel, Handreichung und Protokoll: drei fertige A4-Blätter, mit denen die KI-Nutzung "
      "deiner Lerngruppe geregelt ist."),
     ("ki-glossar.html", "Glossar",
-     "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden — "
-     "erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
+     "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
+     "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
     ("ki-neues.html", "Neu diese Woche",
-     "Was sich getan hat, und kleine Handgriffe für den Unterricht — kurz genug für die "
+     "Was sich getan hat, und kleine Handgriffe für den Unterricht, kurz genug für die "
      "Freistunde."),
 ]
 
@@ -93,7 +93,7 @@ def de():
       <h1>KI im Unterricht, ohne die Kontrolle abzugeben</h1>
       <p class="mlead">Nicht mehr digital arbeiten, sondern smarter. Hier liegen Handbücher,
       Material für die Klasse und kurze Notizen für Lehrkräfte, die ihren Alltag mit digitalen
-      Werkzeugen und KI spürbar entlasten wollen — ohne den Anspruch aufzugeben, zu verstehen,
+      Werkzeugen und KI spürbar entlasten wollen, ohne den Anspruch aufzugeben, zu verstehen,
       was da passiert.</p>
     </div>
 
@@ -106,7 +106,7 @@ def de():
         <h2>Woher das kommt</h2>
         <p>ClassTiles ist im eigenen Unterricht entstanden, weil vorhandene Werkzeuge nicht
         gepasst haben. Die Fortbildungen entstehen aus derselben Ecke: aus dem, was sich im
-        Schulalltag bewährt hat. <b>Werkzeug statt Selbstzweck</b> — es geht nicht darum, KI
+        Schulalltag bewährt hat. <b>Werkzeug statt Selbstzweck</b>: Es geht nicht darum, KI
         einzusetzen, sondern darum, Zeit für den Unterricht zurückzugewinnen. Und
         <b>Datenschutz von Anfang an</b>: Schülerdaten gehören nicht versehentlich in einen
         Chatbot.</p>
@@ -116,13 +116,13 @@ def de():
     <section class="rev">
       <div class="head">
         <h2>Fortbildungen fürs Kollegium</h2>
-        <p>Was hier zum Lesen liegt, gibt es auch als Fortbildung — drei Themen, die in der
+        <p>Was hier zum Lesen liegt, gibt es auch als Fortbildung: drei Themen, die in der
         Praxis am häufigsten gefragt werden.</p>
       </div>
       <div class="grid">{themen}</div>
       <div class="two" style="margin-top:26px">{formate}</div>
       <p class="note"><b>Noch gibt es nichts zu buchen.</b> Wenn eines der Themen für dich oder
-      dein Kollegium interessant ist, schreib uns — dann melden wir uns, sobald es so weit ist,
+      dein Kollegium interessant ist, schreib uns. Dann melden wir uns, sobald es so weit ist,
       und wissen, woran wirklich Bedarf besteht.</p>
       <div class="cta">
         <a class="btn b-solid" href="{MAILTO}">Interesse anmelden</a>

@@ -181,7 +181,7 @@ def regal():
       <div class="eyebrow">KI-Handbücher</div>
       <h1>Wie KI im Schulalltag verlässlich wird</h1>
       <p class="mlead">Keine Prompt-Sammlung. Die Bände zeigen, wie aus einem einmal
-      erklärten Ablauf ein Ergebnis wird, auf das du dich verlassen kannst — und sie sagen
+      erklärten Ablauf ein Ergebnis wird, auf das du dich verlassen kannst, und sie sagen
       an jedem Kapitelende, wo die Methode aufhört. Online lesen oder als PDF mitnehmen.</p>
     </div>
 
@@ -189,13 +189,13 @@ def regal():
 
     <section class="rev">
       <p class="note">Schülerdaten gehören in keinen dieser Abläufe. Jeder Band sagt an der
-      Stelle, an der es darauf ankommt, welche Angaben draußen bleiben — und
+      Stelle, an der es darauf ankommt, welche Angaben draußen bleiben, und
       <a href="ki-material.html">die Blätter für die Klasse</a> setzen dieselbe Linie für
       deine Schülerinnen und Schüler.</p>
     </section>
 '''
     desc = ("KI-Handbücher für Lehrkräfte: verlässliche, wiederholbare Abläufe statt "
-            "Prompt-Sammlungen — Unterrichtsmaterial, Datenschutz und Grenzen. Online "
+            "Prompt-Sammlungen: Unterrichtsmaterial, Datenschutz und Grenzen. Online "
             "lesbar und als PDF.")
     return shell.page("ki-handbuecher.html", "KI-Handbücher — ClassTiles", desc, body)
 

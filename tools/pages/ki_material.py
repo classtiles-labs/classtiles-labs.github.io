@@ -29,7 +29,7 @@ BLAETTER = [
               "jede Aufgabe neu verhandelt wird."),
     dict(name="ki-handreichung", pdf="KI-Handreichung.pdf",
          wann="Zu Beginn der Reihe einmal austeilen und durchsprechen. Erklärt, warum es die "
-              "Regeln gibt — die Ampel sagt nur, wie sie lauten."),
+              "Regeln gibt; die Ampel sagt nur, wie sie lauten."),
     dict(name="ki-protokoll", pdf="KI-Protokoll.pdf",
          wann="Liegt jeder Abgabe bei. Wer offenlegt, wie ein Ergebnis entstanden ist, muss "
               "sich hinterher nicht rechtfertigen."),
@@ -72,7 +72,7 @@ def seite():
     <div class="pagetitle" style="max-width:none">
       <div class="eyebrow">Material für die Klasse</div>
       <h1>Drei Blätter, und die Sache ist geregelt</h1>
-      <p class="mlead">KI-Nutzung lässt sich nicht verbieten und nicht ignorieren — aber sie
+      <p class="mlead">KI-Nutzung lässt sich nicht verbieten und nicht ignorieren, aber sie
       lässt sich regeln, und zwar kürzer, als man denkt. Ein Aushang, ein Merkblatt, ein
       Protokoll: fertig gesetzt auf A4, zum Ausdrucken und Weitergeben.</p>
     </div>
@@ -90,7 +90,7 @@ def seite():
         Regel nur befolgt und nicht verstanden. <b>Was habe ich getan?</b> gehört an die
         Arbeit, nicht an die Wand.</p>
         <p>Die Blätter sind so geschrieben, dass sie ohne Anpassung funktionieren. Wenn an
-        deiner Schule etwas anderes gilt, ist die Ampel die Stelle, an der du es änderst —
+        deiner Schule etwas anderes gilt, ist die Ampel die Stelle, an der du es änderst.
         Handreichung und Protokoll bleiben davon unberührt.</p>
       </div>
     </section>
@@ -98,12 +98,12 @@ def seite():
     <section class="rev">
       <p class="note">Woher die Linie kommt, steht in den
       <a href="ki-handbuecher.html">KI-Handbüchern</a>: dieselbe Ampel gilt dort für dich als
-      Lehrkraft, eine Etage höher — mit Klassenlisten, Diagnosen und Zeugnissen statt
+      Lehrkraft, eine Etage höher, mit Klassenlisten, Diagnosen und Zeugnissen statt
       Hausaufgaben.</p>
     </section>
 '''
     desc = ("KI-Regeln für die Klasse: Ampel für den Aushang, Handreichung für die Lerngruppe "
-            "und Protokoll für die Abgabe — drei fertige A4-Blätter zum Ausdrucken.")
+            "und Protokoll für die Abgabe: drei fertige A4-Blätter zum Ausdrucken.")
     return shell.page("ki-material.html", "Material für die Klasse — ClassTiles", desc, body)
 
 

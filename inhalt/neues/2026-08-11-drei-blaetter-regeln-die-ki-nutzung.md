@@ -5,12 +5,12 @@ weiter:
   - Material für die Klasse | ki-material.html
 ---
 
-„Darf ich für die Aufgabe KI benutzen?“ — die Frage kommt, und sie kommt in jeder Lerngruppe
+„Darf ich für die Aufgabe KI benutzen?“ Die Frage kommt, und sie kommt in jeder Lerngruppe
 noch einmal neu. Ein Verbot hält sie nicht auf, und Ignorieren auch nicht.
 
 Was hilft, sind drei Blätter, die drei verschiedene Fragen beantworten:
 
-- **Was gilt?** Die Ampel hängt aus. Rot, gelb, grün — sie klärt den Normalfall, damit nicht
+- **Was gilt?** Die Ampel hängt aus. Rot, gelb, grün; sie klärt den Normalfall, damit nicht
   jede Aufgabe neu verhandelt wird.
 - **Warum gilt das?** Die Handreichung wird einmal zu Beginn der Reihe ausgeteilt und
   durchgesprochen. Ohne sie wird die Regel befolgt, aber nicht verstanden.
@@ -18,5 +18,5 @@ Was hilft, sind drei Blätter, die drei verschiedene Fragen beantworten:
   entstanden ist, muss sich hinterher nicht rechtfertigen.
 
 Alle drei sind auf A4 gesetzt und lassen sich ohne Anpassung einsetzen. Gilt an deiner Schule
-etwas anderes, ist die Ampel die Stelle, an der du es änderst — die anderen beiden bleiben
+etwas anderes, ist die Ampel die Stelle, an der du es änderst. Die anderen beiden bleiben
 unberührt.
