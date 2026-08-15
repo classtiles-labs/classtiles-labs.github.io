@@ -29,7 +29,7 @@ def quellen_da():
 
 
 def markdown_baende():
-    """Die vier Bände aus Markdown — ohne das Cowork-Heft, dessen Quelle HTML ist."""
+    """Die fünf Bände aus Markdown — ohne das Cowork-Heft, dessen Quelle HTML ist."""
     return [b for b in ki_handbuecher.BAENDE
             if b["quelle"] and b.get("format") != "html"]
 
@@ -100,7 +100,7 @@ class TestKurzfassungen(unittest.TestCase):
             with self.subTest(band=b["slug"]):
                 m = handbuchtext.parse(os.path.join(REPO, b["quelle"]))
                 idee = ki_kurzfassungen.abschnitt(m["body"],
-                                                  ki_kurzfassungen.KURZ[b["slug"]]["idee"],
+                                                  ki_kurzfassungen.KURZ[b["slug"]]["idee"][1],
                                                   b["slug"])
                 self.assertNotIn("Redaktionsstand", idee)
                 self.assertNotIn("Ausgabe", idee)
@@ -124,7 +124,7 @@ class TestKurzfassungen(unittest.TestCase):
             vorhanden = {f"kapitel-{nr}" for nr, _ in m["kapitel"]}
             vorhanden |= {a for _, _, a in m["abschnitte"]}
             k = ki_kurzfassungen.KURZ[b["slug"]]
-            for anker in [k["idee"], k["methode"][1], k["grenzen"][1]]:
+            for anker in [k["idee"][1], k["methode"][1], k["grenzen"][1]]:
                 with self.subTest(band=b["slug"], anker=anker):
                     self.assertIn(anker, vorhanden)
             for text, anker in k["mitnehmen"]:

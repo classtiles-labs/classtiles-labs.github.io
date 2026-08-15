@@ -151,7 +151,7 @@ class TestVorspann(unittest.TestCase):
 
 
 class TestEchteQuellen(unittest.TestCase):
-    """Die vier Bände selbst — sie liegen im Nachbarrepo und fehlen ggf. auf anderen Rechnern."""
+    """Die fünf Bände selbst — sie liegen im Nachbarrepo und fehlen ggf. auf anderen Rechnern."""
 
     def setUp(self):
         sys.path.insert(0, os.path.join(REPO, "tools", "pages"))

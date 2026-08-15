@@ -47,7 +47,7 @@ ACTIVE["en/digitalisation-ai.html"] = "digitalisation-ai.html"
 # die Klasse heben alle denselben Reiter hervor.
 KI_SEITEN = ["digitalisierung-ki.html", "ki-handbuecher.html", "ki-material.html",
              "ki-glossar.html", "ki-neues.html"]
-KI_BAENDE = ("workflows", "materialwerkstatt", "ablauf", "assistent", "cowork")
+KI_BAENDE = ("workflows", "materialwerkstatt", "ablauf", "uebungsseiten", "assistent", "cowork")
 # Das Cowork-Heft hat keine Kurzfassung — siehe tools/pages/ki_kurzfassungen.py.
 KI_KURZFASSUNGEN = KI_BAENDE[:-1]
 KI_SEITEN += [f"ki-handbuch-{s}.html" for s in KI_BAENDE]

@@ -59,8 +59,9 @@ FORMATE = [
 # Schönheitsfehler, sondern ein Fehler, den tools/check-links.py meldet.
 TUEREN = [
     ("ki-handbuecher.html", "Die Handbücher",
-     "Fünf Titel über verlässliche KI-Abläufe, von den sechs Begriffen bis zum "
-     "Unterrichtsmaterial, das zu deiner Stunde passt. Zu jedem Band eine Kurzfassung."),
+     "Sechs Titel über verlässliche KI-Abläufe, von den sechs Begriffen über das "
+     "Unterrichtsmaterial bis zur Übungsseite, die im Browser läuft. Zu jedem Band eine "
+     "Kurzfassung."),
     ("ki-material.html", "Material für die Klasse",
      "KI-Ampel, Handreichung und Protokoll: drei fertige A4-Blätter, mit denen die KI-Nutzung "
      "deiner Lerngruppe geregelt ist."),

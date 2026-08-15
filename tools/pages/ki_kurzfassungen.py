@@ -31,12 +31,14 @@ HUB = "digitalisierung-ki.html"
 
 # Je Band: die Ankerpunkte der selbstzusammenfassenden Passagen und die Mitnehmpunkte.
 # Die Lesezeit steht bei den Banddaten in ki_handbuecher.py, weil auch das Regal
-# und die Handbuchseite sie nennen. `idee` führen alle vier Bände; `methode` und `grenzen`
-# heißen von Band zu Band anders.
+# und die Handbuchseite sie nennen. Alle drei Passagen sind (Überschrift, Anker): Wie sie
+# heißen, entscheidet der Band, nicht diese Datei — Band 4 führt weder „Die Idee in einem
+# Satz" noch „Die Methode", und eine erfundene Überschrift über einem wörtlichen Zitat wäre
+# genau die Verschiebung, die das Schneiden vermeiden soll.
 # Ein Mitnehmpunkt ist (Text, Zielanker) — der Anker darf None sein.
 KURZ = {
     "workflows": dict(
-        idee="kapitel-18-die-idee-in-einem-satz",
+        idee=("Die Idee in einem Satz", "kapitel-18-die-idee-in-einem-satz"),
         methode=("Die Methode", "kapitel-01-die-methode"),
         grenzen=("Was der Band nicht verspricht", "kapitel-01-was-hier-nicht-versprochen-wird"),
         mitnehmen=[
@@ -56,7 +58,7 @@ KURZ = {
              "der erste Schritt ins Regelchaos.", "kapitel-13"),
         ]),
     "materialwerkstatt": dict(
-        idee="kapitel-16-die-idee-in-einem-satz",
+        idee=("Die Idee in einem Satz", "kapitel-16-die-idee-in-einem-satz"),
         methode=("Die Methode", "kapitel-01-die-methode"),
         grenzen=("Was der Band nicht verspricht", "kapitel-01-was-hier-nicht-versprochen-wird"),
         mitnehmen=[
@@ -76,7 +78,7 @@ KURZ = {
              "Handgriff, an dem die Verantwortung hängt.", "kapitel-11"),
         ]),
     "ablauf": dict(
-        idee="kapitel-04-die-idee-in-einem-satz",
+        idee=("Die Idee in einem Satz", "kapitel-04-die-idee-in-einem-satz"),
         methode=("Die Rechnung", "kapitel-01-die-rechnung"),
         grenzen=("Was der Band nicht behauptet", "kapitel-04-was-dieser-band-nicht-behauptet"),
         mitnehmen=[
@@ -94,8 +96,35 @@ KURZ = {
             ("Das rechnet sich über Wiederholung. Wer KI zweimal im Monat für eine schnelle "
              "Frage nutzt, braucht nichts davon.", "kapitel-00-fuer-wen-das-nichts-ist"),
         ]),
+    "uebungsseiten": dict(
+        idee=("Was am Ende dasteht", "kapitel-00-was-am-ende-dasteht"),
+        methode=("Drei Eigenschaften, die den Alltag entscheiden",
+                 "kapitel-01-drei-eigenschaften-die-den-alltag-entscheiden"),
+        grenzen=("Zwei Grenzen, die nicht verhandelbar sind",
+                 "kapitel-08-zwei-grenzen-die-nicht-verhandelbar-sind"),
+        mitnehmen=[
+            ("Eine Übungsseite ist eine einzige Datei. Doppelklick, sie läuft im Browser, sie "
+             "läuft ohne Internet, und sie sendet nichts.", "kapitel-01"),
+            ("Was die Klasse eintippt, bleibt auf ihrem Gerät — auch vor dir. Wer wissen muss, "
+             "wer wie weit ist, braucht dafür einen zweiten Weg.",
+             "kapitel-01-was-sie-nicht-ist"),
+            ("Sechs Angaben machen den Auftrag: Fach und Stoff, wie geübt wird, was nach dem "
+             "Prüfen passiert, wie viel, die Form, was draußen bleibt.", "kapitel-03"),
+            ("Der Satz, dass alles in eine einzige Datei gehört und nichts nachgeladen wird, "
+             "steht in jedem Auftrag. Ohne ihn ist die Seite im Raum ohne WLAN weiß.",
+             "kapitel-01"),
+            ("Erst die Fachaufgaben prüfen, dann schmücken. Punkte, Stufen und Bestenliste "
+             "kommen in einer zweiten Runde dazu.", "kapitel-04"),
+            ("Die Bestenliste steht auf dem Gerät, nicht über der Klasse. „Lässt sich "
+             "zurücksetzen“ ist daran der wichtigste Halbsatz.",
+             "kapitel-04-die-bestenliste-vergleicht-kein-klassenzimmer"),
+            ("Je älter die Lerngruppe, desto weniger trägt die Punktzahl: Statt richtig oder "
+             "falsch verlangst du einen Satz, der die Entscheidung erklärt.", "kapitel-05"),
+            ("Vor dem Weitergeben einmal selbst durchspielen, auch absichtlich falsch, und die "
+             "Seite ohne WLAN öffnen.", "kapitel-08"),
+        ]),
     "assistent": dict(
-        idee="kapitel-16-die-idee-in-einem-satz",
+        idee=("Die Idee in einem Satz", "kapitel-16-die-idee-in-einem-satz"),
         methode=("Das Grundprinzip", "kapitel-01-das-grundprinzip"),
         grenzen=("Was KI nicht übernimmt", "kapitel-01-was-ki-nicht-uebernimmt"),
         mitnehmen=[
@@ -131,7 +160,7 @@ def abschnitt(body, anker, quelle):
 
 def seite(b, m, k):
     body_q = m["body"]
-    idee = abschnitt(body_q, k["idee"], b["slug"])
+    i_titel, i_anker = k["idee"]
     m_titel, m_anker = k["methode"]
     g_titel, g_anker = k["grenzen"]
 
@@ -168,9 +197,9 @@ def seite(b, m, k):
     <div class="kurz">
       <blockquote>{m["merksatz"]}</blockquote>
 
-      <h2>Die Idee in einem Satz</h2>
-      <div class="zitat">{idee}
-        <p class="quelle"><a href="{lesen}#{k["idee"]}">im Handbuch nachlesen →</a></p></div>
+      <h2>{html.escape(i_titel)}</h2>
+      <div class="zitat">{abschnitt(body_q, i_anker, b["slug"])}
+        <p class="quelle"><a href="{lesen}#{i_anker}">im Handbuch nachlesen →</a></p></div>
 
       <h2>{html.escape(m_titel)}</h2>
       <div class="zitat">{abschnitt(body_q, m_anker, b["slug"])}

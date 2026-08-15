@@ -103,6 +103,12 @@ Satz", „Die Methode", „Was hier nicht versprochen wird") **wörtlich** herau
 paraphrasieren. Selbst geschrieben sind nur die Mitnehmpunkte in `KURZ`, und jeder davon nennt
 das Kapitel, aus dem er stammt.
 
+Wie die drei Passagen überschrieben sind, entscheidet der Band: In `KURZ` steht jede als
+(Überschrift, Anker). Band 4 führt weder „Die Idee in einem Satz" noch „Die Methode" und
+liefert dort „Was am Ende dasteht" und „Drei Eigenschaften, die den Alltag entscheiden" —
+eine erfundene Überschrift über einem wörtlichen Zitat wäre genau die Verschiebung, die das
+Schneiden vermeiden soll.
+
 ## Ein neues Handbuch veröffentlichen
 
 Quelle ist ein Ordner unter `~/mobai` mit `handbuch.html`, `screenshots/` und dem PDF:

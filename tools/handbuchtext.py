@@ -11,7 +11,7 @@ Randnotiz, hier ein Merksatz über die Textbreite. Vor allem aber ist der gesamt
 Repos `python3 tools/…` ohne eine einzige Abhängigkeit; eine npm-Installation dafür wäre
 teurer als die 200 Zeilen hier. Gemeinsam ist den beiden Wegen die Quelle, nicht der Renderer.
 
-Deshalb ist die Grammatik bewusst klein und geschlossen — genau das, was in den vier Bänden
+Deshalb ist die Grammatik bewusst klein und geschlossen — genau das, was in den fünf Bänden
 tatsächlich vorkommt (ausgezählt, nicht geraten):
 
     # Titel / # NN · Kapitel      ## Abschnitt        > Merksatz

@@ -4,7 +4,7 @@
 Das Heft ist der einzige KI-Titel, dessen Quelle kein Markdown ist, sondern fertig gesetztes
 Druck-HTML mit eingebetteten Bildern. Statt eines zweiten Seitenbauers gibt dieses Modul
 deshalb genau die Felder zurück, die `ki_handbuecher.band_seite()` ohnehin erwartet — die
-Leseseite entsteht danach auf demselben Weg wie bei den vier Markdown-Bänden.
+Leseseite entsteht danach auf demselben Weg wie bei den fünf Markdown-Bänden.
 
 Zwei Dinge werden dabei umgeschrieben:
 

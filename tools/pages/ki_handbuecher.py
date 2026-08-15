@@ -48,6 +48,10 @@ BAENDE = [
          titel="Vom Prompt zum Ablauf",
          quelle=f"{QUELLREPO}/2026-08-10-promptest-du-noch/handbuch.md",
          pdf="Vom-Prompt-zum-Ablauf.pdf"),
+    dict(slug="uebungsseiten", kurz_minuten=4, reihe="Praxis-Handbuch", zaehler="Band 4",
+         titel="Übungsseiten selbst bauen",
+         quelle=f"{QUELLREPO}/2026-08-15-uebungsseiten-selbst-bauen/handbuch.md",
+         pdf="Uebungsseiten-selbst-bauen.pdf"),
     dict(slug="assistent", kurz_minuten=4, reihe="Einzeltitel", zaehler="Workbook",
          titel="Dein KI-Unterrichtsassistent",
          quelle=f"{QUELLREPO}/2026-08-09-stapel-und-assistent/handbuch.md",
@@ -165,9 +169,10 @@ def kachel(b):
 def regal():
     reihen = []
     for name, text in (("Praxis-Handbuch",
-                        "Drei Bände, die aufeinander aufbauen. Band 1 klärt die Begriffe und "
+                        "Vier Bände, die aufeinander aufbauen. Band 1 klärt die Begriffe und "
                         "die Methode, Band 2 wendet sie auf Unterrichtsmaterial an, Band 3 "
-                        "zeigt, wohin der lange Prompt verschwindet."),
+                        "zeigt, wohin der lange Prompt verschwindet, und Band 4 baut daraus "
+                        "Übungsseiten, die im Browser laufen."),
                        ("Einzeltitel",
                         "Steht für sich und setzt keinen Band voraus.")):
         kacheln = "".join(kachel(b) for b in BAENDE if b["reihe"] == name)
