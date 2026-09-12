@@ -65,6 +65,14 @@ TUEREN = [
     ("ki-material.html", "Material für die Klasse",
      "KI-Ampel, Handreichung und Protokoll: drei fertige A4-Blätter, mit denen die KI-Nutzung "
      "deiner Lerngruppe geregelt ist."),
+    ("ki-werkstatt.html", "KI-Werkstatt",
+     "Reels zum Nachbauen: Staffel 1 baut in fünf Folgen einen Erwartungshorizont mit Claude "
+     "Cowork, mit den Fehlern der KI und den Entscheidungen der Lehrkraft. Dazu alle Vorlagen "
+     "zum Kopieren."),
+    ("ki-lernspiel.html", "Lernspiel selbst bauen",
+     "Zwei Schüler, ein iPad, ein Korb pro richtige Antwort: der Prompt, aus dem dieses "
+     "Übungsspiel als einzelne HTML-Datei entsteht. Zum Kopieren, mit Beispielen für "
+     "Mathematik, Französisch und Biologie."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
