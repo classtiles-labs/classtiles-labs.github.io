@@ -69,6 +69,10 @@ TUEREN = [
      "Reels zum Nachbauen: Staffel 1 baut in fünf Folgen einen Erwartungshorizont mit Claude "
      "Cowork, mit den Fehlern der KI und den Entscheidungen der Lehrkraft. Dazu alle Vorlagen "
      "zum Kopieren."),
+    ("ki-skills.html", "Skills für Claude",
+     "Fertige Regeln, die du einmal in Claude hochlädst: ein Wort im Chat, und Claude prüft dein "
+     "Arbeitsblatt oder fragt deinen Schüler zurück, statt vorzurechnen. Zwei Skills zum Laden, "
+     "mit dem Text zum Anpassen."),
     ("ki-lernspiel.html", "Lernspiel selbst bauen",
      "Zwei Schüler, ein iPad, ein Korb pro richtige Antwort: der Prompt, aus dem dieses "
      "Übungsspiel als einzelne HTML-Datei entsteht. Zum Kopieren, mit Beispielen für "
