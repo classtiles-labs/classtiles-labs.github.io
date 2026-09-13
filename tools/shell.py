@@ -46,7 +46,8 @@ ACTIVE["en/digitalisation-ai.html"] = "digitalisation-ai.html"
 # Der KI-Bereich ist ein Baum unter „Digitalisierung & KI": Regal, Bände und die Blätter für
 # die Klasse heben alle denselben Reiter hervor.
 KI_SEITEN = ["digitalisierung-ki.html", "ki-handbuecher.html", "ki-material.html",
-             "ki-glossar.html", "ki-neues.html", "ki-werkstatt.html", "ki-lernspiel.html"]
+             "ki-glossar.html", "ki-neues.html", "ki-werkstatt.html", "ki-lernspiel.html",
+             "ki-skills.html"]
 KI_BAENDE = ("workflows", "materialwerkstatt", "ablauf", "uebungsseiten", "assistent", "cowork")
 # Das Cowork-Heft hat keine Kurzfassung — siehe tools/pages/ki_kurzfassungen.py.
 KI_KURZFASSUNGEN = KI_BAENDE[:-1]
