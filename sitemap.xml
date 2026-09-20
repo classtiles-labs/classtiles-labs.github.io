@@ -130,10 +130,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://classtiles.de/modul-planung.html" />
   </url>
   <url>
+    <loc>https://classtiles.de/notenschluessel-rechner.html</loc>
+  </url>
+  <url>
     <loc>https://classtiles.de/nutzungsbedingungen.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://classtiles.de/nutzungsbedingungen.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://classtiles.de/en/terms.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://classtiles.de/nutzungsbedingungen.html" />
+  </url>
+  <url>
+    <loc>https://classtiles.de/preise.html</loc>
   </url>
   <url>
     <loc>https://classtiles.de/support.html</loc>

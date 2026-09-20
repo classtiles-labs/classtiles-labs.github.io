@@ -62,8 +62,11 @@ def pages(root):
 # Der href ist relativ zur jeweiligen Sprachfassung: eine deutsche Seite liegt in der Wurzel,
 # eine englische in /en/ — beide verlinken „ihre" Dateien ohne Präfix.
 NAV = {
+    # „Preise" steht nur in der deutschen Leiste: Die Seite gibt es nur auf Deutsch, weil sie
+    # einen Euro-Preis nennt. Die englische Leiste bleibt bei vier Einträgen.
     "de": [("index.html#module", "Module"), ("handbuecher.html", "Handbücher"),
-           ("digitalisierung-ki.html", "Digitalisierung &amp; KI"), ("support.html", "Support")],
+           ("digitalisierung-ki.html", "Digitalisierung &amp; KI"), ("preise.html", "Preise"),
+           ("support.html", "Support")],
     "en": [("index.html#module", "Modules"), ("manuals.html", "Manuals"),
            ("digitalisation-ai.html", "Digitalisation &amp; AI"), ("support.html", "Support")],
 }
@@ -80,11 +83,15 @@ for _f in ("index.html", "modul-notenverwaltung.html", "modul-kalender.html", "m
 for _f in ("index.html", "module-grades.html", "module-calendar.html", "module-planning.html",
            "module-groups.html", "module-documentation.html", "module-tasks.html"):
     ACTIVE["en/" + _f] = "index.html#module"
+ACTIVE["preise.html"] = "preise.html"
 ACTIVE["handbuecher.html"] = "handbuecher.html"
 ACTIVE["handbuch-notenverwaltung.html"] = "handbuecher.html"
 ACTIVE["handbuch-gruppen-sitzordnung.html"] = "handbuecher.html"
 ACTIVE["en/manuals.html"] = "manuals.html"
 ACTIVE["en/digitalisation-ai.html"] = "digitalisation-ai.html"
+# notenschluessel-rechner.html steht mit Absicht NICHT hier: Der Rechner ist ein Seiteneingang
+# aus der Suche, kein Bereich der Website. Ohne Eintrag hebt er keinen Reiter hervor und seine
+# Brotkrume bleibt Start → Notenschlüssel-Rechner.
 
 # Der KI-Bereich ist ein Baum unter „Digitalisierung & KI": Regal, Bände und die Blätter für
 # die Klasse heben alle denselben Reiter hervor.
@@ -287,15 +294,19 @@ def breadcrumb_of(path):
     if base_of(path) == "index.html":
         return []
     lang = lang_of(path)
+    url = canonical_of(path)
     start = f"{SITE}/en/" if lang == "en" else f"{SITE}/"
     pfad = [(START_LABEL[lang], start)]
     aktiv = active_of(path)
     if aktiv:
         label = next((html.unescape(l) for h, l in NAV[lang] if h == aktiv), None)
-        # Der Reiter „Module" zeigt auf einen Anker der Startseite und ist damit kein eigener
-        # Knoten — er kommt nur in den Pfad, wenn er nicht die Startseite selbst ist.
-        if label and absolute_of(path, aktiv) != start:
-            pfad.append((label, absolute_of(path, aktiv)))
+        ziel = absolute_of(path, aktiv)
+        # Zwei Fälle, in denen der Reiter kein eigener Knoten ist: Er zeigt auf einen Anker der
+        # Startseite (Reiter „Module"), oder die Seite IST ihr eigener Bereich — Support,
+        # Handbücher, Preise und der KI-Einstieg heben den Reiter hervor, auf dem sie selbst
+        # stehen. Ohne diese Prüfung stünde der Name zweimal im Pfad.
+        if label and ziel != start and ziel != url:
+            pfad.append((label, ziel))
     return pfad
 
 
