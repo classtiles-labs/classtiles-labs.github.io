@@ -7,11 +7,32 @@ es kennt die Shell, kennt aber bewusst keinen Seiteninhalt.
 """
 import html
 import os
+import posixpath
+
+import jsonld
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 CSS = open(os.path.join(HERE, "shell", "site.css"), encoding="utf-8").read()
 ICON = open(os.path.join(HERE, "shell", "app-icon.datauri.txt"), encoding="utf-8").read().strip()
+
+# ---------- Adresse der Website ----------
+# Ohne Schrägstrich am Ende; canonical_of() hängt ihn an. Suchmaschinen brauchen absolute URLs:
+# ein relativer canonical-Verweis wäre wirkungslos.
+SITE = "https://classtiles.de"
+
+# Vorschaubild beim Teilen (Open Graph). Liegt auf unserem eigenen Server — beim Aufruf der Seite
+# wird es nicht geladen, nur von Diensten abgerufen, in denen jemand den Link teilt.
+OG_BILD = {"de": "assets/og-classtiles-de.png", "en": "assets/og-classtiles-en.png"}
+OG_BILD_GROESSE = (1200, 630)
+OG_ALT = {
+    "de": "ClassTiles — Notenverwaltung für Lehrkräfte, auf iPad, iPhone und Mac",
+    "en": "ClassTiles — grade management for teachers, on iPad, iPhone and Mac",
+}
+OG_LOCALE = {"de": "de_DE", "en": "en_US"}
+
+# Erster Eintrag im Navigationspfad (Brotkrumen).
+START_LABEL = {"de": "Start", "en": "Home"}
 
 # ---------- Navigation ----------
 # (href, Beschriftung) der Kopfleiste. Sie zeigt, was Besucher suchen; die Rechtstexte stehen
@@ -187,7 +208,137 @@ def active_of(path):
     return ACTIVE.get(path)
 
 
+# ---------- Adressen für Suchmaschinen ----------
+
+def canonical_of(path):
+    """Die eine gültige, absolute Adresse dieser Seite.
+
+    Der Webserver liefert dieselbe Startseite unter „/" und unter „/index.html"; intern verlinken
+    wir „index.html", von außen zeigt alles auf „/". Ohne canonical muss Google raten, welche der
+    beiden zählt, und verteilt die Signale auf zwei Adressen. Wir nennen „/" als die gültige.
+    """
+    if base_of(path) == "index.html":
+        return f"{SITE}/en/" if lang_of(path) == "en" else f"{SITE}/"
+    return f"{SITE}/{path}"
+
+
+def absolute_of(path, href):
+    """Macht einen seitenrelativen Verweis absolut — „index.html#module" auf einer Seite in
+    /en/ wird zu https://classtiles.de/en/#module."""
+    ziel, _, anker = href.partition("#")
+    voll = posixpath.normpath(posixpath.join(posixpath.dirname(path), ziel or "."))
+    voll = "" if voll == "." else voll
+    if posixpath.basename(voll) == "index.html":
+        voll = posixpath.dirname(voll)
+        voll = (voll + "/") if voll else ""
+    url = f"{SITE}/{voll}"
+    return f"{url}#{anker}" if anker else url
+
+
+def twin_page(path):
+    """Die anderssprachige Fassung als Pfad im Repo („en/privacy.html" bzw. „datenschutz.html").
+
+    twin_of() liefert denselben Verweis seitenrelativ, für den Gebrauch im Markup.
+    """
+    twin = TWIN.get(base_of(path), "index.html")
+    return twin if lang_of(path) == "en" else "en/" + twin
+
+
+def is_paired(path):
+    """Gibt es diese Seite wirklich in beiden Sprachen — oder nur einen Notausgang?
+
+    TWIN schickt jede nur deutsche Seite (Handbücher, der ganze KI-Bereich) auf eine englische
+    Hinweisseite. Als Sprachverweis wäre das falsch: hreflang gilt nur, wenn beide Seiten sich
+    gegenseitig benennen, und die eine Hinweisseite kann nicht auf zwölf deutsche zurückzeigen.
+    Google verwirft solche Gruppen — schlimmer, es kann die eine echte Zuordnung mitverwerfen.
+    Ein Paar zählt deshalb nur, wenn der Verweis hin und zurück wieder hier ankommt.
+    """
+    return twin_page(twin_page(path)) == path
+
+
+def breadcrumb_of(path):
+    """Navigationspfad dieser Seite als Liste (Beschriftung, absolute URL).
+
+    Die Seite selbst hängt meta_block() an — nur dort ist ihr Titel bekannt. Die Startseiten
+    bekommen keinen Pfad; sie sind der Anfang.
+    """
+    if base_of(path) == "index.html":
+        return []
+    lang = lang_of(path)
+    start = f"{SITE}/en/" if lang == "en" else f"{SITE}/"
+    pfad = [(START_LABEL[lang], start)]
+    aktiv = active_of(path)
+    if aktiv:
+        label = next((html.unescape(l) for h, l in NAV[lang] if h == aktiv), None)
+        # Der Reiter „Module" zeigt auf einen Anker der Startseite und ist damit kein eigener
+        # Knoten — er kommt nur in den Pfad, wenn er nicht die Startseite selbst ist.
+        if label and absolute_of(path, aktiv) != start:
+            pfad.append((label, absolute_of(path, aktiv)))
+    return pfad
+
+
 # ---------- Blöcke ----------
+
+def meta_block(path, title, desc, text=""):
+    """Alles im Kopf, was Suchmaschinen und Messenger lesen — plus das Seitensymbol.
+
+    `title` und `desc` kommen so herein, wie sie in der Seite stehen (HTML-maskiert); für die
+    strukturierten Daten werden sie aufgelöst. `text` ist der Quelltext der Seite und wird nur
+    für die Fragen der Support-Seite gebraucht.
+
+    Der Block lädt nichts von fremden Servern. Das Vorschaubild liegt unter assets/ und wird
+    beim Seitenaufruf nicht angefordert — nur ein Messenger, in dem jemand den Link teilt,
+    holt es sich. Es entsteht also kein Zugriff, dem ein Besucher zustimmen müsste.
+    """
+    lang = lang_of(path)
+    url = canonical_of(path)
+    bild = f"{SITE}/{OG_BILD[lang]}"
+    zeilen = [f'<link rel="canonical" href="{url}">']
+
+    # hreflang nur für echte Paare, und immer mit Selbstverweis: Google wertet eine Sprachgruppe
+    # nur aus, wenn jede Seite darin sich selbst und alle anderen nennt.
+    if is_paired(path):
+        twin = twin_page(path)
+        de, en = (path, twin) if lang == "de" else (twin, path)
+        zeilen += [f'<link rel="alternate" hreflang="de" href="{canonical_of(de)}">',
+                   f'<link rel="alternate" hreflang="en" href="{canonical_of(en)}">',
+                   # Maßgeblich ist die deutsche Fassung — sie bekommt den Vorgabeplatz.
+                   f'<link rel="alternate" hreflang="x-default" href="{canonical_of(de)}">']
+
+    alt = html.escape(OG_ALT[lang], quote=True)
+    zeilen += [
+        f'<meta property="og:type" content="website">',
+        f'<meta property="og:site_name" content="ClassTiles">',
+        f'<meta property="og:locale" content="{OG_LOCALE[lang]}">',
+    ]
+    if is_paired(path):
+        andere = "en" if lang == "de" else "de"
+        zeilen.append(f'<meta property="og:locale:alternate" content="{OG_LOCALE[andere]}">')
+    zeilen += [
+        f'<meta property="og:title" content="{title}">',
+        f'<meta property="og:description" content="{desc}">',
+        f'<meta property="og:url" content="{url}">',
+        f'<meta property="og:image" content="{bild}">',
+        f'<meta property="og:image:width" content="{OG_BILD_GROESSE[0]}">',
+        f'<meta property="og:image:height" content="{OG_BILD_GROESSE[1]}">',
+        f'<meta property="og:image:alt" content="{alt}">',
+        f'<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{title}">',
+        f'<meta name="twitter:description" content="{desc}">',
+        f'<meta name="twitter:image" content="{bild}">',
+    ]
+
+    klartext_titel = html.unescape(title)
+    pfad = breadcrumb_of(path)
+    if pfad:
+        # Die Seite selbst schließt den Pfad ab und trägt keine eigene URL — so will es schema.org.
+        pfad = pfad + [(klartext_titel.split(" — ClassTiles")[0], None)]
+    zeilen.append(jsonld.block(path, lang, url, klartext_titel, html.unescape(desc),
+                               bild, pfad, text))
+
+    zeilen.append(f'<link rel="icon" type="image/png" href="{ICON}">')
+    return "\n  ".join(zeilen)
+
 
 def style_block():
     return "<style>" + CSS + "</style>"
@@ -258,17 +409,15 @@ def script_block():
 def page(path, title, desc, body):
     """Vollständige Seite. `body` ist der Inhalt zwischen Kopfleiste und Fußzeile."""
     lang = lang_of(path)
-    _, twin_code = LANG_LABEL[lang]
-    twin = twin_of(path)
+    titel, beschreibung = html.escape(title), html.escape(desc)
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(title)}</title>
-  <meta name="description" content="{html.escape(desc)}">
-  <link rel="alternate" hreflang="{twin_code}" href="{twin}">
-  <link rel="icon" type="image/png" href="{ICON}">
+  <title>{titel}</title>
+  <meta name="description" content="{beschreibung}">
+  {meta_block(path, titel, beschreibung, body)}
   {style_block()}
 </head>
 <body>
