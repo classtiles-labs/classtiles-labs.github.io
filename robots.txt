@@ -1,0 +1,8 @@
+# classtiles.de — alles darf gelesen und aufgenommen werden.
+# Nichts auf dieser Website ist nicht-öffentlich; es gibt keinen Anmeldebereich und keine
+# Seite, die aus dem Index bleiben soll.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://classtiles.de/sitemap.xml

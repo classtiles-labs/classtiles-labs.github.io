@@ -19,6 +19,19 @@ from urllib.parse import unquote, urldefrag
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ERLAUBT_EXTERN = ("https://static.cloudflareinsights.com/beacon.min.js",)
 
+SITE = "https://classtiles.de/"
+
+# <link rel="canonical"> und <link rel="alternate" hreflang="…"> sind Angaben *über* die Seite,
+# keine eingebundene Ressource: der Browser lädt daraus nichts, es entsteht kein Zugriff auf einen
+# fremden Server. Sie dürfen deshalb eine absolute Adresse tragen — aber nur unsere eigene. Ein
+# canonical auf eine fremde Domain wäre kein Datenschutzproblem, sondern ein schwerer SEO-Fehler:
+# er verschenkt die Seite an den dort Genannten.
+META_LINK = re.compile(r'rel="(?:canonical|alternate)"')
+
+# Dasselbe für die absoluten Adressen in den Open-Graph-Angaben.
+META_URL = re.compile(r'<meta [^>]*(?:property|name)="(og:(?:image|url)|twitter:image)"[^>]*'
+                      r'content="(https?://[^"]+)"')
+
 
 def pages():
     out = [n for n in sorted(os.listdir(REPO)) if n.endswith(".html")]
@@ -57,10 +70,20 @@ def main():
             if frag and rel in inhalt and frag not in anchors(inhalt[rel]):
                 fehler.append(f"{seite}: Anker fehlt → {url}")
 
-        for m in re.finditer(r'<(?:script|link|img|source|iframe)[^>]*(?:src|href)='
+        for m in re.finditer(r'<(script|link|img|source|iframe)([^>]*?)(?:src|href)='
                              r'"(https?://[^"]+)"', text):
-            if m.group(1) not in ERLAUBT_EXTERN:
-                fehler.append(f"{seite}: Fremdressource eingebunden → {m.group(1)}")
+            tag, attribute, url = m.groups()
+            if url in ERLAUBT_EXTERN:
+                continue
+            if tag == "link" and META_LINK.search(attribute):
+                if not url.startswith(SITE):
+                    fehler.append(f"{seite}: canonical/alternate zeigt nach außen → {url}")
+                continue
+            fehler.append(f"{seite}: Fremdressource eingebunden → {url}")
+
+        for m in META_URL.finditer(text):
+            if not m.group(2).startswith(SITE):
+                fehler.append(f"{seite}: {m.group(1)} zeigt nach außen → {m.group(2)}")
         if "<form" in text:
             fehler.append(f"{seite}: enthält ein <form>")
 

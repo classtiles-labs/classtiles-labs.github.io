@@ -21,15 +21,20 @@ App-Repo hat die Seiten ursprünglich erzeugt, ist aber seit Commit `b3b72ac9` n
 (App-Store-Badges, Cloudflare Web Analytics, Instagram-Links und mehrere Rechtstext-Korrekturen
 existieren nur hier). Er wird nicht mehr benutzt.
 
-Gemeinsam sind allen Seiten nur Kopfleiste, Fußzeile, CSS und das Inline-Skript — die liegen in
-`tools/shell/` und werden mit `tools/apply-shell.py` in alle Seiten geschrieben:
+Gemeinsam sind allen Seiten nur Kopfleiste, Fußzeile, CSS, das Inline-Skript und der Meta-Block —
+die liegen in `tools/shell/` und werden mit `tools/apply-shell.py` in alle Seiten geschrieben:
 
 ```bash
 python3 tools/apply-shell.py          # Shell in alle Seiten zurückschreiben
 python3 tools/apply-shell.py --check  # nur prüfen (Exit-Code 1 bei Abweichung)
+python3 tools/pages/sitemap.py        # sitemap.xml neu erzeugen (--check zum Prüfen)
 python3 tools/check-links.py          # interne Links, Anker, Fremdressourcen
 python3 -m unittest discover -s tools/tests -v
 ```
+
+**Nach jeder neuen oder umbenannten Seite** gehören beide Läufe dazu — `apply-shell.py` setzt den
+Meta-Block, `sitemap.py` nimmt die Seite ins Inhaltsverzeichnis auf. Vergisst man den zweiten,
+schlägt `test_sitemap_ist_auf_dem_stand` fehl.
 
 Zwei Seiten werden erzeugt statt von Hand gepflegt, weil sie aus vielen gleichartigen Kacheln
 bestehen:
@@ -123,6 +128,38 @@ python3 tools/apply-shell.py && python3 tools/check-links.py
 Das PDF wird unverändert übernommen. Ein Neubau aus den WebP-Screenshots wurde versucht und wieder
 verworfen: Chrome rastert beim Drucken jedes Bild in Druckauflösung neu, das Ergebnis war größer
 als das Original statt kleiner.
+
+## Was Suchmaschinen lesen
+
+Alles, was für Google und fürs Teilen in Messengern nötig ist, steckt im **Meta-Block** — einem
+der fünf Blöcke, die `apply-shell.py` schreibt. Er reicht im Seitenkopf vom ersten `<link>` bis
+zum Seitensymbol und enthält canonical, hreflang, Open Graph und die strukturierten Daten.
+Titel und Beschreibung gehören weiterhin der Seite; der Block **liest** sie nur und reicht sie
+weiter (`test_titel_und_beschreibung_gehoeren_der_seite` bewacht das).
+
+Vier Regeln, die man nicht sieht, wenn man sie bricht — Google verwirft still:
+
+- **canonical** nennt „/" als gültige Startseite, nicht „/index.html". Der Server liefert beide.
+- **hreflang** gibt es nur für **echte** Sprachpaare (`shell.is_paired`). `TWIN` schickt jede nur
+  deutsche Seite — Handbücher, der ganze KI-Bereich — auf eine englische Hinweisseite. Als
+  Sprachverweis wäre das falsch: die eine Hinweisseite kann nicht auf zwölf deutsche zurückzeigen,
+  und Google verwirft solche Gruppen mitsamt der einen echten Zuordnung darin.
+- Jede Gruppe nennt **sich selbst**, den Zwilling und `x-default` (deutsch, weil maßgeblich).
+- **Keine erfundenen Angaben.** Kein `aggregateRating` ohne Bewertungen; die Fragen der
+  strukturierten Daten werden aus dem Markup der Support-Seite **gelesen**, nicht gepflegt.
+
+`tools/jsonld.py` baut die strukturierten Daten, `tools/pages/og_image.py` die Vorschaubilder
+(1200×630 PNG, braucht die Systemschrift von macOS), `tools/pages/sitemap.py` das
+Inhaltsverzeichnis. `robots.txt` steht von Hand in der Wurzel und nennt die Sitemap.
+
+Der Meta-Block lädt **nichts** von fremden Servern: `<link rel="canonical">` und
+`<link rel="alternate">` sind Angaben über die Seite, keine eingebundene Ressource, und das
+Vorschaubild liegt unter `assets/`. `tools/check-links.py` prüft beides — es lässt diese beiden
+`rel`-Werte durch, aber nur mit einer Adresse auf classtiles.de.
+
+Angemeldet wird die Sitemap einmalig in der **Google Search Console**
+(`https://classtiles.de/sitemap.xml`). Ohne diese Anmeldung dauert es Wochen, bis Google sie von
+selbst findet.
 
 ## Grundsätze
 
