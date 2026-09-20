@@ -8,6 +8,7 @@ es kennt die Shell, kennt aber bewusst keinen Seiteninhalt.
 import html
 import os
 import posixpath
+import re
 
 import jsonld
 
@@ -33,6 +34,27 @@ OG_LOCALE = {"de": "de_DE", "en": "en_US"}
 
 # Erster Eintrag im Navigationspfad (Brotkrumen).
 START_LABEL = {"de": "Start", "en": "Home"}
+
+# Bestätigungsdateien fremder Dienste liegen in der Wurzel, gehören aber nicht zur Website: sie
+# tragen keine Kopfleiste, keinen Meta-Block und dürfen nicht in die Sitemap. Der Name ist von
+# Google vorgegeben (google<hex>.html) und darf sich nicht ändern, sonst verliert die Search
+# Console die Bestätigung. Das Muster ist absichtlich eng — eine echte Seite namens
+# „google-tipps.html" würde weiter gepflegt.
+BESTAETIGUNGSDATEI = re.compile(r'^google[0-9a-f]{8,}\.html$')
+
+
+def pages(root):
+    """Die gepflegten Seiten der Website — deutsche in der Wurzel, englische in en/.
+
+    Eine Stelle für alle Werkzeuge: apply-shell, check-links, sitemap und die Tests müssen
+    dieselbe Liste sehen, sonst prüft das eine, was das andere gar nicht schreibt.
+    """
+    out = [n for n in sorted(os.listdir(root))
+           if n.endswith(".html") and not BESTAETIGUNGSDATEI.match(n)]
+    endir = os.path.join(root, "en")
+    if os.path.isdir(endir):
+        out += ["en/" + n for n in sorted(os.listdir(endir)) if n.endswith(".html")]
+    return out
 
 # ---------- Navigation ----------
 # (href, Beschriftung) der Kopfleiste. Sie zeigt, was Besucher suchen; die Rechtstexte stehen

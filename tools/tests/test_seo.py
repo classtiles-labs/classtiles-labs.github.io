@@ -34,10 +34,7 @@ SITE = "https://classtiles.de"
 
 
 def pages(root=REPO):
-    out = [n for n in sorted(os.listdir(root)) if n.endswith(".html")]
-    endir = os.path.join(root, "en")
-    out += ["en/" + n for n in sorted(os.listdir(endir)) if n.endswith(".html")]
-    return out
+    return shell.pages(root)
 
 
 def read(name, root=REPO):
@@ -297,6 +294,35 @@ class TestSitemapUndRobots(unittest.TestCase):
         robots = read("robots.txt")
         self.assertIn(f"Sitemap: {SITE}/sitemap.xml", robots)
         self.assertNotIn("Disallow: /\n", robots, "robots.txt sperrt die ganze Seite aus")
+
+
+class TestBestaetigungsdatei(unittest.TestCase):
+    """Googles Bestätigungsdatei liegt in der Wurzel, gehört aber nicht zur Website."""
+
+    def dateien(self):
+        return [n for n in sorted(os.listdir(REPO)) if shell.BESTAETIGUNGSDATEI.match(n)]
+
+    def test_muster_trifft_googles_schema_und_sonst_nichts(self):
+        self.assertTrue(shell.BESTAETIGUNGSDATEI.match("google8c86af4b4455c27c.html"))
+        for kein in ("google-tipps.html", "index.html", "googleXYZ.html", "google.html"):
+            self.assertFalse(shell.BESTAETIGUNGSDATEI.match(kein), kein)
+
+    def test_die_datei_bleibt_liegen(self):
+        """Google: „Entferne die Datei auch nach bestandener Prüfung nicht." Ist sie weg,
+        verliert die Search Console die Bestätigung — und damit alle Daten dort."""
+        self.assertTrue(self.dateien(), "Bestätigungsdatei der Search Console fehlt")
+
+    def test_sie_wird_von_allen_werkzeugen_uebergangen(self):
+        """Sie hat weder Kopfleiste noch Meta-Block — apply-shell.py würde sonst abbrechen."""
+        gepflegt = set(shell.pages(REPO))
+        for name in self.dateien():
+            self.assertNotIn(name, gepflegt, f"{name} steht in der Seitenliste")
+            self.assertNotIn(f"{SITE}/{name}", read("sitemap.xml"), f"{name} steht in der Sitemap")
+
+    def test_ihr_inhalt_ist_die_kennung(self):
+        for name in self.dateien():
+            self.assertEqual(read(name).strip(), f"google-site-verification: {name}",
+                             f"{name}: Inhalt passt nicht zum Dateinamen")
 
 
 if __name__ == "__main__":

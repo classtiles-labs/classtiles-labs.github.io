@@ -64,14 +64,6 @@ def _beschreibung(path, text):
     return wert
 
 
-def pages(root):
-    out = [n for n in sorted(os.listdir(root)) if n.endswith(".html")]
-    endir = os.path.join(root, "en")
-    if os.path.isdir(endir):
-        out += ["en/" + n for n in sorted(os.listdir(endir)) if n.endswith(".html")]
-    return out
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -79,7 +71,7 @@ def main():
     a = ap.parse_args()
 
     changed = []
-    for name in pages(a.root):
+    for name in shell.pages(a.root):
         path = os.path.join(a.root, name)
         text = original = open(path, encoding="utf-8").read()
         for pattern, build in BLOCKS:
@@ -97,7 +89,7 @@ def main():
                 open(path, "w", encoding="utf-8").write(text)
 
     verb = "würden sich ändern" if a.check else "geändert"
-    print(f"{len(pages(a.root))} Seiten geprüft, {len(changed)} {verb}")
+    print(f"{len(shell.pages(a.root))} Seiten geprüft, {len(changed)} {verb}")
     for name in changed:
         print("  " + name)
     if a.check and changed:

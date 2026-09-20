@@ -14,6 +14,9 @@ Datenschutzerklärung mit.
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import shell  # noqa: E402
 from urllib.parse import unquote, urldefrag
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,19 +36,13 @@ META_URL = re.compile(r'<meta [^>]*(?:property|name)="(og:(?:image|url)|twitter:
                       r'content="(https?://[^"]+)"')
 
 
-def pages():
-    out = [n for n in sorted(os.listdir(REPO)) if n.endswith(".html")]
-    out += ["en/" + n for n in sorted(os.listdir(os.path.join(REPO, "en"))) if n.endswith(".html")]
-    return out
-
-
 def anchors(text):
     return set(re.findall(r'id="([^"]+)"', text))
 
 
 def main():
     inhalt = {}
-    for p in pages():
+    for p in shell.pages(REPO):
         with open(os.path.join(REPO, p), encoding="utf-8") as f:
             inhalt[p] = f.read()
     fehler = []

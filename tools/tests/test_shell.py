@@ -19,17 +19,8 @@ BAR = re.compile(r'<div class="bar" id="bar">.*?\n  </div>', re.S)
 FOOTER = re.compile(r'<footer>.*?</footer>', re.S)
 
 
-def pages(root):
-    out = []
-    for name in sorted(os.listdir(root)):
-        if name.endswith(".html"):
-            out.append(name)
-    endir = os.path.join(root, "en")
-    if os.path.isdir(endir):
-        for name in sorted(os.listdir(endir)):
-            if name.endswith(".html"):
-                out.append("en/" + name)
-    return out
+def pages(root=REPO):
+    return shell.pages(root)
 
 
 class TestShellFacts(unittest.TestCase):
