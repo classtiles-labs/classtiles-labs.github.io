@@ -3,7 +3,8 @@
 Landing-Page, Modul-Seiten, Handbücher und Rechtstexte der App **ClassTiles**, gehostet über
 GitHub Pages unter [classtiles.de](https://classtiles.de).
 
-**Deutsch (maßgeblich):** `index.html`, `modul-*.html` (6), `handbuecher.html`, `handbuch-*.html`,
+**Deutsch (maßgeblich):** `index.html`, `preise.html`, `notenschluessel-rechner.html`,
+`modul-*.html` (6), `handbuecher.html`, `handbuch-*.html`,
 `digitalisierung-ki.html`, `ki-handbuecher.html`, `ki-handbuch-*.html`, `ki-material.html`, `ki-werkstatt.html`, `ki-skills.html`, `ki-simulation.html`,
 `datenschutz.html`, `impressum.html`, `nutzungsbedingungen.html`, `support.html`
 
@@ -128,6 +129,40 @@ python3 tools/apply-shell.py && python3 tools/check-links.py
 Das PDF wird unverändert übernommen. Ein Neubau aus den WebP-Screenshots wurde versucht und wieder
 verworfen: Chrome rastert beim Drucken jedes Bild in Druckauflösung neu, das Ergebnis war größer
 als das Original statt kleiner.
+
+## Preisseite und Rechner
+
+Zwei Seiten gibt es **nur auf Deutsch**, mit Absicht:
+
+`preise.html` nennt den Preis der Vollversion. Er steht im Quelltext an **einer** Stelle
+(`jsonld.PREIS_VOLLVERSION`); `test_der_preis_steht_nur_an_einer_stelle` vergleicht ihn mit dem
+Fließtext der Seite, damit Text und strukturierte Daten nicht auseinanderlaufen. Das Angebot ist
+eine `AggregateOffer` von 0 bis zum Vollpreis — beides stimmt: Der Download kostet nichts und
+reicht dauerhaft für eine Klasse, die Vollversion ist ein einmaliger In-App-Kauf. Die Aussagen
+zum Frei-Umfang stammen aus der Paywall der App (`ClassCreationGate`, `TabCreationGate`,
+`ExportGate`): eine Klasse, ein Reiter, kein Export.
+
+`notenschluessel-rechner.html` rechnet Punkte in Noten um. Sie ist die einzige Seite mit eigenem
+Skript, und daran hängen drei Regeln:
+
+- **Nichts wird auf dem Gerät abgelegt** — kein Cookie, und auch nicht der Browser-Speicher.
+  § 25 TDDDG erfasst das Ablegen unabhängig von der Technik; ein „merke die letzte Einstellung"
+  würde das Cookie-Banner erzwingen. `TestKeinSpeicherAufDemGeraet` prüft das für alle Seiten,
+  und zwar nur innerhalb von `<script>`-Blöcken: Die KI-Seiten zeigen Prompts, die dem Modell
+  genau das verbieten — im Fließtext ist das Wort ein Verbot, kein Zugriff.
+- **Das Skript darf nicht mit `(function()` beginnen.** `apply-shell.py` erkennt seinen
+  Skriptblock daran; ein zweites Skript mit demselben Anfang würde den Ersatz auf sich ziehen
+  und alles bis zum Cloudflare-Kommentar verschlucken, Fußzeile inklusive
+  (`test_der_shell_skriptblock_kommt_genau_einmal_vor`).
+- **Rechnen und Anzeige sind getrennt** durch die Marke `// ---- Anzeige ----`.
+  `tools/tests/test_rechner.py` löst alles davor heraus und führt es in **Node** aus. Das ist
+  die einzige Stelle im Repo, die mehr als `python3` braucht — ohne Node überspringt sich der
+  Test, statt rot zu werden. Eine Nachbildung der Formel in Python wäre keine Prüfung: Sie
+  würde bei jedem Denkfehler genauso falsch rechnen wie die Seite.
+
+Die drei ClassTiles-Tabellen im Rechner (1–6, mit Tendenzen, Oberstufe 0–15) sind Kopien aus
+`PointsGradingKey+Defaults.swift` im App-Repo. Ändern sie sich dort, müssen sie hier mit —
+`test_rechnet_mit_den_tabellen_der_app` hält sie fest, damit das auffällt.
 
 ## Was Suchmaschinen lesen
 

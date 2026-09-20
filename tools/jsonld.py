@@ -50,7 +50,16 @@ APP = {
 
 BETRIEBSSYSTEME = ["iPadOS 26", "iOS 26", "macOS 26"]
 
-FAQ_SEITEN = ("support.html", "en/support.html")
+# Der Preis der Vollversion steht hier EINMAL. preise.html nennt ihn im Fließtext; ein Test
+# vergleicht beide, damit die Seite und die strukturierten Daten nicht auseinanderlaufen.
+PREIS_VOLLVERSION = "14.99"
+WAEHRUNG = "EUR"
+
+# Seiten mit einem SoftwareApplication-Knoten: die Startseiten und die Preisseite. Auf der
+# Preisseite trägt er die Preisspanne — das ist die Seite, die von Preisangaben handelt.
+APP_SEITEN = ("index.html", "en/index.html", "preise.html")
+
+FAQ_SEITEN = ("support.html", "en/support.html", "preise.html")
 
 # <details><summary>Frage</summary><div class="answer">Antwort</div></details>
 FAQ_PAAR = re.compile(r'<details>\s*<summary>(.*?)</summary>\s*'
@@ -115,9 +124,18 @@ def _software(site, lang, bild):
         "image": bild,
         "author": {"@id": f"{site}/#anbieter"},
         "publisher": {"@id": f"{site}/#anbieter"},
-        # Der Download ist kostenlos; die Vollversion ist ein In-App-Kauf.
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR",
-                   "availability": "https://schema.org/InStock", "url": APP_STORE},
+        # Eine Spanne statt eines Preises, weil beides stimmt: Der Download kostet nichts und
+        # reicht dauerhaft für eine Klasse; die Vollversion ist ein einmaliger In-App-Kauf.
+        # Ein einzelner Preis wäre in die eine oder andere Richtung falsch.
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0",
+            "highPrice": PREIS_VOLLVERSION,
+            "priceCurrency": WAEHRUNG,
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": APP_STORE,
+        },
     }
 
 
@@ -154,7 +172,7 @@ def graph(path, lang, url, title, desc, bild, pfad, text):
             seite["@type"] = ["WebPage", "FAQPage"]
             seite["mainEntity"] = [_frage(f, a) for f, a in paare]
 
-    if path in ("index.html", "en/index.html"):
+    if path in APP_SEITEN:
         knoten.append(_software(site, lang, bild))
 
     if pfad:

@@ -212,11 +212,39 @@ class TestStrukturierteDaten(unittest.TestCase):
             self.assertNotIn("aggregateRating", t, f"{p}: erfundene Bewertung")
             self.assertNotIn("reviewCount", t, f"{p}: erfundene Bewertung")
 
-    def test_die_app_steht_nur_auf_den_startseiten(self):
+    def test_die_app_steht_nur_auf_den_dafuer_vorgesehenen_seiten(self):
+        """Die Startseiten und die Preisseite — sonst keine. Ein SoftwareApplication-Knoten auf
+        jeder Seite wäre kein Gewinn, sondern 47-mal dieselbe Behauptung."""
         for p, t in self.inhalt.items():
             hat = bool(knoten(graph_of(t), "SoftwareApplication"))
-            self.assertEqual(hat, p in ("index.html", "en/index.html"),
+            self.assertEqual(hat, p in jsonld.APP_SEITEN,
                              f"{p}: SoftwareApplication am falschen Ort")
+
+    def test_der_preis_steht_nur_an_einer_stelle(self):
+        """Die Preisseite nennt den Preis im Text, die strukturierten Daten nennen ihn als Zahl.
+        Laufen die auseinander, widerspricht sich die Seite selbst — und Google glaubt eher den
+        strukturierten Daten als dem Text."""
+        deutsch = jsonld.PREIS_VOLLVERSION.replace(".", ",")
+        seite = self.inhalt["preise.html"]
+        self.assertIn(f"{deutsch}&nbsp;€".replace("&nbsp;", " "),
+                      seite.replace("&nbsp;", " ").replace("\u00a0", " "),
+                      f"preise.html nennt nicht {deutsch} €")
+        app = knoten(graph_of(seite), "SoftwareApplication")[0]
+        self.assertEqual(app["offers"]["highPrice"], jsonld.PREIS_VOLLVERSION)
+        self.assertEqual(app["offers"]["lowPrice"], "0",
+                         "Die kostenlose Fassung gehört in die Preisspanne")
+
+    def test_brotkrumen_nennen_keine_station_zweimal(self):
+        """Seiten, die ihren eigenen Reiter hervorheben — Support, Handbücher, Preise, der
+        KI-Einstieg — standen sonst zweimal im Pfad: einmal als Bereich, einmal als Seite."""
+        for p, t in self.inhalt.items():
+            for pfad in knoten(graph_of(t), "BreadcrumbList"):
+                eintraege = pfad["itemListElement"]
+                namen = [e["name"] for e in eintraege]
+                self.assertEqual(len(namen), len(set(namen)), f"{p}: {namen}")
+                for e in eintraege[:-1]:
+                    self.assertNotEqual(e.get("item"), shell.canonical_of(p),
+                                        f"{p}: steht als Zwischenschritt im eigenen Pfad")
 
     def test_die_fragen_stammen_aus_der_seite(self):
         """Die FAQ-Daten dürfen nicht von der sichtbaren Fassung abweichen — sonst wäre es
@@ -323,6 +351,74 @@ class TestBestaetigungsdatei(unittest.TestCase):
         for name in self.dateien():
             self.assertEqual(read(name).strip(), f"google-site-verification: {name}",
                              f"{name}: Inhalt passt nicht zum Dateinamen")
+
+
+class TestRechnerseite(unittest.TestCase):
+    """Der Notenschlüssel-Rechner ist die einzige Seite mit eigenem Skript."""
+
+    SEITE = "notenschluessel-rechner.html"
+
+    # Die Tabellen der App (PointsGradingKey+Defaults.swift). Der Rechner soll nicht anders
+    # rechnen als ClassTiles; ändert sich dort etwas, muss dieser Test bewusst mitgeändert
+    # werden statt still zu verrutschen.
+    CT_1_6 = "[[92,\"1\"],[81,\"2\"],[67,\"3\"],[50,\"4\"],[30,\"5\"],[0,\"6\"]]"
+
+    def setUp(self):
+        self.text = read(self.SEITE)
+
+    def test_rechnet_mit_den_tabellen_der_app(self):
+        ohne_raum = re.sub(r"\s+", "", self.text)
+        self.assertIn(re.sub(r"\s+", "", self.CT_1_6), ohne_raum,
+                      "Die 1–6-Tabelle weicht von der App ab")
+        for prozent in ("97.3", "94.7", "88.3", "84.7"):   # 1–6 mit Tendenzen
+            self.assertIn(prozent, self.text)
+        for punkte in ("95", "90", "33", "27", "20"):      # Oberstufe 0–15
+            self.assertIn(punkte, self.text)
+
+    def test_kein_formular(self):
+        """check-links.py verbietet <form> auf der ganzen Website — ein Formular ginge an einen
+        fremden Server. Der Rechner kommt mit Eingabefeldern ohne Formular aus."""
+        self.assertNotIn("<form", self.text)
+
+
+class TestKeinSpeicherAufDemGeraet(unittest.TestCase):
+    """§ 25 TDDDG erfasst nicht nur Cookies, sondern jedes Ablegen von Informationen auf dem
+    Endgerät. Ein „merke die letzte Einstellung" im Browser-Speicher würde eine Einwilligung
+    verlangen — und damit das Banner erzwingen, das diese Website vermeidet. Die Aussage in
+    der Datenschutzerklärung hängt daran.
+
+    Gesucht wird nur in <script>-Blöcken, nicht im Fließtext. Die KI-Seiten zeigen Prompts,
+    die dem Modell genau das verbieten („Kein localStorage, kein sessionStorage, keine
+    Cookies.") — im Text ist das Wort ein Verbot, kein Zugriff.
+    """
+
+    SKRIPTE = re.compile(r'<script(?![^>]*application/ld\+json)[^>]*>(.*?)</script>', re.S)
+    ZUGRIFF = re.compile(r'\b(?:localStorage|sessionStorage|indexedDB)\s*[.\[]'
+                         r'|\bdocument\s*\.\s*cookie')
+    HANDLER = re.compile(r'\son[a-z]+\s*=')
+
+    def test_kein_skript_legt_etwas_im_browser_ab(self):
+        for p in pages():
+            for skript in self.SKRIPTE.findall(read(p)):
+                treffer = self.ZUGRIFF.findall(skript)
+                self.assertEqual(treffer, [], f"{p} greift auf den Browser-Speicher zu")
+
+    def test_keine_seite_hat_eingebettete_ereignis_handler(self):
+        """Ein onclick="…" im Markup wäre ein Skript, das an den <script>-Blöcken vorbeiliefe —
+        und damit an der Prüfung darüber."""
+        for p in pages():
+            ohne_skripte = self.SKRIPTE.sub("", read(p))
+            self.assertEqual(self.HANDLER.findall(ohne_skripte), [], f"{p}: Handler im Markup")
+
+
+class TestShellBloecke(unittest.TestCase):
+    def test_der_shell_skriptblock_kommt_genau_einmal_vor(self):
+        """apply-shell.py erkennt den Skriptblock an „<script>" plus „(function()". Ein eigenes
+        Seitenskript, das genauso anfängt, würde den Ersatz auf sich ziehen und alles bis zum
+        Cloudflare-Kommentar verschlucken — Fußzeile inklusive."""
+        for p in pages():
+            self.assertEqual(read(p).count("<script>\n(function()"), 1,
+                             f"{p}: mehrdeutiger Skriptblock")
 
 
 if __name__ == "__main__":
