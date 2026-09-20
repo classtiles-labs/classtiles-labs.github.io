@@ -161,6 +161,12 @@ Angemeldet wird die Sitemap einmalig in der **Google Search Console**
 (`https://classtiles.de/sitemap.xml`). Ohne diese Anmeldung dauert es Wochen, bis Google sie von
 selbst findet.
 
+`google8c86af4b4455c27c.html` in der Wurzel ist Googles Bestätigungsdatei für die Search Console
+und **darf nicht gelöscht oder umbenannt werden** — sonst verliert die Search Console die
+Bestätigung und mit ihr alle Daten. Sie gehört nicht zur Website: `shell.pages()` übergeht sie
+(`shell.BESTAETIGUNGSDATEI`), weil sie weder Kopfleiste noch Meta-Block trägt und
+`apply-shell.py` sonst abbrechen würde. Zwei Tests bewachen beides.
+
 ## Grundsätze
 
 - **Kein externer Request** außer dem Cookie-freien Cloudflare-Beacon: keine Webfont, kein CDN,

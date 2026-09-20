@@ -8,16 +8,19 @@ Ohne Sitemap muss Google jede Seite über Verweise finden. Bei einer Website ohn
 eingehende Links dauert das lange und bleibt lückenhaft — der KI-Bereich etwa liegt zwei Klicks
 von der Startseite entfernt.
 
-`lastmod` kommt aus dem Git-Verlauf der jeweiligen Datei, nicht aus dem Dateidatum: ein Auschecken
-setzt Dateidaten neu, und eine Sitemap, die jeder Seite von gestern behauptet, verliert ihren Wert.
-Seiten, die noch nicht eingecheckt sind, bekommen kein `lastmod` — lieber keine Angabe als eine
-erfundene.
+Bewusst **ohne** `lastmod`. Der erste Anlauf nahm das Datum des letzten Commits der Datei — und
+lief in ein Henne-Ei-Problem: Jeder Commit, der eine Seite ändert, ändert auch deren Datum, die
+Sitemap müsste also *nach* diesem Commit neu erzeugt und nachgereicht werden. Erzeugt man sie
+zusammen mit der Änderung, trägt sie das Datum des *vorigen* Commits ein — eine Aussage, die
+nicht stimmt. Ohne Bauschritt auf dem Server ist das nicht auflösbar, und Google wertet ein
+`lastmod`, das nicht zu den beobachteten Änderungen passt, ohnehin nicht aus. Lieber keine
+Angabe als eine falsche.
 
-`priority` und `changefreq` fehlen mit Absicht: Google wertet beides seit Jahren nicht aus.
+`priority` und `changefreq` fehlen aus einem anderen Grund: Google wertet beides seit Jahren
+grundsätzlich nicht aus.
 """
 import argparse
 import os
-import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
@@ -30,31 +33,14 @@ NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 XHTML = "http://www.w3.org/1999/xhtml"
 
 
-def seiten():
-    out = [n for n in sorted(os.listdir(REPO)) if n.endswith(".html")]
-    endir = os.path.join(REPO, "en")
-    out += ["en/" + n for n in sorted(os.listdir(endir)) if n.endswith(".html")]
-    return out
-
-
-def zuletzt_geaendert(path):
-    """Datum des letzten Commits, der diese Datei angefasst hat (JJJJ-MM-TT), oder None."""
-    r = subprocess.run(["git", "-C", REPO, "log", "-1", "--format=%cs", "--", path],
-                       capture_output=True, text=True)
-    return r.stdout.strip() or None
-
-
 def baum():
     ET.register_namespace("", NS)
     ET.register_namespace("xhtml", XHTML)
     wurzel = ET.Element(f"{{{NS}}}urlset")
 
-    for path in seiten():
+    for path in shell.pages(REPO):
         eintrag = ET.SubElement(wurzel, f"{{{NS}}}url")
         ET.SubElement(eintrag, f"{{{NS}}}loc").text = shell.canonical_of(path)
-        stand = zuletzt_geaendert(path)
-        if stand:
-            ET.SubElement(eintrag, f"{{{NS}}}lastmod").text = stand
         # Die Sprachgruppe steht zusätzlich hier — dieselbe Aussage wie die hreflang-Verweise im
         # Seitenkopf. Google liest beides und bestätigt das eine mit dem anderen.
         if shell.is_paired(path):
@@ -80,11 +66,11 @@ def main():
     if a.check:
         if neu != alt:
             sys.exit("sitemap.xml ist nicht auf dem Stand — python3 tools/pages/sitemap.py")
-        print(f"sitemap.xml aktuell ({len(seiten())} Seiten)")
+        print(f"sitemap.xml aktuell ({len(shell.pages(REPO))} Seiten)")
         return
 
     open(ZIEL, "w", encoding="utf-8").write(neu)
-    print(f"sitemap.xml geschrieben — {len(seiten())} Seiten"
+    print(f"sitemap.xml geschrieben — {len(shell.pages(REPO))} Seiten"
           + ("" if neu != alt else " (unverändert)"))
 
 
