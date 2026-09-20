@@ -1,0 +1,11 @@
+Baue mir eine interaktive Simulation als eine einzige HTML-Datei, ohne externe Bibliotheken, ohne Anmeldung. Sie muss auf dem Handy funktionieren.
+
+Thema: Angebot und Nachfrage auf dem Pizzamarkt, Politik-Wirtschaft, Jahrgang 10.
+
+Das Schaubild: Preis auf der y-Achse von 0 bis 12 €, Menge auf der x-Achse von 0 bis 100 Stück. Die Nachfrage fällt als Gerade von 10 € bei 0 Stück auf 0 € bei 100 Stück. Das Angebot steigt als Gerade von 2 € bei 0 Stück auf 12 € bei 100 Stück. Das Gleichgewicht liegt bei 6 € und 40 Stück. Zeige den Gleichgewichtspunkt mit Preis und Menge als Zahl.
+
+Regler: Nachfrage verschieben, Angebot verschieben, Mindestpreis, Höchstpreis. Liegt der Mindestpreis über dem Gleichgewichtspreis, markiere den Überschuss farbig und nenne ihn als Zahl. Liegt der Höchstpreis darunter, markiere den Mangel. Liegt der Wert auf der falschen Seite, schreibe „ohne Wirkung“. Unter dem Schaubild steht das Ergebnis als ganzer Satz.
+
+Dazu Knöpfe für Szenarien, die die Regler setzen, und drei Arbeitsaufträge für Schülerinnen und Schüler.
+
+Ganz oben in der Datei steht ein Block zum Anpassen mit Titel, Fach, Klasse, Name der Lehrkraft, Produkt, Szenarien und Aufgaben. Alles andere soll man nicht anfassen müssen.

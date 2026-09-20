@@ -1,0 +1,3 @@
+[Foto oder Skizze des Schaubilds anhängen]
+
+Erstelle daraus eine interaktive Simulation als einzelne HTML-Datei. Mit Angebot, Nachfrage, veränderbaren Reglern und einem Mindestpreis.

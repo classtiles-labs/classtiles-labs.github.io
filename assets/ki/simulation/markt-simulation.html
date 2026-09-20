@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Markt-Simulation</title>
+<script>
+/* =====================================================================
+   HIER ANPASSEN
+   Titel, Fach, Klasse und Name ändern, speichern, fertig.
+   Mehr muss man in dieser Datei nicht anfassen.
+   ===================================================================== */
+const KONFIG = {
+  titel: 'Der Pizzamarkt',
+  fach: 'Politik-Wirtschaft',
+  klasse: 'Jahrgang 10',
+  lehrkraft: '',            // z. B. 'Frau Beispiel', darf leer bleiben
+
+  produkt: 'Pizza',
+  einheit: 'Stück',
+  waehrung: '€',
+
+  // Jeder Knopf setzt die Regler. nachfrage/angebot: von -3 (viel weniger) bis +3 (viel mehr).
+  // mindestpreis/hoechstpreis: ein Preis oder null für „aus“.
+  szenarien: [
+    {name: 'Ausgangslage', text: 'Ein ganz normaler Tag.', nachfrage: 0, angebot: 0, mindestpreis: null, hoechstpreis: null},
+    {name: 'Großes Fußballspiel', text: 'Heute Abend wollen viel mehr Leute Pizza.', nachfrage: 2, angebot: 0, mindestpreis: null, hoechstpreis: null},
+    {name: 'Neue Pizzeria', text: 'Ein weiterer Anbieter eröffnet. Es gibt mehr Pizza.', nachfrage: 0, angebot: 2, mindestpreis: null, hoechstpreis: null},
+    {name: 'Mindestpreis 8 €', text: 'Der Staat legt fest: Pizza kostet mindestens 8 €.', nachfrage: 0, angebot: 0, mindestpreis: 8, hoechstpreis: null},
+    {name: 'Höchstpreis 4 €', text: 'Der Staat legt fest: Pizza kostet höchstens 4 €.', nachfrage: 0, angebot: 0, mindestpreis: null, hoechstpreis: 4},
+  ],
+
+  aufgaben: [
+    'Verschiebe die Nachfrage nach rechts. Was passiert mit Preis und Menge?',
+    'Setze einen Höchstpreis unter den Gleichgewichtspreis. Wer bekommt keine Pizza?',
+    'Finde einen Mindestpreis, bei dem der Überschuss genau 20 Stück beträgt.',
+  ],
+};
+/* ===================== Ab hier nichts mehr ändern ===================== */
+</script>
+<script id="modell">
+/* Lineares Marktmodell. Preis in Währungseinheiten, Menge in Stück.
+   Nachfrage: P = 10 - 0,1·Q + vN     Angebot: P = 2 + 0,1·Q + vA
+   Eine positive Verschiebung hebt die Kurve an: mehr Nachfrage bzw. teureres Angebot. */
+const MODELL = {
+  Q_MAX: 100,
+  P_MAX: 12,
+  nachfrage: (q, vN) => 10 - 0.1 * q + vN,
+  angebot: (q, vA) => 2 + 0.1 * q + vA,
+  mengeNachfrage: (p, vN) => Math.max(0, (10 + vN - p) / 0.1),
+  mengeAngebot: (p, vA) => Math.max(0, (p - 2 - vA) / 0.1),
+  gleichgewicht(vN, vA) {
+    const q = Math.max(0, (8 + vN - vA) / 0.2);
+    return {q, p: 10 - 0.1 * q + vN};
+  },
+  /** Marktlage für einen Zustand {vN, vA, mindest, hoechst}; mindest/hoechst: Zahl oder null. */
+  lage(z) {
+    const gg = this.gleichgewicht(z.vN, z.vA);
+    const grenze = z.mindest ?? z.hoechst;
+    if (grenze === null || grenze === undefined) return {art: 'frei', gg, preis: gg.p, qN: gg.q, qA: gg.q, differenz: 0};
+    const istMindest = z.mindest !== null && z.mindest !== undefined;
+    const wirkt = istMindest ? grenze > gg.p + 1e-9 : grenze < gg.p - 1e-9;
+    if (!wirkt) return {art: 'ohne', grenzArt: istMindest ? 'mindest' : 'hoechst', gg, preis: gg.p, grenze, qN: gg.q, qA: gg.q, differenz: 0};
+    const qN = this.mengeNachfrage(grenze, z.vN);
+    const qA = this.mengeAngebot(grenze, z.vA);
+    return {art: istMindest ? 'mindest' : 'hoechst', gg, preis: grenze, grenze, qN, qA, differenz: Math.abs(qA - qN)};
+  },
+};
+</script>
+<style>
+:root{
+  --bg:#f6f4ee;--card:#fff;--ink:#16203a;--muted:#5a6377;--line:#d9d6cc;--grid:#e8e5dc;
+  --nachfrage:#1f5fd0;--angebot:#15803d;--punkt:#16203a;--ueberschuss:#d92d20;--mangel:#c2560a;
+  --akzent:#1f5fd0;--plot:#fff;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#060a1c;--card:#0d1430;--ink:#f2f5ff;--muted:#a3adc8;--line:#26305a;--grid:#1a2348;
+  --nachfrage:#6ea8ff;--angebot:#4ade80;--punkt:#fff;--ueberschuss:#ff6b5e;--mangel:#ffa94d;
+  --akzent:#7fd3ea;--plot:#0a1028;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:18px 16px 40px}
+header h1{font-size:26px;line-height:1.15;margin:0 0 4px;letter-spacing:-.4px}
+header p{margin:0;color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:14px}
+#diagramm{display:block;width:100%;height:auto;touch-action:none}
+#diagramm text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:var(--muted)}
+#diagramm .achse{stroke:var(--ink);stroke-width:2}
+#diagramm .gitter{stroke:var(--grid);stroke-width:1}
+#diagramm .kurve{stroke-width:5;stroke-linecap:round;fill:none}
+#diagramm .name{font-weight:700;font-size:14px}
+#diagramm .hilfe{stroke:var(--punkt);stroke-width:1.5;stroke-dasharray:5 5;opacity:.55}
+#diagramm .grenze{stroke-width:3;stroke-dasharray:10 6}
+#diagramm .wert{font-weight:700;fill:var(--ink);font-size:14px}
+#ergebnis{margin:12px 4px 2px;font-size:17px;font-weight:650;min-height:50px}
+#ergebnis b.u{color:var(--ueberschuss)}#ergebnis b.m{color:var(--mangel)}
+.regler{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;padding:10px 4px;border-top:1px solid var(--line)}
+.regler:first-child{border-top:0}
+.regler label{font-weight:650;display:flex;align-items:center;gap:10px}
+.regler output{font-variant-numeric:tabular-nums;font-weight:700;min-width:74px;text-align:right}
+.regler input[type=range]{grid-column:1/-1;width:100%;height:34px;margin:0;accent-color:var(--akzent)}
+.regler input[type=checkbox]{width:22px;height:22px;accent-color:var(--akzent)}
+.regler .punkt{width:12px;height:12px;border-radius:12px;display:inline-block}
+.regler.aus input[type=range]{opacity:.35}
+h2{font-size:15px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:26px 4px 8px}
+.szenarien{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-weight:650;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer}
+button[aria-pressed=true]{background:var(--akzent);border-color:var(--akzent);color:var(--bg)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--akzent);outline-offset:2px}
+#szenariotext{margin:10px 4px 0;color:var(--muted);min-height:24px}
+ol{margin:0;padding-left:24px}li{margin:6px 0}
+footer{margin-top:30px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="titel"></h1>
+    <p id="meta"></p>
+  </header>
+
+  <section class="card" aria-label="Diagramm Angebot und Nachfrage">
+    <svg id="diagramm" viewBox="0 0 500 400" role="img" aria-labelledby="ergebnis">
+      <rect id="plot" x="52" y="20" width="428" height="330" fill="var(--plot)" rx="6"></rect>
+      <g id="gitter"></g>
+      <rect id="flaeche" x="0" y="0" width="0" height="0" opacity=".22"></rect>
+      <line id="hilfeX" class="hilfe"></line>
+      <line id="hilfeY" class="hilfe"></line>
+      <line id="grenzlinie" class="grenze" visibility="hidden"></line>
+      <line id="kurveN" class="kurve" stroke="var(--nachfrage)"></line>
+      <line id="kurveA" class="kurve" stroke="var(--angebot)"></line>
+      <text id="nameN" class="name" fill="var(--nachfrage)" style="fill:var(--nachfrage)">Nachfrage</text>
+      <text id="nameA" class="name" style="fill:var(--angebot)">Angebot</text>
+      <line class="achse" x1="52" y1="20" x2="52" y2="350"></line>
+      <line class="achse" x1="52" y1="350" x2="480" y2="350"></line>
+      <circle id="punktN" r="6" fill="var(--nachfrage)" visibility="hidden"></circle>
+      <circle id="punktA" r="6" fill="var(--angebot)" visibility="hidden"></circle>
+      <circle id="punkt" r="9" fill="var(--punkt)" stroke="var(--plot)" stroke-width="3"></circle>
+      <text id="wertP" class="wert" text-anchor="end"></text>
+      <text id="wertQ" class="wert" text-anchor="middle"></text>
+      <text id="achseY" x="60" y="14"></text>
+      <text id="achseX" x="480" y="392" text-anchor="end"></text>
+    </svg>
+    <p id="ergebnis" aria-live="polite"></p>
+  </section>
+
+  <section class="card" aria-label="Regler">
+    <div class="regler">
+      <label for="rN"><span class="punkt" style="background:var(--nachfrage)"></span>Nachfrage</label>
+      <output id="oN"></output>
+      <input id="rN" type="range" min="-3" max="3" step="0.1" value="0">
+    </div>
+    <div class="regler">
+      <label for="rA"><span class="punkt" style="background:var(--angebot)"></span>Angebot</label>
+      <output id="oA"></output>
+      <input id="rA" type="range" min="-3" max="3" step="0.1" value="0">
+    </div>
+    <div class="regler aus" id="zeileMin">
+      <label><input id="cMin" type="checkbox" aria-label="Mindestpreis einschalten">Mindestpreis</label>
+      <output id="oMin"></output>
+      <input id="rMin" type="range" min="0" max="12" step="0.1" value="8" aria-label="Mindestpreis">
+    </div>
+    <div class="regler aus" id="zeileMax">
+      <label><input id="cMax" type="checkbox" aria-label="Höchstpreis einschalten">Höchstpreis</label>
+      <output id="oMax"></output>
+      <input id="rMax" type="range" min="0" max="12" step="0.1" value="4" aria-label="Höchstpreis">
+    </div>
+  </section>
+
+  <h2>Szenarien</h2>
+  <div class="szenarien" id="szenarien"></div>
+  <p id="szenariotext"></p>
+
+  <h2>Aufgaben</h2>
+  <ol id="aufgaben"></ol>
+
+  <footer>Eine Datei, keine Anmeldung, keine Daten. Titel, Fach und Name stehen ganz oben in der Datei und lassen sich dort ändern.</footer>
+</main>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const PLOT = {x0: 52, x1: 480, y0: 350, y1: 20};
+  const X = (q) => PLOT.x0 + (q / MODELL.Q_MAX) * (PLOT.x1 - PLOT.x0);
+  const Y = (p) => PLOT.y0 - (p / MODELL.P_MAX) * (PLOT.y0 - PLOT.y1);
+  const geld = (p) => p.toLocaleString('de-DE', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' ' + KONFIG.waehrung;
+  const stueck = (q) => Math.round(q).toLocaleString('de-DE') + ' ' + KONFIG.einheit;
+  const set = (el, attrs) => { for (const k in attrs) el.setAttribute(k, attrs[k]); };
+
+  // Kopf, Achsen, Gitter
+  $('titel').textContent = KONFIG.titel;
+  document.title = KONFIG.titel + ' · Markt-Simulation';
+  $('meta').textContent = [KONFIG.fach, KONFIG.klasse, KONFIG.lehrkraft].filter(Boolean).join(' · ');
+  $('achseY').textContent = 'Preis in ' + KONFIG.waehrung;
+  $('achseX').textContent = 'Menge in ' + KONFIG.einheit + ' ' + KONFIG.produkt;
+  const NS = 'http://www.w3.org/2000/svg';
+  for (let p = 2; p <= 12; p += 2) {
+    const l = document.createElementNS(NS, 'line'); set(l, {class: 'gitter', x1: PLOT.x0, x2: PLOT.x1, y1: Y(p), y2: Y(p)}); $('gitter').append(l);
+    const t = document.createElementNS(NS, 'text'); set(t, {x: PLOT.x0 - 8, y: Y(p) + 4, 'text-anchor': 'end'}); t.textContent = p; $('gitter').append(t);
+  }
+  for (let q = 20; q <= 100; q += 20) {
+    const l = document.createElementNS(NS, 'line'); set(l, {class: 'gitter', x1: X(q), x2: X(q), y1: PLOT.y0, y2: PLOT.y1}); $('gitter').append(l);
+    const t = document.createElementNS(NS, 'text'); set(t, {x: X(q), y: PLOT.y0 + 18, 'text-anchor': 'middle'}); t.textContent = q; $('gitter').append(t);
+  }
+
+  // Zustand: `ziel` kommt von den Reglern, `bild` läuft weich hinterher.
+  const ziel = {vN: 0, vA: 0, mindest: null, hoechst: null};
+  const bild = {vN: 0, vA: 0, grenze: 0};
+  const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /** Gerade auf das Zeichenfeld zuschneiden. f(q) liefert den Preis. */
+  const strecke = (f) => {
+    const pts = [];
+    const q0 = 0, q1 = MODELL.Q_MAX, p0 = f(q0), p1 = f(q1), m = (p1 - p0) / (q1 - q0);
+    const drin = (p) => p >= 0 && p <= MODELL.P_MAX;
+    if (drin(p0)) pts.push([q0, p0]);
+    if (drin(p1)) pts.push([q1, p1]);
+    for (const p of [0, MODELL.P_MAX]) { const q = (p - p0) / m; if (q > q0 && q < q1) pts.push([q, p]); }
+    pts.sort((a, b) => a[0] - b[0]);
+    return pts.length >= 2 ? [pts[0], pts[pts.length - 1]] : [[0, 0], [0, 0]];
+  };
+
+  const zeichne = () => {
+    const z = {vN: bild.vN, vA: bild.vA, mindest: ziel.mindest === null ? null : bild.grenze, hoechst: ziel.hoechst === null ? null : bild.grenze};
+    const L = MODELL.lage(z);
+    const [n0, n1] = strecke((q) => MODELL.nachfrage(q, z.vN));
+    const [a0, a1] = strecke((q) => MODELL.angebot(q, z.vA));
+    set($('kurveN'), {x1: X(n0[0]), y1: Y(n0[1]), x2: X(n1[0]), y2: Y(n1[1])});
+    set($('kurveA'), {x1: X(a0[0]), y1: Y(a0[1]), x2: X(a1[0]), y2: Y(a1[1])});
+    // Beginnt die Gerade am oberen Rand, rückt der Name ein Stück an ihr entlang, damit er frei steht.
+    const qName = n0[0] + (n0[1] > MODELL.P_MAX - 0.8 ? 14 : 0);
+    set($('nameN'), {x: X(qName) + 12, y: Y(MODELL.nachfrage(qName, z.vN)) - 10});
+    set($('nameA'), {x: X(a1[0]) - 64, y: Math.min(Y(a1[1]) + 70, PLOT.y0 - 30)});
+    set($('punkt'), {cx: X(L.gg.q), cy: Y(L.gg.p)});
+    const gebunden = L.art === 'mindest' || L.art === 'hoechst';
+    $('punkt').setAttribute('opacity', gebunden ? .35 : 1);
+    const px = gebunden ? Math.min(L.qN, L.qA) : L.gg.q;
+    set($('hilfeX'), {x1: X(px), y1: Y(L.preis), x2: X(px), y2: PLOT.y0});
+    set($('hilfeY'), {x1: PLOT.x0, y1: Y(L.preis), x2: X(gebunden ? Math.max(L.qN, L.qA) : L.gg.q), y2: Y(L.preis)});
+    set($('wertP'), {x: PLOT.x0 + 58, y: Y(L.preis) - 8}); $('wertP').textContent = geld(L.preis);
+    set($('wertQ'), {x: Math.max(X(px), PLOT.x0 + 40), y: PLOT.y0 - 8}); $('wertQ').textContent = stueck(px);
+    const hatGrenze = ziel.mindest !== null || ziel.hoechst !== null;
+    const farbe = ziel.mindest !== null ? 'var(--ueberschuss)' : 'var(--mangel)';
+    set($('grenzlinie'), {visibility: hatGrenze ? 'visible' : 'hidden', x1: PLOT.x0, x2: PLOT.x1, y1: Y(bild.grenze), y2: Y(bild.grenze), stroke: farbe});
+    for (const id of ['punktN', 'punktA']) $(id).setAttribute('visibility', gebunden ? 'visible' : 'hidden');
+    if (gebunden) {
+      set($('punktN'), {cx: X(L.qN), cy: Y(L.preis)});
+      set($('punktA'), {cx: X(L.qA), cy: Y(L.preis)});
+      const xl = X(Math.min(L.qN, L.qA)), xr = X(Math.max(L.qN, L.qA));
+      set($('flaeche'), {x: xl, y: Y(L.preis), width: xr - xl, height: PLOT.y0 - Y(L.preis), fill: farbe});
+    } else set($('flaeche'), {width: 0, height: 0});
+  };
+
+  const schreibe = () => {
+    const L = MODELL.lage(ziel);
+    const e = $('ergebnis');
+    if (L.art === 'frei') e.innerHTML = `Gleichgewicht bei <b>${geld(L.gg.p)}</b> und <b>${stueck(L.gg.q)}</b>.`;
+    else if (L.art === 'ohne') e.innerHTML = `${L.grenzArt === 'mindest' ? 'Mindestpreis' : 'Höchstpreis'} ${geld(L.grenze)}: ohne Wirkung. Das Gleichgewicht bleibt bei <b>${geld(L.gg.p)}</b> und <b>${stueck(L.gg.q)}</b>.`;
+    else if (L.art === 'mindest') e.innerHTML = `Mindestpreis ${geld(L.preis)}: Angebot ${stueck(L.qA)}, Nachfrage ${stueck(L.qN)}. <b class="u">Überschuss ${stueck(L.differenz)}.</b>`;
+    else e.innerHTML = `Höchstpreis ${geld(L.preis)}: Nachfrage ${stueck(L.qN)}, Angebot ${stueck(L.qA)}. <b class="m">Mangel ${stueck(L.differenz)}.</b>`;
+    const vz = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v).toLocaleString('de-DE', {minimumFractionDigits: 1, maximumFractionDigits: 1});
+    $('oN').textContent = vz(ziel.vN);
+    $('oA').textContent = vz(-ziel.vA);
+    $('oMin').textContent = ziel.mindest === null ? 'aus' : geld(ziel.mindest);
+    $('oMax').textContent = ziel.hoechst === null ? 'aus' : geld(ziel.hoechst);
+    $('zeileMin').classList.toggle('aus', ziel.mindest === null);
+    $('zeileMax').classList.toggle('aus', ziel.hoechst === null);
+  };
+
+  let laeuft = false, zuletzt = 0;
+  const schritt = (jetzt) => {
+    const dt = Math.min(64, jetzt - zuletzt); zuletzt = jetzt;
+    const k = ruhig ? 1 : 1 - Math.exp(-dt / 70);
+    const g = ziel.mindest ?? ziel.hoechst ?? bild.grenze;
+    let rest = 0;
+    for (const [key, soll] of [['vN', ziel.vN], ['vA', ziel.vA], ['grenze', g]]) {
+      bild[key] += (soll - bild[key]) * k;
+      if (Math.abs(soll - bild[key]) < 0.004) bild[key] = soll;
+      rest += Math.abs(soll - bild[key]);
+    }
+    zeichne();
+    if (rest > 0) requestAnimationFrame(schritt); else laeuft = false;
+  };
+  const aktualisiere = (sofortGrenze = false) => {
+    if (sofortGrenze) bild.grenze = ziel.mindest ?? ziel.hoechst ?? bild.grenze;
+    schreibe();
+    if (!laeuft) { laeuft = true; zuletzt = performance.now(); requestAnimationFrame(schritt); }
+  };
+
+  const markiereSzenario = (i) => [...$('szenarien').children].forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
+  const vonReglern = () => {
+    ziel.vN = +$('rN').value; ziel.vA = -$('rA').value; // Regler „Angebot“: plus heißt mehr Angebot, die Kurve sinkt
+    ziel.mindest = $('cMin').checked ? +$('rMin').value : null;
+    ziel.hoechst = $('cMax').checked ? +$('rMax').value : null;
+  };
+  for (const id of ['rN', 'rA', 'rMin', 'rMax']) $(id).addEventListener('input', () => {
+    if (id === 'rMin' && !$('cMin').checked) { $('cMin').checked = true; $('cMax').checked = false; }
+    if (id === 'rMax' && !$('cMax').checked) { $('cMax').checked = true; $('cMin').checked = false; }
+    const neu = (id === 'rMin' || id === 'rMax') && ziel.mindest === null && ziel.hoechst === null;
+    vonReglern(); markiereSzenario(-1); $('szenariotext').textContent = ''; aktualisiere(neu);
+  });
+  $('cMin').addEventListener('change', () => { if ($('cMin').checked) $('cMax').checked = false; vonReglern(); markiereSzenario(-1); aktualisiere(true); });
+  $('cMax').addEventListener('change', () => { if ($('cMax').checked) $('cMin').checked = false; vonReglern(); markiereSzenario(-1); aktualisiere(true); });
+
+  KONFIG.szenarien.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = s.name; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => {
+      $('rN').value = s.nachfrage; $('rA').value = s.angebot;
+      $('cMin').checked = s.mindestpreis !== null; if (s.mindestpreis !== null) $('rMin').value = s.mindestpreis;
+      $('cMax').checked = s.hoechstpreis !== null; if (s.hoechstpreis !== null) $('rMax').value = s.hoechstpreis;
+      const hatte = ziel.mindest !== null || ziel.hoechst !== null;
+      vonReglern(); markiereSzenario(i); $('szenariotext').textContent = s.text; aktualisiere(!hatte);
+    });
+    $('szenarien').append(b);
+  });
+  KONFIG.aufgaben.forEach((a) => { const li = document.createElement('li'); li.textContent = a; $('aufgaben').append(li); });
+
+  markiereSzenario(0);
+  $('szenariotext').textContent = KONFIG.szenarien[0]?.text ?? '';
+  schreibe(); zeichne();
+  // Link mit #szenario=4 öffnet direkt das vierte Szenario.
+  const start = /szenario=(\d+)/.exec(location.hash);
+  if (start) $('szenarien').children[+start[1] - 1]?.click();
+})();
+</script>
+</body>
+</html>

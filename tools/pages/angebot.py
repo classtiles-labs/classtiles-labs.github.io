@@ -77,6 +77,10 @@ TUEREN = [
      "Zwei Schüler, ein iPad, ein Korb pro richtige Antwort: der Prompt, aus dem dieses "
      "Übungsspiel als einzelne HTML-Datei entsteht. Zum Kopieren, mit Beispielen für "
      "Mathematik, Französisch und Biologie."),
+    ("ki-simulation.html", "Simulation statt Schaubild",
+     "Aus dem Schaubild im Buch wird eine Simulation mit Reglern: ein Bild, ein Prompt, eine "
+     "HTML-Datei. Mit dem Prompt zum Kopieren und der fertigen Simulation zu Angebot und "
+     "Nachfrage zum Mitnehmen."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),

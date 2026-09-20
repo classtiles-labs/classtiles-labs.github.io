@@ -4,7 +4,7 @@ Landing-Page, Modul-Seiten, Handbücher und Rechtstexte der App **ClassTiles**, 
 GitHub Pages unter [classtiles.de](https://classtiles.de).
 
 **Deutsch (maßgeblich):** `index.html`, `modul-*.html` (6), `handbuecher.html`, `handbuch-*.html`,
-`digitalisierung-ki.html`, `ki-handbuecher.html`, `ki-handbuch-*.html`, `ki-material.html`, `ki-werkstatt.html`, `ki-skills.html`,
+`digitalisierung-ki.html`, `ki-handbuecher.html`, `ki-handbuch-*.html`, `ki-material.html`, `ki-werkstatt.html`, `ki-skills.html`, `ki-simulation.html`,
 `datenschutz.html`, `impressum.html`, `nutzungsbedingungen.html`, `support.html`
 
 **English (convenience translation):** `en/index.html`, `en/module-*.html` (6), `en/manuals.html`,
