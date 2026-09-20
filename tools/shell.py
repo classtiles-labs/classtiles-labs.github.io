@@ -156,27 +156,35 @@ LEGAL = {
 }
 
 # Die Handbuchseiten liegen alle in der Wurzel; aus /en/ heraus brauchen sie deshalb „../".
+# Der Notenschlüssel-Rechner steht hier mit: Er ist ein Werkzeug für Besucher, und die Fußzeile
+# ist der einzige Ort, der auf ALLEN Seiten erscheint. Ohne diesen Eintrag hing er an einem
+# einzigen Verweis tief in der Modulseite — für Leser unauffindbar, und für Google eine Seite
+# ohne internes Gewicht.
 MANUALS = {
     "de": [("handbuch-notenverwaltung.html", "Notenverwaltung"),
            ("handbuch-gruppen-sitzordnung.html", "Gruppen &amp; Sitzordnung"),
-           ("handbuecher.html", "Alle Handbücher")],
+           ("handbuecher.html", "Alle Handbücher"),
+           ("notenschluessel-rechner.html", "Notenschlüssel-Rechner")],
     "en": [("../handbuch-notenverwaltung.html", "Notenverwaltung (DE)"),
            ("../handbuch-gruppen-sitzordnung.html", "Gruppen &amp; Sitzordnung (DE)"),
-           ("manuals.html", "All manuals")],
+           ("manuals.html", "All manuals"),
+           ("../notenschluessel-rechner.html", "Notenschlüssel-Rechner (DE)")],
 }
 
 FOOTER_TEXT = {
     "de": dict(
         blurb="Notenverwaltung für Lehrkräfte. Läuft lokal auf deinem Gerät. Kein Nutzerkonto, "
               "kein Tracking, keine Werbung.",
-        social="ClassTiles auf Instagram", modules="Module", manuals="Handbücher",
+        social="ClassTiles auf Instagram", modules="Module",
+        manuals="Handbücher &amp; Werkzeuge",
         legal="Rechtliches",
         note="Diese Seite setzt keine Cookies. Besucherzahlen werden anonym und Cookie-frei mit "
              "Cloudflare Web Analytics gemessen. Details in der Datenschutzerklärung."),
     "en": dict(
         blurb="Grade management for teachers. Runs locally on your device — no user account, "
               "no tracking, no ads.",
-        social="ClassTiles on Instagram", modules="Modules", manuals="Manuals", legal="Legal",
+        social="ClassTiles on Instagram", modules="Modules",
+        manuals="Manuals &amp; tools", legal="Legal",
         note="This site sets no cookies. Visitor numbers are measured anonymously and cookie-free "
              "with Cloudflare Web Analytics — see the privacy policy for details. English is a "
              "convenience translation — the German version is the legally binding one."),
