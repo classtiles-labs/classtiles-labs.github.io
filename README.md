@@ -160,6 +160,15 @@ Skript, und daran hängen drei Regeln:
   Test, statt rot zu werden. Eine Nachbildung der Formel in Python wäre keine Prüfung: Sie
   würde bei jedem Denkfehler genauso falsch rechnen wie die Seite.
 
+Beide Seiten hängen in der **Fußzeile** (Spalte „Handbücher & Werkzeuge") bzw. der
+**Kopfleiste** — und damit einen Klick von jeder Seite entfernt. Das ist kein Schmuck:
+`tools/tests/test_erreichbarkeit.py` rechnet aus dem fertigen HTML aus, wie viele Verweise auf
+eine Seite zeigen und wie tief sie von der Startseite liegt, und lässt für die beiden
+Sucheingänge nur Klicktiefe 1 zu. Der Rechner hing nach seinem ersten PR an **einem** Verweis
+als letzter Aufzählungspunkt in der Modulseite: für Leser unauffindbar, für Google eine Seite
+ohne internes Gewicht. `check-links.py` fand daran nichts — es prüft, ob Verweise ins Leere
+gehen, nicht, ob eine Seite genug davon abbekommt.
+
 Die drei ClassTiles-Tabellen im Rechner (1–6, mit Tendenzen, Oberstufe 0–15) sind Kopien aus
 `PointsGradingKey+Defaults.swift` im App-Repo. Ändern sie sich dort, müssen sie hier mit —
 `test_rechnet_mit_den_tabellen_der_app` hält sie fest, damit das auffällt.

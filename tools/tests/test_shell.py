@@ -102,12 +102,17 @@ class TestApplyShell(unittest.TestCase):
 
     def test_footer_has_a_manuals_column_and_keeps_the_legal_links(self):
         """Die Rechtstexte verlassen die Kopfleiste — im Fuß müssen sie vollständig bleiben,
-        sonst wäre das Impressum nicht mehr von jeder Seite aus erreichbar."""
+        sonst wäre das Impressum nicht mehr von jeder Seite aus erreichbar.
+
+        Die Überschrift der Handbuchspalte wird bewusst nur am Anfang geprüft: Sie heißt seit
+        dem Notenschlüssel-Rechner „Handbücher & Werkzeuge". Verankert ist die Spalte an dem,
+        worauf es ankommt — dass die Handbuchübersicht darin steht."""
         self.run_apply()
         for name in pages(self.tmp):
             foot = FOOTER.search(self.read(name)).group(0)
             lang = "en" if name.startswith("en/") else "de"
-            self.assertIn("<h4>Handbücher</h4>" if lang == "de" else "<h4>Manuals</h4>", foot)
+            self.assertIn("<h4>Handbücher" if lang == "de" else "<h4>Manuals", foot)
+            self.assertIn("handbuecher.html" if lang == "de" else "manuals.html", foot)
             self.assertIn("impressum.html" if lang == "de" else "imprint.html", foot)
 
     def test_body_content_is_untouched(self):
