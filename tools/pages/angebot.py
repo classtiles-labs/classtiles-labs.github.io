@@ -81,6 +81,10 @@ TUEREN = [
      "Aus dem Schaubild im Buch wird eine Simulation mit Reglern: ein Bild, ein Prompt, eine "
      "HTML-Datei. Mit dem Prompt zum Kopieren und der fertigen Simulation zu Angebot und "
      "Nachfrage zum Mitnehmen."),
+    ("ki-hefteintrag.html", "Tafelbild abfotografiert, Hefteintrag fertig",
+     "Aus dem Foto des Tafelbilds wird mit einem Prompt ein Hefteintrag als PDF: eine Seite mit "
+     "Merksatz, Begriffen, Skizze und drei Kontrollfragen. Mit Prompt zum Kopieren und einem "
+     "Beispiel aus Biologie."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
