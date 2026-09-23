@@ -85,6 +85,9 @@ TUEREN = [
      "Aus dem Foto des Tafelbilds wird mit einem Prompt ein Merkblatt für deine Klasse als PDF: eine Seite mit "
      "Merksatz, Begriffen, Skizze und drei Kontrollfragen. Mit Prompt zum Kopieren und einem "
      "Beispiel aus Biologie."),
+    ("ki-link.html", "HTML-Datei per Link an die Klasse",
+     "Deine Simulation oder dein Lernspiel als Link und QR-Code: mit Netlify Drop kostenlos ins "
+     "Netz, ohne Download und ohne App für die Klasse. Mit allen Schritten und Stolperfallen."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),

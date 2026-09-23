@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neues — ClassTiles</title>
-  <meta name="description" content="Neues zu KI und Digitalisierung in der Schule: kurze Notizen zu Entwicklungen und erprobte Handgriffe für den Unterricht.">
-  <link rel="canonical" href="https://classtiles.de/ki-neues.html">
+  <title>HTML-Datei per Link an die Klasse — ClassTiles</title>
+  <meta name="description" content="Eine HTML-Datei kommt mit Netlify Drop kostenlos ins Netz und als Link oder QR-Code zu deiner Klasse. Mit allen Schritten und Stolperfallen.">
+  <link rel="canonical" href="https://classtiles.de/ki-link.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ClassTiles">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Neues — ClassTiles">
-  <meta property="og:description" content="Neues zu KI und Digitalisierung in der Schule: kurze Notizen zu Entwicklungen und erprobte Handgriffe für den Unterricht.">
-  <meta property="og:url" content="https://classtiles.de/ki-neues.html">
+  <meta property="og:title" content="HTML-Datei per Link an die Klasse — ClassTiles">
+  <meta property="og:description" content="Eine HTML-Datei kommt mit Netlify Drop kostenlos ins Netz und als Link oder QR-Code zu deiner Klasse. Mit allen Schritten und Stolperfallen.">
+  <meta property="og:url" content="https://classtiles.de/ki-link.html">
   <meta property="og:image" content="https://classtiles.de/assets/og-classtiles-de.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="ClassTiles — Notenverwaltung für Lehrkräfte, auf iPad, iPhone und Mac">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Neues — ClassTiles">
-  <meta name="twitter:description" content="Neues zu KI und Digitalisierung in der Schule: kurze Notizen zu Entwicklungen und erprobte Handgriffe für den Unterricht.">
+  <meta name="twitter:title" content="HTML-Datei per Link an die Klasse — ClassTiles">
+  <meta name="twitter:description" content="Eine HTML-Datei kommt mit Netlify Drop kostenlos ins Netz und als Link oder QR-Code zu deiner Klasse. Mit allen Schritten und Stolperfallen.">
   <meta name="twitter:image" content="https://classtiles.de/assets/og-classtiles-de.png">
   <script type="application/ld+json">
 {
@@ -47,22 +47,22 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://classtiles.de/ki-neues.html",
-      "url": "https://classtiles.de/ki-neues.html",
-      "name": "Neues — ClassTiles",
-      "description": "Neues zu KI und Digitalisierung in der Schule: kurze Notizen zu Entwicklungen und erprobte Handgriffe für den Unterricht.",
+      "@id": "https://classtiles.de/ki-link.html",
+      "url": "https://classtiles.de/ki-link.html",
+      "name": "HTML-Datei per Link an die Klasse — ClassTiles",
+      "description": "Eine HTML-Datei kommt mit Netlify Drop kostenlos ins Netz und als Link oder QR-Code zu deiner Klasse. Mit allen Schritten und Stolperfallen.",
       "inLanguage": "de",
       "isPartOf": {
         "@id": "https://classtiles.de/#website"
       },
       "primaryImageOfPage": "https://classtiles.de/assets/og-classtiles-de.png",
       "breadcrumb": {
-        "@id": "https://classtiles.de/ki-neues.html#breadcrumb"
+        "@id": "https://classtiles.de/ki-link.html#breadcrumb"
       }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://classtiles.de/ki-neues.html#breadcrumb",
+      "@id": "https://classtiles.de/ki-link.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -79,7 +79,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Neues"
+          "name": "HTML-Datei per Link an die Klasse"
         }
       ]
     }
@@ -535,6 +535,17 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 .soon-tile{opacity:.62}
 .soon-tile em{color:var(--ink-3)}
 </style>
+  <style>
+    .tpl details{margin-top:12px;border:1px solid var(--hair);border-radius:12px;background:var(--sunk);overflow:hidden}
+    .tpl summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:.9rem;color:var(--ink-2)}
+    .tpl pre{margin:0;padding:14px 16px;font-size:.82rem;line-height:1.5;white-space:pre-wrap;word-break:break-word;color:var(--ink);border-top:1px solid var(--hair);max-height:420px;overflow:auto}
+    .copy.done{background:var(--hb-tip)}
+    .steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    .steps li{position:relative;padding-left:44px;color:var(--ink-2)}
+    .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:9px;background:var(--navy);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.9rem}
+    .steps b{color:var(--ink)}
+    .shot img{border:1px solid var(--hair);border-radius:12px}
+  </style>
 </head>
 <body>
   <div class="bar" id="bar">
@@ -550,32 +561,100 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
   <div class="wrap">
     <a class="back" href="digitalisierung-ki.html">← Digitalisierung &amp; KI</a>
     <div class="pagetitle" style="max-width:none">
-      <div class="eyebrow">Neues</div>
-      <h1>Was sich getan hat</h1>
-      <p class="mlead">Kurze Notizen zu Entwicklungen rund um KI in der Schule und Handgriffe,
-      die sich im Unterricht bewährt haben. Kein Newsletter, keine Anmeldung. Die Seite
-      steht hier, und wer mag, schaut vorbei.</p>
+      <div class="eyebrow">Link statt Datei</div>
+      <h1>Deine HTML-Datei als Link für die Klasse</h1>
+      <p class="mlead">Simulationen, Lernspiele und Übungsseiten, die du mit KI baust, sind oft eine
+      einzelne HTML-Datei. Per Mail oder über die Schulplattform kommt so eine Datei aber oft nur als
+      Download an, und manche Tablets zeigen dann nur den Quelltext. Mit Netlify Drop stellst du die
+      Datei kostenlos ins Netz. Deine Klasse öffnet sie dann über einen Link oder einen QR-Code, ohne
+      Download und ohne App.</p>
     </div>
 
-    <section class="neues">
-      <article class="neu" id="2026-09-23-html-per-link"><div class="neukopf"><time>23. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-23-html-per-link">HTML-Datei per Link an die Klasse</a></h3><p>Eine HTML-Datei per Mail oder Schulplattform kommt oft nur als Download an, und manche Tablets zeigen dann nur den Quelltext. Mit Netlify Drop stellst du die Datei kostenlos ins Netz und gibst deiner Klasse einen Link oder einen QR-Code.</p><p>Auf der Seite stehen alle Schritte: Konto anlegen, nur die eine Datei hochladen, der Seite einen Namen geben, das Abzeichen ausschalten und den QR-Code in Chrome erstellen. Dazu, wie du die Datei später änderst, ohne dass sich der Link ändert.</p><div class="neuweiter"><a href="ki-link.html">Zur Anleitung →</a></div></article>
-      <article class="neu" id="2026-09-21-tafelbild-merkblatt"><div class="neukopf"><time>21. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-21-tafelbild-merkblatt">Tafelbild abfotografiert, Merkblatt fertig</a></h3><p>Am Ende der Stunde wird die Tafel gewischt. Wenn du das Tafelbild vorher fotografierst, macht Claude daraus mit einem Prompt ein Merkblatt für deine Klasse als PDF auf einer DIN-A4-Seite.</p><p>Das Merkblatt enthält eine Überschrift, einen Merksatz, die wichtigsten Begriffe, eine beschriftete Skizze und drei Kontrollfragen für den Einstieg in die nächste Stunde. Es ersetzt nicht das Mitschreiben, es ergänzt es. Auf der Seite stehen der Prompt zum Kopieren und ein Beispiel aus Biologie mit Foto und PDF.</p><p>Lies das Merkblatt gegen die Tafel, bevor du es verteilst: Eine KI kann sich bei Handschrift verlesen. Kennzeichne es so, wie es die Regeln deiner Schule zum KI-Einsatz verlangen.</p><div class="neuweiter"><a href="ki-merkblatt.html">Zur Anleitung →</a></div></article>
-      <article class="neu" id="2026-09-20-simulation-statt-schaubild"><div class="neukopf"><time>20. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-20-simulation-statt-schaubild">Aus dem Schaubild im Buch wird eine Simulation</a></h3><p>Ein Schaubild im Buch bewegt sich nicht. Mit einem Bild und einem Prompt baut Claude daraus eine Simulation: eine einzige HTML-Datei mit Reglern, an denen die Klasse selbst dreht.</p><p>Auf der Seite steht der Prompt zum Kopieren und eine fertige Simulation zu Angebot und Nachfrage mit Mindest- und Höchstpreis. Titel, Fach, Klasse und Name stehen ganz oben in der Datei und lassen sich dort ändern.</p><p>Die Datei läuft ohne Internetverbindung, fragt keine Namen ab und speichert nichts. Prüfe die Zahlen, bevor die Klasse damit arbeitet: Steht im Schaubild kein Wert, erfindet die KI welche.</p><div class="neuweiter"><a href="ki-simulation.html">Zur Simulation →</a></div></article>
-      <article class="neu" id="2026-09-13-skills-fuer-claude"><div class="neukopf"><time>13. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-13-skills-fuer-claude">Skills für Claude: ein Wort im Chat, und Claude prüft dein Arbeitsblatt</a></h3><p>Ein Skill ist eine Textdatei mit Regeln, die Claude nur dann liest, wenn du ihn aufrufst. Du lädst ihn einmal hoch, danach reicht ein Wort am Ende deiner Nachricht.</p><p>Zwei Skills liegen ab heute zum Laden bereit, beide mit echten Aufgaben getestet:</p><ul><li><b>gegenlesen</b> prüft ein KI-erstelltes Arbeitsblatt, bevor du es austeilst: Fachfehler, Bilder, Niveau der Klasse, Kennzeichnung. Die Antwort endet mit einem von drei Urteilen.</li><li><b>lernen</b> ist für deinen Kurs: Claude nennt keine Lösung und rechnet nichts vor, sondern stellt in jeder Antwort genau eine Frage.</li></ul><p>Auf der Seite steht, wie ein Skill in dein Claude kommt, woran du merkst, dass er geladen ist, und wie du die Regeln für deinen Kurs änderst. Das Test-Arbeitsblatt mit fünf eingebauten Fehlern liegt zum Nachprobieren dabei.</p><div class="neuweiter"><a href="ki-skills.html">Zu den Skills →</a></div></article>
-      <article class="neu" id="2026-09-12-lernspiel-aus-einem-prompt"><div class="neukopf"><time>12. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-12-lernspiel-aus-einem-prompt">Ein Übungsspiel für dein Fach, aus einem Prompt</a></h3><p>Zwei Schülerinnen oder Schüler sitzen nebeneinander am iPad und treten gegeneinander an. Jede richtige Antwort ist ein Korb, die Uhr läuft für beide, am Ende gewinnt, wer mehr Körbe hat.</p><p>Das Spiel ist eine einzige HTML-Datei und entsteht aus einem einzigen Prompt. Der steht auf der Seite zum Kopieren, dazu drei fertige Beispiele für Mathematik, Französisch und Biologie und zwei spielbare Fassungen für Englisch in Jahrgang 8.</p><p>Nach dem Laden läuft das Spiel ohne Internetverbindung, fragt keine Namen ab und speichert keine Ergebnisse. Deshalb gibt es weder Konto noch Einwilligung zu klären.</p><div class="neuweiter"><a href="ki-lernspiel.html">Zum Lernspiel →</a></div></article>
-      <article class="neu" id="2026-09-10-ki-werkstatt-erwartungshorizont-mit-cowork"><div class="neukopf"><time>10. September 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-09-10-ki-werkstatt-erwartungshorizont-mit-cowork">KI-Werkstatt: Reels zum Nachbauen, mit allen Vorlagen</a></h3><p>Die erste Staffel der KI-Werkstatt ist da. Fünf kurze Reels bauen aus einer Klausur einen Erwartungshorizont mit Claude Cowork, und jede Folge zeigt genau einen Fehler, den die KI dabei macht, und die Entscheidung der Lehrkraft dazu.</p><p>Damit niemand aus einem laufenden Video abtippen muss, liegen die Vorlagen auf der Seite: das Muster für die Kontextdatei, die Ordner-Anweisungen, der Wortlaut der Aufträge und ein Blanko-Horizont als Word-Datei. Alles in eckigen Klammern passt du an deine Klausur an.</p><p>Die Regel, die in allen fünf Folgen gilt: Die KI schlägt Punkte vor. Die Note vergibt die Lehrkraft.</p><div class="neuweiter"><a href="ki-werkstatt.html">Zur KI-Werkstatt →</a></div></article>
-      <article class="neu" id="2026-08-15-band-4-uebungsseiten-selbst-bauen"><div class="neukopf"><time>15. August 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-08-15-band-4-uebungsseiten-selbst-bauen">Band 4: Übungsseiten selbst bauen</a></h3><p>Der vierte Band des Praxis-Handbuchs ist da. Er führt einmal durch den ganzen Weg zu einer interaktiven Übungsseite: beschreiben, bauen lassen, öffnen, weitergeben. Programmieren musst du dafür nichts.</p><p>Am Ende steht eine einzige Datei mit der Endung <b>.html</b>. Sie öffnet sich per Doppelklick im Browser, sie läuft ohne Internet, und sie sendet nichts — was die Klasse eintippt, bleibt auf ihrem Gerät. Deshalb gibt es hier weder Konto noch Einwilligung zu klären.</p><p>Die Aufträge im Heft sind wörtlich zu übernehmen; auszutauschen sind nur Fach, Jahrgang und Thema. Drei davon stammen aus dem Unterricht: englischer Satzbau in Jahrgang 5, dieselbe Übung spielerisch mit Punkten und Stufen, und Konnektoren im Leistungskurs mit einer Erklärung nach jeder Antwort.</p><p>Was eine Übungsseite nicht ist, steht ebenfalls drin: Sie prüft, was eindeutig ist, und sie bewertet keinen freien Text. Und sie ist kein Lernstandssystem — wer wissen muss, wer wie weit ist, braucht dafür weiterhin einen zweiten Weg.</p><div class="neuweiter"><a href="ki-handbuch-uebungsseiten.html">Band 4 lesen →</a><a href="ki-kurzfassung-uebungsseiten.html">Kurzfassung →</a></div></article>
-      <article class="neu" id="2026-08-11-die-ki-handbuecher-sind-online"><div class="neukopf"><time>11. August 2026</time><span class="art art-neu">Neu</span></div><h3><a href="#2026-08-11-die-ki-handbuecher-sind-online">Die KI-Handbücher sind online</a></h3><p>Vier Bände liegen ab heute zum Lesen und Herunterladen bereit: die drei Bände des Praxis-Handbuchs und das Workbook. Sie stehen vollständig auf der Seite. Kein Newsletter, keine Anmeldung, kein Konto.</p><p>Wer sich nicht durch 7.000 Wörter arbeiten will, findet zu jedem Band eine <b>Kurzfassung</b>: die Idee in einem Satz, die Methode, ein halbes Dutzend Punkte zum Mitnehmen und die Grenzen des Bandes. Fünf Minuten statt einer Stunde.</p><p>Dazu gibt es ein Glossar mit 29 Begriffen. Jeder Eintrag steht in einem Satz da und springt von dort an die Stelle im Handbuch, an der es ausführlich wird.</p><div class="neuweiter"><a href="ki-handbuecher.html">Zu den Handbüchern →</a><a href="ki-glossar.html">Glossar →</a></div></article>
-      <article class="neu" id="2026-08-11-drei-blaetter-regeln-die-ki-nutzung"><div class="neukopf"><time>11. August 2026</time><span class="art art-tipp">Tipp</span></div><h3><a href="#2026-08-11-drei-blaetter-regeln-die-ki-nutzung">Drei Blätter regeln die KI-Nutzung in der Klasse</a></h3><p>„Darf ich für die Aufgabe KI benutzen?“ Die Frage kommt, und sie kommt in jeder Lerngruppe noch einmal neu. Ein Verbot hält sie nicht auf, und Ignorieren auch nicht.</p><p>Was hilft, sind drei Blätter, die drei verschiedene Fragen beantworten:</p><ul><li><b>Was gilt?</b> Die Ampel hängt aus. Rot, gelb, grün; sie klärt den Normalfall, damit nicht jede Aufgabe neu verhandelt wird.</li><li><b>Warum gilt das?</b> Die Handreichung wird einmal zu Beginn der Reihe ausgeteilt und durchgesprochen. Ohne sie wird die Regel befolgt, aber nicht verstanden.</li><li><b>Was habe ich getan?</b> Das Protokoll liegt der Abgabe bei. Wer offenlegt, wie ein Ergebnis entstanden ist, muss sich hinterher nicht rechtfertigen.</li></ul><p>Alle drei sind auf A4 gesetzt und lassen sich ohne Anpassung einsetzen. Gilt an deiner Schule etwas anderes, ist die Ampel die Stelle, an der du es änderst. Die anderen beiden bleiben unberührt.</p><div class="neuweiter"><a href="ki-material.html">Material für die Klasse →</a></div></article>
+    <section style="padding:34px 0 0">
+      <div class="head">
+        <h2>Das Beispiel</h2>
+        <p>Die Markt-Simulation aus <a href="ki-simulation.html">Simulation statt Schaubild</a>
+        liegt auf diesem Weg im Netz. Du kannst sie auf dem Tablet, dem Handy oder am Computer
+        öffnen.</p>
+      </div>
+      <div class="hblinks"><a class="btn b-solid" href="https://pizzamarkt.netlify.app" target="_blank" rel="noopener noreferrer">pizzamarkt.netlify.app öffnen</a></div>
     </section>
 
     <section class="rev">
-      <p class="note">Die ausführlichen Fassungen stehen in den
-      <a href="ki-handbuecher.html">Handbüchern</a>; angekündigt wird hier Erscheinendes auch
-      <a href="https://www.instagram.com/classtiles/" target="_blank" rel="noopener noreferrer">auf
-      Instagram</a>.</p>
+      <div class="head">
+        <h2>So gehst du vor</h2>
+        <p>Sechs Schritte, von der Datei bis zum QR-Code an der Tafel. Beim ersten Mal dauert das
+        etwa zehn Minuten, danach wenige Minuten.</p>
+      </div>
+      <ol class="steps">
+        <li><b>Ein kostenloses Konto bei Netlify anlegen.</b> Die Anmeldung geht zum Beispiel mit
+        einem Google-Konto. Ohne Konto löscht Netlify die Seite nach einer Stunde wieder.</li>
+        <li><b>Die Datei vorbereiten.</b> Lege einen neuen, leeren Ordner an und kopiere nur deine
+        HTML-Datei hinein. Benenne sie in <code>index.html</code> um. Dann öffnet der Link direkt deine
+        Seite. Zieh nie einen Ordner mit anderen Dateien hoch: Alles darin wird öffentlich.</li>
+        <li><b>Den Ordner ins Browserfenster ziehen.</b> Öffne <code>app.netlify.com/drop</code>,
+        während du angemeldet bist, und zieh den Ordner in das Feld. Nach wenigen Sekunden ist die
+        Seite online.</li>
+        <li><b>Der Seite einen Namen geben.</b> Netlify vergibt zuerst einen Zufallsnamen wie
+        <code>iridescent-pasca-1ef025.netlify.app</code>. Unter Project configuration → General →
+        Change project name trägst du einen eigenen Namen ein, zum Beispiel <code>pizzamarkt</code>.
+        Die alte Adresse funktioniert danach nicht mehr. Benenne die Seite deshalb um, bevor du den
+        Link verteilst.</li>
+        <li><b>Das Abzeichen „Powered by Netlify“ ausschalten.</b> Bei kostenlosen Konten blendet
+        Netlify seit August 2026 ein Abzeichen mit Logo auf der Seite ein. Unter Project configuration
+        → General → Powered by Netlify badge schaltest du es aus.</li>
+        <li><b>Den QR-Code erstellen.</b> Öffne den Link in Chrome. Klicke mit der rechten Maustaste
+        auf die Seite und wähle „QR-Code für diese Seite erstellen“. Den Code kannst du herunterladen,
+        am Beamer zeigen oder auf das Arbeitsblatt drucken.</li>
+      </ol>
+      <p class="note"><b>Nur Safari?</b> Safari hat keinen eingebauten QR-Code-Generator. Mit der
+      Kurzbefehle-App von Apple geht es trotzdem: Lege einen neuen Kurzbefehl an, füge eine
+      Text-Aktion mit deinem Link ein und danach die Aktion für QR-Codes (in der Suche „QR“
+      eingeben). Der Kurzbefehl zeigt dir dann den Code an.</p>
     </section>
 
+    <section class="rev">
+      <div class="head">
+        <h2>Die Datei ändern, den Link behalten</h2>
+        <p>Wenn du die Datei verbesserst, soll der Link gleich bleiben. Sonst zeigt der QR-Code, den
+        deine Klasse schon hat, auf die alte Fassung.</p>
+      </div>
+      <ol class="steps">
+        <li><b>Das Projekt bei Netlify öffnen</b> und den Bereich „Deploys“ wählen.</li>
+        <li><b>Den Ordner mit der neuen Fassung dort hineinziehen.</b> Die Datei heißt wieder
+        <code>index.html</code>. Der Link bleibt gleich.</li>
+      </ol>
+      <p class="note"><b>Die Stolperfalle:</b> Wenn du die neue Fassung wieder auf
+      <code>app.netlify.com/drop</code> ziehst, entsteht eine zweite Seite mit einem neuen
+      Zufallsnamen. Die erste Seite bleibt unverändert.</p>
+    </section>
+
+    <section class="rev">
+      <div class="box">
+        <h2>Datenschutz</h2>
+        <ul>
+          <li><b>Die Seite ist öffentlich.</b> Jeder, der den Link kennt, kann sie öffnen.</li>
+          <li><b>Keine Namen, Noten oder Fotos von Schülerinnen und Schülern in die Datei.</b> Die
+          Datei enthält nur Unterrichtsmaterial.</li>
+          <li><b>Die Datei lädt nichts von anderen Anbietern nach.</b> Keine Schriften von Google
+          Fonts, keine eingebetteten Videos, keine Zählpixel. Dann ruft das Tablet deiner Schüler nur
+          die Seite bei Netlify ab. Du kannst das der KI beim Bauen gleich mit auftragen: „Alles in
+          einer Datei, keine externen Ressourcen.“</li>
+          <li><b>Netlify ist ein Anbieter aus den USA.</b> Kläre im Zweifel mit deiner Schule, ob du
+          Material auf diesem Weg bereitstellen darfst.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="rev">
+      <div class="box">
+        <h2>Kosten</h2>
+        <p>Das kostenlose Konto hat ein monatliches Kontingent. Eine einzelne HTML-Datei ist meist
+        nur wenige hundert Kilobyte groß. Damit reicht das Kontingent für viele tausend Aufrufe. Wie
+        viel du verbraucht hast, zeigt Netlify in deinem Konto an.</p>
+        <p style="margin-top:12px">Unabhängiger Beitrag. Keine Kooperation mit Netlify oder Google.</p>
+      </div>
+    </section>
   </div>
 
   <footer>
@@ -642,5 +721,20 @@ footer{border-top:1px solid var(--hair);margin-top:48px;padding:44px 0 60px}
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7b45f2b83d574c8987ad43343d41f3c4"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+document.querySelectorAll('button.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.dataset.copy);
+    var label=btn.dataset.label;
+    function ok(){btn.textContent='Kopiert';btn.classList.add('done');setTimeout(function(){btn.textContent=label;btn.classList.remove('done');},1800);}
+    function fail(){btn.textContent='Bitte von Hand markieren';setTimeout(function(){btn.textContent=label;},2600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent).then(ok,fail);return;}
+    var open=el.closest('details');if(open)open.open=true;
+    var r=document.createRange();r.selectNodeContents(el);
+    var s=getSelection();s.removeAllRanges();s.addRange(r);
+    try{document.execCommand('copy')?ok():fail();}catch(e){fail();}
+  });
+});
+</script>
 </body>
 </html>
