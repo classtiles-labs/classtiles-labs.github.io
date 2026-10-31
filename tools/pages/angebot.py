@@ -88,6 +88,9 @@ TUEREN = [
     ("ki-link.html", "HTML-Datei per Link an die Klasse",
      "Deine Simulation oder dein Lernspiel als Link und QR-Code: mit Netlify Drop kostenlos ins "
      "Netz, ohne Download und ohne App für die Klasse. Mit allen Schritten und Stolperfallen."),
+    ("ki-teaching-assistant.html", "Teaching Assistant",
+     "Ein Beamer-Dashboard für die ganze Stunde, mit KI gebaut: Timer, Lautstärke-Ampel mit "
+     "Sternen, Zufallsauswahl, Karten und Vokabeln in einer HTML-Datei. Kostenlos zum Laden."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
