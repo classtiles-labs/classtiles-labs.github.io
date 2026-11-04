@@ -57,3 +57,11 @@ test('Stationslinks im gezeichneten Netz tragen den Stand mit (Schlussprüfung, 
   const leer = netzSvg(N2, {linie: null, start: null, besucht: []}, '', 390);
   assert.match(leer, /href="ki-kurs-wie-ki-schreibt\.html"/);
 });
+
+test('unter dem Netz steht eine Legende, die „in Planung“ erklärt', async () => {
+  const {netzSvg} = await import('../../../assets/kurs/netz.js');
+  const html = netzSvg(N, {linie: null, start: null, besucht: []}, '', 390);
+  assert.match(html, /class="netz-legende"/);
+  assert.match(html, /in Planung/);
+  assert.match(html, /besucht/);
+});

@@ -60,6 +60,12 @@ export function netzLayout(netz, {breite = 390} = {}) {
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Legende unter dem Netz: Blasse, gestrichelte Stationen sind noch nicht gebaut.
+const LEGENDE = '<p class="netz-legende">'
+  + '<span class="lg-eintrag"><span class="lg lg-besucht"></span> besucht</span>'
+  + '<span class="lg-eintrag"><span class="lg lg-offen"></span> offen</span>'
+  + '<span class="lg-eintrag"><span class="lg lg-geplant"></span> in Planung, kommt als Fahrplanänderung</span></p>';
+
 // Das gezeichnete Netz als SVG-Text. `fragment` (z. B. „#stand=…“) hängt an jedem
 // Stationslink, damit der Fortschritt auch beim Tippen ins Netz mitreist.
 export function netzSvg(netz, stand, fragment, breite) {
@@ -93,5 +99,5 @@ export function netzSvg(netz, stand, fragment, breite) {
     teile.push(`<circle class="netz-puls linie-${z.linie.toLowerCase()}" cx="${z.x}" cy="${z.y}" r="9"/>`);
     teile.push(`<g class="netz-zug"><rect x="${z.x - 20}" y="${z.y + 14}" width="40" height="18" rx="9"/><text x="${z.x}" y="${z.y + 27}">Du</text></g>`);
   }
-  return `<svg viewBox="0 0 ${breite} ${l.hoehe}" width="100%" aria-hidden="true" focusable="false">${teile.join('')}</svg>`;
+  return `<svg viewBox="0 0 ${breite} ${l.hoehe}" width="100%" aria-hidden="true" focusable="false">${teile.join('')}</svg>` + LEGENDE;
 }

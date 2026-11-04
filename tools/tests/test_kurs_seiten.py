@@ -137,9 +137,11 @@ class TestSeiten(unittest.TestCase):
         self.assertNotIn('rel="next"', a)
 
     def test_umstieg_wird_angeboten(self):
+        # Am Linienende steht der Umstieg im Endstations-Hinweis, sonst im eigenen Kasten.
         drei = self.seiten["ki-kurs-e-drei.html"]
-        self.assertIn('class="kurs-umstieg"', drei)
-        self.assertIn('href="ki-kurs-a-eins.html"', drei)
+        self.assertTrue('class="kurs-umstieg"' in drei or 'class="kurs-endstation"' in drei)
+        nav = re.search(r'<nav class="station-nav">(.*?)</nav>', drei, re.S).group(1)
+        self.assertIn('href="ki-kurs-a-eins.html"', nav)
 
     def test_station_kopf_nennt_linie_und_position(self):
         drei = self.seiten["ki-kurs-e-drei.html"]
@@ -225,6 +227,39 @@ class TestEchteSeiten(unittest.TestCase):
         r = subprocess.run([sys.executable, os.path.join(REPO, "tools", "pages", "ki_kurs.py"),
                             "--check"], capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+
+class TestEndstation(unittest.TestCase):
+    """Wo eine Linie vorerst endet, sagt die Station das und bietet das Umsteigen an
+    (Stefan, 04.11.2026: „komme nicht weiter bei B 2 zu 3“)."""
+
+    @classmethod
+    def setUpClass(cls):
+        with Kopie() as k:
+            k.aendere(lambda d: d["stationen"].insert(3, {"id": "e-vier", "linie": "E", "titel": "Vierte Station",
+                                                          "status": "geplant", "erlebnis": None, "umstieg": None}))
+            cls.seiten = ki_kurs.seiten(ki_kurs.lade_netz(k.netz))
+
+    def ende(self, name):
+        m = re.search(r'<div class="kurs-endstation">(.*?)</div>', self.seiten[name], re.S)
+        return m.group(1) if m else None
+
+    def test_letzte_gebaute_station_nennt_die_naechste_geplante(self):
+        ende = self.ende("ki-kurs-e-drei.html")
+        self.assertIsNotNone(ende, "kein Hinweis am Ende der Linie")
+        self.assertIn("Vierte Station", ende)
+        self.assertIn("in Planung", ende)
+        self.assertIn('href="ki-kurs-a-eins.html"', ende)   # Umsteigen auf eine andere Linie
+        self.assertIn('href="ki-kurs.html"', ende)
+
+    def test_station_mit_nachfolger_hat_keinen_hinweis(self):
+        self.assertIsNone(self.ende("ki-kurs-e-eins.html"))
+
+    def test_echtes_ende_ohne_geplante_station(self):
+        ende = self.ende("ki-kurs-a-eins.html")
+        self.assertIsNotNone(ende)
+        self.assertIn("Endstation", ende)
+        self.assertIn('href="ki-kurs-e-eins.html"', ende)
 
 
 class TestGebauteStationen(unittest.TestCase):

@@ -321,3 +321,16 @@ button.btn{min-height:44px}
 .ar-knoepfe{display:flex;align-items:center;gap:10px;margin:14px 0 0}
 .ar-zaehler{font-size:.85rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .ar-knoepfe .btn:disabled{opacity:.4;cursor:default}
+
+/* ---------- Ende einer Linie ---------- */
+.kurs-endstation{flex-basis:100%;padding:14px 16px;border-radius:14px;background:var(--sunk);border:1px solid var(--hair-2);border-left:5px solid var(--lf)}
+.kurs-endstation p{margin:0 0 6px}
+.kurs-endstation p:last-child{margin:0}
+.kurs-endstation a{display:inline-flex;gap:5px;align-items:center;min-height:36px}
+.netz-legende{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:.8rem;color:var(--ink-3);margin:4px 4px 12px}
+.netz-legende{gap:4px 14px}
+.lg-eintrag{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.netz-legende .lg{display:inline-block;width:12px;height:12px;border-radius:50%;border:2.5px solid var(--ink-3)}
+.netz-legende .lg-besucht{background:var(--ink-3)}
+.netz-legende .lg-offen{background:var(--tile)}
+.netz-legende .lg-geplant{background:var(--tile);border-style:dashed;opacity:.6}

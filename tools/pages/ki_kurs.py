@@ -236,6 +236,38 @@ def uebersicht(netz, neues=()):
     return shell.page(UEBERSICHT, "KI-Kurs — ClassTiles", desc, body)
 
 
+def _endstation(netz, s):
+    """Hinweis, wenn nach dieser Station auf ihrer Linie keine gebaute mehr folgt: nennt die
+    nächste geplante Station (oder „Endstation“) und bietet das Umsteigen auf die anderen
+    Linien an. Ohne ihn stünde man am Linienende ohne „Weiter“ und ohne Erklärung."""
+    alle = _auf_linie(netz, s["linie"])
+    danach = alle[alle.index(s) + 1:]
+    if any(x["status"] == "gebaut" for x in danach):
+        return ""
+    andere = []
+    for lid in LINIEN:
+        if lid == s["linie"]:
+            continue
+        erste = next((x for x in _auf_linie(netz, lid) if x["status"] == "gebaut"), None)
+        # Ein fester Umstieg dieser Station geht vor dem Linienanfang.
+        if s.get("umstieg"):
+            ziel = _station(netz, s["umstieg"])
+            if ziel["linie"] == lid and ziel["status"] == "gebaut":
+                erste = ziel
+        if erste:
+            andere.append(f'<a href="{dateiname(erste["id"])}">{_badge(lid)} '
+                          f'{html.escape(_linie(netz, lid)["name"])}</a>')
+    if danach:
+        kopf = (f'<p><b>Hier endet die Linie vorerst.</b> Als Nächstes kommt '
+                f'„{html.escape(danach[0]["titel"])}“, die Station ist in Planung. Neue Stationen '
+                f'kündigen wir als Fahrplanänderung an.</p>')
+    else:
+        kopf = '<p><b>Endstation.</b> Du hast diese Linie bis zum Ende befahren.</p>'
+    weiter = " · ".join(andere + [f'<a href="{UEBERSICHT}">Zum Liniennetz</a>'])
+    um = f'<p>{"Umsteigen: " if andere else ""}{weiter}</p>'
+    return f'<div class="kurs-endstation">{kopf}{um}</div>'
+
+
 def station(netz, s, neues=()):
     linie = _linie(netz, s["linie"])
     alle = _auf_linie(netz, s["linie"])
@@ -251,7 +283,11 @@ def station(netz, s, neues=()):
         nav.append(f'<a rel="next" href="{dateiname(n["id"])}">Weiter: '
                    f'{html.escape(n["titel"])} →</a>')
     nav.append(f'<a class="kurs-zum-netz" href="{UEBERSICHT}">Zum Liniennetz</a>')
-    umstieg = _umstieg_html(netz, s)
+    # Am Linienende ersetzt der Endstations-Hinweis den Umstieg und „Zum Liniennetz“ (beides steht darin).
+    ende = _endstation(netz, s)
+    umstieg = ende or _umstieg_html(netz, s)
+    if ende:
+        nav = [n for n in nav if "kurs-zum-netz" not in n]
     body = f'''    <a class="back" href="{UEBERSICHT}">← KI-Kurs: Liniennetz</a>
     <link rel="stylesheet" href="assets/kurs/kurs.css">
     <main class="station" data-station="{s["id"]}" data-linie="{s["linie"]}">
