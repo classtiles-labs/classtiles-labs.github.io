@@ -147,6 +147,15 @@ class TestSeiten(unittest.TestCase):
         self.assertIn("Station 3 von 3", drei)
         self.assertIn("Einsteigen", drei)
 
+    def test_fahrkarte_hat_einen_ersatz_ohne_javascript(self):
+        ueb = self.seiten["ki-kurs.html"]
+        fahrkarte = re.search(r'<section id="fahrkarte".*?</section>', ueb, re.S).group(0)
+        self.assertIn('data-erlebnis="fahrkarte"', fahrkarte)
+        self.assertIn("3 Fragen", fahrkarte)
+        # Ersatz: Einstieg in jede Linie, die schon eine gebaute Station hat
+        self.assertIn('href="ki-kurs-e-eins.html"', fahrkarte)
+        self.assertIn('href="ki-kurs-a-eins.html"', fahrkarte)
+
     def test_ticket_text_steht_im_html(self):
         self.assertIn("Prompt aus e-drei", self.seiten["ki-kurs-e-drei.html"])
 

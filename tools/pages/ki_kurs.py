@@ -130,6 +130,20 @@ def _umstieg_html(netz, s):
             f'{html.escape(linie["name"])} ab {hin}</p>')
 
 
+def _einstiege(netz):
+    """Ersatz für die Fahrkarte ohne JavaScript: Einstieg in jede Linie, die schon fährt."""
+    links = []
+    for lid in LINIEN:
+        erste = next((s for s in _auf_linie(netz, lid) if s["status"] == "gebaut"), None)
+        if erste:
+            linie = _linie(netz, lid)
+            links.append(f'<a href="{dateiname(erste["id"])}">{_badge(lid)} '
+                         f'{html.escape(linie["name"])}</a>')
+    if not links:
+        return ""
+    return f'<p class="fk-einstiege">Direkt einsteigen: {" · ".join(links)}</p>'
+
+
 def uebersicht(netz):
     listen = []
     for lid in LINIEN:
@@ -169,8 +183,9 @@ def uebersicht(netz):
     <section id="fahrkarte" class="kurs-fahrkarte">
       <div data-erlebnis="fahrkarte">
         <h2>Fahrkarte lösen</h2>
-        <p>Drei Fragen, eine Minute: Danach weißt du, auf welcher Linie du einsteigst. Du kannst
+        <p>3 Fragen, 1 Minute: Danach weißt du, auf welcher Linie du einsteigst. Du kannst
         auch direkt unten im Liniennetz einsteigen.</p>
+        {_einstiege(netz)}
       </div>
     </section>
 

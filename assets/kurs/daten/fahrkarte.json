@@ -1,0 +1,34 @@
+{
+  "fragen": [
+    {
+      "linie": "E",
+      "frage": "Eine KI nennt dir eine Studie mit Autorin, Jahr und Titel. Was stimmt?",
+      "antworten": [
+        {"text": "Die Studie gibt es, sonst würde die KI sie nicht nennen.", "richtig": false},
+        {"text": "Die Studie kann erfunden sein, auch wenn sie echt klingt.", "richtig": true},
+        {"text": "Mit Jahr und Titel hat die KI die Angabe geprüft.", "richtig": false}
+      ],
+      "erklaerung": "Eine KI erzeugt Text Wort für Wort nach Wahrscheinlichkeit. Eine Quellenangabe mit Autorin, Jahr und Titel ist wahrscheinlicher Text, ob es die Studie gibt oder nicht. In einer Untersuchung von 2023 waren 55 % der Literaturangaben von GPT-3.5 erfunden, bei GPT-4 noch 18 %. Quellen deshalb immer selbst nachschlagen."
+    },
+    {
+      "linie": "A",
+      "frage": "Die KI soll deinen Erwartungshorizont bei jeder Korrektur kennen. Was ist der beste Weg?",
+      "antworten": [
+        {"text": "Ihn bei jeder Korrektur neu in den Chat kopieren.", "richtig": false},
+        {"text": "Ihn einmal in irgendeinen Chat hochladen, dann kennt ihn jeder neue Chat.", "richtig": false},
+        {"text": "Ein Projekt anlegen und das Dokument dort hinterlegen (bei Gemini: ein Gem mit dem Dokument als Wissen).", "richtig": true}
+      ],
+      "erklaerung": "Eine Datei, die du in einem einzelnen Chat hochlädst, steht verlässlich nur diesem Chat zur Verfügung. In einem Projekt in Claude oder ChatGPT liegen Dateien und Anweisungen für alle Chats dieses Projekts bereit. Bei Gemini übernimmt das ein Gem mit Dateien unter „Wissen“. Kopieren geht auch, kostet aber jedes Mal Zeit."
+    },
+    {
+      "linie": "B",
+      "frage": "Was macht ein Coding-Agent wie Claude Code oder Codex anders als ein Chat im Browser?",
+      "antworten": [
+        {"text": "Er arbeitet in einem Ordner auf deinem Rechner: Er liest und ändert Dateien und führt Befehle aus.", "richtig": true},
+        {"text": "Er ist ein Chat mit schwarzem Hintergrund, sonst gibt es keinen Unterschied.", "richtig": false},
+        {"text": "Er schreibt Code, den du anschließend selbst in Dateien kopieren musst.", "richtig": false}
+      ],
+      "erklaerung": "Claude Code und Codex laufen im Terminal oder in einer App auf dem Rechner. Sie lesen Dateien, ändern sie und führen Befehle aus, je nach Einstellung erst nach deiner Freigabe. So entsteht ein fertiges Werkzeug statt eines Codeschnipsels zum Kopieren."
+    }
+  ]
+}
