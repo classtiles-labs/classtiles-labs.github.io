@@ -147,8 +147,11 @@ export async function mountErlebnis(name, el, kontext) {
   try {
     const modul = await import(`./erlebnisse/${name}.js`);
     let daten = null;
-    const antwort = await fetch(new URL(`./daten/${name}.json`, import.meta.url));
-    if (antwort.ok) daten = await antwort.json();
+    // Ein Erlebnis ohne Daten erklärt das mit „export const DATEN = false“ — dann kein Abruf.
+    if (modul.DATEN !== false) {
+      const antwort = await fetch(new URL(`./daten/${name}.json`, import.meta.url));
+      if (antwort.ok) daten = await antwort.json();
+    }
     el.classList.add('erlebnis-aktiv');
     modul.mount(el, daten, kontext);
   } catch (fehler) {

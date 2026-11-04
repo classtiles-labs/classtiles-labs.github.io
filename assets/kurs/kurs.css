@@ -251,3 +251,33 @@ button.btn{min-height:44px}
 .ls-knoepfe{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
 .ls-spiel details summary{cursor:pointer;font-size:.88rem;font-weight:600;min-height:32px}
 .ls-prompt{white-space:pre-wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.78rem;max-height:260px;overflow:auto;background:var(--tile);border:1px solid var(--hair);border-radius:10px;padding:10px}
+
+/* ---------- Erlebnis: Terminal ---------- */
+.tm-anleitung{margin:0 0 12px}
+.tm-anleitung code,.einordnung code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.88em;background:var(--sunk);padding:1px 5px;border-radius:5px}
+.tm-fenster{background:#14161d;color:#e6e8ef;border-radius:12px;overflow:hidden;box-shadow:var(--sh-2)}
+.tm-leiste{display:flex;align-items:center;gap:6px;padding:8px 10px;background:#22252f;font-size:.75rem;color:#9aa0b4}
+.tm-leiste i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.tm-leiste i+i{background:#febc2e}.tm-leiste i+i+i{background:#28c840}
+.tm-leiste span{margin-left:8px}
+.tm-ausgabe{margin:0;padding:12px;min-height:150px;max-height:280px;overflow:auto;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.84rem;line-height:1.5;white-space:pre-wrap}
+.tm-zeile{padding:0 12px 12px}
+.tm-zeile label{display:flex;gap:6px;align-items:center;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.84rem}
+.tm-prompt{color:#6fbf86;white-space:nowrap}
+.tm-zeile input{flex:1;min-width:0;background:none;border:none;color:inherit;font:inherit;outline:none;min-height:32px}
+.tm-zeile:focus-within{outline:2px solid #6f9be6;outline-offset:-4px;border-radius:8px}
+.tm-tasten{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.tm-tasten button{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.8rem;padding:6px 10px;min-height:36px;border-radius:8px;border:1px solid var(--hair-2);background:var(--tile);color:var(--ink);cursor:pointer}
+.tm-geschafft{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--linie-e) 18%,var(--tile))}
+
+/* ---------- Erlebnis: Coding-Agent ---------- */
+.ca-fenster .tm-leiste b{margin-left:auto;color:#e6e8ef;font-variant-numeric:tabular-nums}
+.ca-log{list-style:none;margin:0;padding:12px;min-height:180px;max-height:320px;overflow:auto;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.82rem;line-height:1.5;display:flex;flex-direction:column;gap:6px}
+.ca-log li{display:grid;grid-template-columns:44px 1fr;gap:6px}
+.ca-marke{color:#9aa0b4;font-weight:700}
+.ca-du span:last-child{color:#c9d8f5}.ca-befehl span:last-child{color:#6fbf86}.ca-frage span:last-child{color:#febc2e}.ca-fertig span:last-child{color:#6fbf86;font-weight:700}
+.ca-knoepfe{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.ca-ergebnis{margin:12px 0 0}
+.ca-vergleich{width:100%;border-collapse:collapse;margin:16px 0 0;font-size:.88rem}
+.ca-vergleich caption{text-align:left;font-weight:700;margin-bottom:6px}
+.ca-vergleich th,.ca-vergleich td{border-top:1px solid var(--hair);padding:8px 6px;text-align:left;vertical-align:top}
+.ca-vergleich thead th{border-top:none;color:var(--ink-3);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}

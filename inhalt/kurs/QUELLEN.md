@@ -144,3 +144,31 @@ Abgerufen am 04.11.2026.
 - Spiele: zwei echte Läufe am 04.11.2026 mit Claude Sonnet 5.5 über Claude Code (`claude -p`,
   ohne Werkzeuge), Ausgabe unverändert als HTML-Datei gespeichert; geprüft auf Fremdressourcen
   und Speicherzugriffe (Tests) und durchgespielt.
+
+## terminal
+
+Abgerufen am 04.11.2026.
+
+- Terminal öffnen: macOS „Cmd + Space … type Terminal, and press Enter“; Windows: „PowerShell is
+  Windows' built-in terminal … Press Win + X and select Windows PowerShell (or Terminal)“.
+  Claude Code Docs, Terminal guide for new users. https://code.claude.com/docs/en/terminal-guide
+- PowerShell hat eingebaute Aliasse, u. a. `cd` und unter Windows `ls`. Microsoft Learn,
+  about_Aliases. https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_aliases
+- Claude Code ohne Terminal: Desktop-App. Terminal guide (wie oben). Codex als App: OpenAI,
+  Introducing the Codex app. https://openai.com/index/introducing-the-codex-app/
+- Das Terminal im Erlebnis ist ein Nachbau mit Spielzeug-Dateisystem.
+
+## claude-code-codex
+
+Abgerufen am 04.11.2026.
+
+- Claude Code: „reads your codebase, edits files, runs commands“; im Terminal, in IDEs, in der
+  Desktop-App und im Browser; meist mit Claude-Abo oder Anthropic-Console-Konto; liest
+  CLAUDE.md, kann AGENTS.md lesen. https://code.claude.com/docs/en/overview
+- „You don't need to know how to code.“ Claude Code Docs, Terminal guide. https://code.claude.com/docs/en/terminal-guide
+- Codex: „inspect files, make edits, and run the tools already installed on your machine“.
+  https://learn.chatgpt.com/docs/codex/cli — Anmeldung mit ChatGPT im Rahmen des Abos oder per
+  API-Schlüssel; Projektregeln in AGENTS.md. GitHub openai/codex, README.
+  https://github.com/openai/codex — Codex-App und Cloud: OpenAI, Introducing Codex / Introducing
+  the Codex app. https://openai.com/index/introducing-codex/
+- Der Zeitraffer im Erlebnis ist nachgestellt (so gekennzeichnet).

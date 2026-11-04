@@ -213,7 +213,10 @@ class TestGebauteStationen(unittest.TestCase):
             daten = os.path.join(REPO, "assets", "kurs", "daten", f'{s["erlebnis"]}.json')
             modul = os.path.join(REPO, "assets", "kurs", "erlebnisse", f'{s["erlebnis"]}.js')
             self.assertTrue(os.path.exists(modul), f'{s["id"]}: {modul} fehlt')
-            self.assertTrue(os.path.exists(daten), f'{s["id"]}: {daten} fehlt')
+            # Ein Erlebnis ohne Daten erklärt das selbst (export const DATEN = false).
+            ohne_daten = "export const DATEN = false;" in open(modul, encoding="utf-8").read()
+            self.assertNotEqual(os.path.exists(daten), ohne_daten,
+                                f'{s["id"]}: Daten und Erklärung DATEN passen nicht zusammen')
 
 
 if __name__ == "__main__":

@@ -1,0 +1,113 @@
+{
+  "aufgabe": "Bau mir einen Notenschlüssel-Rechner als einzelne HTML-Datei: Höchstpunktzahl eingeben, Notengrenzen in Prozent einstellen, Tabelle mit den Punkten pro Note. Läuft offline und speichert nichts.",
+  "schritte": [
+    {
+      "zeit": 0,
+      "art": "du",
+      "text": "Bau mir einen Notenschlüssel-Rechner als einzelne HTML-Datei: Höchstpunktzahl eingeben, Notengrenzen in Prozent einstellen, Tabelle mit den Punkten pro Note. Läuft offline und speichert nichts."
+    },
+    {
+      "zeit": 5,
+      "art": "agent",
+      "text": "Plan: eine Datei notenschluessel.html mit Eingabe, Rechnung und Tabelle. Zuerst schreibe ich die Rechnung und einen kleinen Test dafür."
+    },
+    {
+      "zeit": 24,
+      "art": "datei",
+      "text": "notenschluessel.html angelegt"
+    },
+    {
+      "zeit": 31,
+      "art": "datei",
+      "text": "test-notenschluessel.js angelegt"
+    },
+    {
+      "zeit": 36,
+      "art": "befehl",
+      "text": "node test-notenschluessel.js  →  6 von 6 Prüfungen bestanden"
+    },
+    {
+      "zeit": 41,
+      "art": "frage",
+      "text": "Darf ich die Datei im Browser öffnen, um das Ergebnis anzusehen?  [Ja] [Nein]"
+    },
+    {
+      "zeit": 44,
+      "art": "du",
+      "text": "Ja."
+    },
+    {
+      "zeit": 52,
+      "art": "agent",
+      "text": "Bei 47 Punkten liegt eine Grenze bei 23,5. Sollen halbe Punkte erlaubt sein, oder runde ich?"
+    },
+    {
+      "zeit": 63,
+      "art": "du",
+      "text": "Halbe Punkte erlauben."
+    },
+    {
+      "zeit": 71,
+      "art": "datei",
+      "text": "notenschluessel.html geändert: Schritte von 0,5 Punkten"
+    },
+    {
+      "zeit": 76,
+      "art": "befehl",
+      "text": "node test-notenschluessel.js  →  7 von 7 Prüfungen bestanden"
+    },
+    {
+      "zeit": 81,
+      "art": "fertig",
+      "text": "Fertig: notenschluessel.html läuft offline. Zum Öffnen doppelklicken."
+    }
+  ],
+  "ergebnis": {
+    "datei": "notenschluessel-rechner.html",
+    "text": "So sieht ein solches Werkzeug fertig aus: der Notenschlüssel-Rechner dieser Website."
+  },
+  "vergleich": {
+    "spalten": [
+      "Claude Code",
+      "Codex"
+    ],
+    "zeilen": [
+      {
+        "merkmal": "Anbieter",
+        "werte": [
+          "Anthropic",
+          "OpenAI"
+        ]
+      },
+      {
+        "merkmal": "Wo es läuft",
+        "werte": [
+          "Terminal, Entwicklungsumgebung, Desktop-App, Browser",
+          "Terminal, Entwicklungsumgebung, Codex-App, Cloud"
+        ]
+      },
+      {
+        "merkmal": "Was es tut",
+        "werte": [
+          "liest Dateien, ändert sie, führt Befehle aus",
+          "prüft Dateien, ändert sie, führt Werkzeuge auf dem Rechner aus"
+        ]
+      },
+      {
+        "merkmal": "Zugang",
+        "werte": [
+          "mit Claude-Abo oder API-Konto",
+          "mit ChatGPT-Abo (Anmeldung mit ChatGPT) oder API-Schlüssel"
+        ]
+      },
+      {
+        "merkmal": "Regeln für ein Projekt",
+        "werte": [
+          "Datei CLAUDE.md (liest auch AGENTS.md)",
+          "Datei AGENTS.md"
+        ]
+      }
+    ]
+  },
+  "hinweis": "Nachgestellter Ablauf, gekürzt. Zeiten und Zwischenschritte sind ein typisches Beispiel, kein Mitschnitt."
+}

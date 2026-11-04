@@ -126,17 +126,19 @@
       "id": "terminal",
       "linie": "B",
       "titel": "Das Terminal",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "terminal",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Was ein Terminal ist und wie du es öffnest. Probier die ersten Befehle in einem Nachbau, ohne etwas zu installieren."
     },
     {
       "id": "claude-code-codex",
       "linie": "B",
       "titel": "Claude Code & Codex",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "coding-agent",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Was Coding-Agenten wie Claude Code und Codex können. Ein Zeitraffer vom Satz zum Werkzeug und beide im Vergleich."
     },
     {
       "id": "erstes-tool",
