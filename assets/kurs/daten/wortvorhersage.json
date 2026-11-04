@@ -1,0 +1,10 @@
+{
+  "hinweis": "Beispielwerte zur Veranschaulichung. Ein echtes Modell rechnet mit Wortstücken (Token) und sehr vielen Möglichkeiten.",
+  "satz": "Liebe Eltern, am Freitag findet unser",
+  "stufen": [
+    {"optionen": [["Elternabend", 38], ["Wandertag", 24], ["Sportfest", 17], ["Projekttag", 11], ["Lesefest", 9.9], ["Weltuntergang", 0.1]]},
+    {"optionen": [["statt.", 61], ["in der Aula statt.", 22], ["auf dem Schulhof statt.", 12], ["mit Musik statt.", 5]]}
+  ],
+  "regler": {"min": 0.2, "max": 2.5, "start": 1},
+  "aha": "So schreibt eine KI: Stück für Stück das, was wahrscheinlich passt. Wahrscheinlich heißt nicht wahr."
+}

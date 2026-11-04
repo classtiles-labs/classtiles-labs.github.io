@@ -1,0 +1,15 @@
+{
+  "hinweis": "Vereinfachtes Beispiel mit kleinen Zahlen. Echte Kontextfenster fassen Hunderttausende Token, das Prinzip ist dasselbe.",
+  "fenster": 320,
+  "nachrichten": [
+    {"wer": "du", "text": "Wir planen den Wandertag der 7b. Wichtig: Zwei Kinder essen kein Fleisch, ein Kind hat eine Nussallergie.", "tokens": 40, "wichtig": true},
+    {"wer": "ki", "text": "Notiert. Wohin soll es gehen, und wie lang darf die Strecke sein?", "tokens": 30},
+    {"wer": "du", "text": "Zum See, etwa 8 km hin und zurück. Abfahrt um 8 Uhr mit dem Bus.", "tokens": 35},
+    {"wer": "ki", "text": "Vorschlag: 8:00 Abfahrt an der Schule, 8:45 Start am Parkplatz, Rundweg mit zwei Pausen, 12:30 Picknick am See, 14:30 Rückfahrt …", "tokens": 80},
+    {"wer": "du", "text": "Schreib mir noch einen Elternbrief mit Packliste.", "tokens": 25},
+    {"wer": "ki", "text": "Liebe Eltern, am Freitag wandern wir mit der 7b zum See. Bitte geben Sie Ihrem Kind wetterfeste Kleidung, feste Schuhe und eine Trinkflasche mit …", "tokens": 90},
+    {"wer": "du", "text": "Und jetzt noch ein Vorschlag fürs gemeinsame Picknick.", "tokens": 20},
+    {"wer": "ki", "text": "Picknick-Idee: Würstchen vom Grill für alle, dazu Nussecken zum Nachtisch.", "tokens": 30, "vergessen": true}
+  ],
+  "aha": "Die KI hat die Vorgaben aus der ersten Nachricht vergessen: kein Fleisch, keine Nüsse. Die Nachricht liegt nicht mehr im Kontextfenster."
+}

@@ -24,3 +24,39 @@ Abgerufen am 04.11.2026.
   im Terminal, in der IDE, in der Desktop-App und im Browser. https://code.claude.com/docs/en/overview
 - Codex CLI: „Let Codex inspect files, make edits, and run the tools already installed on your
   machine.“ https://learn.chatgpt.com/docs/codex/cli
+
+## wie-ki-schreibt
+
+Abgerufen am 04.11.2026.
+
+- Vorhersage des nächsten Worts: „autoregressive language models (such as Claude’s underlying
+  model) are pretrained to predict the next word, given the previous context of text“; LLMs
+  „are trained on vast amounts of text data“. Anthropic, Glossary.
+  https://platform.claude.com/docs/en/about-claude/glossary
+- Temperatur: „Higher temperatures lead to more creative and diverse outputs … Lower temperatures
+  result in more conservative and deterministic outputs that stick to the most probable phrasing“;
+  auch bei 0 nicht vollständig deterministisch. Anthropic, Glossary (wie oben).
+- Halluzination: „plausible yet incorrect statements“. Kalai, Nachum, Vempala, Zhang (2025):
+  Why Language Models Hallucinate. arXiv:2509.04664. https://arxiv.org/abs/2509.04664
+- 55 % / 18 % erfundene Literaturangaben: Walters & Wilder (2023), siehe „fahrkarte“.
+- Die Wahrscheinlichkeiten im Erlebnis sind Beispielwerte (im Erlebnis so gekennzeichnet).
+
+## grundbegriffe
+
+Abgerufen am 04.11.2026.
+
+- Kontextfenster: „all the text a language model can reference when generating a response“,
+  eine Art Arbeitsgedächtnis; Chat-Oberflächen wie claude.ai können das Fenster „on a rolling
+  ‚first in, first out‘ basis“ verwalten; Kompaktierung „summarizes earlier parts of the
+  conversation“. Anthropic, Context windows.
+  https://platform.claude.com/docs/en/build-with-claude/context-windows
+- Größe: aktuelle Claude-Modelle 1 Mio. Token, andere 200.000 (dieselbe Seite) — im Kurs nur als
+  „Hunderttausende Token“.
+- Token: Wörter, Wortteile, Zeichen; Größe hängt von Modell und Sprache ab. Anthropic, Glossary.
+  Faustregel Englisch: 1 Token ≈ 4 Zeichen ≈ ¾ Wort; andere Sprachen haben ein höheres
+  Token-Zeichen-Verhältnis. OpenAI Help, What are tokens and how to count them.
+  https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
+- Agent: Systeme, in denen das Modell „dynamically direct[s] their own processes and tool usage“.
+  Anthropic (2024), Building effective agents. https://www.anthropic.com/engineering/building-effective-agents
+- Halluzination: siehe „wie-ki-schreibt“.
+- Das Chat-Beispiel ist vereinfacht (kleine Zahlen, im Erlebnis so gekennzeichnet).

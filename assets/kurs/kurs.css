@@ -18,7 +18,9 @@ main.station[data-linie="B"]{--lf:var(--linie-b)}
 
 /* ---------- Übersicht ---------- */
 /* Die Website gibt jedem <section> 52–76 px Polster; im Kurs stehen Abschnitte dichter. */
-.kurs-fahrkarte,.kurs-netz,.kurs-fahrplan,main.station>section{padding:0}
+.kurs-fahrkarte,.kurs-netz,.kurs-fahrplan,main.station>.einordnung,main.station>.in-der-app{padding:0}
+/* .btn setzt display und hebelt sonst das hidden-Attribut aus. */
+[hidden]{display:none!important}
 .kurs-kopf h1{font-size:clamp(1.65rem,4.6vw,2.6rem);line-height:1.15;letter-spacing:-.02em;max-width:24ch}
 .kurs-fahrkarte{margin:30px 0 0}
 .kurs-fahrkarte>[data-erlebnis]{position:relative;background:var(--navy);color:var(--paper);border-radius:var(--r);
@@ -77,6 +79,7 @@ main.station>section>h2{font-size:1.2rem}
   padding:20px;box-shadow:var(--sh-2)}
 .einordnung{max-width:64ch;font-size:1.04rem;line-height:1.6}
 .einordnung p{margin:0 0 12px}
+.einordnung a,.ticket a{color:var(--ink);text-decoration-color:var(--lf);text-decoration-thickness:2px;text-underline-offset:3px}
 .in-der-app figure{margin:0 0 18px}
 .in-der-app img{display:block;max-width:100%;height:auto;border:1px solid var(--hair);border-radius:12px;box-shadow:var(--sh-1)}
 .in-der-app figcaption{font-size:.85rem;color:var(--ink-3);margin-top:6px}
@@ -134,3 +137,40 @@ button.btn{min-height:44px}
   max-width:640px;line-height:1.5}
 .fk-einstieg{font-size:1.05rem;margin:6px 0 0!important}
 .fk-neu{font:inherit;background:none;border:none;color:inherit;opacity:.75;text-decoration:underline;cursor:pointer;min-height:44px}
+
+/* ---------- Erlebnis: Sei die KI ---------- */
+.erlebnis-aktiv>h2{margin-top:0}
+.ew-anleitung,.kf-anleitung{color:var(--ink-2);margin:0 0 12px}
+.ew-satz{font-size:1.25rem;line-height:1.5;margin:0 0 14px;min-height:2.2em}
+.ew-satz mark{background:color-mix(in srgb,var(--lf) 22%,transparent);color:inherit;border-radius:6px;padding:0 4px}
+.ew-balken{display:grid;gap:6px}
+.ew-option{display:grid;grid-template-columns:minmax(90px,38%) 1fr 56px;gap:10px;align-items:center;font:inherit;
+  text-align:left;background:none;border:1px solid transparent;border-radius:10px;padding:8px;min-height:44px;cursor:pointer;color:var(--ink)}
+.ew-option:hover{background:var(--sunk);border-color:var(--hair)}
+.ew-wort{font-weight:600;font-size:.95rem;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.ew-spur{height:12px;background:var(--sunk);border-radius:6px;overflow:hidden}
+.ew-spur span{display:block;height:100%;background:var(--lf);border-radius:6px;transition:width .3s}
+.ew-prozent{text-align:right;font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--ink-2)}
+.ew-knoepfe,.kf-knoepfe{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.ew-regler{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--ink-2);margin:12px 0 0}
+.ew-regler input{flex:1;accent-color:var(--lf);min-height:32px}
+.ew-hinweis{font-size:.8rem;color:var(--ink-3);margin:12px 0 0}
+.ew-aha,.kf-aha{margin-top:14px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile))}
+
+/* ---------- Erlebnis: Das Gedächtnis der KI ---------- */
+.kf-zaehler{display:flex;flex-direction:column;gap:6px;position:sticky;top:0;background:var(--tile);padding:6px 0;z-index:1;
+  font-size:.88rem;font-weight:600;font-variant-numeric:tabular-nums}
+.kf-spur{height:10px;background:var(--sunk);border-radius:5px;overflow:hidden}
+.kf-spur span{display:block;height:100%;background:var(--lf);transition:width .3s}
+.kf-chat{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.kf-nachricht{max-width:85%;padding:10px 12px;border-radius:14px;line-height:1.45;font-size:.95rem;position:relative}
+.kf-du{align-self:flex-end;background:var(--navy-soft)}
+.kf-ki{align-self:flex-start;background:var(--sunk)}
+.kf-wer{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:2px}
+.kf-raus{opacity:.45;text-decoration:line-through;text-decoration-color:var(--ink-3)}
+.kf-marke{display:block;margin-top:4px;font-size:.75rem;font-weight:700;text-decoration:none;color:var(--linie-b)}
+.kf-vergessen{outline:2px solid var(--linie-b);outline-offset:2px}
+.begriffe{margin:0 0 12px}
+.begriffe dt{font-weight:700;margin-top:10px}
+.begriffe dd{margin:2px 0 0;color:var(--ink-2)}
+@media (prefers-reduced-motion: reduce){.ew-spur span,.kf-spur span{transition:none}}

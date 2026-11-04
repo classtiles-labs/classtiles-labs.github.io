@@ -22,9 +22,10 @@
       "id": "wie-ki-schreibt",
       "linie": "E",
       "titel": "Wie KI schreibt",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "wortvorhersage",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie E: Sei die KI und wähle Wort für Wort. So entsteht eine Antwort, und so erklärt sich, warum KI sicher klingt, auch wenn sie irrt."
     },
     {
       "id": "die-apps",
@@ -38,9 +39,10 @@
       "id": "grundbegriffe",
       "linie": "E",
       "titel": "Grundbegriffe",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "kontextfenster",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie E: Modell, Prompt, Token, Kontext, Halluzination, Agent. Mit einem Chat, in dem die erste Nachricht aus dem Gedächtnis der KI fällt."
     },
     {
       "id": "gut-fragen",

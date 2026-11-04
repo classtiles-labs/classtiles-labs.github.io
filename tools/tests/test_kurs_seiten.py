@@ -174,5 +174,45 @@ class TestEchteSeiten(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
 
+class TestGebauteStationen(unittest.TestCase):
+    """Regeln für jede gebaute Station des echten Registers (Plan, „Gemeinsame Regeln“)."""
+
+    REIHENFOLGE = ("erlebnis", "einordnung", "in-der-app", "ticket")
+    ABSCHNITT = re.compile(r'<section class="(erlebnis|einordnung|in-der-app|ticket)"')
+
+    @classmethod
+    def setUpClass(cls):
+        cls.netz = ki_kurs.lade_netz()
+        cls.gebaut = [s for s in cls.netz["stationen"] if s["status"] == "gebaut"]
+        with open(os.path.join(REPO, "inhalt", "kurs", "QUELLEN.md"), encoding="utf-8") as f:
+            cls.quellen = f.read()
+
+    def test_gebaute_stationen_halten_die_regeln(self):
+        for s in self.gebaut:
+            frag = s["fragment"]
+            folge = self.ABSCHNITT.findall(frag)
+            self.assertEqual(folge[0], "erlebnis", s["id"])
+            self.assertEqual(folge[-1], "ticket", s["id"])
+            self.assertEqual(folge, sorted(folge, key=self.REIHENFOLGE.index), s["id"])
+            self.assertEqual(folge.count("erlebnis"), 1, s["id"])
+            self.assertEqual(folge.count("einordnung"), 1, s["id"])
+            self.assertIn(f'data-erlebnis="{s["erlebnis"]}"', frag, s["id"])
+            einordnung = re.search(r'<section class="einordnung">(.*?)</section>', frag, re.S).group(1)
+            woerter = len(re.sub(r"<[^>]+>", " ", einordnung).split())
+            self.assertLessEqual(woerter, 220, f'{s["id"]}: Einordnung hat {woerter} Wörter')
+            for img in re.findall(r"<img[^>]*>", frag):
+                self.assertRegex(img, r'src="assets/kurs/bilder/[^"]+\.webp"', s["id"])
+                self.assertRegex(img, r'alt="[^"]+"', s["id"])
+            for fig in re.findall(r'<section class="in-der-app">(.*?)</section>', frag, re.S):
+                for cap in re.findall(r"<figcaption>(.*?)</figcaption>", fig, re.S):
+                    self.assertIn("Stand:", cap, s["id"])
+            self.assertIsNone(re.search(r"Platzhalter|TODO|TBD", frag, re.I), s["id"])
+            self.assertIn(f'## {s["id"]}', self.quellen, f'{s["id"]}: keine Quellen in QUELLEN.md')
+            daten = os.path.join(REPO, "assets", "kurs", "daten", f'{s["erlebnis"]}.json')
+            modul = os.path.join(REPO, "assets", "kurs", "erlebnisse", f'{s["erlebnis"]}.js')
+            self.assertTrue(os.path.exists(modul), f'{s["id"]}: {modul} fehlt')
+            self.assertTrue(os.path.exists(daten), f'{s["id"]}: {daten} fehlt')
+
+
 if __name__ == "__main__":
     unittest.main()
