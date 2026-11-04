@@ -1,0 +1,5 @@
+Bau mir ein Werkzeug als einzelne HTML-Datei, das Serienbriefe zur Klassenfahrt erstellt. Die Klasse [Klasse] der [Schule] fährt vom [Datum] nach [Ziel]. Die Fahrt kostet [Betrag] Euro pro Kind, bitte bis zum [Frist] überweisen. Empfänger ist [Kontoinhaber], IBAN [IBAN].
+
+In das Werkzeug ziehe ich meine Klassenliste, eine CSV-Datei aus Excel mit den Spalten Vorname und Nachname. Für jedes Kind entsteht eine Seite: der Elternbrief mit dem Namen des Kindes und unten ein GiroCode mit dem Verwendungszweck „[Verwendungszweck] Vorname Nachname“. Am Ende drucke ich alle Seiten oder speichere sie als PDF. Jeder Brief muss dabei auf genau eine A4-Seite passen, auch wenn der Browser eigene Ränder oder Kopf- und Fußzeilen hinzufügt, in Chrome und in Safari.
+
+Die Namen meiner Schülerinnen und Schüler sollen meinen Rechner nicht verlassen. Das Werkzeug muss deshalb ohne Internet funktionieren und darf nichts nachladen oder hochladen. Die Klassenliste bekommst du nicht zu sehen, teste das Werkzeug mit erfundenen Namen.

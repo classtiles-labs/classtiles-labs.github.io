@@ -95,6 +95,9 @@ TUEREN = [
     ("ki-teaching-assistant.html", "Teaching Assistant",
      "Ein Beamer-Dashboard für die ganze Stunde, mit KI gebaut: Timer, Lautstärke-Ampel mit "
      "Sternen, Zufallsauswahl, Karten und Vokabeln in einer HTML-Datei. Kostenlos zum Laden."),
+    ("ki-serienbrief.html", "Serienbrief mit GiroCode",
+     "Ein Elternbrief pro Kind, mit dem Namen im Brief und im GiroCode. Die KI baut das Werkzeug, "
+     "die Klassenliste bleibt auf deinem Rechner. Kostenlos zum Laden, mit Prompt."),
     ("ki-glossar.html", "Glossar",
      "Prompt, Kontext, Halluzination, Agent: die Wörter, die überall vorausgesetzt werden. "
      "Erklärt, und mit dem Sprung an die Stelle im Handbuch, die ausführlich wird."),
