@@ -31,9 +31,10 @@
       "id": "die-apps",
       "linie": "E",
       "titel": "Die Apps kennenlernen",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "app-rundgang",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie E: ChatGPT und Claude in echten Screenshots. Wo du Dateien anhängst, Modell und Denkaufwand wählst, und welches Abo sich lohnt."
     },
     {
       "id": "grundbegriffe",

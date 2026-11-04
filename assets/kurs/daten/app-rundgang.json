@@ -1,0 +1,156 @@
+{
+  "apps": [
+    {
+      "name": "ChatGPT",
+      "bilder": [
+        {
+          "datei": "assets/kurs/bilder/chatgpt-eingabe.webp",
+          "titel": "Das Eingabefeld",
+          "alt": "ChatGPT: leeres Eingabefeld „ChatGPT fragen“ mit Plus-Taste links und Mikrofon rechts",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.45,
+              "y": 0.37,
+              "text": "Hier schreibst du deinen Auftrag."
+            },
+            {
+              "x": 0.13,
+              "y": 0.75,
+              "text": "Das Plus öffnet Dateien, Projekte und Werkzeuge."
+            }
+          ]
+        },
+        {
+          "datei": "assets/kurs/bilder/chatgpt-plus.webp",
+          "titel": "Das Plus-Menü",
+          "alt": "ChatGPT: geöffnetes Plus-Menü mit „Fotos und Dateien hinzufügen“, „In einem Projekt arbeiten“ und „Deep Research“",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.048,
+              "y": 0.064,
+              "text": "Dateien anhängen, zum Beispiel ein Arbeitsblatt als PDF."
+            },
+            {
+              "x": 0.048,
+              "y": 0.61,
+              "text": "Im Projekt liegt Material bereit, das du in vielen Chats brauchst."
+            },
+            {
+              "x": 0.048,
+              "y": 0.72,
+              "text": "Deep Research: gründliche Recherche mit Bericht und Quellen."
+            }
+          ]
+        },
+        {
+          "datei": "assets/kurs/bilder/chatgpt-denkaufwand.webp",
+          "titel": "Der Denkaufwand",
+          "alt": "ChatGPT: Regler „Medium“ für den Denkaufwand über dem Eingabefeld",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.12,
+              "y": 0.17,
+              "text": "Der Regler darunter stellt ein, wie lange das Modell nachdenkt."
+            },
+            {
+              "x": 0.11,
+              "y": 0.77,
+              "text": "Hier öffnest du die Einstellung „Denkaufwand“."
+            }
+          ]
+        },
+        {
+          "datei": "assets/kurs/bilder/chatgpt-modell.webp",
+          "titel": "Das Modell",
+          "alt": "ChatGPT: Modellauswahl mit „GPT-6“ (ausgewählt) und „GPT-5.6 Sol“",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.42,
+              "y": 0.18,
+              "text": "Das Modell wählst du über „Medium ›“ im Denkaufwand."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Claude",
+      "bilder": [
+        {
+          "datei": "assets/kurs/bilder/claude-eingabe.webp",
+          "titel": "Das Eingabefeld",
+          "alt": "Claude: leeres Eingabefeld „Wie kann ich dir heute helfen?“ mit Plus-Taste, darunter „Projekt“ und „Opus 5.5 Mittel“",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.62,
+              "y": 0.26,
+              "text": "Hier schreibst du deinen Auftrag."
+            },
+            {
+              "x": 0.12,
+              "y": 0.53,
+              "text": "Das Plus öffnet Dateien und Werkzeuge."
+            },
+            {
+              "x": 0.21,
+              "y": 0.84,
+              "text": "Hier wählst du ein Projekt."
+            },
+            {
+              "x": 0.6,
+              "y": 0.84,
+              "text": "Modell und Aufwand, hier Opus 5.5 mit „Mittel“."
+            }
+          ]
+        },
+        {
+          "datei": "assets/kurs/bilder/claude-dateien.webp",
+          "titel": "Das Plus-Menü",
+          "alt": "Claude: geöffnetes Plus-Menü mit „Dateien hochladen oder hinzufügen“, „Recherche“ und „Gedächtnis“",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.085,
+              "y": 0.065,
+              "text": "Dateien anhängen, zum Beispiel ein Arbeitsblatt als PDF."
+            },
+            {
+              "x": 0.085,
+              "y": 0.62,
+              "text": "Recherche: gründliche Suche mit Quellen."
+            }
+          ]
+        },
+        {
+          "datei": "assets/kurs/bilder/claude-modell.webp",
+          "titel": "Modell und Aufwand",
+          "alt": "Claude: Modellauswahl mit Fable 5.1, Opus 5.5, Sonnet 5.5 und Haiku 5.5 sowie den Aufwand-Stufen Niedrig bis Maximal",
+          "stand": "November 2026",
+          "markierungen": [
+            {
+              "x": 0.82,
+              "y": 0.105,
+              "text": "Modelle von gründlich bis schnell, jeweils mit kurzer Beschreibung."
+            },
+            {
+              "x": 0.82,
+              "y": 0.32,
+              "text": "Aufwand: wie lange das Modell nachdenkt."
+            },
+            {
+              "x": 0.82,
+              "y": 0.53,
+              "text": "Mehr Aufwand verbraucht mehr von deinem Nutzungskontingent."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "hinweis": "Echte Screenshots aus neuen, leeren Chats (Stand: November 2026), zugeschnitten. Oberflächen ändern sich oft."
+}

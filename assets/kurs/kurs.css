@@ -303,3 +303,21 @@ button.btn{min-height:44px}
   .ca-vergleich th,.ca-vergleich td{border-top:none;padding:2px 0}
   .ca-vergleich td::before{content:attr(data-spalte) ": ";font-weight:700;color:var(--ink-2)}
 }
+
+/* ---------- Erlebnis: Die Apps kennenlernen ---------- */
+.ar-anleitung{color:var(--ink-2);margin:0 0 12px}
+.ar-schalter{display:inline-flex;gap:6px;background:var(--sunk);padding:4px;border-radius:12px;margin:0 0 12px}
+.ar-schalter button{font:inherit;font-weight:600;min-height:44px;padding:6px 18px;border:none;border-radius:9px;background:none;color:var(--ink-2);cursor:pointer}
+.ar-schalter button[aria-pressed="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.ar-figur{margin:0}
+.ar-bild{position:relative;display:inline-block;max-width:100%;border:1px solid var(--hair);border-radius:12px;overflow:hidden;background:#fff}
+.ar-bild img{display:block;max-width:100%;height:auto}
+.ar-marke{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:var(--linie-b);color:#fff;
+  font-size:.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff}
+.ar-titel{font-size:.85rem;color:var(--ink-3);margin-top:8px}
+.ar-legende{margin:10px 0 0;padding-left:1.4em}
+.ar-legende li{margin:4px 0}
+.ar-legende li::marker{color:var(--linie-b);font-weight:800}
+.ar-knoepfe{display:flex;align-items:center;gap:10px;margin:14px 0 0}
+.ar-zaehler{font-size:.85rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.ar-knoepfe .btn:disabled{opacity:.4;cursor:default}

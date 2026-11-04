@@ -172,3 +172,21 @@ Abgerufen am 04.11.2026.
   https://github.com/openai/codex — Codex-App und Cloud: OpenAI, Introducing Codex / Introducing
   the Codex app. https://openai.com/index/introducing-codex/
 - Der Zeitraffer im Erlebnis ist nachgestellt (so gekennzeichnet).
+
+## die-apps
+
+Abgerufen am 04.11.2026.
+
+- Screenshots: claude.ai und chatgpt.com in Stefans Chrome, neue leere Chats am 04.11.2026,
+  Fensterbreite 500 px; zugeschnitten ohne Begrüßung mit Namen, ohne eigene Artefakte, ohne
+  persönliche Vorschläge und ohne Mauszeiger. Gemini nicht abgebildet (Stefan, 04.11.2026: kein
+  Gemini-Konto).
+- „Maximal … 4× oder mehr Nutzung“ beim Aufwand: Claude-Oberfläche (Screenshot claude-modell).
+- Claude Pro gegenüber Free: „More usage than Free“, zusätzlich Opus und weitere Modelle,
+  Recherche, Claude Code, Projekte ohne die Grenze von fünf. Claude, Pricing.
+  https://claude.com/pricing
+- ChatGPT Plus: „Fortgeschrittene Reasoning-Modelle mit GPT-6“, „Erweiterte Nachrichten und
+  Uploads“, „Erweiterte Deep Research-Funktionalität“, „Projekte, geplante Aufgaben und
+  individuelle GPTs“. ChatGPT, Pläne und Preise (gelesen im angemeldeten Browser).
+  https://chatgpt.com/de-DE/pricing/
+- Projekte in beiden Apps: siehe „fahrkarte“.
