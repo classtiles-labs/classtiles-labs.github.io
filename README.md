@@ -83,6 +83,20 @@ erzeugte HTML und die PDFs unter `assets/ki/`. Welcher Band aus welcher Datei ko
   `tools/tests/test_kurs_js.py` ruft das auf und überspringt sich ohne Node.
 - **Verhalten:** `assets/kurs/` (Stil, Netz, Fortschritt, Erlebnisse). Ohne JavaScript bleiben
   alle gebauten Stationen als Links und alle Tickets als Text lesbar.
+- **Fragmentregeln** (`TestGebauteStationen`): Abschnitte in der Reihenfolge `erlebnis` →
+  `einordnung` (höchstens 220 Wörter) → optional `in-der-app` (Bilder unter
+  `assets/kurs/bilder/*.webp` mit `alt`, Bildunterschrift mit „Stand:“) → `ticket` mit genau
+  einem `<pre class="ticket-prompt">`. Zu jedem Erlebnis gehört `assets/kurs/erlebnisse/<name>.js`
+  und `assets/kurs/daten/<name>.json`, es sei denn, das Modul erklärt `export const DATEN = false;`.
+- **Echte Läufe:** Beispiel-Antworten einer KI stammen aus echten Läufen und tragen App, Modell
+  und Datum; konstruierte Beispiele heißen „Beispiel“. Screenshots nur aus neuen, leeren Chats,
+  ohne Verlauf, Kontoname oder E-Mail.
+- **Fahrplanänderungen:** Ein Eintrag unter `inhalt/neues/` mit `station: <id>` erscheint auf der
+  Kursübersicht (die drei neuesten) und auf der Station. `ki_neues.py` prüft die Kennung gegen
+  das Register. Nach einem neuen Eintrag `ki_neues.py` **und** `ki_kurs.py` laufen lassen.
+- **Startseite:** Abschnitt `#ki-kurs` in `index.html` (statisch, ohne Skript); Tür im KI-Bereich
+  über `tools/pages/angebot.py`.
+- **Datenschutz:** Abschnitt 2.5 der Datenschutzerklärung (DE/EN) beschreibt den Kursspeicher.
 
 ### Einen Eintrag unter „Neues" schreiben
 

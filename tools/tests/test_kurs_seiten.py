@@ -192,6 +192,34 @@ class TestFahrplan(unittest.TestCase):
         self.assertNotIn("Notiz", self.seiten["ki-kurs-e-drei.html"].replace("Notiz 05", ""))
 
 
+def lies_seite(name):
+    with open(os.path.join(REPO, name), encoding="utf-8") as f:
+        return f.read()
+
+
+class TestEinbindung(unittest.TestCase):
+    def test_startseite_fuehrt_zum_kurs(self):
+        m = re.search(r'<section class="rev" id="ki-kurs">(.*?)</section>', lies_seite("index.html"), re.S)
+        self.assertIsNotNone(m, "Abschnitt #ki-kurs fehlt auf der Startseite")
+        abschnitt = m.group(1)
+        self.assertIn(ki_kurs.SLOGAN, abschnitt)
+        self.assertIn('href="ki-kurs.html#fahrkarte"', abschnitt)
+        self.assertIn('href="ki-kurs.html"', abschnitt)
+        self.assertNotIn("<script", abschnitt)
+
+    def test_ki_bereich_hat_die_kurstuer(self):
+        self.assertIn('href="ki-kurs.html"', lies_seite("digitalisierung-ki.html"))
+
+    def test_datenschutz_nennt_den_kursspeicher(self):
+        de, en = lies_seite("datenschutz.html"), lies_seite("en/privacy.html")
+        for text in (de, en):
+            self.assertIn("classtiles-kurs", text)
+            self.assertIn("localStorage", text)
+            self.assertIn("§&nbsp;25 Abs.&nbsp;2 Nr.&nbsp;2 TDDDG", text)
+        self.assertIn("Fortschritt auf diesem Gerät merken", de)
+        self.assertIn("Vergessen", de)
+
+
 class TestEchteSeiten(unittest.TestCase):
     def test_echte_seiten_sind_auf_dem_stand(self):
         r = subprocess.run([sys.executable, os.path.join(REPO, "tools", "pages", "ki_kurs.py"),
