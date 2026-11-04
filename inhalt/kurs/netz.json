@@ -145,6 +145,15 @@
       "beschreibung": "KI-Kurs, Linie B: Was Coding-Agenten wie Claude Code und Codex können. Ein Zeitraffer vom Satz zum Werkzeug und beide im Vergleich."
     },
     {
+      "id": "kontext-befehle",
+      "linie": "B",
+      "titel": "Kontext und Befehle",
+      "status": "gebaut",
+      "erlebnis": "kontext-terminal",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Kontext und Befehle in Claude Code und Codex. Im nachgebauten Terminal /context, /compact, /clear und /usage ausprobieren."
+    },
+    {
       "id": "erstes-tool",
       "linie": "B",
       "titel": "Erstes Tool",

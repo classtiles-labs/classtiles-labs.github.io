@@ -1,0 +1,300 @@
+{
+  "texte": {
+    "anleitung": "Du arbeitest an einem Arbeitsblatt zur Bruchrechnung. Tipp ein paar Mal auf „Weiterarbeiten“ und beobachte die Anzeige unter dem Fenster. Wird es eng, probier die Befehle: erst ansehen, dann zusammenfassen, dann neu anfangen.",
+    "weiter": "Weiterarbeiten",
+    "gespraech": "Gespräch",
+    "frei": "Frei",
+    "unbekannt": "Unbekannter Befehl: {b}. Die Befehle dieses Nachbaus stehen als Knöpfe unter dem Fenster.",
+    "geschafft": "Du hast zusammengefasst und neu angefangen. Neues Thema, neuer Chat. Lange Arbeit am selben Thema: zusammenfassen.",
+    "vergleich": "Dieselben Aufgaben in beiden Werkzeugen (Stand: November 2026)",
+    "hinweis": "Nachbau mit Beispielwerten und vereinfachten Anzeigen, keine echte KI. Befehle und ihre Wirkung: Stand November 2026."
+  },
+  "warnung": 80,
+  "zusammenfassung": 6,
+  "arbeit": [
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Lies lehrplan-mathe-6.pdf und fasse die Ziele zur Bruchrechnung zusammen.",
+      "antwort": "Liest lehrplan-mathe-6.pdf (12 Seiten) und fasst fünf Ziele zusammen.",
+      "prozent": 18
+    },
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Erstelle ein Arbeitsblatt mit acht Aufgaben zum Erweitern und Kürzen.",
+      "antwort": "Legt arbeitsblatt-brueche.md mit acht Aufgaben an.",
+      "prozent": 12
+    },
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Schreib die Lösungen dazu, mit Rechenweg.",
+      "antwort": "Legt loesungen-brueche.md an und rechnet alle Aufgaben nach.",
+      "prozent": 14
+    },
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Mach die Aufgaben 5 bis 8 schwerer.",
+      "antwort": "Ändert vier Aufgaben und passt die Lösungen an.",
+      "prozent": 10
+    },
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Erstelle eine zweite Fassung mit kürzeren Sätzen.",
+      "antwort": "Legt arbeitsblatt-brueche-einfach.md an.",
+      "prozent": 16
+    },
+    {
+      "thema": "Arbeitsblatt Bruchrechnung, Klasse 6",
+      "prompt": "Prüf beide Fassungen noch einmal auf Rechenfehler.",
+      "antwort": "Rechnet 16 Aufgaben nach und findet keinen Fehler.",
+      "prozent": 12
+    }
+  ],
+  "sitzungen": [
+    "Elternbrief Wandertag, gestern",
+    "Notenschlüssel Klasse 8, Montag"
+  ],
+  "werkzeuge": {
+    "claude": {
+      "name": "Claude Code",
+      "autoCompact": 100,
+      "resumeNachNeu": true,
+      "grundlast": {
+        "System": 9,
+        "CLAUDE.md": 2
+      },
+      "texte": {
+        "willkommen": "Claude Code (Nachbau) im Ordner arbeitsblatt-brueche. Tippe einen Auftrag oder einen Befehl mit /.",
+        "warnung": "Kontext zu {p} % belegt. Tipp aus dem Kurs: Ist das Thema durch, fang mit /clear neu an. Sonst fass mit /compact zusammen.",
+        "autoCompact": "Kontext voll: Claude Code fasst das Gespräch jetzt automatisch zusammen. Frühe Einzelheiten können dabei verloren gehen."
+      },
+      "befehle": {
+        "/context": {
+          "art": "kontext",
+          "kurz": "zeigt, was den Kontext belegt",
+          "titel": "Kontext (Nachbau, vereinfacht):"
+        },
+        "/compact": {
+          "art": "compact",
+          "kurz": "fasst das Gespräch zusammen, auf Wunsch mit Anweisung",
+          "fertig": "Gespräch zusammengefasst: Kontext von {vorher} % auf {nachher} %. Deine Aufträge und wichtige Stellen bleiben, frühe Einzelheiten können verloren gehen. CLAUDE.md wird neu geladen.",
+          "mitAnweisung": "Beim Zusammenfassen beachtet: „{a}“",
+          "leer": "Noch nichts zusammenzufassen."
+        },
+        "/clear": {
+          "art": "neu",
+          "kurz": "neuer Chat, der alte bleibt über /resume erreichbar",
+          "fertig": "Neuer Chat: Das Gespräch ist aus dem Kontext, CLAUDE.md wird neu geladen. Den alten Chat holst du mit /resume zurück."
+        },
+        "/resume": {
+          "art": "resume",
+          "kurz": "öffnet einen früheren Chat",
+          "titel": "Frühere Chats:",
+          "hinweis": "(Im Nachbau nur als Liste.)"
+        },
+        "/usage": {
+          "art": "text",
+          "kurz": "zeigt die Nutzung deines Abos",
+          "zeilen": [
+            "Nutzung (Beispielwerte):",
+            "  Aktuelle Sitzung  ██░░░░░░░░  23 %",
+            "  Woche             ████░░░░░░  41 %"
+          ]
+        },
+        "/model": {
+          "art": "text",
+          "kurz": "wählt das Modell",
+          "zeilen": [
+            "Hier wählst du das Modell. Die Wahl gilt danach als Standard, mit s nur für diese Sitzung. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/init": {
+          "art": "text",
+          "kurz": "legt CLAUDE.md mit Projektregeln an",
+          "zeilen": [
+            "Legt CLAUDE.md mit Regeln für dieses Projekt an. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/memory": {
+          "art": "text",
+          "kurz": "öffnet CLAUDE.md zum Bearbeiten",
+          "zeilen": [
+            "Öffnet CLAUDE.md, damit du die Regeln selbst änderst. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/rewind": {
+          "art": "text",
+          "kurz": "spult zu einem früheren Stand zurück",
+          "zeilen": [
+            "Zeigt frühere Stände von Gespräch und Dateien zum Zurückspulen. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/statusline": {
+          "art": "text",
+          "kurz": "richtet die Zeile unten ein",
+          "zeilen": [
+            "Richtet die Statuszeile ein. Mehr dazu in der Station Statusline."
+          ]
+        },
+        "/help": {
+          "art": "hilfe",
+          "kurz": "listet die Befehle"
+        }
+      },
+      "alias": {
+        "/new": "/clear",
+        "/reset": "/clear",
+        "/cost": "/usage"
+      },
+      "fehlt": {},
+      "tasten": [
+        "/context",
+        "/compact",
+        "/clear",
+        "/resume",
+        "/usage",
+        "/help"
+      ],
+      "anzeigeText": "{p} % belegt (Statusline)"
+    },
+    "codex": {
+      "name": "Codex",
+      "autoCompact": 100,
+      "resumeNachNeu": false,
+      "grundlast": {
+        "System": 8,
+        "AGENTS.md": 2
+      },
+      "texte": {
+        "willkommen": "Codex (Nachbau) im Ordner arbeitsblatt-brueche. Tippe einen Auftrag oder einen Befehl mit /.",
+        "warnung": "Kontext zu {p} % belegt. Tipp aus dem Kurs: Ist das Thema durch, fang mit /new neu an. Sonst fass mit /compact zusammen.",
+        "autoCompact": "Kontext voll: Codex fasst den Chat jetzt automatisch zusammen."
+      },
+      "befehle": {
+        "/status": {
+          "art": "status",
+          "kurz": "zeigt Kontext, Modell und Limits",
+          "zeilen": [
+            "Status (Beispielwerte):",
+            "  Kontextfenster:  {frei} % übrig",
+            "  5-Stunden-Limit: 77 % übrig",
+            "  Wochenlimit:     59 % übrig"
+          ]
+        },
+        "/compact": {
+          "art": "compact",
+          "kurz": "fasst den Chat zusammen",
+          "fertig": "Chat zusammengefasst: Kontext von {vorher} % auf {nachher} % belegt.",
+          "ohneAnweisung": "Hinweis: In Codex nimmt /compact keine Anweisung an.",
+          "leer": "Noch nichts zusammenzufassen."
+        },
+        "/new": {
+          "art": "neu",
+          "kurz": "neuer Chat in derselben Sitzung",
+          "fertig": "Neuer Chat: Das Gespräch ist aus dem Kontext."
+        },
+        "/clear": {
+          "art": "neu",
+          "kurz": "neuer Chat, leert auch das Fenster",
+          "fertig": "Fenster geleert, neuer Chat: Das Gespräch ist aus dem Kontext.",
+          "leertFenster": true
+        },
+        "/resume": {
+          "art": "resume",
+          "kurz": "öffnet einen früheren Chat",
+          "titel": "Frühere Chats:",
+          "hinweis": "(Im Nachbau nur als Liste. Ob der Chat von eben hier auftaucht, sagt die Doku nicht.)"
+        },
+        "/model": {
+          "art": "text",
+          "kurz": "wählt das Modell",
+          "zeilen": [
+            "Hier wählst du das Modell. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/init": {
+          "art": "text",
+          "kurz": "legt AGENTS.md mit Projektregeln an",
+          "zeilen": [
+            "Legt AGENTS.md mit Regeln für dieses Projekt an. (Im Nachbau nur angedeutet.)"
+          ]
+        },
+        "/usage": {
+          "art": "text",
+          "kurz": "zeigt, wie viele Tokens du verbraucht hast",
+          "zeilen": [
+            "Token-Verbrauch pro Tag und Woche (im Nachbau nur angedeutet). Deine Limits zeigt /status."
+          ]
+        },
+        "/statusline": {
+          "art": "text",
+          "kurz": "richtet die Zeile unten ein",
+          "zeilen": [
+            "Richtet die Statuszeile ein, du wählst die Bausteine aus. Mehr dazu in der Station Statusline."
+          ]
+        }
+      },
+      "alias": {},
+      "fehlt": {
+        "/context": "Gibt es in Codex nicht. Wie viel Kontext übrig ist, zeigt /status.",
+        "/help": "Codex hat kein /help. In diesem Nachbau stehen alle Befehle als Knöpfe unter dem Fenster.",
+        "/rewind": "Gibt es in Codex nicht. Zweimal Esc öffnet deine letzte Nachricht zum Bearbeiten.",
+        "/memory": "Gibt es in Codex nicht. AGENTS.md bearbeitest du als Datei."
+      },
+      "tasten": [
+        "/status",
+        "/compact",
+        "/new",
+        "/resume",
+        "/usage"
+      ],
+      "anzeigeText": "{f} % Kontext übrig"
+    }
+  },
+  "vergleich": [
+    {
+      "zweck": "Sehen, wie voll der Kontext ist",
+      "claude": "/context",
+      "codex": "/status"
+    },
+    {
+      "zweck": "Gespräch zusammenfassen",
+      "claude": "/compact",
+      "codex": "/compact"
+    },
+    {
+      "zweck": "Neu anfangen",
+      "claude": "/clear",
+      "codex": "/new oder /clear"
+    },
+    {
+      "zweck": "Früheren Chat fortsetzen",
+      "claude": "/resume",
+      "codex": "/resume"
+    },
+    {
+      "zweck": "Limits des Abos sehen",
+      "claude": "/usage",
+      "codex": "/status"
+    },
+    {
+      "zweck": "Modell wählen",
+      "claude": "/model",
+      "codex": "/model"
+    },
+    {
+      "zweck": "Projektregeln anlegen",
+      "claude": "/init (CLAUDE.md)",
+      "codex": "/init (AGENTS.md)"
+    },
+    {
+      "zweck": "Statuszeile einrichten",
+      "claude": "/statusline",
+      "codex": "/statusline"
+    },
+    {
+      "zweck": "Zurückspulen",
+      "claude": "/rewind",
+      "codex": "zweimal Esc"
+    }
+  ]
+}

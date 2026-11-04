@@ -450,3 +450,21 @@ button.btn{min-height:44px}
 .sl-meldung{font-size:.85rem;color:var(--ink-2)}
 .sl-hinweis{font-size:.85rem;color:var(--ink-2);margin:6px 0 0}
 .pb-label code{text-transform:none;letter-spacing:0;font-size:.95em}
+
+/* ---------- Erlebnis: Kontext und Befehle ---------- */
+.kt-schalter{display:inline-flex;gap:6px;background:var(--sunk);padding:4px;border-radius:12px;margin:0 0 12px}
+.kt-schalter button{font:inherit;font-weight:600;min-height:44px;padding:6px 18px;border:none;border-radius:9px;background:none;color:var(--ink-2);cursor:pointer}
+.kt-schalter button[aria-pressed="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.kt-ausgabe{min-height:190px;max-height:320px}
+@media (max-width:380px){.kt-ausgabe{font-size:.72rem;padding:10px}}
+.kt-anzeige{display:flex;align-items:center;gap:10px;padding:0 12px 10px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.78rem;color:#9aa0b4}
+.kt-balken{flex:1;height:8px;border-radius:4px;background:#2b2f3b;overflow:hidden}
+.kt-balken span{display:block;height:100%;background:#6fbf86;transition:width .3s}
+.kt-balken span.eng{background:#ec8a73}
+.kt-zahl{white-space:nowrap}
+.kt-tasten .kt-arbeit{font-family:inherit;font-weight:600;border-color:var(--lf);background:color-mix(in srgb,var(--lf) 14%,var(--tile))}
+.kt-vergleich{border-collapse:collapse;width:100%;margin:16px 0 0;font-size:.86rem}
+.kt-vergleich caption{text-align:left;font-weight:700;padding-bottom:6px}
+.kt-vergleich th,.kt-vergleich td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--hair);vertical-align:top}
+.kt-vergleich code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85em;background:var(--sunk);padding:1px 5px;border-radius:5px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.kt-balken span{transition:none}}

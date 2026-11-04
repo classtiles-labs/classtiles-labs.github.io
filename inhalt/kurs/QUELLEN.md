@@ -319,3 +319,35 @@ Abgerufen am 04.11.2026.
   `config.toml`. https://learn.chatgpt.com/docs/developer-commands?surface=cli
 - Das erzeugte Skript ist im Test mit bash und jq 1.7.1 gegen die Vorschau geprüft
   (`tools/tests/kurs/statusline-baukasten.test.mjs`). Beispieldaten in der Vorschau erfunden.
+
+## kontext-befehle
+
+Abgerufen am 04.11.2026.
+
+- Claude Code, Befehle: `/context` „Visualize current context usage as a colored grid“; `/clear`
+  „Start a new conversation with empty context. Pass a name to label the previous conversation in
+  the /resume picker“ (Kurzformen `/reset`, `/new`); `/compact` mit optionalen Anweisungen;
+  `/usage` (Kurzform `/cost`), `/model` (gilt als Standard, `s` nur für die Sitzung), `/init`,
+  `/memory`, `/rewind`, `/statusline`, `/help`. https://code.claude.com/docs/en/commands
+- Zusammenfassen: „The summary keeps your requests and key code snippets, but detailed
+  instructions from early in the conversation may be lost.“
+  https://code.claude.com/docs/en/how-claude-code-works — Auto-Compact am Kontextlimit des Modells:
+  https://code.claude.com/docs/en/model-config#default-auto-compact-thresholds
+- CLAUDE.md nach `/compact`: „Claude re-reads it from disk and re-injects it into the session.“
+  https://code.claude.com/docs/en/memory — nach `/clear` oder `/compact` neu geladen:
+  https://code.claude.com/docs/en/prompt-caching
+- Empfehlung: „Clear between tasks: run /clear when switching to unrelated work.“
+  https://code.claude.com/docs/en/context-window
+- Codex, Befehle: `/new` „Start a new chat inside the same CLI session.“; `/clear` „Clear the
+  terminal and start a fresh chat.“; `/init` „Generate an AGENTS.md scaffold“; `/compact`, `/status`,
+  `/resume`, `/model`, `/usage`, `/statusline`; kein `/rewind`, stattdessen „Press Escape twice with
+  an empty composer to edit the previous user message“. Kein `/context`, kein `/help`, `/compact`
+  ohne Anweisung (Quellcode github.com/openai/codex, Commit 9ff072db8a).
+  https://learn.chatgpt.com/docs/developer-commands?surface=cli
+- Codex-Limits: „If you want to see your remaining limits during an active Codex CLI session, you
+  can use /status.“ https://learn.chatgpt.com/docs/pricing — „Codex also compacts chats
+  automatically“, „Keep one chat per coherent unit of work.“ https://learn.chatgpt.com/guides/best-practices
+- Anzeige „% Kontext übrig“ im Nachbau: Wortlaut der Codex-Fußzeile im Quellcode (openai/codex).
+- Ob ein Codex-Chat nach `/new` über `/resume` zurückkommt, ist nicht dokumentiert; der Nachbau
+  zeigt es deshalb nur für Claude Code. Prozentwerte, Grundlast und Limits im Nachbau sind
+  Beispielwerte.

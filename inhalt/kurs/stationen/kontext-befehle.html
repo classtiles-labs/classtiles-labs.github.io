@@ -1,0 +1,45 @@
+      <section class="erlebnis" data-erlebnis="kontext-terminal">
+        <h2>Kontext im Blick</h2>
+        <p>Ein nachgebautes Terminal mit Claude Code und Codex: Du arbeitest an einem Arbeitsblatt,
+        der Kontext füllt sich, und du probierst die Befehle aus, die ihn wieder frei machen. Mit
+        JavaScript läuft hier die Simulation, ohne JavaScript steht unten der Spickzettel.</p>
+      </section>
+
+      <section class="einordnung">
+        <h2>Kontext im Terminal</h2>
+        <p>In Claude Code und Codex füllt sich der Kontext schneller als im Chat. Neben deinen
+        Nachrichten landen dort gelesene Dateien, Ausgaben von Befehlen und die Projektregeln aus
+        CLAUDE.md oder AGENTS.md. Ist er voll, fassen beide das Gespräch automatisch zusammen. Frühe
+        Einzelheiten können dabei verloren gehen.</p>
+        <p>Für den Alltag reichen drei Befehle. Mit /compact fasst du selbst zusammen; in Claude Code
+        kannst du dazuschreiben, was erhalten bleiben soll. Mit /clear, in Codex auch /new, beginnst
+        du einen neuen Chat. Die Doku von Claude Code rät, zwischen Aufgaben, die nichts miteinander
+        zu tun haben, /clear zu nutzen; CLAUDE.md wird danach neu geladen. Wie voll der Kontext ist,
+        zeigt in Claude Code /context oder dauerhaft eine Statusline, in Codex /status und die
+        Fußzeile (Stand: November 2026).</p>
+        <p>Faustregel: ein Chat pro Aufgabe. Arbeitsblatt fertig, weiter zum Elternbrief: neuer
+        Chat. Lange Arbeit am selben Arbeitsblatt: zusammenfassen. Deine Limits siehst du mit /usage
+        in Claude Code und mit /status in Codex.</p>
+      </section>
+
+      <section class="ticket">
+        <h2>Zum Mitnehmen</h2>
+        <p>Der Spickzettel für neben den Bildschirm, erst Claude Code, dann Codex.</p>
+        <pre class="ticket-prompt">CLAUDE CODE
+/context  Füllstand ansehen
+/compact  zusammenfassen
+/clear    neues Thema
+/resume   alten Chat holen
+/usage    Limits des Abos
+/init     CLAUDE.md anlegen
+
+CODEX
+/status   Kontext und Limits
+/compact  zusammenfassen
+/new      neues Thema
+/resume   alten Chat holen
+/init     AGENTS.md anlegen
+
+Mit Wunsch (nur Claude Code):
+/compact behalte die Lösungen</pre>
+      </section>
