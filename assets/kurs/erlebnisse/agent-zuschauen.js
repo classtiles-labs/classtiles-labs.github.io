@@ -51,6 +51,7 @@ export function mount(el, daten) {
     else if (a === 'weiter') index = naechsterSchritt(daten, index, entscheidungen).index;
     else if (a === 'neu') { index = 0; entscheidungen.clear(); }
     zeichne();
+    knoepfe.querySelector('button')?.focus();
   });
   zeichne();
 }

@@ -62,3 +62,11 @@ test('vereinige: Fragment und gemerkter Stand ergänzen sich', async () => {
   assert.deepEqual(vereinige({linie: null, start: null, besucht: []}, b).linie, 'A');
   assert.equal(vereinige(null, null), null);
 });
+
+test('nur ein leerer oder ein Stand-Anker darf ersetzt werden (Schlussprüfung, Fund 2)', async () => {
+  const {ersetzbarerHash} = await import('../../../assets/kurs/stand.js');
+  assert.equal(ersetzbarerHash(''), true);
+  assert.equal(ersetzbarerHash('#stand=1~E~-~'), true);
+  assert.equal(ersetzbarerHash('#fahrkarte'), false);
+  assert.equal(ersetzbarerHash('#liniennetz'), false);
+});

@@ -46,3 +46,14 @@ test('geplante Stationen sind markiert', () => {
   const l = netzLayout(N, {breite: 390});
   for (const s of N.stationen) assert.equal(l.stationen.find((x) => x.id === s.id).geplant, s.status !== 'gebaut');
 });
+
+test('Stationslinks im gezeichneten Netz tragen den Stand mit (Schlussprüfung, Fund 1)', async () => {
+  const {netzSvg} = await import('../../../assets/kurs/netz.js');
+  const N2 = structuredClone(N);
+  N2.stationen.find((s) => s.id === 'wie-ki-schreibt').status = 'gebaut';
+  const svg = netzSvg(N2, {linie: 'E', start: 'wie-ki-schreibt', besucht: ['wie-ki-schreibt']}, '#stand=1~E~wie-ki-schreibt~wie-ki-schreibt', 390);
+  assert.match(svg, /href="ki-kurs-wie-ki-schreibt\.html#stand=1~E~wie-ki-schreibt~wie-ki-schreibt"/);
+  assert.doesNotMatch(svg, /href="ki-kurs-[a-z-]+\.html"/, 'kein Stationslink ohne Stand');
+  const leer = netzSvg(N2, {linie: null, start: null, besucht: []}, '', 390);
+  assert.match(leer, /href="ki-kurs-wie-ki-schreibt\.html"/);
+});

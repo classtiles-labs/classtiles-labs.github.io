@@ -89,6 +89,16 @@ export function mount(el, daten, kontext) {
   }
 
   el.addEventListener('click', (ev) => {
+    // „Überspringen“ scrollt zum Netz, ohne den Anker der Adresse zu ändern (dort steht der Stand).
+    const sprung = ev.target.closest('a[href="#liniennetz"]');
+    if (sprung) {
+      ev.preventDefault();
+      const ziel = document.querySelector('.kurs-netz h2') ?? document.getElementById('liniennetz');
+      ziel?.setAttribute('tabindex', '-1');
+      ziel?.scrollIntoView({block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      ziel?.focus({preventScroll: true});
+      return;
+    }
     const b = ev.target.closest('button');
     if (!b) return;
     if (b.dataset.aktion === 'los' || b.dataset.aktion === 'neu') { schritt = 0; gewaehlt.length = 0; frage(); }

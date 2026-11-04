@@ -4,9 +4,9 @@
 //
 // Ohne dieses Skript bleibt alles lesbar: Die Stationen stehen als Links in der Übersicht, die
 // Tickets als Text in der Station.
-import {leererStand, besuche, alsFragment, ausFragment, vereinige} from './stand.js';
+import {leererStand, besuche, alsFragment, ausFragment, vereinige, ersetzbarerHash} from './stand.js';
 import {erstelleSpeicher, speicherDesBrowsers} from './speicher.js';
-import {netzLayout} from './netz.js';
+import {netzSvg} from './netz.js';
 import {kopiere} from './ticket.js';
 
 const netzEl = document.getElementById('kurs-netz');
@@ -36,7 +36,7 @@ function start() {
 
   function nachAenderung() {
     speicher.aktualisiere(stand);
-    if (stand.besucht.length || stand.linie) history.replaceState(null, '', alsFragment(stand));
+    if ((stand.besucht.length || stand.linie) && ersetzbarerHash(location.hash)) history.replaceState(null, '', alsFragment(stand));
     verlinke();
     zeichneFortschritt();
     for (const f of beobachter) f(stand);
@@ -76,13 +76,17 @@ function start() {
     const knopf = ev.target.closest('button[data-aktion]');
     if (!knopf) return;
     const meldung = (t) => { box.querySelector('.fortschritt-meldung').textContent = t; };
+    // Nach dem Neuzeichnen bekommt der Ersatzknopf den Fokus, sonst landet die Tastatur oben.
+    const fokus = (aktion) => box.querySelector(`[data-aktion="${aktion}"]`)?.focus();
     if (knopf.dataset.aktion === 'merken') {
       const ok = speicher.merke(stand);
       zeichneFortschritt();
+      fokus(ok ? 'vergessen' : 'link');
       if (!ok) meldung('Auf diesem Gerät nicht möglich. Nutze den Link, um weiterzumachen.');
     } else if (knopf.dataset.aktion === 'vergessen') {
       speicher.vergiss();
       zeichneFortschritt();
+      fokus('merken');
       meldung('Vergessen. Auf diesem Gerät ist nichts mehr gespeichert.');
     } else if (knopf.dataset.aktion === 'link') {
       const url = location.origin + location.pathname + alsFragment(stand);
@@ -160,41 +164,10 @@ export async function mountErlebnis(name, el, kontext) {
   }
 }
 
-const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
 function zeichneNetz(box, stand) {
   const breite = Math.max(300, Math.min(box.clientWidth || 390, 760));
-  const l = netzLayout(netz, {breite});
-  const besucht = new Set(stand.besucht);
-  const zug = [...stand.besucht].reverse().find((id) => l.stationen.some((s) => s.id === id)) ?? stand.start;
-  const teile = [];
-  for (const u of l.umstiege) teile.push(`<path class="netz-umstieg" d="${u.pfad}"/>`);
-  for (const li of l.linien) {
-    teile.push(`<line class="netz-linie linie-${li.id.toLowerCase()}" x1="${li.x1}" y1="${li.y}" x2="${li.x2}" y2="${li.y}"/>`);
-  }
-  for (const sch of l.schilder) {
-    teile.push(`<g class="netz-schild linie-${sch.linie.toLowerCase()}"><rect x="${sch.x}" y="${sch.y - 12}" width="28" height="24" rx="6"/><text x="${sch.x + 14}" y="${sch.y + 5}">${sch.linie}</text></g>`);
-  }
-  for (const s of l.stationen) {
-    const klasse = ['netz-station', `linie-${s.linie.toLowerCase()}`];
-    if (s.geplant) klasse.push('geplant');
-    if (besucht.has(s.id)) klasse.push('besucht');
-    if (s.umstieg) klasse.push('umsteige');
-    const form = s.umstieg
-      ? `<rect class="${klasse.join(' ')}" x="${s.x - 9}" y="${s.y - 9}" width="18" height="18" rx="9"/>`
-      : `<circle class="${klasse.join(' ')}" cx="${s.x}" cy="${s.y}" r="7"/>`;
-    teile.push(s.geplant ? form : `<a href="ki-kurs-${s.id}.html" tabindex="-1">${form}</a>`);
-  }
-  for (const lab of l.labels) {
-    const s = l.stationen.find((x) => x.id === lab.id);
-    teile.push(`<text class="netz-label${s.geplant ? ' geplant' : ''}" x="${lab.x}" y="${lab.y}" transform="rotate(${lab.winkel} ${lab.x} ${lab.y})">${esc(s.titel)}</text>`);
-  }
-  const z = l.stationen.find((s) => s.id === zug);
-  if (z) {
-    teile.push(`<circle class="netz-puls linie-${z.linie.toLowerCase()}" cx="${z.x}" cy="${z.y}" r="9"/>`);
-    teile.push(`<g class="netz-zug"><rect x="${z.x - 20}" y="${z.y + 14}" width="40" height="18" rx="9"/><text x="${z.x}" y="${z.y + 27}">Du</text></g>`);
-  }
-  box.innerHTML = `<svg viewBox="0 0 ${breite} ${l.hoehe}" width="100%" aria-hidden="true" focusable="false">${teile.join('')}</svg>`;
+  const fragment = stand.besucht.length || stand.linie ? alsFragment(stand) : '';
+  box.innerHTML = netzSvg(netz, stand, fragment, breite);
   box.hidden = false;
 }
 

@@ -437,6 +437,17 @@ class TestKeinSpeicherAufDemGeraet(unittest.TestCase):
             self.assertEqual(self.DATEI_ZUGRIFF.findall(text), [],
                              f"{rel} greift auf den Browser-Speicher zu")
 
+    def test_gemerkt_wird_nur_im_merken_knopf(self):
+        """Datenschutzerklärung 2.5: Gespeichert wird nur nach „Fortschritt auf diesem Gerät
+        merken“. speicher.merke() schreibt ohne Vorbedingung; es darf deshalb nur an genau einer
+        Stelle stehen, im Zweig des Merken-Knopfs. aktualisiere() prüft istGemerkt() selbst
+        (Node-Test speicher.test.mjs)."""
+        aufrufe = {rel: len(re.findall(r"\bspeicher\.merke\(", text))
+                   for rel, text in self.skriptdateien().items()}
+        self.assertEqual({r: n for r, n in aufrufe.items() if n}, {"assets/kurs/kurs.js": 1})
+        kurs = self.skriptdateien()["assets/kurs/kurs.js"]
+        self.assertRegex(kurs, r"aktion === 'merken'\)\s*\{\s*const ok = speicher\.merke\(")
+
     def test_nur_der_kursspeicher_darf_zugreifen_und_nur_auf_localstorage(self):
         text = self.skriptdateien().get(self.KURSSPEICHER)
         self.assertIsNotNone(text, f"{self.KURSSPEICHER} fehlt")

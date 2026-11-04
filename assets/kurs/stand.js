@@ -61,3 +61,9 @@ export function vereinige(a, b) {
   for (const id of b.besucht) if (!besucht.includes(id)) besucht.push(id);
   return {linie: a.linie ?? b.linie, start: a.start ?? b.start, besucht};
 }
+
+// Die Seite schreibt den Stand nur in die Adresse, wenn dort kein anderer Anker steht
+// (#fahrkarte, #liniennetz): Sonst sprängen Links wie „Fahrkarte lösen“ nicht mehr an ihr Ziel.
+export function ersetzbarerHash(hash) {
+  return !hash || hash.startsWith('#stand=');
+}
