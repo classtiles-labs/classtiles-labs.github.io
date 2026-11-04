@@ -1,0 +1,1147 @@
+PAKET: Englisch Jahrgang 8 – Reported Speech
+KENNUNG: englisch8-reported-speech
+FACH: Englisch
+ZEITDRUCK: lang
+
+=== TRAINER 1 ===
+NAME: Nell
+THEMA: Die Zeiten für den Backshift
+HALLO: Ahoy! The gulls said that you were coming today.
+HALLO: Before we cast our nets, let's check your tenses.
+SIEG: My net is full of perfect tenses. Well done!
+NIEDERLAGE: The tide said that you would be back soon. Practise and return!
+REVANCHE: The fish asked if you wanted another round.
+
+FRAGE: Simple present: Zoe ___ (visit) her grandma every Sunday.
+ANTWORT: visits
+FALSCH: visit | is visiting | visited
+
+FRAGE: Present progressive: Look! Andrew ___ (take) photos of the skyline.
+ANTWORT: is taking
+FALSCH: takes | is takeing | was taking
+
+FRAGE: Simple past: Last summer, Julia ___ (fly) to New York.
+ANTWORT: flew
+FALSCH: flied | has flown | flies
+
+FRAGE: Past progressive: When the phone rang, Mr Brooks ___ (cook) dinner.
+ANTWORT: was cooking
+FALSCH: cooked | were cooking | is cooking
+
+FRAGE: Present perfect: We ___ (already / buy) the tickets.
+ANTWORT: have already bought
+FALSCH: has already bought | have already buyed | already have buy
+
+FRAGE: Past perfect: When we got to the station, the train ___ (leave).
+ANTWORT: had left
+FALSCH: has left | had leaved | was leaving
+
+FRAGE: Which tense is this? “She was reading a book.”
+ANTWORT: past progressive
+AUCH RICHTIG: past continuous
+FALSCH: simple past | present progressive | past perfect
+
+FRAGE: Which tense is this? “They have finished their project.”
+ANTWORT: present perfect
+FALSCH: simple past | past perfect | present progressive
+
+FRAGE: Which tense is this? “He had forgotten his ticket.”
+ANTWORT: past perfect
+FALSCH: present perfect | simple past | past progressive
+
+FRAGE: Which tense goes with signal words like “every day”, “often” and “usually”?
+ANTWORT: simple present
+AUCH RICHTIG: present simple
+FALSCH: present progressive | simple past | present perfect
+
+FRAGE: Which tense goes with signal words like “yesterday”, “last week” and “two days ago”?
+ANTWORT: simple past
+AUCH RICHTIG: past simple
+FALSCH: present perfect | simple present | past perfect
+
+FRAGE: Which tense goes with “Look!”, “Listen!” and “at the moment”?
+ANTWORT: present progressive
+AUCH RICHTIG: present continuous
+FALSCH: simple present | past progressive | present perfect
+
+FRAGE: Which tense goes with “already”, “ever”, “yet” and “since”?
+ANTWORT: present perfect
+FALSCH: simple past | present progressive | simple present
+
+FRAGE: How do you form the past perfect?
+ANTWORT: had + past participle
+FALSCH: have + past participle | was + -ing form | had + infinitive
+FORM: auswahl
+
+FRAGE: How do you form the past progressive?
+ANTWORT: was/were + -ing form
+FALSCH: had + past participle | is/are + -ing form | did + infinitive
+FORM: auswahl
+
+FRAGE: Write the simple past of “buy”.
+ANTWORT: bought
+
+FRAGE: Write the past participle of “write”.
+ANTWORT: written
+
+FRAGE: Write the past participle of “see”.
+ANTWORT: seen
+
+FRAGE: Past perfect: The film ___ (start) before we arrived.
+ANTWORT: had started
+AUCH RICHTIG: 'd started
+
+FRAGE: Present perfect: Ben ___ (lose) his phone.
+ANTWORT: has lost
+AUCH RICHTIG: 's lost
+
+FRAGE: Past progressive: The children ___ (play) in Central Park when it started to rain.
+ANTWORT: were playing
+
+FRAGE: Simple present: Ms Rivera ___ (work) at the museum.
+ANTWORT: works
+
+FRAGE: Build the sentence in the past progressive: „Zoe telefonierte gerade, als ich ankam.“
+SATZ: Zoe was talking on the phone when I arrived.
+EXTRA: talked | is
+
+FRAGE: Build the sentence in the present perfect: „Wir haben den Times Square schon gesehen.“
+SATZ: We have already seen Times Square.
+EXTRA: saw | has
+
+FRAGE: Build the sentence in the past perfect: „Sie hatte ihr Ticket vergessen.“
+SATZ: She had forgotten her ticket.
+EXTRA: has | forgot
+
+FRAGE: Build the sentence in the simple present: „Andrew mag kein scharfes Essen.“
+SATZ: Andrew doesn't like spicy food.
+EXTRA: don't | likes
+
+FRAGE: Build the sentence in the present progressive: „Sie warten gerade auf den Bus.“
+SATZ: They are waiting for the bus.
+EXTRA: wait | is
+
+FRAGE: Build the sentence with will: „Es wird morgen sonnig sein.“
+SATZ: It will be sunny tomorrow.
+EXTRA: would | is
+
+FRAGE: Build the sentence in the simple past: „Ich konnte die U-Bahn-Station nicht finden.“
+SATZ: I couldn't find the subway station.
+EXTRA: can't | found
+
+FRAGE: Build the question in the simple past: „Hast du gestern das Museum besucht?“
+SATZ: Did you visit the museum yesterday?
+EXTRA: Do | visited
+
+=== TRAINER 2 ===
+NAME: Alder
+THEMA: Backshift: Present wird Past
+HALLO: The trees whispered that a visitor was walking through the forest.
+HALLO: Here every present tense goes one step back into the past.
+SIEG: The trees say that you know your backshift. Well done!
+NIEDERLAGE: Every big tree was small once. Practise a little and try again.
+REVANCHE: The owls asked me if you were ready for another walk.
+
+FRAGE: Zoe: “I love baseball.” → Zoe said that she ___ baseball.
+ANTWORT: loved
+FALSCH: loves | love | has loved
+
+FRAGE: Andrew: “I am hungry.” → Andrew said that he ___ hungry.
+ANTWORT: was
+FALSCH: is | were | had
+
+FRAGE: Julia: “My friends are in Brooklyn.” → Julia said that her friends ___ in Brooklyn.
+ANTWORT: were
+FALSCH: are | was | had
+
+FRAGE: Ben: “I play the guitar.” → Ben said that he ___ the guitar.
+ANTWORT: played
+FALSCH: plays | play | was play
+
+FRAGE: Mia: “My brother lives in Boston.” → Mia said that her brother ___ in Boston.
+ANTWORT: lived
+FALSCH: lives | live | had live
+
+FRAGE: Leo: “I don't like museums.” → Leo said that he ___ museums.
+ANTWORT: didn't like
+AUCH RICHTIG: did not like
+FALSCH: doesn't like | don't like | didn't liked
+
+FRAGE: Zoe: “I am writing a letter.” → Zoe said that she ___ a letter.
+ANTWORT: was writing
+FALSCH: is writing | wrote | were writing
+
+FRAGE: Andrew: “We are waiting for the bus.” → Andrew said that they ___ for the bus.
+ANTWORT: were waiting
+FALSCH: are waiting | was waiting | waited
+
+FRAGE: Julia: “It is raining.” → Julia said that it ___.
+ANTWORT: was raining
+FALSCH: is raining | rained | were raining
+
+FRAGE: Ms Rivera: “The museum opens at nine.” → Ms Rivera said that the museum ___ at nine.
+ANTWORT: opened
+FALSCH: opens | had opened | open
+
+FRAGE: Which tense does the simple present become after “said”?
+ANTWORT: simple past
+AUCH RICHTIG: past simple
+FALSCH: past perfect | present perfect | past progressive
+
+FRAGE: Which tense does the present progressive become after “said”?
+ANTWORT: past progressive
+AUCH RICHTIG: past continuous
+FALSCH: simple past | past perfect | present perfect
+
+FRAGE: Choose the correct report. Kai: “I am tired.”
+ANTWORT: Kai said that he was tired.
+FALSCH: Kai said that he is tired. | Kai said that I was tired. | Kai said that he were tired.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Anna: “I'm reading a comic.”
+ANTWORT: Anna said that she was reading a comic.
+FALSCH: Anna said that she is reading a comic. | Anna said that she read a comic. | Anna said that I was reading a comic.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Tom: “My parents work in Manhattan.”
+ANTWORT: Tom said that his parents worked in Manhattan.
+FALSCH: Tom said that my parents worked in Manhattan. | Tom said that his parents work in Manhattan. | Tom said that his parents had work in Manhattan.
+FORM: auswahl
+
+FRAGE: Sara: “I have a dog.” → Sara said that she ___ a dog.
+ANTWORT: had
+
+FRAGE: Amir: “I know the answer.” → Amir said that he ___ the answer.
+ANTWORT: knew
+
+FRAGE: Lina: “Zoe speaks Spanish.” → Lina said that Zoe ___ Spanish.
+ANTWORT: spoke
+
+FRAGE: Max: “I'm not watching TV.” → Max said that he ___ TV.
+ANTWORT: wasn't watching
+AUCH RICHTIG: was not watching
+
+FRAGE: Julia: “Andrew is sitting next to me.” → Julia said that Andrew ___ next to her.
+ANTWORT: was sitting
+
+FRAGE: Ben: “I go to school by bike.” → Ben said that he ___ to school by bike.
+ANTWORT: went
+
+FRAGE: Zoe: “My sister is studying in Boston.” → Zoe said that her sister ___ in Boston.
+ANTWORT: was studying
+
+FRAGE: Report the sentence. Mia: “I like pizza.”
+SATZ: Mia said that she liked pizza.
+AUCH RICHTIG: Mia said she liked pizza.
+EXTRA: likes | I
+
+FRAGE: Report the sentence. Leo: “I am cold.”
+SATZ: Leo said that he was cold.
+AUCH RICHTIG: Leo said he was cold.
+EXTRA: is | I
+
+FRAGE: Report the sentence. Andrew: “I'm packing my bag.”
+SATZ: Andrew said that he was packing his bag.
+AUCH RICHTIG: Andrew said he was packing his bag.
+EXTRA: is | my
+
+FRAGE: Report the sentence. Zoe: “We often go to the zoo.”
+SATZ: Zoe said that they often went to the zoo.
+AUCH RICHTIG: Zoe said they often went to the zoo.
+EXTRA: go | we
+
+FRAGE: Report the sentence. Julia: “The children are playing outside.”
+SATZ: Julia said that the children were playing outside.
+AUCH RICHTIG: Julia said the children were playing outside.
+EXTRA: are | was
+
+FRAGE: Report the sentence. Kai: “I don't eat meat.”
+SATZ: Kai said that he didn't eat meat.
+AUCH RICHTIG: Kai said he didn't eat meat.
+EXTRA: doesn't | ate
+
+FRAGE: Report the sentence. Anna: “My phone doesn't work.”
+SATZ: Anna said that her phone didn't work.
+AUCH RICHTIG: Anna said her phone didn't work.
+EXTRA: doesn't | my
+
+FRAGE: Report the sentence. Tom: “It's snowing in New York.”
+SATZ: Tom said that it was snowing in New York.
+AUCH RICHTIG: Tom said it was snowing in New York.
+EXTRA: is | snowed
+
+=== TRAINER 3 ===
+NAME: Hazel
+THEMA: Backshift: zum Past perfect
+HALLO: My basket is full of verbs that travelled far back in time.
+HALLO: Simple past and present perfect? Here they become past perfect.
+SIEG: You have picked every past perfect. My basket is happy!
+NIEDERLAGE: Some mushrooms need more rain. Practise and come back!
+REVANCHE: The frogs told me that you had come back. Let's go!
+
+FRAGE: Zoe: “I saw the Statue of Liberty.” → Zoe said that she ___ the Statue of Liberty.
+ANTWORT: had seen
+FALSCH: saw | has seen | had saw
+
+FRAGE: Andrew: “I have lost my map.” → Andrew said that he ___ his map.
+ANTWORT: had lost
+FALSCH: has lost | lost | had losed
+
+FRAGE: Julia: “We visited the museum.” → Julia said that they ___ the museum.
+ANTWORT: had visited
+FALSCH: visited | have visited | had visit
+
+FRAGE: Ben: “I have never been to Chicago.” → Ben said that he ___ to Chicago.
+ANTWORT: had never been
+FALSCH: has never been | never was | had never was
+
+FRAGE: Mia: “I bought a new T-shirt.” → Mia said that she ___ a new T-shirt.
+ANTWORT: had bought
+FALSCH: bought | had buyed | has bought
+
+FRAGE: Ms Rivera: “Millions of people have visited the memorial.” → Ms Rivera said that millions of people ___ the memorial.
+ANTWORT: had visited
+FALSCH: have visited | visited | has visited
+
+FRAGE: Leo: “I didn't finish my homework.” → Leo said that he ___ his homework.
+ANTWORT: hadn't finished
+AUCH RICHTIG: had not finished
+FALSCH: didn't finish | hasn't finished | hadn't finish
+
+FRAGE: Zoe: “I had never seen snow before.” → Zoe said that she ___ snow before.
+ANTWORT: had never seen
+FALSCH: has never seen | never saw | had never saw
+
+FRAGE: Which tense does the simple past become after “said”?
+ANTWORT: past perfect
+FALSCH: simple past | present perfect | past progressive
+
+FRAGE: Which tense does the present perfect become after “said”?
+ANTWORT: past perfect
+FALSCH: simple past | present perfect | simple present
+
+FRAGE: What happens to the past perfect in reported speech?
+ANTWORT: It stays the same.
+FALSCH: It becomes the simple past. | It becomes the present perfect. | It becomes the past progressive.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Kai: “I found a wallet.”
+ANTWORT: Kai said that he had found a wallet.
+FALSCH: Kai said that he has found a wallet. | Kai said that he had find a wallet. | Kai said that I had found a wallet.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Anna: “I have already eaten.”
+ANTWORT: Anna said that she had already eaten.
+FALSCH: Anna said that she has already eaten. | Anna said that she had already ate. | Anna said that she already eaten.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Tom: “We met a famous actor.”
+ANTWORT: Tom said that they had met a famous actor.
+FALSCH: Tom said that we had met a famous actor. | Tom said that they have met a famous actor. | Tom said that they had meet a famous actor.
+FORM: auswahl
+
+FRAGE: Andrew: “I went to a baseball game.” → Andrew said that he ___ to a baseball game.
+ANTWORT: had gone
+FALSCH: had went | has gone | went
+
+FRAGE: Sara: “I wrote a story.” → Sara said that she ___ a story.
+ANTWORT: had written
+
+FRAGE: Amir: “I have broken my arm.” → Amir said that he ___ his arm.
+ANTWORT: had broken
+
+FRAGE: Lina: “I forgot my ticket.” → Lina said that she ___ her ticket.
+ANTWORT: had forgotten
+
+FRAGE: Max: “I have arrived.” → Max said that he ___.
+ANTWORT: had arrived
+
+FRAGE: Julia: “Zoe told me a story.” → Julia said that Zoe ___ her a story.
+ANTWORT: had told
+
+FRAGE: Ben: “I didn't see the sign.” → Ben said that he ___ the sign.
+ANTWORT: hadn't seen
+AUCH RICHTIG: had not seen
+
+FRAGE: Zoe: “I was nine years old at the time.” → Zoe said that she ___ nine years old at the time.
+ANTWORT: had been
+
+FRAGE: Report the sentence. Mia: “I lost my key.”
+SATZ: Mia said that she had lost her key.
+AUCH RICHTIG: Mia said she had lost her key.
+EXTRA: has | my
+
+FRAGE: Report the sentence. Leo: “I have finished the test.”
+SATZ: Leo said that he had finished the test.
+AUCH RICHTIG: Leo said he had finished the test.
+EXTRA: has | finish
+
+FRAGE: Report the sentence. Andrew: “We took the subway.”
+SATZ: Andrew said that they had taken the subway.
+AUCH RICHTIG: Andrew said they had taken the subway.
+EXTRA: took | we
+
+FRAGE: Report the sentence. Julia: “I have met Zoe.”
+SATZ: Julia said that she had met Zoe.
+AUCH RICHTIG: Julia said she had met Zoe.
+EXTRA: has | I
+
+FRAGE: Report the sentence. Kai: “I didn't hear the alarm.”
+SATZ: Kai said that he hadn't heard the alarm.
+AUCH RICHTIG: Kai said he hadn't heard the alarm.
+EXTRA: didn't | hear
+
+FRAGE: Report the sentence. Anna: “We have been to Brooklyn.”
+SATZ: Anna said that they had been to Brooklyn.
+AUCH RICHTIG: Anna said they had been to Brooklyn.
+EXTRA: have | we
+
+FRAGE: Report the sentence. Tom: “The bus left early.”
+SATZ: Tom said that the bus had left early.
+AUCH RICHTIG: Tom said the bus had left early.
+EXTRA: leaved | has
+
+FRAGE: Report the sentence. Ben: “I had already eaten.”
+SATZ: Ben said that he had already eaten.
+AUCH RICHTIG: Ben said he had already eaten.
+EXTRA: has | ate
+
+=== TRAINER 4 ===
+NAME: Rashid
+THEMA: Backshift: will, can, must
+HALLO: My mirror shows the past: will turns into would.
+HALLO: Can, will and must? Show me how they travel back in time.
+SIEG: You said that you could cross the dunes – and you did! Well done.
+NIEDERLAGE: The sand moves fast. Rest a little and try again.
+REVANCHE: The camels said that they would wait for you. Ready?
+
+FRAGE: Andrew to Zoe: “I will call you.” → Andrew said that he ___ call her.
+ANTWORT: would
+FALSCH: will | could | was
+
+FRAGE: Zoe: “I can swim very well.” → Zoe said that she ___ swim very well.
+ANTWORT: could
+FALSCH: can | would | had
+
+FRAGE: Mr Brooks to us: “You must be on time.” → Mr Brooks said that we ___ be on time.
+ANTWORT: had to
+FALSCH: must | have to | would
+
+FRAGE: Julia: “I have to work on Saturday.” → Julia said that she ___ work on Saturday.
+ANTWORT: had to
+FALSCH: has to | have to | must
+
+FRAGE: Ben: “I'm going to visit my aunt.” → Ben said that he ___ visit his aunt.
+ANTWORT: was going to
+FALSCH: is going to | were going to | had going to
+
+FRAGE: Mia: “I won't be late.” → Mia said that she ___ be late.
+ANTWORT: wouldn't
+AUCH RICHTIG: would not
+FALSCH: won't | will not | couldn't
+
+FRAGE: Leo: “I can't come to the party.” → Leo said that he ___ come to the party.
+ANTWORT: couldn't
+AUCH RICHTIG: could not
+FALSCH: can't | wouldn't | cannot
+
+FRAGE: Ms Rivera to us: “You can take photos outside.” → Ms Rivera said that we ___ take photos outside.
+ANTWORT: could
+FALSCH: can | would | must
+
+FRAGE: Zoe: “I could see the river from my window.” → Zoe said that she ___ see the river from her window.
+ANTWORT: could
+FALSCH: can | had could | would
+
+FRAGE: Andrew: “I would like a hot dog.” → Andrew said that he ___ like a hot dog.
+ANTWORT: would
+FALSCH: will | wouldn't | had
+
+FRAGE: What does “will” become after “said”?
+ANTWORT: would
+FALSCH: will | could | had
+
+FRAGE: What does “must” become after “said”?
+ANTWORT: had to
+FALSCH: has to | must | would
+
+FRAGE: Which modal verbs do not change in reported speech?
+ANTWORT: could, would, should, might
+FALSCH: can, will, must, may | can, could, will, would | must, should, can, might
+FORM: auswahl
+
+FRAGE: Choose the correct report. Kai to me: “I will help you.”
+ANTWORT: Kai said that he would help me.
+FALSCH: Kai said that he will help me. | Kai said that he could help me. | Kai said that I would help him.
+FORM: auswahl
+
+FRAGE: Choose the correct report with backshift. Anna: “We must buy tickets.”
+ANTWORT: Anna said that they had to buy tickets.
+FALSCH: Anna said that they must buy tickets. | Anna said that we had to buy tickets. | Anna said that they have to buy tickets.
+FORM: auswahl
+
+FRAGE: Tom: “I will be there.” → Tom said that he ___ be there.
+ANTWORT: would
+
+FRAGE: Sara: “I can't find my bag.” → Sara said that she ___ find her bag.
+ANTWORT: couldn't
+AUCH RICHTIG: could not
+
+FRAGE: Amir: “I must go home.” → Amir said that he ___ go home.
+ANTWORT: had to
+
+FRAGE: Lina: “We are going to fly to Boston.” → Lina said that they ___ fly to Boston.
+ANTWORT: were going to
+
+FRAGE: Max: “I should study more.” → Max said that he ___ study more.
+ANTWORT: should
+
+FRAGE: Julia: “Andrew might be late.” → Julia said that Andrew ___ be late.
+ANTWORT: might
+
+FRAGE: Zoe to Julia: “I'll show you some photos.” → Zoe said that she ___ show Julia some photos.
+ANTWORT: would
+
+FRAGE: Report the sentence. Andrew: “I will buy the tickets.”
+SATZ: Andrew said that he would buy the tickets.
+AUCH RICHTIG: Andrew said he would buy the tickets.
+EXTRA: will | I
+
+FRAGE: Report the sentence. Mia: “I can speak French.”
+SATZ: Mia said that she could speak French.
+AUCH RICHTIG: Mia said she could speak French.
+EXTRA: can | I
+
+FRAGE: Report the sentence. Leo: “I must clean my room.”
+SATZ: Leo said that he had to clean his room.
+AUCH RICHTIG: Leo said he had to clean his room.
+EXTRA: must | my
+
+FRAGE: Report the sentence. Zoe: “I'm going to write a letter.”
+SATZ: Zoe said that she was going to write a letter.
+AUCH RICHTIG: Zoe said she was going to write a letter.
+EXTRA: is | I
+
+FRAGE: Report the sentence. Ben: “I won't tell anyone.”
+SATZ: Ben said that he wouldn't tell anyone.
+AUCH RICHTIG: Ben said he wouldn't tell anyone.
+EXTRA: won't | I
+
+FRAGE: Report the sentence. Julia: “We have to hurry.”
+SATZ: Julia said that they had to hurry.
+AUCH RICHTIG: Julia said they had to hurry.
+EXTRA: have | we
+
+FRAGE: Report the sentence. Kai: “I could hear the music.”
+SATZ: Kai said that he could hear the music.
+AUCH RICHTIG: Kai said he could hear the music.
+EXTRA: can | heard
+
+FRAGE: Report the sentence. Anna: “It will be cold.”
+SATZ: Anna said that it would be cold.
+AUCH RICHTIG: Anna said it would be cold.
+EXTRA: will | is
+
+=== TRAINER 5 ===
+NAME: Skye
+THEMA: Personen, Zeit und Ort
+HALLO: Up here, today becomes that day and here becomes there!
+HALLO: Hold on to your goggles. Pronouns, time words and place words change too.
+SIEG: You flew through every time word. Brilliant!
+NIEDERLAGE: The wind was too strong today. Practise and fly again!
+REVANCHE: The wind asked if you wanted to fly with me again.
+
+FRAGE: What does “now” become in reported speech?
+ANTWORT: then
+FALSCH: now | there | that day
+
+FRAGE: What does “today” become in reported speech?
+ANTWORT: that day
+FALSCH: today | the day before | the next day
+
+FRAGE: What does “yesterday” become in reported speech?
+ANTWORT: the day before
+FALSCH: yesterday | the next day | that day
+
+FRAGE: What does “tomorrow” become in reported speech?
+ANTWORT: the next day
+AUCH RICHTIG: the following day
+FALSCH: tomorrow | the day before | that day
+
+FRAGE: What does “here” become in reported speech?
+ANTWORT: there
+FALSCH: here | then | where
+
+FRAGE: What does “next week” become in reported speech?
+ANTWORT: the following week
+AUCH RICHTIG: the next week
+FALSCH: next week | the week before | that week
+
+FRAGE: What does “two years ago” become in reported speech?
+ANTWORT: two years before
+FALSCH: two years ago | two years after | two years later
+
+FRAGE: What does “last year” become in reported speech?
+ANTWORT: the year before
+FALSCH: last year | the next year | that year
+
+FRAGE: What does “this” become in reported speech?
+ANTWORT: that
+FALSCH: this | these | those
+
+FRAGE: What does “tonight” become in reported speech?
+ANTWORT: that night
+FALSCH: tonight | the night before | the next night
+
+FRAGE: Julia: “I met Zoe yesterday.” → Julia said that she had met Zoe ___.
+ANTWORT: the day before
+FALSCH: yesterday | the next day | that day
+
+FRAGE: Andrew: “I'm flying to New York tomorrow.” → Andrew said that he was flying to New York ___.
+ANTWORT: the next day
+AUCH RICHTIG: the following day
+FALSCH: tomorrow | the day before | that day
+
+FRAGE: Choose the correct report. Ben: “I'm here now.”
+ANTWORT: Ben said that he was there then.
+FALSCH: Ben said that he was here now. | Ben said that he is there then. | Ben said that I was there then.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Mia to Leo: “I can meet you tomorrow.”
+ANTWORT: Mia said that she could meet him the next day.
+FALSCH: Mia said that she could meet you the next day. | Mia said that she could meet him tomorrow. | Mia said that she can meet him the next day.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Mr Brooks: “We will visit this museum today.”
+ANTWORT: Mr Brooks said that they would visit that museum that day.
+FALSCH: Mr Brooks said that they would visit this museum today. | Mr Brooks said that we will visit that museum that day. | Mr Brooks said that they would visit that museum the day before.
+FORM: auswahl
+
+FRAGE: Zoe: “I come here every September.” → Zoe said that she came ___ every September.
+ANTWORT: there
+
+FRAGE: Leo: “I'm tired now.” → Leo said that he was tired ___.
+ANTWORT: then
+
+FRAGE: Anna: “I lost my phone last night.” → Anna said that she had lost her phone ___.
+ANTWORT: the night before
+
+FRAGE: Tom: “Our test is next week.” → Tom said that ___ test was the following week.
+ANTWORT: their
+
+FRAGE: Sara: “I visited my grandma two days ago.” → Sara said that she had visited her grandma two days ___.
+ANTWORT: before
+
+FRAGE: Kai: “I love my new bike.” → Kai said that he loved ___ new bike.
+ANTWORT: his
+
+FRAGE: Andrew to Julia: “I need your help today.” → Andrew said that he needed ___ help that day.
+ANTWORT: her
+
+FRAGE: Report the sentence. Leo: “I am busy today.”
+SATZ: Leo said that he was busy that day.
+AUCH RICHTIG: Leo said he was busy that day.
+EXTRA: today | is
+
+FRAGE: Report the sentence. Mia: “I saw Zoe yesterday.”
+SATZ: Mia said that she had seen Zoe the day before.
+AUCH RICHTIG: Mia said she had seen Zoe the day before.
+EXTRA: yesterday | saw
+
+FRAGE: Report the sentence. Ben to Anna: “I will call you tomorrow.”
+SATZ: Ben said that he would call her the next day.
+AUCH RICHTIG: Ben said he would call her the next day.
+EXTRA: tomorrow | you
+
+FRAGE: Report the sentence. Julia: “We are staying here.”
+SATZ: Julia said that they were staying there.
+AUCH RICHTIG: Julia said they were staying there.
+EXTRA: here | we
+
+FRAGE: Report the sentence. Andrew: “I like this city.”
+SATZ: Andrew said that he liked that city.
+AUCH RICHTIG: Andrew said he liked that city.
+EXTRA: this | likes
+
+FRAGE: Report the sentence. Anna: “I am leaving now.”
+SATZ: Anna said that she was leaving then.
+AUCH RICHTIG: Anna said she was leaving then.
+EXTRA: now | is
+
+FRAGE: Report the sentence. Tom: “My cousin arrived last week.”
+SATZ: Tom said that his cousin had arrived the week before.
+AUCH RICHTIG: Tom said his cousin had arrived the week before.
+EXTRA: my | last
+
+FRAGE: Report the sentence. Leave out “that” after “said”. Kai: “We are going to the zoo tonight.”
+SATZ: Kai said they were going to the zoo that night.
+EXTRA: tonight | we
+
+=== TRAINER 6 ===
+NAME: Gideon
+THEMA: Fragen mit Fragewort
+HALLO: My question machine asked me where you had been all this time.
+HALLO: Remember: in reported questions, do, does and did disappear!
+SIEG: Every gear turns smoothly. Your questions are perfect!
+NIEDERLAGE: One gear was in the wrong place. Fix it and come back!
+REVANCHE: My machine wants to know if you are ready again.
+
+FRAGE: Andrew: “Where do you live?” → Andrew asked Julia where she ___.
+ANTWORT: lived
+FALSCH: lives | did live | does live
+
+FRAGE: A visitor: “When does the museum open?” → A visitor asked Ms Rivera when the museum ___.
+ANTWORT: opened
+FALSCH: opens | did open | does open
+
+FRAGE: Julia: “What are you doing?” → Julia asked Zoe what she ___.
+ANTWORT: was doing
+FALSCH: is doing | were doing | did do
+
+FRAGE: Ben: “Why is the bus late?” → Ben asked why the bus ___ late.
+ANTWORT: was
+FALSCH: is | did be | were
+
+FRAGE: Mia: “How old are you?” → Mia asked Leo how old he ___.
+ANTWORT: was
+FALSCH: is | were | did be
+
+FRAGE: Julia: “When did you come home yesterday?” → Julia asked Zoe when she ___ home the day before.
+ANTWORT: had come
+FALSCH: did come | had came | has come
+
+FRAGE: Andrew: “What did you see in New York?” → Andrew asked Julia what she ___ in New York.
+ANTWORT: had seen
+FALSCH: did see | had saw | has seen
+
+FRAGE: What happens to do, does and did in reported questions?
+ANTWORT: They disappear.
+FALSCH: They stay. | They move to the end. | They become had.
+FORM: auswahl
+
+FRAGE: What comes after the question word in a reported question?
+ANTWORT: subject + verb
+FALSCH: verb + subject | did + subject | do + subject + verb
+FORM: auswahl
+
+FRAGE: Which punctuation mark ends a reported question?
+ANTWORT: a full stop
+AUCH RICHTIG: full stop | a period | period
+FALSCH: a question mark | an exclamation mark | a comma
+
+FRAGE: Choose the correct report. Zoe: “Where is the subway station?”
+ANTWORT: Zoe asked where the subway station was.
+FALSCH: Zoe asked where was the subway station. | Zoe asked where the subway station is. | Zoe asked where is the subway station.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Andrew: “What time does the game start?”
+ANTWORT: Andrew asked what time the game started.
+FALSCH: Andrew asked what time did the game start. | Andrew asked what time does the game start. | Andrew asked what time the game starts.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Ms Rivera: “Who has a question?”
+ANTWORT: Ms Rivera asked who had a question.
+FALSCH: Ms Rivera asked who did have a question. | Ms Rivera asked who has a question. | Ms Rivera asked who a question had.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Julia: “How many people work here?”
+ANTWORT: Julia asked how many people worked there.
+FALSCH: Julia asked how many people did work there. | Julia asked how many people worked here. | Julia asked how many people work there.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Ben to Mia: “Why are you laughing?”
+ANTWORT: Ben asked Mia why she was laughing.
+FALSCH: Ben asked Mia why was she laughing. | Ben asked Mia why she is laughing. | Ben asked Mia why you were laughing.
+FORM: auswahl
+
+FRAGE: Kai: “Where does Zoe work?” → Kai asked where Zoe ___.
+ANTWORT: worked
+
+FRAGE: Anna to Tom: “What do you want?” → Anna asked Tom what he ___.
+ANTWORT: wanted
+
+FRAGE: Tom: “Where are my keys?” → Tom asked where his keys ___.
+ANTWORT: were
+
+FRAGE: Sara: “When will the train arrive?” → Sara asked when the train ___ arrive.
+ANTWORT: would
+
+FRAGE: Amir to us: “How can I help you?” → Amir asked how he ___ help us.
+ANTWORT: could
+
+FRAGE: Lina to me: “Who called you?” → Lina asked who ___ called me.
+ANTWORT: had
+
+FRAGE: Mr Brooks: “Which bus are we taking?” → Mr Brooks asked which bus they ___.
+ANTWORT: were taking
+
+FRAGE: Report the question. Andrew to Julia: “Where do you live?”
+SATZ: Andrew asked Julia where she lived.
+EXTRA: did | ?
+
+FRAGE: Report the question. Mia to Kai: “What is your name?”
+SATZ: Mia asked Kai what his name was.
+EXTRA: is | your
+
+FRAGE: Report the question. Leo: “When does the film start?”
+SATZ: Leo asked when the film started.
+EXTRA: does | starts
+
+FRAGE: Report the question. A visitor: “How old is this tree?”
+SATZ: A visitor asked how old that tree was.
+EXTRA: is | this
+
+FRAGE: Report the question. Julia to Zoe: “Why did you write the letter?”
+SATZ: Julia asked Zoe why she had written the letter.
+EXTRA: did | wrote
+
+FRAGE: Report the question. Ben to Anna: “What are you reading?”
+SATZ: Ben asked Anna what she was reading.
+EXTRA: is | ?
+
+FRAGE: Report the question. Tom: “Where can I buy a ticket?”
+SATZ: Tom asked where he could buy a ticket.
+EXTRA: can | I
+
+FRAGE: Report the question. Zoe: “Who took this photo?”
+SATZ: Zoe asked who had taken that photo.
+EXTRA: did | this
+
+=== TRAINER 7 ===
+NAME: Freya
+THEMA: Ja-/Nein-Fragen mit if
+HALLO: No question word? Then “if” breaks the ice for you.
+HALLO: My fish asked me if you could report yes/no questions.
+SIEG: You caught every if! The northern lights are dancing.
+NIEDERLAGE: The ice is thin today. Warm up and try again.
+REVANCHE: The northern lights asked if you would come back. Here you are!
+
+FRAGE: Andrew: “Do you like New York?” → Andrew asked Julia ___ she liked New York.
+ANTWORT: if
+AUCH RICHTIG: whether
+FALSCH: that | do | what
+
+FRAGE: A girl: “Can we take photos inside?” → A girl asked Ms Rivera if they ___ take photos inside.
+ANTWORT: could
+FALSCH: can | would | did
+
+FRAGE: Julia: “Are you tired?” → Julia asked Zoe if she ___ tired.
+ANTWORT: was
+FALSCH: is | were | did be
+
+FRAGE: Ben: “Is the museum open?” → Ben asked if the museum ___ open.
+ANTWORT: was
+FALSCH: is | were | has
+
+FRAGE: Mia: “Do you have a pen?” → Mia asked Leo if he ___ a pen.
+ANTWORT: had
+FALSCH: has | did have | have
+
+FRAGE: A visitor: “Will the museum be open tomorrow?” → A visitor asked if the museum would be open ___.
+ANTWORT: the next day
+AUCH RICHTIG: the following day
+FALSCH: tomorrow | the day before | that day
+
+FRAGE: A boy: “Did you work here in 2001?” → A boy asked Ms Rivera if she ___ there in 2001.
+ANTWORT: had worked
+FALSCH: did work | has worked | had work
+
+FRAGE: Zoe: “Have you ever been to Boston?” → Zoe asked Andrew if he ___ ever been to Boston.
+ANTWORT: had
+FALSCH: has | did | have
+
+FRAGE: Which word can you use instead of “if” in a reported yes/no question?
+ANTWORT: whether
+FALSCH: that | weather | what
+
+FRAGE: Why does a reported yes/no question start with “if”?
+ANTWORT: Because there is no question word.
+FALSCH: Because it is a command. | Because it needs a question mark. | Because the verb stays the same.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Kai to Anna: “Are you hungry?”
+ANTWORT: Kai asked Anna if she was hungry.
+FALSCH: Kai asked Anna that she was hungry. | Kai asked Anna if was she hungry. | Kai asked Anna if she is hungry.
+FORM: auswahl
+
+FRAGE: Choose the correct report. The guide to us: “Do you have any questions?”
+ANTWORT: The guide asked us if we had any questions.
+FALSCH: The guide asked us do we have any questions. | The guide asked us if did we have any questions. | The guide asked us if we have any questions.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Andrew to Zoe: “Can you show me the way?”
+ANTWORT: Andrew asked Zoe if she could show him the way.
+FALSCH: Andrew asked Zoe if she can show him the way. | Andrew asked Zoe if could she show him the way. | Andrew asked Zoe if she could show me the way.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Julia to Ben: “Did Zoe call you?”
+ANTWORT: Julia asked Ben if Zoe had called him.
+FALSCH: Julia asked Ben if did Zoe call him. | Julia asked Ben if Zoe had called you. | Julia asked Ben that Zoe had called him.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Mr Brooks: “Is everybody here?”
+ANTWORT: Mr Brooks asked if everybody was there.
+FALSCH: Mr Brooks asked if everybody was here. | Mr Brooks asked if was everybody there. | Mr Brooks asked that everybody was there.
+FORM: auswahl
+
+FRAGE: Sara to me: “Do you speak English?” → Sara asked if I ___ English.
+ANTWORT: spoke
+
+FRAGE: Amir: “Is it raining?” → Amir asked if it ___.
+ANTWORT: was raining
+
+FRAGE: Lina to me: “Will you help me?” → Lina asked if I ___ help her.
+ANTWORT: would
+
+FRAGE: Max to us: “Did you enjoy the trip?” → Max asked if we ___ the trip.
+ANTWORT: had enjoyed
+
+FRAGE: Tom to me: “Are your parents at home?” → Tom asked if my parents ___ at home.
+ANTWORT: were
+
+FRAGE: Julia: “Do you like baseball?” → Julia wanted to know if Zoe ___ baseball.
+ANTWORT: liked
+
+FRAGE: Andrew: “Do I have to wear a uniform?” → Andrew asked if he ___ wear a uniform.
+ANTWORT: had to
+
+FRAGE: Report the question. Andrew to Julia: “Do you like pizza?”
+SATZ: Andrew asked Julia if she liked pizza.
+EXTRA: do | that
+
+FRAGE: Report the question. Mia to Leo: “Are you ready?”
+SATZ: Mia asked Leo if he was ready.
+EXTRA: are | ?
+
+FRAGE: Report the question. Ben: “Can I sit here?”
+SATZ: Ben asked if he could sit there.
+EXTRA: here | can
+
+FRAGE: Report the question. Kai to Anna: “Did you see the game?”
+SATZ: Kai asked Anna if she had seen the game.
+EXTRA: did | saw
+
+FRAGE: Report the question. Julia: “Is Zoe at home?”
+SATZ: Julia asked if Zoe was at home.
+EXTRA: is | that
+
+FRAGE: Report the question. Tom to Sara: “Have you finished?”
+SATZ: Tom asked Sara if she had finished.
+EXTRA: has | ?
+
+FRAGE: Report the question. A visitor: “Will the café be open?”
+SATZ: A visitor asked if the café would be open.
+EXTRA: will | that
+
+FRAGE: Report the question with “whether”. Zoe to Andrew: “Do you want a map?”
+SATZ: Zoe asked Andrew whether he wanted a map.
+EXTRA: do | that
+
+=== TRAINER 8 ===
+NAME: Celeste
+THEMA: Befehle und Bitten
+HALLO: The stars told me to wait for you here.
+HALLO: Commands and requests: told or asked + person + to + infinitive.
+SIEG: The stars asked me to tell you that you are a star!
+NIEDERLAGE: Even stars need the night to shine. Try again!
+REVANCHE: The stars told me not to give up. Shall we play again?
+
+FRAGE: Mr Brooks: “Bring your tickets.” → Mr Brooks told the students ___ their tickets.
+ANTWORT: to bring
+FALSCH: bring | brought | that they bring
+
+FRAGE: Mr Brooks: “Don't be late.” → Mr Brooks told the students ___ late.
+ANTWORT: not to be
+FALSCH: don't be | not be | didn't be
+
+FRAGE: Mr Brooks: “Please switch off your phones.” → Mr Brooks ___ the students to switch off their phones.
+ANTWORT: asked
+FALSCH: said | says | asked please
+
+FRAGE: Ben: “Mr Brooks, please wait for me!” → Ben asked Mr Brooks to wait for ___.
+ANTWORT: him
+FALSCH: me | them | he
+
+FRAGE: Ms Rivera: “Don't touch the exhibits.” → Ms Rivera told the visitors ___ the exhibits.
+ANTWORT: not to touch
+FALSCH: don't touch | not touch | not touching
+
+FRAGE: Julia to Andrew: “Please call me later.” → Julia asked Andrew ___ her later.
+ANTWORT: to call
+FALSCH: call | called | to calling
+
+FRAGE: Zoe to us: “Sit down, please.” → Zoe asked us ___ down.
+ANTWORT: to sit
+FALSCH: sit | sat | sitting
+
+FRAGE: Which reporting verb do you use for a command?
+ANTWORT: told
+FALSCH: asked | said | wanted to know
+
+FRAGE: Which reporting verb do you use for a request with “please”?
+ANTWORT: asked
+FALSCH: told | said | wanted to know
+
+FRAGE: What happens to “please” in a reported request?
+ANTWORT: It disappears.
+FALSCH: It stays at the end. | It becomes “pleased”. | It moves to the front.
+FORM: auswahl
+
+FRAGE: Is there a backshift in reported commands?
+ANTWORT: No, you use to + infinitive.
+FALSCH: Yes, the verb goes one step back. | Yes, you use the past perfect. | No, you use the -ing form.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Mr Brooks to us: “Stay together.”
+ANTWORT: Mr Brooks told us to stay together.
+FALSCH: Mr Brooks told us stay together. | Mr Brooks told us that we stayed together. | Mr Brooks said us to stay together.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Mia to Leo: “Please help me.”
+ANTWORT: Mia asked Leo to help her.
+FALSCH: Mia asked Leo to help me. | Mia asked Leo please to help her. | Mia told Leo to helped her.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Zoe's dad to Zoe: “Don't forget your jacket.”
+ANTWORT: Zoe's dad told her not to forget her jacket.
+FALSCH: Zoe's dad told her don't forget her jacket. | Zoe's dad told her not to forget your jacket. | Zoe's dad told her not forget her jacket.
+FORM: auswahl
+
+FRAGE: Choose the correct report. Andrew to Julia: “Please send me some tips.”
+ANTWORT: Andrew asked Julia to send him some tips.
+FALSCH: Andrew asked Julia to send me some tips. | Andrew told Julia please send him some tips. | Andrew asked Julia sending him some tips.
+FORM: auswahl
+
+FRAGE: Mr Brooks to us: “Listen carefully.” → Mr Brooks told us to ___ carefully.
+ANTWORT: listen
+
+FRAGE: Ms Rivera: “Don't run.” → Ms Rivera told the children ___ run.
+ANTWORT: not to
+
+FRAGE: Kai to me: “Please open the window.” → Kai asked me to ___ the window.
+ANTWORT: open
+
+FRAGE: Anna to us: “Please don't laugh.” → Anna asked us ___ laugh.
+ANTWORT: not to
+
+FRAGE: Tom to Sara: “Give me your number.” → Tom told Sara to give ___ her number.
+ANTWORT: him
+
+FRAGE: The teacher: “Write your names on the paper.” → The teacher told the students to write ___ names on the paper.
+ANTWORT: their
+
+FRAGE: Mr Brooks to us: “Wait here.” → Mr Brooks told us to wait ___.
+ANTWORT: there
+
+FRAGE: Report the command. Mr Brooks to us: “Sit down.”
+SATZ: Mr Brooks told us to sit down.
+EXTRA: sat | that
+
+FRAGE: Report the command. Mr Brooks to us: “Don't talk.”
+SATZ: Mr Brooks told us not to talk.
+EXTRA: don't | talked
+
+FRAGE: Report the request. Zoe to Julia: “Please come with me.”
+SATZ: Zoe asked Julia to come with her.
+EXTRA: please | me
+
+FRAGE: Report the command. Ms Rivera to us: “Don't take photos here.”
+SATZ: Ms Rivera told us not to take photos there.
+EXTRA: here | don't
+
+FRAGE: Report the request. Ben to Anna: “Please help me with my homework.”
+SATZ: Ben asked Anna to help him with his homework.
+EXTRA: me | my
+
+FRAGE: Report the command. Mr Brooks: “Switch off your phones.”
+SATZ: Mr Brooks told the students to switch off their phones.
+EXTRA: your | switched
+
+FRAGE: Report the command. Julia to Andrew: “Don't forget the tickets.”
+SATZ: Julia told Andrew not to forget the tickets.
+EXTRA: don't | forgot
+
+FRAGE: Report the request. Andrew to Zoe: “Please show me your photos.”
+SATZ: Andrew asked Zoe to show him her photos.
+EXTRA: me | your
+
+=== ENDGEGNER ===
+HALLO: You came all this way. Nobody has asked me anything for years.
+HALLO: Tell me what they said … I have forgotten so many words.
+SIEG: You remembered every word. Maybe I am not alone after all.
+NIEDERLAGE: The mist is thick here. Rest, and then try again.
+
+=== ZETTEL ===
+FRAGE: Lina: “I am happy.” → Lina said that she ___ happy.
+ANTWORT: was
+FALSCH: is | were | had
+
+FRAGE: What does “can” become in reported speech?
+ANTWORT: could
+FALSCH: can | would | had
+
+FRAGE: Sam: “I live in Queens.” → Sam said that he ___ in Queens.
+ANTWORT: lived
+
+FRAGE: Ella: “I am reading.” → Ella said that she ___.
+ANTWORT: was reading
+
+FRAGE: Nora: “I lost my cap.” → Nora said that she ___ her cap.
+ANTWORT: had lost
+FALSCH: lost | has lost | had lose
+
+FRAGE: Liam to me: “I will text you.” → Liam said that he ___ text me.
+ANTWORT: would
+
+FRAGE: Ava: “I must go.” → Ava said that she ___ go.
+ANTWORT: had to
+FALSCH: must | has to | would
+
+FRAGE: Jo: “Where is the bank?” → Jo asked where the bank ___.
+ANTWORT: was
+
+FRAGE: Ida to me: “Do you like cats?” → Ida asked if I ___ cats.
+ANTWORT: liked
+FALSCH: like | likes | did like
+
+FRAGE: Bo to me: “Close the door.” → Bo told me ___ the door.
+ANTWORT: to close
+FALSCH: close | closed | closing
+
+FRAGE: Ruby to us: “Don't shout.” → Ruby told us ___ shout.
+ANTWORT: not to
+FALSCH: don't | not | didn't
+
+FRAGE: Tara: “My birthday is next week.” → Tara said that her birthday was ___.
+ANTWORT: the following week
+AUCH RICHTIG: the next week
+FALSCH: next week | the week before | that week
+
+FRAGE: Which tense does “I have eaten” become after “said”?
+ANTWORT: past perfect
+FALSCH: simple past | present perfect | simple present
+
+FRAGE: Write the simple past of “take”.
+ANTWORT: took
+
+FRAGE: Write the past participle of “speak”.
+ANTWORT: spoken
+
+FRAGE: Amir: “Can I come in?” → Amir asked if he ___ come in.
+ANTWORT: could
+
+FRAGE: Max: “What time is it?” → Max asked what time it ___.
+ANTWORT: was
+FALSCH: is | did be | were
+
+FRAGE: Sara to me: “Please wait.” → Sara asked me ___.
+ANTWORT: to wait
+FALSCH: wait | waited | waiting
+
+FRAGE: Leo: “I'm here.” → Leo said that he was ___.
+ANTWORT: there
+FALSCH: here | then | where
+
+FRAGE: Mia: “I saw a film today.” → Mia said that she had seen a film ___.
+ANTWORT: that day
+FALSCH: today | the day before | the next day

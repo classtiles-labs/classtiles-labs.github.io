@@ -81,6 +81,9 @@ TUEREN = [
      "Zwei Schüler, ein iPad, ein Korb pro richtige Antwort: der Prompt, aus dem dieses "
      "Übungsspiel als einzelne HTML-Datei entsteht. Zum Kopieren, mit Beispielen für "
      "Mathematik, Französisch und Biologie."),
+    ("lumara.html", "Lumara: Lernspiel für jedes Fach",
+     "Ein Lernspiel im Pixel-Stil: Die Kinder vertreiben den Nebel über einer Insel mit Wissen. "
+     "Die Fragen kommen aus deinem Unterricht, als Lernpaket von der KI. Kostenlos, fürs iPad."),
     ("ki-simulation.html", "Simulation statt Schaubild",
      "Aus dem Schaubild im Buch wird eine Simulation mit Reglern: ein Bild, ein Prompt, eine "
      "HTML-Datei. Mit dem Prompt zum Kopieren und der fertigen Simulation zu Angebot und "
