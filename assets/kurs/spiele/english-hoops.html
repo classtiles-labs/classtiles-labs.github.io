@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Hoops</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Arial,Helvetica,sans-serif;background:#f3f0e6;color:#101c2b;overflow-x:hidden;-webkit-text-size-adjust:100%;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+button,input{font-family:Arial,Helvetica,sans-serif}
+:focus-visible{outline:4px solid #ff934f;outline-offset:3px;box-shadow:0 0 0 2px #101c2b}
+#page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.dark{background:#101c2b;color:#fff;padding:env(safe-area-inset-top) 10px 0}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:8px 0}
+.top h1{margin:0;font-size:clamp(20px,3vw,30px);letter-spacing:.5px}
+.top h1 span{color:#ff934f}
+#timer{font-size:clamp(36px,6vw,56px);font-weight:bold;font-variant-numeric:tabular-nums;line-height:1}
+#timer.low{color:#ff934f}
+.btn{min-height:48px;min-width:48px;padding:0 18px;border:3px solid #101c2b;border-radius:12px;background:#fff;color:#101c2b;font-size:18px;font-weight:bold;cursor:pointer}
+.btn.primary{background:#ff934f}
+.btn:active{filter:brightness(.92)}
+#pauseBtn{justify-self:end;background:#ff934f;border-color:#ff934f}
+.bar{height:6px;background:#233750;margin:0 -10px}
+.bar i{display:block;height:100%;width:100%;background:#ff934f}
+.hall{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0 12px}
+.hcell{min-width:0}
+.court{position:relative;width:100%;padding-top:50%;border-radius:12px;overflow:hidden;background:#0b1420}
+.court canvas{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+.score{position:absolute;top:6px;left:6px;display:flex;align-items:center;gap:10px;background:rgba(16,28,43,.8);border-left:6px solid #53d6f5;border-radius:8px;padding:2px 12px 2px 8px}
+.hcell.b .score{left:auto;right:6px;border-left-color:#ff947d}
+.sname{font-size:clamp(13px,1.8vw,18px);font-weight:bold}
+.snum{font-size:clamp(40px,7vw,76px);font-weight:bold;line-height:1;color:#53d6f5;font-variant-numeric:tabular-nums}
+.hcell.b .snum{color:#ff947d}
+.sheets{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;align-content:start}
+.sheet{min-width:0;background:#fffdf7;border:2px solid #101c2b;border-top-width:10px;border-radius:12px;padding:12px}
+.sheet.a{border-top-color:#53d6f5}
+.sheet.b{border-top-color:#ff947d}
+.sh-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sh-head h2{margin:0;font-size:18px}
+.chip{background:#101c2b;color:#fff;border-radius:99px;padding:4px 12px;font-size:14px;font-weight:bold}
+.chip:empty{display:none}
+.qn{margin-left:auto;color:#4b5967;font-size:14px}
+.sent{margin:10px 0 12px;font-size:clamp(20px,2.7vw,28px);line-height:1.35;min-height:2.7em}
+.gap{display:inline-block;min-width:3.2em;border-bottom:3px solid #ff934f;text-align:center;font-weight:bold;padding:0 6px}
+.gap.ok{color:#1a7f45;border-color:#1a7f45}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{display:flex;align-items:center;gap:8px;min-height:60px;padding:8px 10px;border:3px solid #101c2b;border-radius:12px;background:#fff;color:#101c2b;font-size:clamp(17px,2.2vw,22px);font-weight:bold;text-align:left;cursor:pointer;min-width:0}
+.opt .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:#101c2b;color:#fff;display:grid;place-items:center;font-size:15px}
+.opt .txt{min-width:0;overflow-wrap:anywhere}
+.opt .mark{margin-left:auto;font-size:22px}
+.opt:active{background:#ffe9da}
+.opt.right{background:#d4f5de;border-color:#1a7f45}
+.opt.wrong{background:#ffdcd6;border-color:#b3261e}
+.opt.dim{opacity:.55}
+.fb{min-height:80px;margin-top:10px;font-size:17px;line-height:1.35}
+.fb .verdict{display:block;font-size:20px;font-weight:bold}
+.fb .verdict.ok{color:#1a7f45}
+.fb .verdict.no{color:#b3261e}
+.fb .rule{display:block;margin-top:2px;color:#33414f}
+.ov{position:fixed;left:0;top:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;justify-content:center;background:rgba(16,28,43,.95);padding:12px;overflow:auto}
+.ov[hidden]{display:none}
+#ovCount{background:rgba(16,28,43,.6);pointer-events:none;z-index:15}
+#ovPause{z-index:20}
+.card{background:#fffdf7;color:#101c2b;border-radius:16px;padding:22px;width:min(580px,94vw);max-height:94vh;overflow:auto;text-align:center;border-top:10px solid #ff934f}
+.card h2{margin:0 0 8px;font-size:30px}
+.card p{margin:6px 0 12px;line-height:1.4;font-size:17px}
+.presets{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0}
+.pre[aria-pressed="true"]{background:#101c2b;color:#fff}
+.custom{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:10px 0}
+.custom input{min-height:48px;width:130px;font-size:20px;padding:0 10px;border:3px solid #101c2b;border-radius:12px;text-align:center}
+.custom input.active{background:#101c2b;color:#fff}
+.err{min-height:1.4em;color:#b3261e;font-weight:bold;margin:4px 0}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+#countNum{font-size:min(38vw,38vh);font-weight:bold;color:#ff934f;line-height:1;animation:pop .9s ease-out}
+@keyframes pop{from{transform:scale(1.5);opacity:.2}to{transform:scale(1);opacity:1}}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.rbox{border:3px solid #101c2b;border-radius:12px;padding:10px}
+.rbox.a{border-color:#53d6f5;background:#e9fafe}
+.rbox.b{border-color:#ff947d;background:#fff0ec}
+.rbox.win{box-shadow:0 0 0 4px #ff934f}
+.rbox b{display:block;font-size:18px}
+.rbox .big{font-size:56px;font-weight:bold;line-height:1.1;display:block}
+.rbox span{font-size:15px}
+@media (max-width:620px){.sheets{grid-template-columns:1fr}.opts{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="page">
+<div class="dark" id="top">
+<header class="top">
+<h1>English <span>Hoops</span></h1>
+<div id="timer" role="timer" aria-label="Time left">3:00</div>
+<button class="btn" id="pauseBtn" type="button" aria-label="Pause game, stops the clock for both teams">Pause</button>
+</header>
+<div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+</div>
+<main id="main" style="flex:1;display:flex;flex-direction:column">
+<div class="dark" style="padding-top:0">
+<section class="hall" aria-label="Basketball courts">
+<div class="hcell a"><div class="court"><canvas id="cv0" role="img" aria-label="Team A basketball court"></canvas>
+<div class="score" role="group" aria-label="Team A score"><span class="sname">Team A</span><span class="snum" id="score0">0</span></div></div></div>
+<div class="hcell b"><div class="court"><canvas id="cv1" role="img" aria-label="Team B basketball court, mirrored"></canvas>
+<div class="score" role="group" aria-label="Team B score"><span class="sname">Team B</span><span class="snum" id="score1">0</span></div></div></div>
+</section>
+</div>
+<section class="sheets" aria-label="Worksheets">
+<section class="sheet a" aria-labelledby="sh0">
+<div class="sh-head"><h2 id="sh0">Team A</h2><span class="chip" id="chip0"></span><span class="qn" id="qn0"></span></div>
+<p class="sent" id="sent0">Get ready…</p>
+<div class="opts" id="opts0" role="group" aria-label="Team A answer options"></div>
+<div class="fb" id="fb0" role="status" aria-live="polite"></div>
+</section>
+<section class="sheet b" aria-labelledby="sh1">
+<div class="sh-head"><h2 id="sh1">Team B</h2><span class="chip" id="chip1"></span><span class="qn" id="qn1"></span></div>
+<p class="sent" id="sent1">Get ready…</p>
+<div class="opts" id="opts1" role="group" aria-label="Team B answer options"></div>
+<div class="fb" id="fb1" role="status" aria-live="polite"></div>
+</section>
+</section>
+</main>
+</div>
+
+<div class="ov" id="ovSetup" role="dialog" aria-modal="true" aria-labelledby="setupTitle">
+<form class="card" id="setupForm" novalidate>
+<h2 id="setupTitle">English Hoops</h2>
+<p>Two players, one iPad. Fill the gap correctly to score a basket. A wrong answer costs nothing, so keep going. The team with the most baskets wins.</p>
+<div class="presets" role="group" aria-label="Game length in minutes">
+<button class="btn pre" type="button" data-min="1" aria-pressed="false">1 min</button>
+<button class="btn pre" type="button" data-min="2" aria-pressed="false">2 min</button>
+<button class="btn pre" type="button" data-min="3" aria-pressed="true">3 min</button>
+<button class="btn pre" type="button" data-min="4" aria-pressed="false">4 min</button>
+<button class="btn pre" type="button" data-min="5" aria-pressed="false">5 min</button>
+</div>
+<div class="custom"><label for="customSec"><b>Or custom (15–1800 seconds):</b></label>
+<input id="customSec" type="number" inputmode="numeric" min="15" max="1800" step="1" placeholder="e.g. 90" aria-describedby="setupErr"></div>
+<p class="err" id="setupErr" role="alert"></p>
+<button class="btn primary" type="submit" id="startBtn" style="width:100%;min-height:60px;font-size:22px" aria-label="Start game with countdown">Start game</button>
+</form>
+</div>
+
+<div class="ov" id="ovCount" hidden><div id="countNum" role="status" aria-live="assertive">3</div></div>
+
+<div class="ov" id="ovPause" role="dialog" aria-modal="true" aria-labelledby="pauseTitle" hidden>
+<div class="card"><h2 id="pauseTitle">Paused</h2><p>The clock is stopped for both teams.</p>
+<div class="row"><button class="btn primary" type="button" id="resumeBtn" aria-label="Resume game">Resume</button>
+<button class="btn" type="button" id="quitBtn" aria-label="Quit to settings">Quit to menu</button></div></div>
+</div>
+
+<div class="ov" id="ovResult" role="dialog" aria-modal="true" aria-labelledby="resTitle" hidden>
+<div class="card"><h2 id="resTitle">Final whistle!</h2><p id="resWinner"></p>
+<div class="res" id="resBoxes"></div>
+<div class="row"><button class="btn primary" type="button" id="rematchBtn" aria-label="Rematch with the same length">Rematch</button>
+<button class="btn" type="button" id="menuBtn" aria-label="Change settings">Change settings</button></div></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var TOPICS=[
+{name:"Tenses",items:[
+["Yesterday Tom ___ his homework before dinner.","Last summer the workers ___ the new gym before September.","finished","finish","has finished","finishes","Use the simple past for finished actions with a time word like yesterday or last summer."],
+["Shh! My little brother ___ at the moment.","Don't shout! The baby ___ in the next room right now.","is sleeping","sleeps","slept","has slept","Use the present progressive (am/is/are + -ing) for actions happening right now."],
+["Has your cousin ever ___ to London?","Has your teacher ever ___ to Spain?","been","was","being","be","In present perfect questions use has/have + subject + past participle."],
+["When the lights went out, the girls ___ cards.","When the storm began, the boys ___ football in the park.","were playing","was playing","are playing","plays","Use the past progressive (was/were + -ing) for an action in progress when something else happened."],
+["Look at those dark clouds! It ___ rain soon.","Careful! That glass ___ fall off the table.","is going to","are going to","was going to","goes to","Use going to for predictions based on what you can see now."],
+["My dad usually ___ the bus to work.","Our coach always ___ the bus to away games.","takes","take","is taking","taking","Use the simple present for habits, and add -s with he, she and it."],
+["When we arrived at the gym, the game ___ already started.","When Anna reached the station, the train ___ already left.","had","has","have","is","Use the past perfect (had + past participle) for an action before another past action."],
+["Mr Brown has taught here ___ 2015.","We have lived in this town ___ 2012.","since","for","ago","in","Use since with a point in time (2015, Monday)."],
+["Mia has played the violin ___ six years.","My uncle has worked here ___ ten months.","for","since","ago","in","Use for with a length of time (six years, ten months)."],
+["___ you see the match on TV last night?","___ your brother come to the party last weekend?","Did","Do","Have","Does","Use did + base verb to ask about finished actions in the past."],
+["Last Friday we ___ a great match on TV.","Yesterday Eva ___ her old friend at the mall.","saw","seen","see","have seen","The simple past of see is saw; seen is the past participle."],
+["Hurry up! The bus ___ just left.","Look! The cleaner ___ just washed the floor.","has","have","is","did","Use has/have + past participle with just for something that has only just happened."]
+]},
+{name:"If-clauses",items:[
+["If it ___ tomorrow, we will stay inside.","If it ___ on Saturday, the match will be cancelled.","rains","will rain","rained","would rain","In type 1 use the simple present after if and will in the main clause."],
+["If I ___ more time, I would practise every day.","If Lena ___ a bigger garden, she would keep a dog.","had","have","would have","will have","In type 2 use the simple past after if and would in the main clause."],
+["If we ___ earlier, we would have caught the train.","If Tom ___ earlier, he would have seen the start of the film.","had left","left","would have left","have left","In type 3 use the past perfect after if and would have + past participle in the main clause."],
+["If you heat ice, it ___.","If you leave chocolate in the sun, it ___.","melts","melted","would melt","melting","Zero conditional: use the simple present in both parts for facts that are always true."],
+["You will miss the bus ___ you hurry.","The match will be played ___ it snows heavily.","unless","if","when","because","Unless means if not."],
+["If I were rich, I ___ money to schools.","If Max won the prize, he ___ half of it to charity.","would give","will give","gave","would gave","Type 2 main clauses use would + base verb."],
+["If I ___ you, I would ask the teacher.","If she ___ you, she would say sorry.","were","am","would be","had been","In If I were you advice, use were for all persons."],
+["If you train every day, you ___ a better player.","If the weather is nice, we ___ at the lake.","will be","would be","were","had been","Type 1: after if + present simple, the main clause uses will + base verb."],
+["We will cancel the trip if the roads ___ icy.","They will stay inside if the streets ___ flooded.","are","will be","were","would be","After if in a type 1 sentence use the simple present, even for the future."],
+["If I had known your number, I ___ you.","If Eva had had her phone, she ___ the police.","would have called","would call","had called","will call","In type 3 the main clause uses would have + past participle."],
+["What ___ you do if you saw a bear?","Where ___ you live if you could choose?","would","will","did","do","Type 2 questions use would + base verb with an if-clause in the simple past."],
+["You can borrow my ball ___ you bring it back.","You can stay up late ___ you finish your homework.","as long as","unless","although","instead of","As long as means only if: it names a condition that must be met."]
+]},
+{name:"Passive",items:[
+["Basketball ___ in over 200 countries.","Chess ___ in our school club every Friday.","is played","plays","are played","is playing","Present passive: am/is/are + past participle."],
+["The window ___ by a ball yesterday.","The old vase ___ by the cat last night.","was broken","broke","were broken","has broken","Past passive: was/were + past participle."],
+["The new gym ___ by the mayor next month.","The new bridge ___ by the Queen next spring.","will be opened","will open","opened","opens","Future passive: will be + past participle."],
+["The homework ___ already been checked.","The match ___ just been cancelled.","has","have","is","was","Present perfect passive: has/have been + past participle."],
+["When ___ the school built?","Where ___ this photo taken?","was","did","were","has","Past passive questions start with was/were, for example: When was it built?"],
+["The song was written ___ a famous singer.","The cake was baked ___ my grandma.","by","from","at","of","In passive sentences, by introduces the person who does the action."],
+["These instructions must ___ carefully.","This message must ___ aloud to the class.","be read","read","been read","being read","Modal passive: modal + be + past participle."],
+["This novel was ___ by a teenager.","The poem was ___ by our teacher.","written","wrote","write","writing","After was/were use the past participle: write, wrote, written."],
+["The windows ___ cleaned every Friday.","The balls ___ kept in a big box.","are","is","was","be","Plural subjects take are in the present passive."],
+["Two goals ___ scored in the first half yesterday.","Many photos ___ taken at the party last night.","were","was","are","have","Plural subjects take were in the past passive."],
+["The pitch ___ painted at the moment.","Our new school ___ built at the moment.","is being","was being","has been","will be","Present progressive passive: am/is/are + being + past participle."],
+["Yesterday the game ___ played because of the rain.","Last night the concert ___ held because of the storm.","wasn't","didn't","weren't","hasn't","Negative past passive: wasn't/weren't + past participle."]
+]},
+{name:"Relative clauses",items:[
+["The girl ___ won the race is my cousin.","The man ___ fixed our car is a mechanic.","who","which","whose","whom","Use who for people as the subject of the relative clause."],
+["This is the book ___ I told you about.","That is the ball ___ I lost last week.","which","who","whose","where","Use which for things."],
+["The boy ___ bike was stolen called the police.","The team ___ coach is ill cannot train today.","whose","who","which","whom","Use whose to show that something belongs to someone."],
+["This is the gym ___ we train twice a week.","That is the town ___ my grandparents live.","where","which","who","whose","Use where for places."],
+["It was the best match ___ I have ever seen.","This is the funniest film ___ we have ever watched.","that","who","whose","where","After superlatives use that."],
+["The girl with ___ I sat was very nice.","The man to ___ I spoke was the principal.","whom","who","which","whose","After a preposition, use whom for people."],
+["Mr Green, ___ teaches maths, is our coach.","My aunt, ___ lives in Paris, is a chef.","who","that","which","whose","In clauses set off by commas, use who for people, never that."],
+["The stadium, ___ was built in 1990, is huge.","Our school, ___ has 800 students, is quite old.","which","that","who","whose","In clauses set off by commas, use which for things, never that."],
+["Do you remember the day ___ we won the cup?","I will never forget the summer ___ we moved.","when","where","who","whose","Use when after time words like day, year or summer."],
+["Everything ___ he said was true.","All ___ she wanted was a glass of water.","that","what","who","whose","After everything, all and nothing use that, not what."],
+["She passed the test, ___ made her parents happy.","He scored twice, ___ surprised everyone.","which","who","what","whose","Use which after a comma to refer to a whole clause."],
+["People ___ live near the sea often love sailing.","Students ___ read a lot usually write well.","who","which","whose","whom","Use who for plural people, too."]
+]},
+{name:"Vocabulary",items:[
+["Can I ___ your pen, please?","Can I ___ your pencil case for an hour?","borrow","lend","rent","lose","You borrow something from someone and you lend something to someone."],
+["Could you ___ me your bike for the day?","Please ___ me ten euros until Monday.","lend","borrow","rent","win","You lend something to someone; the other person borrows it."],
+["Our team hopes to ___ the final.","My sister wants to ___ the chess tournament.","win","beat","earn","gain","You win a game or a prize, but you beat an opponent."],
+["We ___ the other team 3–1 yesterday.","Eva ___ her brother at tennis last week.","beat","won","gained","scored","You beat an opponent; you win a game."],
+["I have to ___ my homework before dinner.","Please ___ the washing-up after lunch.","do","make","give","play","We do homework and chores; we make things like plans or mistakes."],
+["Don't ___ a mistake in the last question.","Please don't ___ so much noise.","make","do","give","hold","We make a mistake and we make noise."],
+["Can you ___ me the way to the gym?","Please ___ us a story, Grandpa.","tell","say","speak","talk","We tell someone something; we say words."],
+["Please ___ to your teacher carefully.","I like to ___ to music on the bus.","listen","hear","look","watch","Listen is followed by to; it means paying attention to sounds."],
+["The test was so ___ that everybody finished early.","This puzzle is so ___ that even my little brother can solve it.","easy","difficult","heavy","empty","Easy is the opposite of difficult."],
+["Wear ___ shoes for the hike, not sandals.","Be ___ and don't run on the wet floor.","sensible","sensitive","sensational","sentimental","Sensible means reasonable; sensitive means easily hurt or upset."],
+["Our match is ___ Saturday.","The party is ___ Friday evening.","on","at","in","to","Use on with days: on Saturday, on Friday evening."],
+["The referee blew his ___ to stop the game.","The coach used a ___ to call the players.","whistle","whisper","wheel","whale","A whistle makes a loud, high sound; a referee uses it to stop play."]
+]},
+{name:"Mixed grammar",items:[
+["A cheetah is ___ than a horse.","Our new bike is ___ than the old one.","faster","more fast","fastest","the faster","Short adjectives take -er in the comparative: fast, faster."],
+["This is the ___ interesting book I have read.","That was the ___ boring lesson of the week.","most","more","much","very","Long adjectives form the superlative with the most."],
+["She wants to be ___ engineer.","He ate ___ apple after training.","an","a","any","some","Use an before words that begin with a vowel sound."],
+["How ___ players are in a basketball team?","How ___ apples did you buy?","many","much","more","little","Use many with countable nouns and much with uncountable nouns."],
+["You ___ talk during the test. It is forbidden.","Players ___ push each other. It is against the rules.","mustn't","must","should","can","Mustn't means it is forbidden; must means it is necessary."],
+["Tom said that he ___ tired.","Eva said that she ___ hungry.","was","were","been","being","In reported speech the verb moves back in time: is becomes was."],
+["I enjoy ___ in the lake in summer.","My sister enjoys ___ every Sunday.","swimming","swim","to swim","swam","After enjoy use the -ing form."],
+["We want ___ to the final.","She wants ___ to Italy.","to go","go","going","went","After want use to + base verb."],
+["He runs very ___.","She speaks English very ___.","well","good","best","goodly","The adverb of good is well."],
+["There aren't ___ chairs left.","We don't have ___ time.","any","some","a","an","Use any in negative sentences."],
+["We stayed home ___ it was raining.","I took an umbrella ___ the sky was dark.","because","although","unless","so","Because introduces a reason."],
+["The box is ___ heavy for me to lift.","This tea is ___ hot to drink.","too","enough","much","as","Too means more than necessary and is followed by an adjective and to."]
+]}
+];
+var PAIRS=[];
+for(var k=0;k<12;k++){for(var tt=0;tt<6;tt++){var it=TOPICS[tt].items[k];PAIRS.push({t:tt,a:it[0],b:it[1],ans:it[2],d:[it[3],it[4],it[5]],rule:it[6]});}}
+
+function $(id){return document.getElementById(id);}
+var rmq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):{matches:false};
+function rm(){return rmq.matches;}
+function lerp(a,b,u){return a+(b-a)*u;}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=a[i];a[i]=a[j];a[j]=x;}return a;}
+function show(el,v){if(v)el.removeAttribute('hidden');else el.setAttribute('hidden','');}
+function setInert(el,v){if(v){el.setAttribute('inert','');el.setAttribute('aria-hidden','true');}else{el.removeAttribute('inert');el.removeAttribute('aria-hidden');}}
+
+var GAME={state:'setup',paused:false,secs:180,total:180000,left:180000,cd:3000,last:0,lastN:0};
+function mk(i,name,color,mirror){return {id:i,name:name,color:color,mirror:mirror,cv:$('cv'+i),ctx:null,bg:null,sc:0,ans:0,cor:0,n:0,locked:true,fb:0,opts:[],cur:null,anim:-1,type:'make',ph:0};}
+var T=[mk(0,'Team A','#53d6f5',false),mk(1,'Team B','#ff947d',true)];
+T.forEach(function(t){t.ctx=t.cv.getContext('2d');});
+
+/* ---------- Canvas scene ---------- */
+var HX=120,FY=270,RIMX=568,RIMY=112;
+function rng(seed){return function(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};}
+function scaleOf(t){var s=Math.min(t.cv.width/640,t.cv.height/320);return {s:s,ox:(t.cv.width-640*s)/2,oy:(t.cv.height-320*s)/2};}
+function buildBg(t){
+  var c=t.bg||(t.bg=document.createElement('canvas'));
+  c.width=t.cv.width;c.height=t.cv.height;
+  var x=c.getContext('2d');
+  x.setTransform(1,0,0,1,0,0);
+  x.fillStyle='#0b1420';x.fillRect(0,0,c.width,c.height);
+  var m=scaleOf(t);x.setTransform(m.s,0,0,m.s,m.ox,m.oy);
+  var g=x.createLinearGradient(0,0,0,200);g.addColorStop(0,'#08111c');g.addColorStop(1,'#1a2f48');
+  x.fillStyle=g;x.fillRect(0,0,640,200);
+  var i;
+  x.fillStyle='rgba(255,255,255,.045)';
+  for(i=0;i<4;i++){var x0=80+i*160;x.beginPath();x.moveTo(x0-6,0);x.lineTo(x0+6,0);x.lineTo(x0+70,200);x.lineTo(x0-70,200);x.closePath();x.fill();}
+  var r=rng(7),cols=['#4a6a8a','#8a5560','#5f8070','#9a8452','#6d5f93','#3f5873'];
+  for(var row=0;row<5;row++){
+    var y=18+row*28;
+    x.fillStyle=row%2?'#13243a':'#17304a';x.fillRect(0,y+14,640,14);
+    for(var px=8+(row%2)*9;px<640;px+=18){
+      var col=r()<0.12?t.color:cols[Math.floor(r()*cols.length)];
+      var jx=px+r()*4;
+      x.fillStyle=col;x.fillRect(jx-6,y+9,12,12);
+      x.fillStyle='#d9b08c';x.beginPath();x.arc(jx,y+4,5,0,6.283);x.fill();
+    }
+  }
+  x.fillStyle='#0b1626';x.fillRect(0,166,640,34);
+  var adc=['#ff934f','#53d6f5','#ff947d','#ffffff'];
+  for(i=0;i<8;i++){x.globalAlpha=.6;x.fillStyle=adc[i%4];x.fillRect(i*80+8,174,64,18);}
+  x.globalAlpha=1;
+  var fg=x.createLinearGradient(0,200,0,320);fg.addColorStop(0,'#b87a3f');fg.addColorStop(1,'#d9a062');
+  x.fillStyle=fg;x.fillRect(0,200,640,120);
+  var ys=[208,218,230,244,260,280,304],prev=200;
+  x.strokeStyle='rgba(90,50,20,.28)';x.lineWidth=1;
+  var r2=rng(21);
+  ys.forEach(function(yy){
+    x.beginPath();x.moveTo(0,yy);x.lineTo(640,yy);x.stroke();
+    for(var sx=r2()*60;sx<640;sx+=50+r2()*70){x.beginPath();x.moveTo(sx,prev);x.lineTo(sx,yy);x.stroke();}
+    prev=yy;
+  });
+  x.fillStyle='rgba(255,255,255,.08)';x.beginPath();x.ellipse(320,255,300,50,0,0,6.283);x.fill();
+  x.globalAlpha=.16;x.fillStyle=t.color;x.beginPath();x.ellipse(200,262,80,20,0,0,6.283);x.fill();x.globalAlpha=1;
+  x.strokeStyle='rgba(255,255,255,.9)';x.lineWidth=3;x.lineJoin='round';
+  x.beginPath();x.moveTo(0,206);x.lineTo(612,206);x.lineTo(630,314);x.lineTo(0,314);x.stroke();
+  x.fillStyle='rgba(255,147,79,.25)';
+  x.beginPath();x.moveTo(612,232);x.lineTo(474,232);x.lineTo(462,288);x.lineTo(623,288);x.closePath();x.fill();x.stroke();
+  x.beginPath();x.ellipse(468,260,16,28,0,0,6.283);x.stroke();
+  x.beginPath();x.ellipse(612,260,236,50,0,Math.PI/2,Math.PI*1.5);x.stroke();
+  x.beginPath();x.ellipse(0,260,34,52,0,0,6.283);x.stroke();
+  x.fillStyle='rgba(0,0,0,.25)';x.beginPath();x.ellipse(629,266,16,4,0,0,6.283);x.fill();
+  x.fillStyle='#2b3b50';x.fillRect(623,98,8,168);
+  x.fillRect(604,94,22,7);
+  x.fillStyle='#f4f7fa';x.strokeStyle='#9fb3c8';x.lineWidth=2;
+  x.fillRect(594,60,10,68);x.strokeRect(594,60,10,68);
+  x.fillStyle='#ff934f';x.fillRect(570,110,26,4);
+  x.strokeStyle='#ff934f';x.lineWidth=4;x.beginPath();x.ellipse(RIMX,RIMY,20,5,0,0,6.283);x.stroke();
+}
+function sizeCv(t){
+  var r=t.cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);
+  var w=Math.max(1,Math.round(r.width*d)),h=Math.max(1,Math.round(r.height*d));
+  if(t.cv.width!==w||t.cv.height!==h){t.cv.width=w;t.cv.height=h;}
+  buildBg(t);
+}
+function endOf(t){if(rm())return t.type==='make'?800:250;return 1500;}
+function ballState(t){
+  var a=t.anim,m=!rm(),u;
+  var bounce=(GAME.state==='play'&&m&&!GAME.paused)?Math.abs(Math.sin(t.ph/300))*36:0;
+  var rest={x:HX+22,y:FY-10-bounce,r:0};
+  if(a<0)return rest;
+  if(!m)return t.type==='make'?{x:RIMX,y:RIMY+9,r:0}:rest;
+  var sx=HX+12,sy=160;
+  if(t.type==='make'){
+    if(a<700){u=a/700;return {x:lerp(sx,RIMX,u),y:lerp(sy,RIMY,u)-85*4*u*(1-u),r:u*9};}
+    if(a<1050){u=(a-700)/350;return {x:RIMX-u*6,y:lerp(RIMY,FY-10,u*u),r:9};}
+    u=Math.min(1,(a-1050)/450);return {x:lerp(RIMX-6,rest.x,u),y:FY-10-18*Math.abs(Math.sin(u*Math.PI*3)),r:9+u*5};
+  }
+  if(a<600){u=a/600;return {x:lerp(sx,RIMX-28,u),y:lerp(sy,RIMY-8,u)-70*4*u*(1-u),r:u*8};}
+  if(a<1100){u=(a-600)/500;return {x:RIMX-28-u*120,y:lerp(RIMY-8,FY-10,u)-55*4*u*(1-u),r:8+u*6};}
+  u=Math.min(1,(a-1100)/400);return {x:lerp(RIMX-148,rest.x,u),y:FY-10-14*Math.abs(Math.sin(u*Math.PI*2)),r:14};
+}
+function ln(c,x1,y1,x2,y2){c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();}
+function drawPlayer(c,t){
+  var a=t.anim,mot=!rm(),jump=0;
+  if(a>=0&&mot&&a<520)jump=Math.sin(a/520*Math.PI)*16;
+  var sw=(GAME.state==='play'&&mot&&!GAME.paused)?Math.sin(t.ph/170)*3:0;
+  var x=HX,fy=FY;
+  c.fillStyle='rgba(0,0,0,.3)';c.beginPath();c.ellipse(x,fy+2,Math.max(8,22-jump*.5),5,0,0,6.283);c.fill();
+  c.save();c.translate(0,-jump);
+  c.lineCap='round';c.strokeStyle='#e8b98f';c.lineWidth=7;
+  ln(c,x-4,244,x-9+sw,fy-6);ln(c,x+5,244,x+10-sw,fy-6);
+  c.fillStyle='#ffffff';
+  c.beginPath();c.ellipse(x-10+sw,fy-3,8,4,0,0,6.283);c.fill();
+  c.beginPath();c.ellipse(x+11-sw,fy-3,8,4,0,0,6.283);c.fill();
+  c.fillStyle='#0b1626';c.fillRect(x-13,226,26,20);
+  c.fillStyle=t.color;c.fillRect(x-13,244,26,2);
+  c.strokeStyle='#e8b98f';c.lineWidth=6;
+  ln(c,x-11,198,x-16,226);
+  c.fillStyle=t.color;c.beginPath();c.moveTo(x-13,194);c.lineTo(x+13,194);c.lineTo(x+14,230);c.lineTo(x-14,230);c.closePath();c.fill();
+  c.fillStyle='#fff';c.fillRect(x-4,204,8,3);c.fillRect(x-4,210,8,3);
+  c.fillStyle='#f0c8a0';c.beginPath();c.arc(x,174,11,0,6.283);c.fill();
+  c.fillStyle='#2a1b12';c.beginPath();c.arc(x,173,11,Math.PI,0);c.fill();
+  var hx=x+20,hy=232;
+  if(a>=0&&a<650){hx=x+12;hy=160;}
+  c.strokeStyle='#f0c8a0';c.lineWidth=6;ln(c,x+11,198,hx,hy);
+  c.restore();
+}
+function drawNet(c,t){
+  var a=t.anim,sway=0,stretch=0;
+  if(!rm()&&t.type==='make'&&a>=600){var q=a-600;sway=9*Math.exp(-q/480)*Math.sin(q/55);if(q<350)stretch=7*Math.sin(q/350*Math.PI);}
+  var n=7,top=[],bot=[],i;
+  for(i=0;i<n;i++){var f=i/(n-1);top.push([RIMX-18+36*f,RIMY+2]);bot.push([RIMX-9+18*f+sway,RIMY+34+stretch]);}
+  c.strokeStyle='rgba(255,255,255,.85)';c.lineWidth=1.3;c.lineCap='round';
+  for(i=0;i<n-1;i++){ln(c,top[i][0],top[i][1],bot[i+1][0],bot[i+1][1]);ln(c,top[i+1][0],top[i+1][1],bot[i][0],bot[i][1]);}
+  c.beginPath();c.moveTo(bot[0][0],bot[0][1]);for(i=1;i<n;i++)c.lineTo(bot[i][0],bot[i][1]);c.stroke();
+  if(t.type==='make'&&t.anim>=0){
+    var a2=t.anim,ring=null;
+    if(rm()){if(a2<800)ring={r:30,al:.7};}
+    else if(a2>=650&&a2<1100){ring={r:20+(a2-650)/10,al:1-(a2-650)/450};}
+    if(ring){c.strokeStyle='rgba(255,147,79,'+ring.al+')';c.lineWidth=4;c.beginPath();c.arc(RIMX,RIMY,ring.r,0,6.283);c.stroke();}
+  }
+}
+function drawBall(c,b){
+  c.save();c.translate(b.x,b.y);c.rotate(b.r);
+  c.fillStyle='#ff934f';c.beginPath();c.arc(0,0,10,0,6.283);c.fill();
+  c.strokeStyle='#7a3510';c.lineWidth=1.5;c.stroke();
+  c.beginPath();c.moveTo(-10,0);c.lineTo(10,0);c.moveTo(0,-10);c.lineTo(0,10);c.stroke();
+  c.beginPath();c.arc(-12,0,9,-0.9,0.9);c.stroke();
+  c.beginPath();c.arc(12,0,9,Math.PI-0.9,Math.PI+0.9);c.stroke();
+  c.restore();
+}
+function frame(t){
+  var cv=t.cv,c=t.ctx,W=cv.width,H=cv.height;
+  if(!W||!H)return;
+  c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,W,H);
+  if(t.mirror){c.translate(W,0);c.scale(-1,1);}
+  if(t.bg)c.drawImage(t.bg,0,0);
+  var m=scaleOf(t);c.translate(m.ox,m.oy);c.scale(m.s,m.s);
+  drawPlayer(c,t);
+  drawBall(c,ballState(t));
+  drawNet(c,t);
+}
+
+/* ---------- Game logic ---------- */
+function fmt(ms){var s=Math.ceil(ms/1000);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2);}
+function updateTimer(){
+  var tm=$('timer');tm.textContent=fmt(GAME.left);
+  tm.className=(GAME.left<=10000&&GAME.state==='play')?'low':'';
+  $('barFill').style.width=(GAME.total?Math.max(0,GAME.left/GAME.total*100):0)+'%';
+}
+function setScore(t){$('score'+t.id).textContent=t.sc;}
+function syncInert(){
+  var lock=!(GAME.state==='play'||GAME.state==='count')||GAME.paused;
+  setInert($('top'),lock);setInert($('main'),lock);
+}
+function renderQ(t){
+  var p=PAIRS[t.n%PAIRS.length];
+  var s=(t.id===0?p.a:p.b);
+  t.cur=p;t.locked=false;t.fb=0;
+  t.opts=shuffle([p.ans].concat(p.d));
+  $('chip'+t.id).textContent=TOPICS[p.t].name;
+  $('qn'+t.id).textContent='Question '+(t.n+1);
+  var sent=$('sent'+t.id);
+  sent.textContent='';
+  sent.setAttribute('aria-label',s.replace('___','blank'));
+  var parts=s.split('___');
+  sent.appendChild(document.createTextNode(parts[0]));
+  var gap=document.createElement('span');gap.className='gap';gap.id='gap'+t.id;gap.textContent='\u00a0';
+  sent.appendChild(gap);
+  sent.appendChild(document.createTextNode(parts[1]));
+  var box=$('opts'+t.id);box.textContent='';
+  t.opts.forEach(function(txt,i){
+    var b=document.createElement('button');b.type='button';b.className='opt';
+    b.setAttribute('aria-label','Option '+(i+1)+': '+txt);
+    var n=document.createElement('span');n.className='num';n.textContent=i+1;n.setAttribute('aria-hidden','true');
+    var x=document.createElement('span');x.className='txt';x.textContent=txt;
+    var mk2=document.createElement('span');mk2.className='mark';mk2.setAttribute('aria-hidden','true');
+    b.appendChild(n);b.appendChild(x);b.appendChild(mk2);
+    b.addEventListener('click',function(){answer(t,i);});
+    box.appendChild(b);
+  });
+  var fb=$('fb'+t.id);fb.textContent='';
+}
+function answer(t,i){
+  if(GAME.state!=='play'||GAME.paused||t.locked)return;
+  t.locked=true;
+  var ok=t.opts[i]===t.cur.ans;
+  t.ans++;if(ok){t.cor++;t.sc++;setScore(t);}
+  t.type=ok?'make':'miss';t.anim=0;
+  var btns=$('opts'+t.id).children;
+  for(var j=0;j<btns.length;j++){
+    var b=btns[j],mark=b.lastChild;
+    b.setAttribute('aria-disabled','true');
+    if(t.opts[j]===t.cur.ans){b.classList.add('right');mark.textContent='\u2713';}
+    else if(j===i){b.classList.add('wrong');mark.textContent='\u2717';}
+    else b.classList.add('dim');
+  }
+  var gap=$('gap'+t.id);gap.textContent=t.cur.ans;gap.classList.add('ok');
+  var fb=$('fb'+t.id);fb.textContent='';
+  var v=document.createElement('span');v.className='verdict '+(ok?'ok':'no');
+  v.textContent=ok?'\u2713 Correct! +1 point':'\u2717 Not this time. Answer: '+t.cur.ans;
+  var r=document.createElement('span');r.className='rule';r.textContent=(ok?'Answer: '+t.cur.ans+'. ':'')+t.cur.rule;
+  fb.appendChild(v);fb.appendChild(r);
+  t.fb=1600;
+}
+function beginPlay(){
+  GAME.state='play';show($('ovCount'),false);
+  T.forEach(function(t){renderQ(t);});
+  syncInert();
+}
+function startGame(secs){
+  GAME.secs=secs;GAME.total=GAME.left=secs*1000;GAME.state='count';GAME.cd=3000;GAME.lastN=0;GAME.paused=false;
+  T.forEach(function(t){
+    t.sc=0;t.ans=0;t.cor=0;t.n=0;t.locked=true;t.fb=0;t.anim=-1;t.cur=null;
+    setScore(t);
+    $('chip'+t.id).textContent='';$('qn'+t.id).textContent='';
+    $('sent'+t.id).textContent='Get ready…';$('sent'+t.id).removeAttribute('aria-label');
+    $('opts'+t.id).textContent='';$('fb'+t.id).textContent='';
+  });
+  show($('ovSetup'),false);show($('ovResult'),false);show($('ovPause'),false);show($('ovCount'),true);
+  $('countNum').textContent='3';
+  updateTimer();syncInert();GAME.last=performance.now();
+}
+function finish(){
+  GAME.state='result';GAME.paused=false;
+  show($('ovCount'),false);
+  var A=T[0],B=T[1];
+  var w=$('resWinner');
+  if(A.sc>B.sc)w.textContent='Team A wins with '+A.sc+' to '+B.sc+' baskets!';
+  else if(B.sc>A.sc)w.textContent='Team B wins with '+B.sc+' to '+A.sc+' baskets!';
+  else w.textContent="It's a draw: "+A.sc+' to '+B.sc+' baskets!';
+  var box=$('resBoxes');box.textContent='';
+  T.forEach(function(t){
+    var d=document.createElement('div');
+    d.className='rbox '+(t.id?'b':'a')+((t.sc>T[1-t.id].sc)?' win':'');
+    var h=document.createElement('b');h.textContent=t.name;
+    var big=document.createElement('span');big.className='big';big.textContent=t.sc;
+    var l=document.createElement('span');l.textContent='baskets';
+    var acc=document.createElement('span');acc.style.display='block';acc.style.marginTop='6px';
+    acc.textContent='Accuracy: '+(t.ans?Math.round(100*t.cor/t.ans)+'%':'–')+' ('+t.cor+' of '+t.ans+' correct)';
+    d.appendChild(h);d.appendChild(big);d.appendChild(l);d.appendChild(acc);box.appendChild(d);
+  });
+  show($('ovResult'),true);syncInert();$('rematchBtn').focus();
+}
+function toMenu(){
+  GAME.state='setup';GAME.paused=false;
+  show($('ovPause'),false);show($('ovResult'),false);show($('ovCount'),false);show($('ovSetup'),true);
+  GAME.left=GAME.total=GAME.secs*1000;updateTimer();syncInert();
+  T.forEach(function(t){t.anim=-1;});
+  $('startBtn').focus();
+}
+function pause(){
+  if(GAME.paused||(GAME.state!=='play'&&GAME.state!=='count'))return;
+  GAME.paused=true;show($('ovPause'),true);syncInert();$('resumeBtn').focus();
+}
+function resume(){
+  if(!GAME.paused)return;
+  GAME.paused=false;show($('ovPause'),false);syncInert();GAME.last=performance.now();$('pauseBtn').focus();
+}
+function loop(now){
+  var dt=Math.min(Math.max(now-GAME.last,0),250);GAME.last=now;
+  if(!GAME.paused){
+    if(GAME.state==='count'){
+      GAME.cd-=dt;
+      var n=Math.max(1,Math.ceil(GAME.cd/1000));
+      if(n!==GAME.lastN){GAME.lastN=n;var cn=$('countNum');cn.textContent=n;cn.style.animation='none';void cn.offsetWidth;cn.style.animation='';}
+      if(GAME.cd<=0)beginPlay();
+    }else if(GAME.state==='play'){
+      GAME.left-=dt;
+      T.forEach(function(t){
+        if(t.fb>0){t.fb-=dt;if(t.fb<=0){t.fb=0;t.n++;renderQ(t);}}
+      });
+      if(GAME.left<=0){GAME.left=0;updateTimer();finish();}
+      else updateTimer();
+    }
+    T.forEach(function(t){
+      if(t.anim>=0){t.anim+=dt;if(t.anim>=endOf(t))t.anim=-1;}
+      t.ph+=dt;
+    });
+  }
+  T.forEach(frame);
+  requestAnimationFrame(loop);
+}
+
+/* ---------- Setup UI ---------- */
+var sel={mode:'min',min:3};
+var pres=document.querySelectorAll('.pre'),cs=$('customSec');
+function markPresets(){
+  for(var i=0;i<pres.length;i++)pres[i].setAttribute('aria-pressed',(sel.mode==='min'&&+pres[i].getAttribute('data-min')===sel.min)?'true':'false');
+  cs.className=sel.mode==='custom'?'active':'';
+}
+for(var pi=0;pi<pres.length;pi++){
+  pres[pi].addEventListener('click',function(){sel.mode='min';sel.min=+this.getAttribute('data-min');$('setupErr').textContent='';markPresets();});
+}
+function goCustom(){sel.mode='custom';markPresets();}
+cs.addEventListener('focus',goCustom);cs.addEventListener('input',function(){goCustom();$('setupErr').textContent='';});
+$('setupForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var secs;
+  if(sel.mode==='min')secs=sel.min*60;
+  else{
+    var v=Number(cs.value);
+    if(cs.value===''||!isFinite(v)||Math.floor(v)!==v||v<15||v>1800){$('setupErr').textContent='Please enter a whole number from 15 to 1800 seconds.';cs.focus();return;}
+    secs=v;
+  }
+  startGame(secs);
+});
+$('pauseBtn').addEventListener('click',pause);
+$('resumeBtn').addEventListener('click',resume);
+$('quitBtn').addEventListener('click',toMenu);
+$('rematchBtn').addEventListener('click',function(){startGame(GAME.secs);});
+$('menuBtn').addEventListener('click',toMenu);
+document.addEventListener('visibilitychange',function(){if(document.hidden)pause();});
+window.addEventListener('pagehide',pause);
+window.addEventListener('blur',pause);
+
+/* ---------- Init ---------- */
+function resizeAll(){T.forEach(sizeCv);}
+if(window.ResizeObserver){var ro=new ResizeObserver(resizeAll);T.forEach(function(t){ro.observe(t.cv);});}
+window.addEventListener('resize',resizeAll);
+window.addEventListener('orientationchange',function(){setTimeout(resizeAll,200);});
+markPresets();resizeAll();
+GAME.total=GAME.left=GAME.secs*1000;updateTimer();syncInert();
+GAME.last=performance.now();
+requestAnimationFrame(loop);
+$('startBtn').focus();
+})();
+</script>
+</body>
+</html>

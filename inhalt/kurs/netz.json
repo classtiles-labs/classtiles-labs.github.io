@@ -84,17 +84,19 @@
       "id": "eigenes-material",
       "linie": "A",
       "titel": "Eigenes Material",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "vorher-nachher",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie A: Dieselbe Bitte mit und ohne deinen Erwartungshorizont. Warum Projekte, eigene GPTs und Gems der KI dein Material dauerhaft geben."
     },
     {
       "id": "lernspiel-bauen",
       "linie": "A",
       "titel": "Lernspiel bauen",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "lernspiel",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie A: Zwei Lernspiele, jedes aus einem einzigen Prompt. Zum Ausprobieren, mit dem Prompt zum Mitnehmen und Anpassen für dein Fach."
     },
     {
       "id": "differenzieren",

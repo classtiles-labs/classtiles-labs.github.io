@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rechen-Körbe · Basketball-Duell · Mathematik Jahrgang 7</title>
+<style>
+:root{--dark:#101c2b;--dark2:#18293d;--a:#53d6f5;--b:#ff947d;--acc:#ff934f;--paper:#f6f2e7;--ink:#101c2b;--ok:#17703f;--bad:#b3261e}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow-x:hidden;background:var(--dark);color:#fff;font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+body{height:100vh;height:100dvh;display:flex;flex-direction:column;-webkit-touch-callout:none}
+[hidden]{display:none!important}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+input{font-family:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px var(--acc)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.screen{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.btn{min-height:48px;min-width:48px;padding:10px 22px;border-radius:14px;border:3px solid transparent;font-weight:700;font-size:18px;color:#fff;background:transparent}
+.btn.pri{background:var(--acc);color:var(--dark)}
+.btn.sec{border-color:#fff;color:#fff}
+.btn.big{min-height:60px;font-size:22px;padding:12px 30px}
+
+/* Start */
+.start{overflow-y:auto;overflow-x:hidden;align-items:center;padding:24px 16px 32px;background:linear-gradient(180deg,#0a121d 0,var(--dark) 40%,#17304a 100%)}
+.card{width:100%;max-width:780px}
+h1{margin:8px 0 4px;font-size:clamp(38px,9vw,78px);line-height:1.05}
+h1 span{color:var(--acc)}
+.sub{margin:0 0 18px;font-size:clamp(16px,2.6vw,22px);color:#cfe0f2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.chips li{background:var(--dark2);border:2px solid #2f4864;border-radius:999px;padding:6px 14px;font-size:16px}
+.teamsrow{display:flex;gap:12px;margin:0 0 18px}
+.tp{flex:1;border-radius:14px;padding:12px 16px;font-weight:700;font-size:20px;color:var(--dark)}
+.tp.a{background:var(--a)}.tp.b{background:var(--b)}
+.tp small{display:block;font-weight:400;font-size:15px}
+.panel{background:var(--dark2);border-radius:16px;padding:16px 18px;margin:0 0 16px}
+.panel h2{margin:0 0 10px;font-size:20px}
+.durs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.dur{min-width:76px;min-height:56px;border-radius:14px;border:3px solid #6f8bab;background:transparent;color:#fff;font-size:20px;font-weight:700;padding:8px 14px}
+.dur[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--dark)}
+.free{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.free label{font-size:17px}
+.free input{width:120px;min-height:48px;font-size:22px;padding:6px 10px;border-radius:12px;border:3px solid #6f8bab;background:#fff;color:var(--dark);font-weight:700}
+.msg{min-height:1.4em;margin:8px 0 0;color:#ffd0b0;font-size:16px}
+.sumline{margin:8px 0 0;font-size:18px;color:#cfe0f2}
+.how{margin:0;padding-left:22px;font-size:17px;line-height:1.5;color:#e6eef8}
+
+/* Game */
+.hud{flex:0 0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:6px 14px;background:var(--dark)}
+.score{display:flex;align-items:baseline;gap:12px;min-width:0}
+.score.b{flex-direction:row-reverse}
+.tn{font-size:clamp(14px,2.2vmin,22px);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pts{font-size:clamp(48px,10vmin,98px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.score.a .tn,.score.a .pts{color:var(--a)}
+.score.b .tn,.score.b .pts{color:var(--b)}
+.clockbox{display:flex;align-items:center;gap:12px}
+.clock{font-size:clamp(30px,6vmin,58px);font-weight:700;font-variant-numeric:tabular-nums;min-width:2.6em;text-align:center}
+.clock.low{color:var(--acc)}
+.bar{flex:0 0 auto;height:6px;background:rgba(255,255,255,.15)}
+.bar i{display:block;height:100%;width:100%;background:var(--acc)}
+.teams{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:1fr 1fr}
+.team{display:flex;flex-direction:column;min-height:0;min-width:0}
+.team+.team{border-left:4px solid #0a121d}
+.team.a{--tc:var(--a)}.team.b{--tc:var(--b)}
+.court{position:relative;flex:0 0 auto;height:clamp(130px,28vh,310px);background:var(--dark);overflow:hidden}
+.court canvas{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+.sheet{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;padding:12px 14px 14px;color:var(--ink);border-top:8px solid var(--tc);
+ background-color:var(--paper);background-image:linear-gradient(rgba(16,28,43,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(16,28,43,.07) 1px,transparent 1px);background-size:24px 24px;user-select:none;-webkit-user-select:none}
+.shead{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{background:var(--tc);color:var(--dark);font-weight:700;padding:5px 12px;border-radius:999px;font-size:clamp(14px,1.9vmin,18px);border:2px solid var(--dark)}
+.topic{background:var(--dark);color:#fff;font-weight:700;padding:5px 12px;border-radius:999px;font-size:clamp(14px,1.9vmin,18px)}
+.q{margin:10px 0 12px;font-size:clamp(19px,calc(.8vw + 1.7vh),30px);line-height:1.3;font-weight:700;min-height:3.9em;overflow-wrap:anywhere}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{min-height:clamp(56px,9vh,86px);border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:14px;font-size:clamp(20px,calc(.7vw + 1.9vh),32px);font-weight:700;display:flex;align-items:center;gap:10px;padding:8px 12px;text-align:left;overflow-wrap:anywhere}
+.opt .l{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--tc);color:var(--dark);display:grid;place-items:center;font-size:20px;border:2px solid var(--dark)}
+.opt .tx{flex:1 1 auto;min-width:0}
+.opt .mark{flex:0 0 auto;font-size:1.1em;margin-left:auto}
+.opt.ok{background:#d6f5df;border-color:var(--ok)}
+.opt.bad{background:#fde1dd;border-color:var(--bad)}
+.opt:disabled{color:var(--ink);cursor:default}
+.opt:disabled:not(.ok):not(.bad){opacity:.6}
+@media (hover:hover){.opt:not(:disabled):hover{background:#fff6e8}}
+.fb{margin-top:12px;min-height:5.6em;border-radius:12px;padding:10px 12px;font-size:clamp(15px,calc(.5vw + 1.3vh),20px);line-height:1.35;border:3px solid transparent}
+.fb.show.ok{background:var(--ok);color:#fff}
+.fb.show.bad{background:var(--bad);color:#fff}
+.fb .t{font-weight:700;font-size:1.1em}
+.fb .s{font-weight:700;margin-top:2px}
+.fb .r{margin-top:2px}
+
+/* Overlays */
+.overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(16,28,43,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:20;padding:20px;text-align:center}
+.overlay h2{margin:0;font-size:clamp(36px,8vw,64px)}
+.overlay p{margin:0;font-size:20px;color:#cfe0f2;max-width:520px}
+.cdnum{font-size:clamp(120px,36vmin,360px);font-weight:700;color:var(--acc);line-height:1}
+.row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* Ende */
+.end{overflow-y:auto;overflow-x:hidden;align-items:center;padding:24px 16px 32px;background:linear-gradient(180deg,#0a121d 0,var(--dark) 40%,#17304a 100%);text-align:center}
+.winT{margin:6px 0 4px;font-size:clamp(36px,8vw,70px);line-height:1.1}
+.winT:focus{outline:none}
+.winS{margin:0 0 18px;font-size:clamp(18px,3vw,26px);color:#cfe0f2}
+.stats{border-collapse:separate;border-spacing:8px;margin:0 auto 20px;width:100%;max-width:720px}
+.stats th,.stats td{padding:10px 12px;border-radius:12px;background:var(--dark2);font-size:clamp(17px,2.6vw,24px)}
+.stats thead th{font-size:clamp(18px,3vw,28px);color:var(--dark)}
+.stats thead th.a{background:var(--a)}.stats thead th.b{background:var(--b)}
+.stats thead th:first-child{background:transparent}
+.stats tbody th{text-align:left}
+.stats td{font-weight:700;font-size:clamp(26px,5.5vw,52px);font-variant-numeric:tabular-nums}
+.stats td.a{color:var(--a)}.stats td.b{color:var(--b)}
+.stats td.win{outline:3px solid var(--acc)}
+
+@media (max-width:820px){
+ .opt .l{width:28px;height:28px;font-size:17px}
+ .opt{padding:6px 8px;gap:6px}
+ .sheet{padding:10px 10px 12px}
+ .hud{padding:4px 8px}
+}
+@media (max-height:620px){
+ .court{height:24vh}
+ .q{min-height:0;margin:6px 0 8px}
+ .fb{min-height:0;margin-top:8px}
+}
+</style>
+</head>
+<body>
+
+<main id="screenStart" class="screen start">
+ <div class="card">
+  <h1>Rechen-<span>Körbe</span></h1>
+  <p class="sub">Basketball-Duell für zwei · Mathematik · Jahrgang 7 · Realschule</p>
+  <ul class="chips" aria-label="Themen">
+   <li>Bruchrechnung</li><li>Prozentrechnung</li><li>Terme</li><li>Gleichungen</li><li>Geometrie</li><li>Dreisatz</li>
+  </ul>
+  <div class="teamsrow">
+   <div class="tp a">Team A<small>linke Hälfte</small></div>
+   <div class="tp b">Team B<small>rechte Hälfte</small></div>
+  </div>
+  <section class="panel" aria-labelledby="durH">
+   <h2 id="durH">Spielzeit wählen</h2>
+   <div class="durs" role="group" aria-label="Spielzeit in Minuten">
+    <button type="button" class="dur" data-sec="60" aria-pressed="false" aria-label="1 Minute">1 Min</button>
+    <button type="button" class="dur" data-sec="120" aria-pressed="false" aria-label="2 Minuten">2 Min</button>
+    <button type="button" class="dur" data-sec="180" aria-pressed="true" aria-label="3 Minuten">3 Min</button>
+    <button type="button" class="dur" data-sec="240" aria-pressed="false" aria-label="4 Minuten">4 Min</button>
+    <button type="button" class="dur" data-sec="300" aria-pressed="false" aria-label="5 Minuten">5 Min</button>
+   </div>
+   <div class="free">
+    <label for="custom">oder frei in Sekunden (15 bis 1800):</label>
+    <input id="custom" type="number" inputmode="numeric" min="15" max="1800" step="1" placeholder="z. B. 90" aria-describedby="durMsg">
+   </div>
+   <p id="durMsg" class="msg" role="alert"></p>
+   <p id="durSum" class="sumline" aria-live="polite"></p>
+  </section>
+  <section class="panel" aria-labelledby="howH">
+   <h2 id="howH">So funktioniert es</h2>
+   <ul class="how">
+    <li>Beide Teams spielen gleichzeitig und lösen dieselben Aufgabenpaare mit unterschiedlichen Texten.</li>
+    <li>Richtig ergibt einen Punkt und einen Korb. Falsch kostet nichts.</li>
+    <li>Nach jeder Antwort stehen Lösung und Regel 1,6 Sekunden da, dann kommt automatisch die nächste Aufgabe.</li>
+    <li>Die Pause hält die Uhr für beide Teams an.</li>
+   </ul>
+  </section>
+  <button id="btnStart" type="button" class="btn pri big" aria-label="Spiel starten, Countdown von drei">Spiel starten</button>
+ </div>
+</main>
+
+<main id="screenGame" class="screen" hidden>
+ <header class="hud">
+  <div id="hudA" class="score a" role="group" aria-label="Team A: 0 Punkte"><span class="tn">Team A</span><span class="pts" id="scoreA" aria-hidden="true">0</span></div>
+  <div class="clockbox">
+   <div id="clock" class="clock" role="timer" aria-label="Restzeit">3:00</div>
+   <button id="btnPause" type="button" class="btn pri" aria-label="Spiel pausieren, die Uhr hält für beide Teams an">Pause</button>
+  </div>
+  <div id="hudB" class="score b" role="group" aria-label="Team B: 0 Punkte"><span class="tn">Team B</span><span class="pts" id="scoreB" aria-hidden="true">0</span></div>
+ </header>
+ <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+ <div class="teams">
+  <section class="team a" aria-label="Team A: Spielfeld und Aufgabe">
+   <div class="court" id="courtA"><canvas id="cvA" role="img" aria-label="Spielfeld Team A mit Korb und Spielfigur, 0 Körbe"></canvas></div>
+   <div class="sheet">
+    <div class="shead"><span class="chip">Team A</span><span class="chip" id="qnumA">Aufgabe 1</span><span class="topic" id="topicA"></span></div>
+    <p class="q" id="qA"></p>
+    <div class="opts" id="optsA" role="group" aria-label="Antworten Team A"></div>
+    <div class="fb" id="fbA" role="status" aria-live="polite"></div>
+   </div>
+  </section>
+  <section class="team b" aria-label="Team B: Spielfeld und Aufgabe">
+   <div class="court" id="courtB"><canvas id="cvB" role="img" aria-label="Spielfeld Team B mit Korb und Spielfigur, 0 Körbe"></canvas></div>
+   <div class="sheet">
+    <div class="shead"><span class="chip">Team B</span><span class="chip" id="qnumB">Aufgabe 1</span><span class="topic" id="topicB"></span></div>
+    <p class="q" id="qB"></p>
+    <div class="opts" id="optsB" role="group" aria-label="Antworten Team B"></div>
+    <div class="fb" id="fbB" role="status" aria-live="polite"></div>
+   </div>
+  </section>
+ </div>
+</main>
+
+<main id="screenEnd" class="screen end" hidden>
+ <h2 id="winT" class="winT" tabindex="-1">Spielende</h2>
+ <p id="winS" class="winS"></p>
+ <table class="stats">
+  <caption class="sr">Ergebnis des Duells</caption>
+  <thead><tr><th scope="col"><span class="sr">Wert</span></th><th scope="col" class="a">Team A</th><th scope="col" class="b">Team B</th></tr></thead>
+  <tbody>
+   <tr><th scope="row">Körbe</th><td id="eKA" class="a"></td><td id="eKB" class="b"></td></tr>
+   <tr><th scope="row">Bearbeitete Aufgaben</th><td id="eAA" class="a"></td><td id="eAB" class="b"></td></tr>
+   <tr><th scope="row">Trefferquote</th><td id="eQA" class="a"></td><td id="eQB" class="b"></td></tr>
+  </tbody>
+ </table>
+ <div class="row">
+  <button id="btnRevanche" type="button" class="btn pri big" aria-label="Revanche spielen, gleiche Spielzeit">Revanche</button>
+  <button id="btnHome" type="button" class="btn sec big" aria-label="Zurück zu den Einstellungen">Einstellungen</button>
+ </div>
+</main>
+
+<div id="count" class="overlay" aria-live="assertive" hidden>
+ <p>Gleich geht es los</p>
+ <div id="cdnum" class="cdnum">3</div>
+</div>
+
+<div id="pause" class="overlay" role="dialog" aria-modal="true" aria-labelledby="pauseT" hidden>
+ <h2 id="pauseT">Pause</h2>
+ <p>Die Uhr steht für beide Teams. Die Aufgaben sind verdeckt.</p>
+ <div class="row">
+  <button id="btnResume" type="button" class="btn pri big" aria-label="Weiter spielen">Weiter spielen</button>
+  <button id="btnQuit" type="button" class="btn sec big" aria-label="Spiel beenden und zu den Einstellungen">Spiel beenden</button>
+ </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ================= AUFGABEN: 6 Themen x 12 Paare = 72 Paare = 144 Sätze =================
+   Paar: [Satz Team A, Satz Team B, richtige Lösung, [3 Ablenker], Regel (ein Satz)] */
+const NAMES=['Bruchrechnung','Prozentrechnung','Terme','Gleichungen','Geometrie','Dreisatz'];
+const TOPICS=[
+/* 0 Bruchrechnung */
+[
+["Berechne: 1/2 + 1/3","Mia isst 1/2 einer Pizza, Ben 1/3 derselben Pizza. Welcher Anteil der Pizza ist gegessen?","5/6",["2/5","1/6","2/6"],"Ungleichnamige Brüche zuerst auf den Hauptnenner bringen, dann nur die Zähler addieren: 3/6 + 2/6 = 5/6."],
+["Berechne: 3/4 − 1/6","Von 3/4 Liter Saft trinkt Jonas 1/6 Liter. Wie viel Liter Saft bleiben übrig?","7/12",["2/10","5/12","8/12"],"Beim Subtrahieren den Hauptnenner 12 bilden und dann die Zähler abziehen: 9/12 − 2/12 = 7/12."],
+["Berechne: 2/3 · 3/4","Von einer Tafel Schokolade sind noch 3/4 übrig. Anna isst davon 2/3. Welchen Anteil der ganzen Tafel isst sie?","1/2",["5/7","8/9","6/7"],"Brüche multipliziert man, indem man Zähler mal Zähler und Nenner mal Nenner rechnet und dann kürzt: 6/12 = 1/2."],
+["Berechne: 3/5 : 3/10","Ein Messbecher fasst 3/10 Liter. Wie viele Messbecher füllt man mit 3/5 Liter Wasser?","2",["9/50","1/2","3/10"],"Durch einen Bruch teilt man, indem man mit seinem Kehrbruch multipliziert: 3/5 · 10/3 = 2."],
+["Kürze vollständig: 18/24","In einem Verein sind 24 Kinder, davon 18 Mädchen. Gib den Anteil der Mädchen als vollständig gekürzten Bruch an.","3/4",["9/12","13/19","4/3"],"Beim Kürzen teilt man Zähler und Nenner durch denselben Teiler, am besten durch den größten gemeinsamen Teiler (hier 6)."],
+["Wandle in einen unechten Bruch um: 2 3/5","Ein Rezept braucht 2 3/5 Tassen Mehl. Schreibe diese Menge als unechten Bruch.","13/5",["6/5","23/5","11/5"],"Eine gemischte Zahl wandelt man um mit Ganze mal Nenner plus Zähler über demselben Nenner: (2 · 5 + 3)/5."],
+["Berechne: 3/8 von 40","Von 40 Schülern fahren 3/8 mit dem Rad zur Schule. Wie viele Schüler sind das?","15",["5","25","120"],"Teil vom Ganzen: erst durch den Nenner teilen (40 : 8 = 5), dann mit dem Zähler multiplizieren (5 · 3 = 15)."],
+["Schreibe als Dezimalzahl: 3/4","Ein Trinkglas ist zu 3/4 gefüllt. Gib den Füllstand als Dezimalzahl an.","0,75",["0,34","0,25","1,33"],"Einen Bruch wandelt man in eine Dezimalzahl um, indem man Zähler durch Nenner teilt: 3 : 4 = 0,75."],
+["Berechne: 1 − 3/7","Von einem 1 km langen Weg hat Lea schon 3/7 geschafft. Welcher Teil des Weges liegt noch vor ihr?","4/7",["3/7","7/4","2/7"],"Ein Ganzes lässt sich als 7/7 schreiben, daher gilt 7/7 − 3/7 = 4/7."],
+["Berechne: 5/6 · 4","Für ein Gericht braucht man 5/6 Liter Milch. Wie viele Liter braucht man für 4 solche Portionen?","10/3",["5/24","20/24","9/6"],"Bruch mal ganze Zahl: nur den Zähler mit der Zahl multiplizieren (20/6) und dann kürzen zu 10/3."],
+["Berechne: 1 1/2 + 2 1/4","Ein Brett ist 1 1/2 m lang, ein zweites 2 1/4 m. Wie lang sind beide zusammen?","3 3/4",["3 2/6","3 1/8","3 1/4"],"Bei gemischten Zahlen addiert man Ganze und Brüche getrennt und macht die Brüche vorher gleichnamig: 1/2 + 1/4 = 3/4."],
+["Erweitere 3/5 auf den Nenner 20. Wie lautet der neue Zähler?","Ein Kuchen ist in 5 gleiche Stücke geteilt, Ida isst 3 davon. Ein gleich großer Kuchen ist in 20 Stücke geteilt. Wie viele Stücke muss Jan essen, um gleich viel zu essen?","12",["18","15","9"],"Beim Erweitern multipliziert man Zähler und Nenner mit derselben Zahl, hier mit 4, also 3 · 4 = 12."]
+],
+/* 1 Prozentrechnung */
+[
+["Berechne 20 % von 150.","In einer Schule mit 150 Kindern fehlen 20 %. Wie viele Kinder fehlen?","30",["7,5","3000","130"],"Prozentwert = Grundwert · Prozentsatz : 100, also 150 · 20 : 100 = 30."],
+["Wie viel Prozent sind 12 von 48?","Ein Spieler wirft 48-mal auf den Korb und trifft 12-mal. Wie viel Prozent der Würfe sind Treffer?","25 %",["4 %","36 %","12 %"],"Der Prozentsatz ist Prozentwert : Grundwert, hier 12 : 48 = 0,25 = 25 %."],
+["15 % eines Betrags sind 45 €. Wie groß ist der ganze Betrag (in €)?","Lukas hat 45 Seiten gelesen, das sind 15 % des Buches. Wie viele Seiten hat das Buch?","300",["6,75","675","30"],"Den Grundwert findet man, indem man erst auf 1 % zurückrechnet (45 : 15 = 3) und dann auf 100 % hochrechnet (3 · 100 = 300)."],
+["Ein Wert von 80 sinkt um 25 %. Wie groß ist der neue Wert?","Eine Jacke kostet 80 €, im Sale gibt es 25 % Rabatt. Wie viel Euro zahlt man?","60",["20","100","55"],"Zuerst den Rabatt berechnen (25 % von 80 = 20) und dann vom Grundwert abziehen: 80 − 20 = 60."],
+["Erhöhe 240 um 15 %. Wie groß ist das Ergebnis?","Die Miete von 240 € steigt um 15 %. Wie hoch ist die neue Miete in €?","276",["36","255","204"],"Bei einer Erhöhung addiert man den Prozentwert zum Grundwert: 240 + 36 = 276, also 240 · 1,15."],
+["Schreibe 35 % als Dezimalzahl.","Ein Akku ist zu 35 % geladen. Gib den Ladestand als Dezimalzahl an.","0,35",["3,5","0,035","35"],"Prozent wandelt man in eine Dezimalzahl um, indem man durch 100 teilt, das Komma wandert zwei Stellen nach links."],
+["Schreibe 40 % als vollständig gekürzten Bruch.","40 % der Klasse sind Jungen. Gib diesen Anteil als vollständig gekürzten Bruch an.","2/5",["1/40","1/4","4/5"],"x % bedeutet x/100, und 40/100 wird durch 20 gekürzt zu 2/5."],
+["Berechne die Jahreszinsen für 500 € Kapital bei einem Zinssatz von 3 % (in €).","Familie Roth legt 500 € für ein Jahr zu 3 % an. Wie viel Euro Zinsen bekommt sie?","15",["1,5","150","515"],"Zinsen sind ein Prozentwert: Kapital · Zinssatz : 100 = 500 · 3 : 100 = 15."],
+["Ein Bruttopreis von 238 € enthält 19 % Mehrwertsteuer. Berechne den Nettopreis in €.","Ein Fahrradhelm kostet inklusive 19 % Mehrwertsteuer 238 €. Wie hoch ist der Nettopreis in €?","200",["219","192,78","283,22"],"Der Bruttopreis entspricht 119 % des Nettopreises, also 238 : 1,19 = 200."],
+["Ein Wert steigt von 50 auf 60. Um wie viel Prozent hat er zugenommen?","Ein Spieler erzielt statt 50 nun 60 Punkte pro Saison. Um wie viel Prozent hat er sich gesteigert?","20 %",["10 %","17 %","120 %"],"Die prozentuale Änderung ist der Unterschied geteilt durch den alten Wert: 10 : 50 = 0,2 = 20 %."],
+["Berechne 130 % von 50.","Ein Verein hatte 50 Mitglieder. Heute sind es 130 % davon. Wie viele Mitglieder sind es?","65",["6,5","15","80"],"Mehr als 100 % ist mehr als das Ganze: 130 % von 50 = 1,3 · 50 = 65."],
+["Nach einer Preissenkung um 20 % beträgt ein Wert noch 64. Wie groß war er vorher?","Ein Spielball kostet nach 20 % Rabatt noch 64 €. Wie hoch war der ursprüngliche Preis in €?","80",["76,80","84","51,20"],"64 entspricht 80 % des alten Werts, also gilt 64 : 0,8 = 80."]
+],
+/* 2 Terme */
+[
+["Vereinfache: 3x + 5x − 2x","Anna sammelt Sticker: erst 3x, dann 5x, dann gibt sie 2x ab. Vereinfache den Term für ihren Bestand.","6x",["10x","6x²","8x"],"Gleichartige Glieder fasst man zusammen, indem man nur die Beiwerte verrechnet: 3 + 5 − 2 = 6."],
+["Multipliziere aus: 4(x + 3)","Ein Rechteck ist 4 cm breit und (x + 3) cm lang. Gib den Flächeninhalt als ausmultiplizierten Term an.","4x + 12",["4x + 3","x + 12","4x + 7"],"Beim Distributivgesetz multipliziert man den Faktor vor der Klammer mit jedem Summanden in der Klammer."],
+["Löse die Klammer auf: 7x − (2x − 3)","Jule hat 7x Punkte. Davon wird eine Strafe von (2x − 3) Punkten abgezogen. Welcher Term gibt ihre Punkte an?","5x + 3",["5x − 3","9x − 3","9x + 3"],"Steht ein Minus vor der Klammer, werden alle Vorzeichen in der Klammer umgekehrt."],
+["Berechne den Wert von 3x − 4 für x = 5.","Ein Taxi kostet 3 € je Kilometer, es gibt aber 4 € Rabatt. Wie viel Euro kostet eine Fahrt über 5 km?","11",["31","19","1"],"Beim Einsetzen ersetzt man die Variable durch die Zahl und beachtet Punkt vor Strich: 3 · 5 − 4 = 11."],
+["Klammere den größten gemeinsamen Faktor aus: 6x + 9","Ein Beet hat die Fläche 6x + 9 (in m²). Schreibe den Term als Produkt mit dem größten gemeinsamen Faktor.","3(2x + 3)",["3(2x + 9)","3(3x + 2)","6(x + 3)"],"Beim Ausklammern setzt man den größten gemeinsamen Faktor (hier 3) vor die Klammer und teilt jeden Summanden durch ihn."],
+["Ein Rechteck hat die Seiten 2x und x + 1. Gib den Umfang als vereinfachten Term an.","Ein Übungsfeld ist 2x m lang und (x + 1) m breit. Gib den Umfang als vereinfachten Term an.","6x + 2",["3x + 1","6x + 1","5x + 2"],"Der Umfang ist 2 · (a + b), also 2 · (2x + x + 1) = 6x + 2."],
+["Vereinfache: 3x · 4x","Eine Fläche ist 3x lang und 4x breit. Gib den Flächeninhalt als vereinfachten Term an.","12x²",["12x","7x²","7x"],"Beim Multiplizieren rechnet man Zahl mal Zahl und x mal x, und es gilt x · x = x²."],
+["Stelle einen Term auf: das Dreifache einer Zahl x, vermindert um 7.","Ben kauft 3 Eintrittskarten zu je x € und bekommt 7 € Rabatt. Welcher Term gibt den Preis an?","3x − 7",["3(x − 7)","x − 21","7 − 3x"],"Man übersetzt schrittweise: ‚Dreifaches von x‘ heißt 3x und ‚vermindert um 7‘ heißt − 7."],
+["Vereinfache: 5a + 3b − 2a + b","Im Lager stehen 5 Kisten mit Bällen (a) und 3 Kisten mit Trikots (b). Dann werden 2 Ballkisten entnommen und 1 Trikotkiste kommt dazu. Welcher vereinfachte Term beschreibt den Bestand?","3a + 4b",["3a + 3b","7a + 4b","7ab"],"Man fasst nur gleiche Variablen zusammen: a-Glieder mit a-Gliedern und b-Glieder mit b-Gliedern."],
+["Drei aufeinanderfolgende Zahlen sind n, n + 1 und n + 2. Gib ihre Summe vereinfacht an.","Drei Spieler tragen aufeinanderfolgende Trikotnummern, der erste die Nummer n. Welcher vereinfachte Term gibt die Summe der Nummern an?","3n + 3",["3n","3n + 2","n + 3"],"Man schreibt alle Summanden auf und fasst gleichartige Glieder zusammen: n + n + n und 1 + 2."],
+["Löse die Klammer auf: −2(x − 5)","Ein Becken verliert 2 Liter pro Stunde, aber nur während (x − 5) Stunden. Die Änderung der Wassermenge ist −2 · (x − 5). Löse die Klammer auf.","−2x + 10",["−2x − 10","−2x − 5","2x − 10"],"Eine Minuszahl vor der Klammer multipliziert jeden Summanden, und minus mal minus ergibt plus."],
+["Berechne den Wert von 2x² für x = 3.","Ein Bodenfeld hat die Fläche 2x² m². Wie groß ist sie für x = 3 in m²?","18",["36","12","6"],"Potenz kommt vor Punkt: erst 3² = 9 berechnen und dann mit 2 multiplizieren."]
+],
+/* 3 Gleichungen */
+[
+["Löse: 2x + 7 = 19","Doppelt so viele Punkte wie Tom, dazu 7 Bonuspunkte, ergeben 19 Punkte. Wie viele Punkte hat Tom?","6",["12","26","13"],"Bei der Äquivalenzumformung zuerst 7 subtrahieren (2x = 12) und dann durch 2 teilen."],
+["Löse: 5x − 3 = 2x + 9","Tarif A kostet 5 € je Einheit abzüglich 3 € Rabatt, Tarif B 2 € je Einheit plus 9 € Grundgebühr. Bei wie vielen Einheiten kosten beide Tarife gleich viel?","4",["2","3","−4"],"Variablen bringt man auf die eine, Zahlen auf die andere Seite: 3x = 12, dann durch 3 teilen."],
+["Löse: 3(x − 2) = 12","Drei Freunde zahlen jeweils (x − 2) €, zusammen 12 €. Wie groß ist x?","6",["2","4","10"],"Zuerst durch 3 teilen (x − 2 = 4) oder ausmultiplizieren, dann 2 addieren."],
+["Löse: x/4 + 3 = 8","Ein Viertel der Zuschauer plus 3 Ehrengäste ergeben 8 Personen im Block. Wie viele Zuschauer gibt es insgesamt?","20",["5","44","29"],"Erst 3 subtrahieren (x/4 = 5) und dann mit dem Nenner 4 multiplizieren."],
+["Eine Zahl plus ihr Doppeltes ergibt 27. Wie lautet die Zahl?","Lisa wirft x Körbe, Ben doppelt so viele. Zusammen sind es 27 Körbe. Wie viele Körbe wirft Lisa?","9",["13,5","25","54"],"Man stellt die Gleichung x + 2x = 3x = 27 auf und teilt durch 3."],
+["Löse: 4x + 9 = 1","Ein Ballon ist 9 m hoch und ändert viermal seine Höhe um jeweils x m. Danach ist er 1 m hoch. Bestimme x (Vorzeichen beachten).","−2",["2","2,5","−8"],"Auch negative Lösungen sind möglich: 4x = −8, also x = −2."],
+["Löse: 6x − 4 = 2x + 16","Anna spart 6 € pro Woche und hat 4 € Schulden. Ben spart 2 € pro Woche und startet mit 16 €. Nach wie vielen Wochen haben beide gleich viel?","5",["3","−5","10"],"Erst 2x subtrahieren, dann 4 addieren: 4x = 20, und zuletzt durch 4 teilen."],
+["Ein Rechteck hat den Umfang 34 cm. Die Länge ist 3 cm größer als die Breite. Wie breit ist das Rechteck (in cm)?","Ein Übungsfeld hat 34 m Umfang und ist 3 m länger als breit. Wie breit ist es in m?","7",["10","8,5","15,5"],"Man stellt 2 · (b + b + 3) = 34 auf, also 4b + 6 = 34 und damit b = 7."],
+["Löse: 20 − 4x = 8","Von 20 Bällen werden in jeder Runde 4 Bälle weggenommen, bis noch 8 übrig sind. Wie viele Runden sind das?","3",["−3","7","12"],"Erst 20 subtrahieren (−4x = −12) und dann durch −4 teilen, denn minus durch minus ergibt plus."],
+["Löse: 2(x + 3) = x + 14","Verdoppelt man die Summe aus einer Zahl und 3, erhält man dasselbe wie bei der Zahl plus 14. Wie lautet die Zahl?","8",["11","−8","20"],"Zuerst ausmultiplizieren (2x + 6 = x + 14), dann sortieren: x = 8."],
+["Löse: 0,5x + 2 = 6","Ein Parkplatz kostet 0,5 € pro Minute plus 2 € Grundgebühr. Insgesamt wurden 6 € bezahlt. Wie viele Minuten wurde geparkt?","8",["2","16","4"],"Erst 2 subtrahieren (0,5x = 4) und dann durch 0,5 teilen, das heißt mal 2 nehmen."],
+["Eine Zahl, um 10 vergrößert, ist doppelt so groß wie die Zahl selbst. Wie lautet die Zahl?","In 10 Jahren ist Ben doppelt so alt wie heute. Wie alt ist Ben heute?","10",["5","20","−10"],"Aus x + 10 = 2x folgt durch Subtrahieren von x auf beiden Seiten x = 10."]
+],
+/* 4 Geometrie */
+[
+["Ein Dreieck hat die Winkel 50° und 60°. Wie groß ist der dritte Winkel?","Bei einem dreieckigen Wegestück auf dem Schulhof betragen zwei Winkel 50° und 60°. Wie groß ist der dritte Winkel?","70°",["110°","130°","250°"],"Die Winkelsumme im Dreieck beträgt 180°, also 180° − 50° − 60° = 70°."],
+["Im gleichschenkligen Dreieck beträgt der Winkel an der Spitze 50°. Wie groß ist ein Basiswinkel?","Ein Zeltdach ist ein gleichschenkliges Dreieck mit 50° an der Spitze. Wie groß ist jeder Basiswinkel?","65°",["130°","40°","25°"],"Die Basiswinkel sind gleich groß, daher gilt (180° − 50°) : 2 = 65°."],
+["Berechne den Flächeninhalt eines Parallelogramms mit Grundseite 8 cm und Höhe 5 cm (in cm²).","Eine Werbebande hat die Form eines Parallelogramms mit 8 m Grundseite und 5 m Höhe. Wie groß ist die Fläche in m²?","40",["26","20","13"],"Beim Parallelogramm gilt A = Grundseite · zugehörige Höhe = 8 · 5 = 40."],
+["Ein Dreieck hat die Grundseite 10 cm und die Höhe 6 cm. Wie groß ist sein Flächeninhalt (in cm²)?","Ein dreieckiges Segel hat 10 dm Grundseite und 6 dm Höhe. Wie viele dm² Stoff hat es?","30",["60","16","15"],"Beim Dreieck gilt A = ½ · g · h = ½ · 10 · 6 = 30."],
+["Berechne den Flächeninhalt eines Trapezes mit den parallelen Seiten 6 cm und 4 cm und der Höhe 3 cm (in cm²).","Ein trapezförmiger Garten hat parallele Seiten von 6 m und 4 m, der Abstand beträgt 3 m. Wie groß ist die Fläche in m²?","15",["30","12","72"],"Beim Trapez gilt A = (a + c) : 2 · h = (6 + 4) : 2 · 3 = 15."],
+["Ein Quader ist 5 cm lang, 4 cm breit und 3 cm hoch. Wie groß ist sein Volumen (in cm³)?","Eine Sporttasche ist 5 dm lang, 4 dm breit und 3 dm hoch. Wie viele Liter (dm³) passen hinein?","60",["12","94","47"],"Beim Quader gilt V = Länge · Breite · Höhe = 5 · 4 · 3 = 60."],
+["Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist seine Oberfläche (in cm²)?","Ein würfelförmiger Karton mit 3 dm Kantenlänge soll außen komplett mit Papier beklebt werden. Wie viele dm² Papier braucht man?","54",["27","18","36"],"Ein Würfel hat sechs gleich große Quadrate, daher gilt O = 6 · a² = 6 · 9 = 54."],
+["Zwei Geraden schneiden sich. Ein Winkel misst 125°. Wie groß ist sein Nebenwinkel?","An einer Wegkreuzung bildet ein Weg mit dem anderen einen Winkel von 125°. Wie groß ist der danebenliegende Winkel auf derselben Geraden?","55°",["235°","35°","145°"],"Nebenwinkel ergänzen sich zu 180°, also 180° − 125° = 55°."],
+["Zwei Geraden schneiden sich, ein Winkel misst 72°. Wie groß ist der gegenüberliegende Scheitelwinkel?","Zwei Linien auf dem Parkett kreuzen sich, ein Winkel misst 72°. Wie groß ist der Winkel genau gegenüber?","72°",["108°","18°","288°"],"Scheitelwinkel liegen sich gegenüber und sind gleich groß."],
+["Ein Rechteck hat den Flächeninhalt 84 cm² und eine Seite von 12 cm. Wie lang ist die andere Seite (in cm)?","Ein Spielfeld hat 84 m² Fläche und ist 12 m lang. Wie breit ist es in m?","7",["72","96","1008"],"Aus A = a · b folgt b = A : a = 84 : 12 = 7."],
+["In einem Viereck sind drei Winkel 90°, 85° und 110° groß. Wie groß ist der vierte Winkel?","Ein viereckiges Spielfeld hat an drei Ecken Winkel von 90°, 85° und 110°. Wie groß ist der Winkel an der vierten Ecke?","75°",["285°","95°","105°"],"Die Winkelsumme im Viereck beträgt 360°, also 360° − 285° = 75°."],
+["Ein Quadrat hat den Flächeninhalt 49 cm². Wie groß ist sein Umfang (in cm)?","Ein quadratischer Feldabschnitt hat 49 m². Wie viele Meter Linie braucht man für den ganzen Rand?","28",["196","14","12,25"],"Erst die Seite bestimmen (a · a = 49, also a = 7) und dann den Umfang 4 · a = 28 berechnen."]
+],
+/* 5 Dreisatz */
+[
+["4 Hefte kosten 6 €. Wie viel Euro kosten 10 Hefte?","Im Fanshop kosten 4 Sammelkarten-Packs zusammen 6 €. Wie viel Euro kosten 10 Packs?","15",["12","24","2,4"],"Beim proportionalen Dreisatz rechnet man erst auf 1 Stück zurück (6 : 4 = 1,50 €) und dann auf 10 Stück hoch."],
+["6 Arbeiter brauchen für eine Arbeit 8 Tage. Wie viele Tage brauchen 4 Arbeiter?","6 Helfer bauen die Tribüne in 8 Stunden auf. Wie viele Stunden brauchen 4 Helfer?","12",["5,3","10","32"],"Weniger Helfer brauchen mehr Zeit (umgekehrt proportional): 6 · 8 = 48 Arbeitsstunden, und 48 : 4 = 12."],
+["Auf einer Karte (Maßstab 1 : 50 000) sind zwei Orte 3 cm voneinander entfernt. Wie weit sind sie in Wirklichkeit entfernt?","Auf dem Stadtplan 1 : 50 000 liegt die Halle 3 cm vom Bahnhof entfernt. Wie weit ist der Weg in Wirklichkeit?","1,5 km",["15 km","0,15 km","150 km"],"Kartenlänge mal 50 000 ergibt 150 000 cm, das sind 1 500 m oder 1,5 km."],
+["Ein Zug fährt in 1,5 Stunden 90 km. Wie weit kommt er bei gleichem Tempo in 4 Stunden (in km)?","Ein Fanbus fährt in 1,5 Stunden 90 km. Wie weit kommt er bei gleichem Tempo in 4 Stunden (in km)?","240",["360","135","60"],"Erst die Strecke für 1 Stunde bestimmen (90 : 1,5 = 60 km) und dann mal 4 rechnen."],
+["Für 4 Personen braucht man 300 g Nudeln. Wie viel Gramm braucht man für 10 Personen?","Ein Trainer kocht für 4 Spieler mit 300 g Reis. Das Team hat 10 Spieler. Wie viel Gramm Reis braucht er?","750",["1200","450","120"],"Menge pro Person ist 300 : 4 = 75 g, dann mal 10 ergibt 750 g."],
+["Ein Wasserhahn füllt 20 Liter in 4 Minuten. Wie viele Minuten dauert es für 35 Liter?","Ein Schlauch füllt 20 Liter in 4 Minuten die Trinkflaschen. Wie viele Minuten dauert es für 35 Liter?","7",["19","175","28"],"Erst die Menge pro Minute bestimmen (20 : 4 = 5 Liter) und dann 35 : 5 = 7 Minuten rechnen."],
+["Ein Futtervorrat reicht für 12 Tiere 30 Tage. Wie viele Tage reicht er für 20 Tiere?","Der Getränkevorrat im Trainingslager reicht für 12 Spieler 30 Tage. Wie viele Tage reicht er für 20 Spieler?","18",["50","22","360"],"Mehr Verbraucher bedeuten kürzere Zeit (umgekehrt proportional): 12 · 30 = 360 Portionen, und 360 : 20 = 18."],
+["250 g Käse kosten 1,50 €. Wie viel Euro kostet 1 kg?","Der Kiosk verkauft 250 g Traubenzucker für 1,50 €. Wie viel Euro kostet ein ganzes Kilogramm?","6",["0,38","7,5","1,75"],"1 kg sind 1000 g, also 4 · 250 g, und damit kostet es 4 · 1,50 € = 6 €."],
+["Ein Auto verbraucht 7 Liter auf 100 km. Wie viele Liter braucht es für 350 km?","Der Mannschaftsbus verbraucht 7 Liter auf 100 km. Wie viele Liter braucht er für 350 km zur Auswärtshalle?","24,5",["245","3,5","2,45"],"350 km sind 3,5 mal 100 km, also braucht man 3,5 · 7 Liter = 24,5 Liter."],
+["3 gleiche Pumpen leeren ein Becken in 10 Stunden. Wie viele Stunden brauchen 5 Pumpen?","3 gleich schnelle Putzkolonnen reinigen die Halle in 10 Stunden. Wie viele Stunden brauchen 5 Kolonnen?","6",["16,7","8","50"],"Mehr Pumpen schaffen es schneller: 3 · 10 = 30 Pumpenstunden, und 30 : 5 = 6."],
+["Farbe wird im Verhältnis 3 : 2 (Rot zu Blau) gemischt. Wie viele Liter Blau gehören zu 15 Litern Rot?","Ein Sportgetränk besteht aus Saft und Wasser im Verhältnis 3 : 2. Wie viele Liter Wasser gehören zu 15 Litern Saft?","10",["22,5","12","5"],"Erst den Wert eines Teils bestimmen (15 : 3 = 5) und dann mal 2 rechnen."],
+["12 Eier kosten 3,60 €. Wie viel Euro kosten 5 Eier?","Der Hallenkiosk verkauft 12 Brötchen für 3,60 €. Wie viel Euro kosten 5 Brötchen?","1,50",["18","0,72","1,80"],"Der Preis für 1 Stück ist 3,60 : 12 = 0,30 €, mal 5 ergibt 1,50 €."]
+]
+];
+
+/* ================= Hilfen ================= */
+const $=id=>document.getElementById(id);
+const mq=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):{matches:false};
+const RM=()=>!!mq.matches;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const LET=['a','b','c','d'];
+const fmt=s=>{const m=Math.floor(s/60),r=s%60;return m+':'+(r<10?'0':'')+r;};
+function topicAt(block,k){const r=(k+block)%6;return block<6?r:5-r;}
+
+/* ================= Zustand ================= */
+const S={state:'start',dur:180,remain:0,cd:0,cdShown:0,shownSec:-1,offset:0};
+function mkTeam(id){
+ return {id:id,score:0,att:0,hit:0,n:0,lock:0,q:null,opts:[],
+  el:{score:$('score'+id),hud:$('hud'+id),qnum:$('qnum'+id),topic:$('topic'+id),q:$('q'+id),opts:$('opts'+id),fb:$('fb'+id),cv:$('cv'+id),court:$('court'+id)},
+  f:{side:id,cv:$('cv'+id),ctx:$('cv'+id).getContext('2d'),w:0,h:0,dpr:1,shot:null,swing:null,bobT:0}};
+}
+const T={A:mkTeam('A'),B:mkTeam('B')};
+const IDS=['A','B'];
+
+/* ================= Aufgaben laden ================= */
+function loadQ(t){
+ const pos=(t.n+S.offset)%72,block=Math.floor(pos/6),k=pos%6,ti=topicAt(block,k),pr=TOPICS[ti][block];
+ t.q={ti:ti,pos:pos,text:t.id==='A'?pr[0]:pr[1],ans:pr[2],rule:pr[4]};
+ const arr=[{x:pr[2],c:true}].concat(pr[3].map(x=>({x:x,c:false})));
+ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;}
+ t.opts=arr;t.lock=0;
+ const e=t.el;
+ e.qnum.textContent='Aufgabe '+(pos+1);
+ e.topic.textContent=NAMES[ti];
+ e.q.textContent=t.q.text;
+ e.opts.textContent='';
+ arr.forEach((o,i)=>{
+  const b=document.createElement('button');b.type='button';b.className='opt';b.dataset.i=String(i);
+  b.setAttribute('aria-label','Antwort '+LET[i]+': '+o.x);
+  const l=document.createElement('span');l.className='l';l.setAttribute('aria-hidden','true');l.textContent=LET[i];
+  const tx=document.createElement('span');tx.className='tx';tx.textContent=o.x;
+  const m=document.createElement('span');m.className='mark';m.setAttribute('aria-hidden','true');
+  b.appendChild(l);b.appendChild(tx);b.appendChild(m);e.opts.appendChild(b);
+ });
+ e.fb.className='fb';e.fb.textContent='';
+ t.f.shot=null;
+}
+
+function setScore(t){
+ t.el.score.textContent=String(t.score);
+ t.el.hud.setAttribute('aria-label','Team '+t.id+': '+t.score+(t.score===1?' Punkt':' Punkte'));
+ t.el.cv.setAttribute('aria-label','Spielfeld Team '+t.id+' mit Korb und Spielfigur, '+t.score+(t.score===1?' Korb':' Körbe'));
+}
+
+function answer(t,i){
+ if(S.state!=='play'||t.lock>0||!t.q||!t.opts[i])return;
+ const ok=t.opts[i].c;
+ t.lock=1600;t.att++;
+ if(ok){t.score++;t.hit++;}
+ const bs=t.el.opts.children;
+ for(let j=0;j<bs.length;j++){
+  const b=bs[j];b.disabled=true;const m=b.querySelector('.mark');
+  if(t.opts[j].c){b.classList.add('ok');m.textContent='✓';}
+  else if(j===i){b.classList.add('bad');m.textContent='✗';}
+ }
+ const fb=t.el.fb;fb.className='fb show '+(ok?'ok':'bad');fb.textContent='';
+ const a=document.createElement('div');a.className='t';a.textContent=ok?'✓ Richtig! +1 Punkt':'✗ Leider falsch – kein Punktabzug';
+ const b2=document.createElement('div');b2.className='s';b2.textContent=(ok?'Lösung: ':'Richtige Lösung: ')+t.q.ans;
+ const c=document.createElement('div');c.className='r';c.textContent='Regel: '+t.q.rule;
+ fb.appendChild(a);fb.appendChild(b2);fb.appendChild(c);
+ t.f.shot={ok:ok,t:0,rm:RM()};
+ t.f.swing=null;
+ setScore(t);
+}
+
+/* Eingabe: pointerup (mehrere Finger gleichzeitig möglich) + Tastatur über click */
+IDS.forEach(id=>{
+ const t=T[id],c=t.el.opts,down=new Map();
+ c.addEventListener('pointerdown',e=>{const b=e.target.closest('.opt');if(b&&!b.disabled)down.set(e.pointerId,b);});
+ c.addEventListener('pointerup',e=>{const b=e.target.closest('.opt');const d=down.get(e.pointerId);down.delete(e.pointerId);if(b&&d===b)answer(t,+b.dataset.i);});
+ c.addEventListener('pointercancel',e=>{down.delete(e.pointerId);});
+ c.addEventListener('click',e=>{if(e.detail===0){const b=e.target.closest('.opt');if(b)answer(t,+b.dataset.i);}});
+});
+
+/* ================= Ablauf ================= */
+function show(id){
+ ['screenStart','screenGame','screenEnd'].forEach(s=>{$(s).hidden=(s!==id);});
+}
+function resetTeams(){
+ IDS.forEach(id=>{const t=T[id];t.score=0;t.att=0;t.hit=0;t.n=0;t.lock=0;t.f.shot=null;t.f.swing=null;t.f.bobT=0;setScore(t);});
+}
+function beginCountdown(){
+ resetTeams();
+ show('screenGame');
+ S.remain=S.dur*1000;S.shownSec=-1;updateClock();
+ IDS.forEach(id=>loadQ(T[id]));
+ $('pause').hidden=true;
+ S.state='count';S.cd=3000;S.cdShown=3;
+ $('cdnum').textContent='3';$('count').hidden=false;
+ sizeAll();
+}
+function startPlay(){
+ S.state='play';$('count').hidden=true;
+}
+function updateClock(){
+ const sec=Math.ceil(S.remain/1000);
+ if(sec!==S.shownSec){S.shownSec=sec;const c=$('clock');c.textContent=fmt(sec);c.classList.toggle('low',sec<=10);}
+ $('bar').style.width=(clamp(S.remain/(S.dur*1000),0,1)*100)+'%';
+}
+function endGame(){
+ S.state='end';
+ $('count').hidden=true;$('pause').hidden=true;
+ show('screenEnd');
+ const A=T.A,B=T.B;
+ const q=t=>t.att?Math.round(100*t.hit/t.att)+' %':'–';
+ $('eKA').textContent=A.score;$('eKB').textContent=B.score;
+ $('eAA').textContent=A.att;$('eAB').textContent=B.att;
+ $('eQA').textContent=q(A);$('eQB').textContent=q(B);
+ $('eKA').classList.toggle('win',A.score>B.score);
+ $('eKB').classList.toggle('win',B.score>A.score);
+ const w=$('winT'),s=$('winS');
+ if(A.score>B.score){w.textContent='Team A gewinnt!';w.style.color='var(--a)';}
+ else if(B.score>A.score){w.textContent='Team B gewinnt!';w.style.color='var(--b)';}
+ else{w.textContent='Unentschieden!';w.style.color='var(--acc)';}
+ s.textContent='Endstand '+A.score+' : '+B.score+' – Team A '+A.score+(A.score===1?' Korb':' Körbe')+', Team B '+B.score+(B.score===1?' Korb':' Körbe');
+ $('btnRevanche').focus();
+}
+function pause(){
+ if(S.state!=='play')return;
+ S.state='pause';$('pause').hidden=false;$('btnResume').focus();
+}
+let quitArmed=false;
+function resetQuit(){quitArmed=false;$('btnQuit').textContent='Spiel beenden';}
+function resume(){
+ if(S.state!=='pause')return;
+ S.state='play';$('pause').hidden=true;resetQuit();$('btnPause').focus();
+}
+function toStart(){
+ S.state='start';$('pause').hidden=true;$('count').hidden=true;resetQuit();show('screenStart');$('btnStart').focus();
+}
+
+/* Startseite */
+const custom=$('custom'),durBtns=Array.prototype.slice.call(document.querySelectorAll('.dur'));
+let selSec=180;
+function readDur(){
+ const raw=custom.value.trim();
+ if(raw!==''){const v=Number(raw);if(!Number.isInteger(v)||v<15||v>1800)return null;return v;}
+ return selSec;
+}
+function updateDurUI(){
+ const freeUsed=custom.value.trim()!=='';
+ durBtns.forEach(b=>b.setAttribute('aria-pressed',String(!freeUsed&&+b.dataset.sec===selSec)));
+ const d=readDur();
+ if(d===null){$('durMsg').textContent='Bitte eine ganze Zahl von 15 bis 1800 Sekunden eingeben.';$('durSum').textContent='';}
+ else{$('durMsg').textContent='';$('durSum').textContent='Spielzeit: '+fmt(d)+' Minuten ('+d+' Sekunden)';}
+}
+durBtns.forEach(b=>b.addEventListener('click',()=>{selSec=+b.dataset.sec;custom.value='';updateDurUI();}));
+custom.addEventListener('input',updateDurUI);
+$('btnStart').addEventListener('click',()=>{
+ const d=readDur();
+ if(d===null){updateDurUI();custom.focus();return;}
+ S.dur=d;S.offset=0;beginCountdown();
+});
+$('btnPause').addEventListener('click',pause);
+$('btnResume').addEventListener('click',resume);
+$('btnQuit').addEventListener('click',()=>{
+ if(!quitArmed){quitArmed=true;$('btnQuit').textContent='Ja, wirklich beenden';return;}
+ toStart();
+});
+$('btnRevanche').addEventListener('click',()=>{
+ S.offset=(S.offset+6*(1+Math.floor(Math.random()*11)))%72;
+ beginCountdown();
+});
+$('btnHome').addEventListener('click',toStart);
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){if(S.state==='play')pause();else if(S.state==='pause')resume();}
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+window.addEventListener('pagehide',pause);
+window.addEventListener('blur',pause);
+updateDurUI();
+
+/* ================= Zeichnen ================= */
+const FX=150,FY=214,K=.9,RIMX=322,RIMY=104;
+const W=220,F=820,D=420,M=700,JR=10,H=44;
+function hs(i,r){const v=Math.sin(i*12.9898+r*78.233)*43758.5453;return v-Math.floor(v);}
+const CROWD=['#e8b7a0','#7fa6c9','#d6c27a','#9ec9a3','#c590c9','#e07a6a','#b8c4d6','#f0d9b5'];
+function pose(s,j,bob){
+ const hipY=-42-j+bob,shY=hipY-26;
+ return {hipY:hipY,shY:shY,hx:lerp(12,14,s),hy:lerp(shY+14,shY-28,s)};
+}
+function hw(p){return {x:FX+K*(p.hx+3),y:FY+K*(p.hy-7)};}
+const P0=hw(pose(1,JR,0));
+
+function calc(f){
+ const sh=f.shot,bob=RM()?0:Math.sin(f.bobT/380)*1.3;
+ if(sh&&sh.rm){
+  const b=sh.ok?{x:RIMX,y:RIMY+13}:hw(pose(0,0,0));
+  return {s:0,j:0,bob:0,b:b,a:1,bump:0};
+ }
+ if(sh){
+  const t=sh.t,total=W+F+(sh.ok?D:M);
+  if(t<total){
+   let s=0,j=0,b=null,a=1,bump=0;
+   if(t<W){const e=t/W;s=e;j=JR*e;b=hw(pose(s,j,0));}
+   else{
+    const r=t-W;
+    s=r<250?1:Math.max(0,1-(r-250)/450);
+    j=JR*Math.max(0,1-r/380);
+    if(r<F){
+     const u=r/F,tx=sh.ok?RIMX:RIMX-27,ty=RIMY-6;
+     b={x:P0.x+(tx-P0.x)*u,y:P0.y+(ty-P0.y)*u-4*H*u*(1-u)};
+    }else{
+     const td=(r-F)/1000;
+     if(sh.ok){b={x:RIMX,y:Math.min(206,RIMY-6+180*td+262*td*td)};bump=Math.sin(Math.PI*Math.min(1,td/.3));}
+     else{b={x:RIMX-27-110*td,y:Math.min(206,RIMY-6-100*td+262*td*td)};}
+    }
+    const left=total-t;if(left<120)a=left/120;
+   }
+   return {s:s,j:j,bob:0,b:b,a:a,bump:bump};
+  }
+ }
+ return {s:0,j:0,bob:bob,b:hw(pose(0,0,bob)),a:1,bump:0};
+}
+
+function drawBall(ctx,x,y,a){
+ ctx.save();ctx.globalAlpha=a;
+ ctx.fillStyle='#ff934f';ctx.strokeStyle='#6e2f0c';ctx.lineWidth=1.2;
+ ctx.beginPath();ctx.arc(x,y,7.5,0,Math.PI*2);ctx.fill();ctx.stroke();
+ ctx.beginPath();ctx.moveTo(x-7.5,y);ctx.lineTo(x+7.5,y);ctx.moveTo(x,y-7.5);ctx.lineTo(x,y+7.5);
+ ctx.moveTo(x-5,y-5.5);ctx.bezierCurveTo(x-2,y-2,x-2,y+2,x-5,y+5.5);
+ ctx.moveTo(x+5,y-5.5);ctx.bezierCurveTo(x+2,y-2,x+2,y+2,x+5,y+5.5);ctx.stroke();
+ ctx.restore();
+}
+
+function drawFigure(ctx,col,shade,p,j){
+ ctx.save();ctx.translate(FX,FY);ctx.scale(K,K);
+ ctx.lineCap='round';ctx.lineJoin='round';
+ ctx.fillStyle='rgba(0,0,0,.28)';ctx.beginPath();ctx.ellipse(0,2,Math.max(8,17-j*.4),4,0,0,Math.PI*2);ctx.fill();
+ const fy=-j*.9;
+ ctx.strokeStyle='#e2ac7e';ctx.lineWidth=7;
+ ctx.beginPath();ctx.moveTo(-5,p.hipY);ctx.lineTo(-9,fy-4);ctx.moveTo(5,p.hipY);ctx.lineTo(10,fy-4);ctx.stroke();
+ ctx.strokeStyle='#f6f2e7';ctx.lineWidth=7;
+ ctx.beginPath();ctx.moveTo(-14,fy-2);ctx.lineTo(-6,fy-2);ctx.moveTo(7,fy-2);ctx.lineTo(16,fy-2);ctx.stroke();
+ ctx.strokeStyle=shade;ctx.lineWidth=10;
+ ctx.beginPath();ctx.moveTo(-5,p.hipY-1);ctx.lineTo(-7,p.hipY+13);ctx.moveTo(5,p.hipY-1);ctx.lineTo(7,p.hipY+13);ctx.stroke();
+ ctx.strokeStyle=col;ctx.lineWidth=18;
+ ctx.beginPath();ctx.moveTo(0,p.hipY-2);ctx.lineTo(2,p.shY+3);ctx.stroke();
+ ctx.strokeStyle='#e2ac7e';ctx.lineWidth=5.5;
+ ctx.beginPath();ctx.moveTo(-1,p.shY+3);ctx.lineTo(p.hx-5,p.hy+1);ctx.moveTo(7,p.shY+3);ctx.lineTo(p.hx,p.hy);ctx.stroke();
+ ctx.fillStyle='#e2ac7e';ctx.beginPath();ctx.arc(4,p.shY-12,9,0,Math.PI*2);ctx.fill();
+ ctx.fillStyle='#2b1b12';ctx.beginPath();ctx.arc(4,p.shY-12,9.6,Math.PI,Math.PI*2);ctx.closePath();ctx.fill();
+ ctx.restore();
+}
+
+function drawNet(ctx,sway,ws){
+ const N=7,L=5,pts=[];
+ for(let l=0;l<=L;l++){
+  const fr=l/L,hwid=(22-11*fr)*ws,cx=RIMX+sway*Math.pow(fr,1.3),y=RIMY+fr*27,row=[];
+  for(let k=0;k<N;k++)row.push([cx+(k/(N-1)*2-1)*hwid,y]);
+  pts.push(row);
+ }
+ ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=1.1;
+ ctx.beginPath();
+ for(let l=0;l<L;l++)for(let k=0;k<N-1;k++){
+  ctx.moveTo(pts[l][k][0],pts[l][k][1]);ctx.lineTo(pts[l+1][k+1][0],pts[l+1][k+1][1]);
+  ctx.moveTo(pts[l][k+1][0],pts[l][k+1][1]);ctx.lineTo(pts[l+1][k][0],pts[l+1][k][1]);
+ }
+ ctx.moveTo(pts[L][0][0],pts[L][0][1]);
+ for(let k=1;k<N;k++)ctx.lineTo(pts[L][k][0],pts[L][k][1]);
+ ctx.stroke();
+}
+
+function scene(ctx,t,x0,y0,vw,vh){
+ const f=t.f,col=t.id==='A'?'#53d6f5':'#ff947d',shade=t.id==='A'?'#1f8aa3':'#c8573e';
+ const xs=x0-6,xe=x0+vw+6,wd=xe-xs,yb=y0+vh+6;
+ /* Halle */
+ let g=ctx.createLinearGradient(0,y0,0,132);g.addColorStop(0,'#0a121d');g.addColorStop(1,'#16283d');
+ ctx.fillStyle=g;ctx.fillRect(xs,y0-6,wd,138-y0);
+ /* Hallenlicht */
+ for(let x=Math.floor(xs/90)*90+30;x<xe+40;x+=90){
+  ctx.fillStyle='rgba(255,244,200,.06)';
+  ctx.beginPath();ctx.moveTo(x-12,y0+8);ctx.lineTo(x+12,y0+8);ctx.lineTo(x+55,126);ctx.lineTo(x-55,126);ctx.closePath();ctx.fill();
+  ctx.fillStyle='#fff3c4';ctx.fillRect(x-16,y0+4,32,4);
+ }
+ /* Tribüne */
+ ctx.fillStyle='#1a2c43';ctx.fillRect(xs,y0-6,wd,124-y0+6);
+ for(let r=0;r<8;r++){
+  const ry=112-r*15;if(ry<y0-14)break;
+  ctx.fillStyle=r%2?'#20364f':'#1b2f46';ctx.fillRect(xs,ry-12,wd,14);
+  for(let i=Math.floor(xs/12)-1;i<=Math.ceil(xe/12)+1;i++){
+   const h=hs(i,r);if(h<.1)continue;
+   const x=i*12+(r%2)*6;
+   ctx.fillStyle=CROWD[Math.floor(h*97)%CROWD.length];
+   ctx.beginPath();ctx.arc(x,ry-8,3.4,0,Math.PI*2);ctx.fill();
+   ctx.fillRect(x-3.8,ry-4.5,7.6,5.5);
+  }
+ }
+ /* Banden */
+ ctx.fillStyle='#0b131e';ctx.fillRect(xs,117,wd,16);
+ const bc=[col,'#ff934f','#f6f2e7'];
+ for(let i=Math.floor(xs/36)-1;i<=Math.ceil(xe/36);i++){
+  ctx.fillStyle=bc[((i%3)+3)%3];ctx.fillRect(i*36+3,120,30,9);
+ }
+ /* Parkett */
+ g=ctx.createLinearGradient(0,132,0,yb);g.addColorStop(0,'#d4965a');g.addColorStop(1,'#a76a30');
+ ctx.fillStyle=g;ctx.fillRect(xs,132,wd,yb-132);
+ ctx.strokeStyle='rgba(70,38,12,.28)';ctx.lineWidth=.8;ctx.beginPath();
+ for(let x=-400;x<=800;x+=22){ctx.moveTo(x,132);ctx.lineTo(200+(x-200)*1.8,yb+4);}
+ ctx.stroke();
+ g=ctx.createLinearGradient(0,132,0,156);g.addColorStop(0,'rgba(255,255,255,.18)');g.addColorStop(1,'rgba(255,255,255,0)');
+ ctx.fillStyle=g;ctx.fillRect(xs,132,wd,24);
+ /* Feldlinien */
+ ctx.fillStyle='rgba(255,147,79,.22)';
+ ctx.beginPath();ctx.moveTo(392,158);ctx.lineTo(300,162);ctx.lineTo(293,214);ctx.lineTo(392,226);ctx.closePath();ctx.fill();
+ ctx.strokeStyle='rgba(255,255,255,.92)';ctx.lineWidth=2.2;ctx.lineJoin='round';
+ ctx.beginPath();
+ ctx.moveTo(392,146);ctx.lineTo(392,236);
+ ctx.moveTo(392,158);ctx.lineTo(300,162);ctx.lineTo(293,214);ctx.lineTo(392,226);
+ ctx.stroke();
+ ctx.beginPath();ctx.ellipse(296,188,17,23,0,Math.PI/2,Math.PI*1.5);ctx.stroke();
+ ctx.beginPath();ctx.ellipse(392,190,218,44,0,Math.PI/2,Math.PI*1.5);ctx.stroke();
+ /* Korbanlage */
+ ctx.fillStyle='#2c3e55';ctx.fillRect(371,98,7,60);
+ ctx.fillStyle='#0b131e';ctx.fillRect(362,154,26,6);
+ ctx.fillStyle='#8aa0b8';ctx.fillRect(344,99,28,6);
+ ctx.fillStyle='#e8eef6';ctx.fillRect(346,60,7,58);
+ ctx.fillStyle='#c0cbd8';ctx.fillRect(346,60,2.5,58);
+ /* Spielfigur und Korb */
+ const c=calc(f);
+ const p=pose(c.s,c.j,c.bob);
+ drawFigure(ctx,col,shade,p,c.j);
+ ctx.lineWidth=3.2;ctx.strokeStyle='#ff934f';
+ ctx.beginPath();ctx.ellipse(RIMX,RIMY,22,5,0,Math.PI,Math.PI*2);ctx.stroke();
+ if(c.b)drawBall(ctx,c.b.x,c.b.y,c.a);
+ let sway=0;
+ if(f.swing&&!RM()){const ts=f.swing.t;sway=8*Math.sin(ts*.022)*Math.exp(-ts/420);}
+ drawNet(ctx,sway,1+.35*c.bump);
+ ctx.lineWidth=3.2;ctx.strokeStyle='#ff934f';
+ ctx.beginPath();ctx.ellipse(RIMX,RIMY,22,5,0,0,Math.PI);ctx.stroke();
+}
+
+function drawField(t){
+ const f=t.f,ctx=f.ctx,cw=f.w,ch=f.h;
+ if(!cw||!ch)return;
+ ctx.setTransform(f.dpr,0,0,f.dpr,0,0);
+ ctx.clearRect(0,0,cw,ch);
+ const sc=Math.min(cw/292,ch/186),vw=cw/sc,vh=ch/sc,x0=396-vw,y0=238-vh;
+ ctx.save();
+ if(f.side==='B'){ctx.translate(cw,0);ctx.scale(-1,1);}
+ ctx.scale(sc,sc);ctx.translate(-x0,-y0);
+ scene(ctx,t,x0,y0,vw,vh);
+ ctx.restore();
+}
+
+function sizeAll(){
+ IDS.forEach(id=>{
+  const f=T[id].f,r=f.cv.getBoundingClientRect();
+  if(!r.width||!r.height)return;
+  f.dpr=Math.min(window.devicePixelRatio||1,2);
+  f.w=Math.round(r.width);f.h=Math.round(r.height);
+  const pw=Math.round(f.w*f.dpr),ph=Math.round(f.h*f.dpr);
+  if(f.cv.width!==pw)f.cv.width=pw;
+  if(f.cv.height!==ph)f.cv.height=ph;
+ });
+}
+window.addEventListener('resize',sizeAll);
+window.addEventListener('orientationchange',()=>{setTimeout(sizeAll,200);});
+if(window.ResizeObserver){const ro=new ResizeObserver(sizeAll);IDS.forEach(id=>ro.observe(T[id].el.court));}
+
+/* ================= Schleife ================= */
+function animate(f,dt){
+ f.bobT+=dt;
+ const sh=f.shot;
+ if(sh&&!sh.rm){
+  sh.t+=dt;
+  if(sh.ok&&!f.swing&&sh.t>=W+F)f.swing={t:0};
+  else if(f.swing)f.swing.t+=dt;
+ }else if(f.swing)f.swing.t+=dt;
+ if(f.swing&&f.swing.t>2000)f.swing=null;
+}
+function update(dt){
+ const st=S.state;
+ if(st==='count'){
+  S.cd-=dt;
+  const n=Math.max(1,Math.ceil(S.cd/1000));
+  if(n!==S.cdShown){S.cdShown=n;$('cdnum').textContent=String(n);}
+  if(S.cd<=0)startPlay();
+ }else if(st==='play'){
+  S.remain-=dt;
+  IDS.forEach(id=>{
+   const t=T[id];
+   if(t.lock>0){t.lock-=dt;if(t.lock<=0){t.n++;loadQ(t);}}
+  });
+  if(S.remain<=0){S.remain=0;updateClock();endGame();return;}
+  updateClock();
+ }
+ if(S.state==='play'||S.state==='count'){IDS.forEach(id=>animate(T[id].f,dt));}
+}
+let last=0;
+function frame(ts){
+ const dt=last?clamp(ts-last,0,100):0;last=ts;
+ update(dt);
+ if(S.state==='count'||S.state==='play'||S.state==='pause'){IDS.forEach(id=>drawField(T[id]));}
+ requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

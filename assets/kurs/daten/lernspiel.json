@@ -1,0 +1,24 @@
+{
+  "spiele": [
+    {
+      "titel": "English Hoops",
+      "fach": "Englisch",
+      "klasse": "Gymnasium, Jahrgang 8",
+      "datei": "assets/kurs/spiele/english-hoops.html",
+      "prompt": "Baue EINE vollständige HTML-Datei: ein Duell-Lernspiel für zwei Schüler an einem iPad, geteilter Bildschirm, gemeinsame Uhr.\n\nANPASSEN:\nGymnasium · Jahrgang 8 · Fach Englisch\nSprache der Oberfläche: English\nTitel: English Hoops · Sport: Basketball\n6 Themen: Zeiten, If-Sätze, Passiv, Relativsätze, Wortschatz, gemischte Grammatik\nFormat: Lückensatz mit ___, vier Optionen, eine richtig\n\nFEST:\nEine Datei, CSS und JS inline. Null externe Ressourcen: keine Bibliotheken, Web-Fonts, Bilder, Tracker, kein fetch. Läuft offline. Schrift nur Arial, Helvetica, sans-serif. Keine Daten, kein localStorage.\n\n72 Aufgabenpaare, 12 pro Thema, 144 verschiedene Sätze. Beide Sätze eines Paares üben dieselbe Regel mit anderem Inhalt und haben dieselbe Lösung und dieselben Ablenker. Beide Teams bekommen bei gleicher Nummer dasselbe Paar, aber nie denselben Satz. Optionen pro Team unabhängig gemischt. Jeder Block aus sechs Aufgaben enthält alle sechs Themen. Schreibe alle 72 Paare aus, keine Auslassungen.\n\nDauer 1 bis 5 Minuten oder frei von 15 bis 1800 Sekunden. Countdown von 3. Richtig ist ein Punkt, falsch kostet nichts. Lösung plus ein Satz Regel stehen 1,6 Sekunden, dann rückt das Team automatisch vor. Jedes Team spielt unabhängig weiter. Pause hält die Uhr für beide an, auch beim App-Wechsel. Am Ende Sieger, Körbe, Trefferquote, Revanche.\n\nSpielfeld per Canvas aus Code: Halle, Tribüne, Parkett, Feldlinien, Korb mit Netz, Spielfigur. Rechtes Feld gespiegelt. Bei richtiger Antwort fliegt der Ball auf einer Parabel in den Korb, das Netz schwingt nach. prefers-reduced-motion beachten.\n\nGestaltung: dunkle Halle oben, helles Arbeitsblatt unten. #101c2b, Team A #53d6f5, Team B #ff947d, Akzent #ff934f. Große Punktzahlen, Touchflächen ab 44 px, Hoch- und Querformat, kein Querscrollen. aria-labels und sichtbarer Fokus.\n\nAntworte nur mit dem HTML, vollständig, ohne Platzhalter.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    },
+    {
+      "titel": "Rechen-Körbe",
+      "fach": "Mathematik",
+      "klasse": "Realschule, Jahrgang 7",
+      "datei": "assets/kurs/spiele/rechen-koerbe.html",
+      "prompt": "Baue EINE vollständige HTML-Datei: ein Duell-Lernspiel für zwei Schüler an einem iPad, geteilter Bildschirm, gemeinsame Uhr.\n\nANPASSEN:\nRealschule · Jahrgang 7 · Fach Mathematik\nSprache der Oberfläche: Deutsch\nTitel: Rechen-Körbe · Sport: Basketball\n6 Themen: Bruchrechnung, Prozentrechnung, Terme, Gleichungen, Geometrie, Dreisatz\nFormat: Rechenaufgabe oder kurze Textaufgabe, vier Ergebnisse, eine richtig; die Ablenker sind typische Rechenfehler\n\nFEST:\nEine Datei, CSS und JS inline. Null externe Ressourcen: keine Bibliotheken, Web-Fonts, Bilder, Tracker, kein fetch. Läuft offline. Schrift nur Arial, Helvetica, sans-serif. Keine Daten, kein localStorage.\n\n72 Aufgabenpaare, 12 pro Thema, 144 verschiedene Sätze. Beide Sätze eines Paares üben dieselbe Regel mit anderem Inhalt und haben dieselbe Lösung und dieselben Ablenker. Beide Teams bekommen bei gleicher Nummer dasselbe Paar, aber nie denselben Satz. Optionen pro Team unabhängig gemischt. Jeder Block aus sechs Aufgaben enthält alle sechs Themen. Schreibe alle 72 Paare aus, keine Auslassungen.\n\nDauer 1 bis 5 Minuten oder frei von 15 bis 1800 Sekunden. Countdown von 3. Richtig ist ein Punkt, falsch kostet nichts. Lösung plus ein Satz Regel stehen 1,6 Sekunden, dann rückt das Team automatisch vor. Jedes Team spielt unabhängig weiter. Pause hält die Uhr für beide an, auch beim App-Wechsel. Am Ende Sieger, Körbe, Trefferquote, Revanche.\n\nSpielfeld per Canvas aus Code: Halle, Tribüne, Parkett, Feldlinien, Korb mit Netz, Spielfigur. Rechtes Feld gespiegelt. Bei richtiger Antwort fliegt der Ball auf einer Parabel in den Korb, das Netz schwingt nach. prefers-reduced-motion beachten.\n\nGestaltung: dunkle Halle oben, helles Arbeitsblatt unten. #101c2b, Team A #53d6f5, Team B #ff947d, Akzent #ff934f. Große Punktzahlen, Touchflächen ab 44 px, Hoch- und Querformat, kein Querscrollen. aria-labels und sichtbarer Fokus.\n\nAntworte nur mit dem HTML, vollständig, ohne Platzhalter.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    }
+  ]
+}

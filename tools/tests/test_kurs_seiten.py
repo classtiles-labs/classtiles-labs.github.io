@@ -206,7 +206,9 @@ class TestGebauteStationen(unittest.TestCase):
             for fig in re.findall(r'<section class="in-der-app">(.*?)</section>', frag, re.S):
                 for cap in re.findall(r"<figcaption>(.*?)</figcaption>", fig, re.S):
                     self.assertIn("Stand:", cap, s["id"])
-            self.assertIsNone(re.search(r"Platzhalter|TODO|TBD", frag, re.I), s["id"])
+            # Im Prompttext eines Tickets ist „Platzhalter“ Inhalt („ohne Platzhalter“), kein Rest.
+            ohne_prompt = re.sub(r'<pre class="ticket-prompt">.*?</pre>', "", frag, flags=re.S)
+            self.assertIsNone(re.search(r"Platzhalter|TODO|TBD", ohne_prompt, re.I), s["id"])
             self.assertIn(f'## {s["id"]}', self.quellen, f'{s["id"]}: keine Quellen in QUELLEN.md')
             daten = os.path.join(REPO, "assets", "kurs", "daten", f'{s["erlebnis"]}.json')
             modul = os.path.join(REPO, "assets", "kurs", "erlebnisse", f'{s["erlebnis"]}.js')

@@ -122,3 +122,25 @@ Abgerufen am 04.11.2026.
   https://support.google.com/gemini/answer/16596215
 - Der Ablauf im Erlebnis ist nachgestellt (im Erlebnis so gekennzeichnet); Buslinie und Zeiten
   sind erfunden.
+
+## eigenes-material
+
+Abgerufen am 04.11.2026.
+
+- Projekte in Claude und ChatGPT, Gems mit „Wissen“ in Gemini: siehe „fahrkarte“.
+- Eigene GPTs in ChatGPT: OpenAI Help, Creating and editing GPTs.
+  https://help.openai.com/en/articles/8554397-creating-a-gpt
+- Antworten im Erlebnis: zwei echte, unabhängige Läufe am 04.11.2026 mit Claude Sonnet 5.5 über
+  Claude Code (`claude -p`, ohne Werkzeuge); im zweiten Lauf lag der erfundene Erwartungshorizont
+  als Projektanweisung und Projektwissen im Systemprompt, so wie ein Projekt Kontext bereitstellt.
+  Schülertext und Erwartungshorizont sind erfunden. Antworten wörtlich gekürzt.
+
+## lernspiel-bauen
+
+Abgerufen am 04.11.2026.
+
+- Prompt: `assets/ki/lernspiel/Prompt-Kurzfassung.txt` dieser Website (Seite „Lernspiel selbst
+  bauen“), für das Mathe-Spiel nur der Block ANPASSEN geändert.
+- Spiele: zwei echte Läufe am 04.11.2026 mit Claude Sonnet 5.5 über Claude Code (`claude -p`,
+  ohne Werkzeuge), Ausgabe unverändert als HTML-Datei gespeichert; geprüft auf Fremdressourcen
+  und Speicherzugriffe (Tests) und durchgespielt.

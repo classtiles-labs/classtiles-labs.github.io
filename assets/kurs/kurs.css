@@ -230,3 +230,24 @@ button.btn{min-height:44px}
 .ag-folge.ag-stopp{background:color-mix(in srgb,var(--linie-e) 16%,transparent)}
 .ag-knoepfe{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
 @media (prefers-reduced-motion: reduce){.dd-karte{transition:none}}
+
+/* ---------- Erlebnis: Mit und ohne dein Material ---------- */
+.vn-anleitung,.ls-anleitung{color:var(--ink-2);margin:0 0 12px}
+.vn-schalter{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--sunk);padding:4px;border-radius:12px;margin:0 0 6px}
+.vn-schalter button{font:inherit;font-size:.9rem;font-weight:600;min-height:44px;border:none;border-radius:9px;background:none;color:var(--ink-2);cursor:pointer;padding:6px 8px}
+.vn-schalter button[aria-selected="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.vn-text{margin:10px 0}
+.vn-text summary{cursor:pointer;font-weight:600;font-size:.9rem;min-height:32px}
+.vn-text pre,.vn-dokument pre{white-space:pre-wrap;font-family:inherit;font-size:.9rem;background:var(--paper);border:1px solid var(--hair);border-radius:10px;padding:10px 12px;margin:6px 0 0}
+.vn-dokument{border-left:3px solid var(--linie-a);padding-left:12px;margin:10px 0}
+.vn-dokument p{margin:0}
+
+/* ---------- Erlebnis: Ein Prompt, ein Spiel ---------- */
+.ls-spiele{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.ls-spiel{border:1px solid var(--hair);border-radius:14px;padding:14px;background:var(--paper)}
+.ls-spiel h3{margin:2px 0 4px;font-size:1.15rem}
+.ls-fach{margin:0;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.ls-quelle{margin:0 0 10px;font-size:.82rem;color:var(--ink-3)}
+.ls-knoepfe{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.ls-spiel details summary{cursor:pointer;font-size:.88rem;font-weight:600;min-height:32px}
+.ls-prompt{white-space:pre-wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.78rem;max-height:260px;overflow:auto;background:var(--tile);border:1px solid var(--hair);border-radius:10px;padding:10px}

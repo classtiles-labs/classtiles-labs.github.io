@@ -1,0 +1,29 @@
+{
+  "bitte": "Gib Feedback zu diesem Schülertext aus Klasse 8 Englisch und schlag eine Punktzahl vor.",
+  "schuelertext": "Hi Tom,\nhow are you? Last weekend was great. On Saturday I go to the cinema with my sister. We watched a funny film and eated popcorn. On Sunday we visited my grandma. She maked a big cake for us. In the evening I played football with my friends but we losed. I was very tired after that.\nWhat did you do last weekend?\nBye, Lena",
+  "dokument": {
+    "titel": "Erwartungshorizont „E-Mail: My last weekend“, Klasse 8 (erfunden)",
+    "auszug": "Inhalt (6 P): Anrede und Gruß, mindestens drei Aktivitäten, ein Gefühl oder eine Meinung, eine Frage an den Freund.\nSprache (8 P): simple past korrekt, auch unregelmäßige Verben (4), Wortschatz (2), Verknüpfungswörter (2).\nAufbau (2 P): Absätze für Einleitung, Hauptteil, Schluss.\nGesamt: 16 Punkte. Feedback: zwei Stärken, zwei nächste Schritte.",
+    "kriterien": [
+      "Inhalt",
+      "Sprache",
+      "Aufbau",
+      "16"
+    ]
+  },
+  "ohne": {
+    "text": "Das ist gut gelungen\nAufgabe erfüllt: Lena schreibt eine passende, freundliche E-Mail mit Anrede, Einleitung, Hauptteil, Rückfrage an Tom und Gruß. …\n\nPunktevorschlag (20 Punkte)\nInhalt / Aufgabenerfüllung: 6 / 8\nAufbau und Textsorte (E-Mail-Form): 3 / 4\nSprachrichtigkeit (Grammatik, Rechtschreibung): 5 / 8\nGesamt: 14 / 20 (70 %)\n\nDas entspricht etwa der Note 3+ bis 2−. …",
+    "urteil": "Die KI erfindet ein eigenes Raster mit 20 Punkten und schlägt gleich eine Note vor.",
+    "app": "Claude, über Claude Code ohne App-Vorgaben",
+    "modell": "Claude Sonnet 5.5",
+    "datum": "2026-11-04"
+  },
+  "mit": {
+    "text": "Punktevorschlag: 12 von 16 Punkten\nInhalt (6): 6. Anrede und Gruß (1), drei Aktivitäten: Kino, Oma besuchen, Fußball (3), Gefühl/Meinung (1), Frage an Tom (1)\nSprache (8): 5. Simple past: 2/4 … Wortschatz: 1/2 … Verknüpfungen: 2/2 …\nAufbau (2): 1. Eine Einleitung als eigener Absatz fehlt …\n\nHinweise für dich: Länge: Der Text hat nur etwa 66 Wörter, gefordert sind 80–100. Der Erwartungshorizont sieht dafür keinen Abzug vor. Das musst du selbst entscheiden. …",
+    "urteil": "Die KI bewertet nach deinem Raster, begründet jeden Punkt und überlässt dir die Grenzfälle.",
+    "app": "Claude, über Claude Code ohne App-Vorgaben",
+    "modell": "Claude Sonnet 5.5",
+    "datum": "2026-11-04"
+  },
+  "hinweis": "Echte Antworten, gekürzt (…). Der Schülertext und der Erwartungshorizont sind erfunden. Im zweiten Lauf lag der Erwartungshorizont als Projektwissen vor (nachgestellt über die Anweisungen)."
+}
