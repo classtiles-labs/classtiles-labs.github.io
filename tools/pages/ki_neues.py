@@ -21,6 +21,7 @@ Einträge im Jahr sind wenige Kilobyte. Verlinkbar ist trotzdem jeder einzeln: E
 Dateinamen als Anker, und genau der gehört dann in die Instagram-Bio.
 """
 import html
+import json
 import os
 import re
 import sys
@@ -39,6 +40,16 @@ MONATE = ("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August"
           "September", "Oktober", "November", "Dezember")
 
 DATEINAME = re.compile(r"^(\d{4})-(\d{2})-(\d{2})-([a-z0-9-]+)\.md$")
+
+
+def kurs_stationen():
+    """Kennungen der Stationen des KI-Kurses. Ein Eintrag mit „station:“ erscheint dort als
+    Fahrplanänderung (tools/pages/ki_kurs.py)."""
+    pfad = os.path.join(REPO, "inhalt", "kurs", "netz.json")
+    if not os.path.exists(pfad):
+        return set()
+    with open(pfad, encoding="utf-8") as f:
+        return {s["id"] for s in json.load(f).get("stationen", [])}
 
 
 def lies(name):
@@ -75,10 +86,14 @@ def lies(name):
         datei = ziel.split("#")[0]
         if datei and not os.path.exists(os.path.join(REPO, datei)):
             sys.exit(f"neues/{name}: Ziel {datei} gibt es nicht")
+    station = kopf.get("station") or None
+    if station and station not in kurs_stationen():
+        sys.exit(f"neues/{name}: Station „{station}“ gibt es im KI-Kurs nicht "
+                 f"(inhalt/kurs/netz.json)")
 
     return dict(sortier=(jahr, monat, tag), jahr=jahr, kennung=f"{jahr}-{monat}-{tag}-{kennung}",
                 datum=f"{int(tag)}. {MONATE[int(monat) - 1]} {jahr}",
-                titel=kopf["titel"], art=kopf["art"], weiter=weiter,
+                titel=kopf["titel"], art=kopf["art"], weiter=weiter, station=station,
                 text=handbuchtext.fliesstext("\n".join(zeilen[ende + 1:])))
 
 

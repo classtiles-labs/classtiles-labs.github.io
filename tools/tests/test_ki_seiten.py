@@ -194,6 +194,17 @@ class TestNeues(unittest.TestCase):
                          "  - Kapitel | ki-handbuch-workflows.html#kapitel-04\n---\nText.\n")
         self.assertEqual(e["weiter"][0][1], "ki-handbuch-workflows.html#kapitel-04")
 
+    def test_station_wird_gelesen(self):
+        e = self.eintrag("---\ntitel: T\nart: Neu\nstation: wie-ki-schreibt\n---\nText.\n")
+        self.assertEqual(e["station"], "wie-ki-schreibt")
+
+    def test_unbekannte_station_bricht_ab(self):
+        with self.assertRaises(SystemExit):
+            self.eintrag("---\ntitel: T\nart: Neu\nstation: gibt-es-nicht\n---\nText.\n")
+
+    def test_eintrag_ohne_station_bleibt_gueltig(self):
+        self.assertIsNone(self.eintrag(self.KOPF)["station"])
+
     def test_echte_eintraege_lassen_sich_lesen(self):
         namen = sorted(n for n in os.listdir(ki_neues.QUELLE) if n.endswith(".md"))
         self.assertTrue(namen, "keine Einträge unter inhalt/neues/")

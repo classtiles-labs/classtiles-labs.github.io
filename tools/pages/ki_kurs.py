@@ -21,6 +21,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import shell  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -144,7 +145,30 @@ def _einstiege(netz):
     return f'<p class="fk-einstiege">Direkt einsteigen: {" · ".join(links)}</p>'
 
 
-def uebersicht(netz):
+def lade_neues():
+    """Alle Einträge unter inhalt/neues/, neueste zuerst (über ki_neues.lies)."""
+    import ki_neues
+    namen = sorted(n for n in os.listdir(ki_neues.QUELLE) if n.endswith(".md"))
+    return sorted((ki_neues.lies(n) for n in namen), key=lambda e: e["sortier"], reverse=True)
+
+
+def _fahrplan(netz, eintraege, mit_station):
+    if not eintraege:
+        return ""
+    zeilen = []
+    for e in eintraege:
+        zeile = (f'<li><time>{html.escape(e["datum"])}</time> '
+                 f'<a href="ki-neues.html#{e["kennung"]}">{html.escape(e["titel"])}</a>')
+        if mit_station:
+            st = _station(netz, e["station"])
+            ziel = (f'<a href="{dateiname(st["id"])}">{html.escape(st["titel"])}</a>'
+                    if st["status"] == "gebaut" else html.escape(st["titel"]))
+            zeile += f' <span class="kurs-fahrplan-station">{_badge(st["linie"])} {ziel}</span>'
+        zeilen.append(zeile + "</li>")
+    return '<ul class="kurs-fahrplan-liste">' + "".join(zeilen) + "</ul>"
+
+
+def uebersicht(netz, neues=()):
     listen = []
     for lid in LINIEN:
         linie = _linie(netz, lid)
@@ -201,6 +225,7 @@ def uebersicht(netz):
       <h2>Fahrplanänderungen</h2>
       <p>Hier steht, was sich in der KI-Welt geändert hat und was es für den Unterricht heißt.
       Alle Notizen stehen unter <a href="ki-neues.html">Neues</a>.</p>
+      {_fahrplan(netz, [e for e in neues if e.get("station")][:3], True)}
     </section>
 
     <div id="kurs-fortschritt"></div>
@@ -211,7 +236,7 @@ def uebersicht(netz):
     return shell.page(UEBERSICHT, "KI-Kurs — ClassTiles", desc, body)
 
 
-def station(netz, s):
+def station(netz, s, neues=()):
     linie = _linie(netz, s["linie"])
     alle = _auf_linie(netz, s["linie"])
     nr = alle.index(s) + 1
@@ -235,6 +260,7 @@ def station(netz, s):
         <h1>{html.escape(s["titel"])}</h1>
       </header>
 {s["fragment"]}
+{_station_fahrplan(netz, s, neues)}
       <nav class="station-nav">
         {umstieg}
         {" ".join(nav)}
@@ -247,17 +273,29 @@ def station(netz, s):
                       s["beschreibung"], body)
 
 
-def seiten(netz):
-    out = {UEBERSICHT: uebersicht(netz)}
+def _station_fahrplan(netz, s, neues):
+    eigene = [e for e in neues if e.get("station") == s["id"]]
+    if not eigene:
+        return ""
+    return (f'      <section class="kurs-fahrplan-station-abschnitt">\n'
+            f'        <h2>Fahrplanänderungen zu dieser Station</h2>\n'
+            f'        {_fahrplan(netz, eigene, False)}\n      </section>')
+
+
+def seiten(netz, neues=()):
+    """Alle Kursseiten. `neues`: Einträge aus inhalt/neues/ (Reihenfolge egal); die mit
+    „station:“ erscheinen als Fahrplanänderungen."""
+    neues = sorted(neues, key=lambda e: e["sortier"], reverse=True)
+    out = {UEBERSICHT: uebersicht(netz, neues)}
     for s in netz["stationen"]:
         if s["status"] == "gebaut":
-            out[dateiname(s["id"])] = station(netz, s)
+            out[dateiname(s["id"])] = station(netz, s, neues)
     return out
 
 
 def main(argv):
     check = "--check" in argv
-    soll = seiten(lade_netz())
+    soll = seiten(lade_netz(), lade_neues())
     vorhanden = {n for n in os.listdir(REPO) if STATIONSSEITE.match(n)}
     abweichung = []
     for name, text in soll.items():

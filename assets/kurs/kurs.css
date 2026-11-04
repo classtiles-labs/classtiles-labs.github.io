@@ -66,6 +66,7 @@ main.station[data-linie="B"]{--lf:var(--linie-b)}
 .kurs-umstieg-hinweis{font-size:.75rem;color:var(--ink-3);display:inline-flex;gap:4px;align-items:center}
 .kurs-fahrplan{margin:40px 0 0;max-width:64ch}
 .kurs-fahrplan>p{color:var(--ink-2)}
+.kurs-fahrplan>p a{color:var(--ink);text-decoration-color:var(--hair-2)}
 
 /* ---------- Station ---------- */
 main.station{max-width:780px;margin:0 auto;padding:6px 0 30px}
@@ -281,3 +282,13 @@ button.btn{min-height:44px}
 .ca-vergleich caption{text-align:left;font-weight:700;margin-bottom:6px}
 .ca-vergleich th,.ca-vergleich td{border-top:1px solid var(--hair);padding:8px 6px;text-align:left;vertical-align:top}
 .ca-vergleich thead th{border-top:none;color:var(--ink-3);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+
+/* ---------- Fahrplanänderungen ---------- */
+.kurs-fahrplan-liste{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.kurs-fahrplan-liste li{background:var(--tile);border:1px solid var(--hair);border-left:4px solid var(--linie-b);border-radius:12px;
+  padding:10px 14px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.kurs-fahrplan-liste time{font-size:.8rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.kurs-fahrplan-liste a{color:var(--ink);font-weight:600;text-decoration-color:var(--hair-2)}
+.kurs-fahrplan-station{font-size:.85rem;color:var(--ink-2);display:inline-flex;gap:5px;align-items:center}
+.kurs-fahrplan-station-abschnitt{margin:0 0 24px}
+.kurs-fahrplan-station-abschnitt h2{font-size:1.05rem}

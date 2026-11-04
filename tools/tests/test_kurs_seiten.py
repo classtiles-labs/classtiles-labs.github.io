@@ -167,6 +167,31 @@ class TestSeiten(unittest.TestCase):
         self.assertNotIn("fragment", daten["stationen"][0])
 
 
+class TestFahrplan(unittest.TestCase):
+    NEUES = [
+        dict(sortier=("2026", "11", d), kennung=f"2026-11-{d}-n{d}", datum=f"{int(d)}. November 2026",
+             titel=f"Notiz {d}", station=st)
+        for d, st in (("01", "e-eins"), ("05", "e-drei"), ("09", "a-eins"), ("12", "e-eins"),
+                      ("15", None))]
+
+    @classmethod
+    def setUpClass(cls):
+        netz = ki_kurs.lade_netz(os.path.join(FIXTURE, "netz.json"))
+        cls.seiten = ki_kurs.seiten(netz, cls.NEUES)
+
+    def test_fahrplan_zeigt_neueste_drei(self):
+        fahrplan = re.search(r'<section id="fahrplan".*?</section>', self.seiten["ki-kurs.html"], re.S).group(0)
+        titel = re.findall(r"Notiz (\d\d)", fahrplan)
+        self.assertEqual(titel, ["12", "09", "05"])   # neueste zuerst, nur mit Station, höchstens drei
+        self.assertIn('href="ki-neues.html#2026-11-12-n12"', fahrplan)
+        self.assertIn('href="ki-kurs-e-eins.html"', fahrplan)
+
+    def test_station_zeigt_ihre_eintraege(self):
+        eins = self.seiten["ki-kurs-e-eins.html"]
+        self.assertEqual(re.findall(r"Notiz (\d\d)", eins), ["12", "01"])
+        self.assertNotIn("Notiz", self.seiten["ki-kurs-e-drei.html"].replace("Notiz 05", ""))
+
+
 class TestEchteSeiten(unittest.TestCase):
     def test_echte_seiten_sind_auf_dem_stand(self):
         r = subprocess.run([sys.executable, os.path.join(REPO, "tools", "pages", "ki_kurs.py"),
