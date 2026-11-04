@@ -66,17 +66,19 @@
       "id": "datenschutz",
       "linie": "E",
       "titel": "Datenschutz",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "darf-das-rein",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie E: Was darf in eine KI-App und was nicht? Acht Fälle aus dem Schulalltag, die Faustregel und wo du das Training abschaltest."
     },
     {
       "id": "agenten",
       "linie": "E",
       "titel": "Was ist ein Agent?",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "agent-zuschauen",
-      "umstieg": "terminal"
+      "umstieg": "terminal",
+      "beschreibung": "KI-Kurs, Linie E: Was ein Agent anders macht als ein Chat. Schau einem Agenten zu und entscheide, wo er anhalten muss."
     },
     {
       "id": "eigenes-material",

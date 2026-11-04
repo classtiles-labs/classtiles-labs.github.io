@@ -1,0 +1,52 @@
+{
+  "aufgabe": "Plane den Wandertag der 7b zum Waldsee und schick den Eltern den Brief.",
+  "schritte": [
+    {
+      "art": "plan",
+      "titel": "Plan machen",
+      "text": "Ich zerlege die Aufgabe: Strecke und Anfahrt klären, Ablauf planen, Elternbrief schreiben, Brief verschicken."
+    },
+    {
+      "art": "werkzeug",
+      "werkzeug": "Websuche",
+      "titel": "Busverbindung suchen",
+      "text": "Suche: Bus von der Schule zum Waldsee, Ankunft vor 9 Uhr. Gefunden: Linie 5011, 8:05 Uhr ab Schule, 8:41 Uhr an Waldsee."
+    },
+    {
+      "art": "werkzeug",
+      "werkzeug": "Datei öffnen",
+      "titel": "Klassenliste öffnen",
+      "text": "Ich möchte Klassenliste_7b.xlsx öffnen, um die Zahl der Kinder zu kennen. Die Datei enthält 24 Namen mit Geburtsdaten.",
+      "freigabe": true,
+      "beiFreigabe": "Freigegeben. Der Agent hat jetzt 24 Namen mit Geburtsdaten gelesen. Für die Planung hätte die Zahl 24 gereicht.",
+      "beiStopp": "Gestoppt. Der Agent fragt nach: „Wie viele Kinder fahren mit?“ Du antwortest „24“. Mehr braucht er nicht."
+    },
+    {
+      "art": "werkzeug",
+      "werkzeug": "Datei schreiben",
+      "titel": "Ablaufplan schreiben",
+      "text": "Ablaufplan.docx angelegt: 8:05 Abfahrt, 9:00 Start am Parkplatz, Rundweg 8 km, 12:30 Picknick, 14:30 Rückfahrt."
+    },
+    {
+      "art": "werkzeug",
+      "werkzeug": "Datei schreiben",
+      "titel": "Elternbrief schreiben",
+      "text": "Elternbrief.docx angelegt, mit Treffpunkt, Zeiten und Packliste."
+    },
+    {
+      "art": "werkzeug",
+      "werkzeug": "E-Mail",
+      "titel": "E-Mail an alle Eltern senden",
+      "text": "Ich möchte den Elternbrief an den Verteiler eltern-7b senden.",
+      "freigabe": true,
+      "beiFreigabe": "Gesendet, ohne dass du den Brief gelesen hast. Ein Fehler im Datum ginge jetzt an 24 Familien.",
+      "beiStopp": "Gestoppt. Der Brief liegt als Entwurf bereit. Du liest ihn, korrigierst und schickst ihn selbst."
+    },
+    {
+      "art": "fertig",
+      "titel": "Fertig",
+      "text": "Aufgabe erledigt: Busverbindung, Ablaufplan und Elternbrief liegen im Ordner."
+    }
+  ],
+  "hinweis": "Nachgestellter Ablauf. So arbeiten Agenten in ChatGPT, Claude und Gemini im Prinzip; Werkzeuge und Freigaben unterscheiden sich je nach App."
+}

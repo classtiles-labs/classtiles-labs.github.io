@@ -87,3 +87,38 @@ Abgerufen am 04.11.2026.
   erfundene Literaturangaben, die übrigen oft mit Fehlern).
 - Stichtag des Wissens: Modelle haben einen „training data cutoff“. Anthropic, Models overview.
   https://platform.claude.com/docs/en/about-claude/models/overview
+
+## datenschutz
+
+Abgerufen am 04.11.2026. Allgemeine Orientierung, keine Rechtsberatung.
+
+- Personenbezogene Daten: alle Informationen, die sich auf eine identifizierte oder
+  identifizierbare natürliche Person beziehen. Art. 4 Nr. 1 DSGVO. https://dsgvo-gesetz.de/art-4-dsgvo/
+- Besondere Kategorien, u. a. Gesundheitsdaten: Art. 9 DSGVO. https://dsgvo-gesetz.de/art-9-dsgvo/
+- ChatGPT: Einstellungen → Datenkontrollen → „Improve the model for everyone“ abschalten; neue
+  Chats werden dann nicht zum Training verwendet (Feedback per Daumen kann trotzdem einfließen).
+  OpenAI Help, Data controls. https://help.openai.com/en/articles/7730893-data-controls-faq
+- Claude: Seit dem 28.08.2025 entscheiden Nutzerinnen und Nutzer von Free, Pro und Max, ob Chats
+  zum Training verwendet werden; Einstellung jederzeit unter
+  claude.ai/settings/data-privacy-controls. Anthropic, Updates to our consumer terms.
+  https://www.anthropic.com/news/updates-to-our-consumer-terms
+- Gemini: Ist „Aktivitäten speichern“ aus, werden künftige Chats nicht zum Training verwendet
+  (außer bei Feedback); Chats bleiben 72 Stunden gespeichert. Google, Gemini-Apps Privacy Hub.
+  https://support.google.com/gemini/answer/13594961?hl=de
+
+## agenten
+
+Abgerufen am 04.11.2026.
+
+- Agenten: „systems where LLMs dynamically direct their own processes and tool usage“.
+  Anthropic (2024), Building effective agents. https://www.anthropic.com/engineering/building-effective-agents
+- ChatGPT agent (17.07.2025): bittet vor Handlungen mit Folgen um Erlaubnis, lässt sich
+  jederzeit unterbrechen. OpenAI, Introducing ChatGPT agent (Seite für Abruf gesperrt, Inhalt
+  laut Berichterstattung, z. B. ITPro, PC Gamer). https://openai.com/index/introducing-chatgpt-agent/
+- Claude Cowork: in der Desktop-App, liest und schreibt lokale Dateien, fragt vor dem
+  endgültigen Löschen nach Erlaubnis. Anthropic Support. https://support.claude.com/articles/13345190
+- Gemini Agent: mehrschrittige Aufgaben; vor heiklen Aktionen wie Senden, Ändern von Daten,
+  Kaufen und Absenden von Formularen kann eine Bestätigung nötig sein. Google Hilfe.
+  https://support.google.com/gemini/answer/16596215
+- Der Ablauf im Erlebnis ist nachgestellt (im Erlebnis so gekennzeichnet); Buslinie und Zeiten
+  sind erfunden.

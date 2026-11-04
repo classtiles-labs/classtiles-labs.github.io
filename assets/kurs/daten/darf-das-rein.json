@@ -1,0 +1,46 @@
+{
+  "hinweis": "Allgemeine Orientierung, keine Rechtsberatung. Was dienstlich erlaubt ist, regeln dein Land und deine Schule.",
+  "karten": [
+    {
+      "text": "Eine Notenliste mit Vor- und Nachnamen, damit die KI den Durchschnitt ausrechnet",
+      "ok": false,
+      "warum": "Noten mit Namen sind personenbezogene Daten von Kindern. Die gehören nicht in eine private KI-App. Für Durchschnitte reicht eine Tabelle ohne Namen, oder du rechnest in deiner Notenverwaltung."
+    },
+    {
+      "text": "Ein Arbeitsblatt zur Bruchrechnung, das du selbst geschrieben hast",
+      "ok": true,
+      "warum": "Eigenes Material ohne Personenbezug: Das kannst du verbessern, kürzen oder differenzieren lassen."
+    },
+    {
+      "text": "Der Aufsatz einer Schülerin mit Namen, um ein Feedback zu formulieren",
+      "ok": false,
+      "warum": "Name und Text gehören zu einer erkennbaren Person. Ob ein Text ohne Namen und erkennbare Details eingegeben werden darf, regeln die Vorgaben deines Landes und deiner Schule."
+    },
+    {
+      "text": "Der Erlass zu Schulfahrten, um ihn zusammenfassen zu lassen",
+      "ok": true,
+      "warum": "Ein öffentliches Dokument ohne Personenbezug. Die Zusammenfassung prüfst du am Original, bevor du dich darauf verlässt."
+    },
+    {
+      "text": "Die E-Mail eines Vaters, in der er die Erkrankung seines Kindes erklärt",
+      "ok": false,
+      "warum": "Gesundheitsdaten sind besonders geschützt (Art. 9 DSGVO). Eine Antwort formulierst du besser allgemein, ohne die E-Mail einzufügen."
+    },
+    {
+      "text": "Eine Liste mit Projektthemen für die Klasse, ohne Namen",
+      "ok": true,
+      "warum": "Kein Personenbezug. Die KI kann Themen ergänzen, sortieren oder in Schwierigkeitsstufen einteilen."
+    },
+    {
+      "text": "Ein Gutachten zum Förderbedarf eines Kindes, mit geschwärztem Namen",
+      "ok": false,
+      "warum": "Auch ohne Namen bleibt ein Kind an Details erkennbar: Klasse, Diagnose, Vorfälle. Solche Unterlagen gehören nicht in eine private KI-App."
+    },
+    {
+      "text": "Ein Foto des Tafelbilds nach der Stunde, ohne Personen darauf",
+      "ok": true,
+      "warum": "Geht, solange weder Gesichter noch Namen zu sehen sind. Aus dem Tafelbild kann die KI zum Beispiel ein Merkblatt machen."
+    }
+  ],
+  "aufloesung": "Faustregel: Nichts, was eine Person erkennbar macht. Eigenes Material und öffentliche Texte gehen."
+}

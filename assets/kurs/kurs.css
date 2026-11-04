@@ -202,3 +202,31 @@ button.btn{min-height:44px}
 .ek-meldung{margin:12px 0 4px;min-height:2.6em}
 .ek-zaehler{font-weight:600;margin:0}
 @media (prefers-reduced-motion: reduce){.pb-meter span{transition:none}}
+
+/* ---------- Erlebnis: Darf das in die KI? ---------- */
+.dd-anleitung{color:var(--ink-2);margin:0 0 8px}
+.dd-zaehler{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.dd-karte{min-height:110px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;border-radius:16px;
+  background:var(--paper);border:1px solid var(--hair);font-size:1.08rem;line-height:1.45;transition:transform .22s,opacity .22s}
+.dd-karte.weg-links{transform:translateX(-40px) rotate(-3deg);opacity:0}
+.dd-karte.weg-rechts{transform:translateX(40px) rotate(3deg);opacity:0}
+.dd-knoepfe{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 0}
+.dd-knoepfe .btn{justify-content:center}
+.dd-nein{background:color-mix(in srgb,var(--linie-b) 18%,var(--tile));color:var(--ink);border-color:color-mix(in srgb,var(--linie-b) 45%,transparent)}
+.dd-ja{background:color-mix(in srgb,var(--linie-e) 18%,var(--tile));color:var(--ink);border-color:color-mix(in srgb,var(--linie-e) 45%,transparent)}
+.dd-warum{margin:12px 0 0;min-height:3.2em}
+
+/* ---------- Erlebnis: Einem Agenten zuschauen ---------- */
+.ag-aufgabe{background:var(--sunk);border-radius:12px;padding:10px 12px;margin:0 0 12px}
+.ag-aufgabe span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.ag-schritte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ag-schritt{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid var(--hair);background:var(--tile)}
+.ag-schritt p{margin:4px 0 0;color:var(--ink-2);font-size:.94rem}
+.ag-freigabe{border-color:color-mix(in srgb,var(--hb-warn) 60%,transparent)}
+.ag-werkzeug{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--navy-soft);color:var(--ink-2)}
+.ag-wartet{font-weight:700;color:var(--ink)!important}
+.ag-folge{padding:8px 10px;border-radius:10px;color:var(--ink)!important}
+.ag-folge.ag-frei{background:color-mix(in srgb,var(--linie-b) 16%,transparent)}
+.ag-folge.ag-stopp{background:color-mix(in srgb,var(--linie-e) 16%,transparent)}
+.ag-knoepfe{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+@media (prefers-reduced-motion: reduce){.dd-karte{transition:none}}
