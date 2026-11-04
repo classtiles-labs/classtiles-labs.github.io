@@ -13,7 +13,7 @@ export function mount(el, daten) {
   el.innerHTML = `
     <h2>Vom Satz zum Werkzeug</h2>
     <div class="tm-fenster ca-fenster">
-      <div class="tm-leiste" aria-hidden="true"><i></i><i></i><i></i><span>Coding-Agent im Ordner „notenschluessel“</span><b class="ca-uhr">0:00</b></div>
+      <div class="tm-leiste" aria-hidden="true"><i></i><i></i><i></i><span>Ordner „notenschluessel“</span><b class="ca-uhr">0:00</b></div>
       <ol class="ca-log" aria-live="polite"></ol>
     </div>
     <div class="ca-knoepfe">
@@ -25,7 +25,7 @@ export function mount(el, daten) {
     <table class="ca-vergleich">
       <caption>Claude Code und Codex im Vergleich (Stand: November 2026)</caption>
       <thead><tr><th scope="col"></th>${daten.vergleich.spalten.map((s) => `<th scope="col">${esc(s)}</th>`).join('')}</tr></thead>
-      <tbody>${daten.vergleich.zeilen.map((z) => `<tr><th scope="row">${esc(z.merkmal)}</th>${z.werte.map((w) => `<td>${esc(w)}</td>`).join('')}</tr>`).join('')}</tbody>
+      <tbody>${daten.vergleich.zeilen.map((z) => `<tr><th scope="row">${esc(z.merkmal)}</th>${z.werte.map((w, i) => `<td data-spalte="${esc(daten.vergleich.spalten[i])}">${esc(w)}</td>`).join('')}</tr>`).join('')}</tbody>
     </table>`;
   const log = el.querySelector('.ca-log');
   function zeichne() {
