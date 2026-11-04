@@ -104,6 +104,25 @@ KI_BAENDE = ("workflows", "materialwerkstatt", "ablauf", "uebungsseiten", "assis
 KI_KURZFASSUNGEN = KI_BAENDE[:-1]
 KI_SEITEN += [f"ki-handbuch-{s}.html" for s in KI_BAENDE]
 KI_SEITEN += [f"ki-kurzfassung-{s}.html" for s in KI_KURZFASSUNGEN]
+
+
+def kurs_seiten():
+    """Seiten des KI-Kurses: die Übersicht und je gebauter Station eine Seite.
+
+    Liest das Register direkt (tools/pages/ki_kurs.py importiert shell, nicht umgekehrt). Fehlt
+    das Register, gibt es keinen Kurs — ältere Stände bleiben damit lauffähig.
+    """
+    pfad = os.path.join(os.path.dirname(HERE), "inhalt", "kurs", "netz.json")
+    if not os.path.exists(pfad):
+        return []
+    import json
+    with open(pfad, encoding="utf-8") as f:
+        stationen = json.load(f).get("stationen", [])
+    return ["ki-kurs.html"] + [f"ki-kurs-{s['id']}.html" for s in stationen
+                               if s.get("status") == "gebaut"]
+
+
+KI_SEITEN += kurs_seiten()
 for _f in KI_SEITEN:
     ACTIVE[_f] = "digitalisierung-ki.html"
 

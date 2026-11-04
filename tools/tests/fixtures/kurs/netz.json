@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "linien": [
+    {"id": "E", "name": "Einsteigen"},
+    {"id": "A", "name": "Im Alltag"},
+    {"id": "B", "name": "Selbst bauen"}
+  ],
+  "stationen": [
+    {"id": "e-eins", "linie": "E", "titel": "Erste Station", "status": "gebaut", "erlebnis": null, "umstieg": null, "beschreibung": "Probe eins."},
+    {"id": "e-zwei", "linie": "E", "titel": "Zweite Station", "status": "geplant", "erlebnis": null, "umstieg": null},
+    {"id": "e-drei", "linie": "E", "titel": "Dritte Station", "status": "gebaut", "erlebnis": null, "umstieg": "a-eins", "beschreibung": "Probe drei."},
+    {"id": "a-eins", "linie": "A", "titel": "Alltag eins", "status": "gebaut", "erlebnis": null, "umstieg": null, "beschreibung": "Probe A."}
+  ]
+}

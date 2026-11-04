@@ -48,6 +48,7 @@ python3 tools/pages/ki_kurzfassungen.py  # ki-kurzfassung-*.html
 python3 tools/pages/ki_glossar.py        # ki-glossar.html
 python3 tools/pages/ki_material.py       # ki-material.html
 python3 tools/pages/ki_neues.py          # ki-neues.html
+python3 tools/pages/ki_kurs.py           # ki-kurs.html + ki-kurs-<station>.html (KI-Kurs)
 ```
 
 Die vier `ki_*`-Generatoren hängen voneinander ab: Kurzfassungen und Glossar verlinken Anker
@@ -61,6 +62,24 @@ Glossar, Material und Neues. Quelle der Bände ist **nicht** dieses Repo, sonder
 im Nachbarrepo `../Instagram` — es wird gelesen, nicht kopiert; versioniert sind hier nur das
 erzeugte HTML und die PDFs unter `assets/ki/`. Welcher Band aus welcher Datei kommt, steht in
 `BAENDE` in `tools/pages/ki_handbuecher.py`.
+
+## Der KI-Kurs
+
+`ki-kurs.html` ist ein interaktiver KI-Kurs für Lehrkräfte, gestaltet als Liniennetz: Linie
+**E · Einsteigen**, **A · Im Alltag**, **B · Selbst bauen**. Die Stationen sind die Lektionen.
+
+- **Register:** `inhalt/kurs/netz.json` nennt Linien und Stationen in Fahrtrichtung. Eine
+  Station mit `"status": "gebaut"` braucht eine `beschreibung` (≤ 160 Zeichen) und ein
+  Inhaltsfragment `inhalt/kurs/stationen/<id>.html` mit genau einem `class="ticket-prompt"`;
+  geplante Stationen erscheinen im Netz als „in Planung“.
+- **Generator:** `python3 tools/pages/ki_kurs.py` schreibt die Übersicht und je gebauter Station
+  `ki-kurs-<id>.html` (veraltete Stationsseiten löscht er), `--check` vergleicht nur. Danach wie
+  immer `apply-shell.py` und `sitemap.py`. `shell.kurs_seiten()` liest dasselbe Register, damit
+  die Kursseiten zum KI-Bereich gehören.
+- **Quellen:** Jede Tatsachenbehauptung einer Station steht belegt in `inhalt/kurs/QUELLEN.md`
+  unter `## <id>`.
+- **Verhalten:** `assets/kurs/` (Stil, Netz, Fortschritt, Erlebnisse). Ohne JavaScript bleiben
+  alle gebauten Stationen als Links und alle Tickets als Text lesbar.
 
 ### Einen Eintrag unter „Neues" schreiben
 

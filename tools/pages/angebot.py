@@ -58,6 +58,10 @@ FORMATE = [
 # „In Vorbereitung" da und verlinkt nichts — ein Link auf eine fehlende Seite wäre kein
 # Schönheitsfehler, sondern ein Fehler, den tools/check-links.py meldet.
 TUEREN = [
+    ("ki-kurs.html", "KI-Kurs: Anschluss behalten",
+     "Die KI-Welt läuft rasant. Drei Linien von den Grundlagen bis zum eigenen Werkzeug, kurze "
+     "Stationen zum Ausprobieren und ein Prompt zum Mitnehmen. Drei Fragen zeigen, wo du "
+     "einsteigst."),
     ("ki-handbuecher.html", "Die Handbücher",
      "Sechs Titel über verlässliche KI-Abläufe, von den sechs Begriffen über das "
      "Unterrichtsmaterial bis zur Übungsseite, die im Browser läuft. Zu jedem Band eine "

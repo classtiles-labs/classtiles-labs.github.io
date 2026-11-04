@@ -53,6 +53,11 @@ class TestShellFacts(unittest.TestCase):
         # Die Handbücher selbst gibt es nur auf Deutsch — sie zeigen auf die Hinweisseite.
         self.assertEqual(shell.twin_of("handbuch-notenverwaltung.html"), "en/manuals.html")
 
+    def test_kursseiten_gehoeren_zum_ki_bereich(self):
+        self.assertIn("ki-kurs.html", shell.kurs_seiten())
+        self.assertEqual(shell.active_of("ki-kurs.html"), "digitalisierung-ki.html")
+        self.assertEqual(shell.twin_of("ki-kurs.html"), "en/digitalisation-ai.html")
+
     def test_bar_contains_instagram_and_language_switch(self):
         bar = shell.bar_block("index.html")
         self.assertIn('href="https://www.instagram.com/classtiles/"', bar)
