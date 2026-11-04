@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tafel-Timer</title>
+<style>
+  :root { --bg:#10261a; --fg:#f4fff6; --accent:#3ddc84; }
+  * { box-sizing:border-box; }
+  html,body { height:100%; margin:0; }
+  body {
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
+    display:flex; flex-direction:column; transition:background .4s;
+  }
+  body.warn { --bg:#3a3000; --accent:#ffd400; }
+  body.alarm { --bg:#400d0d; --accent:#ff4d4d; }
+  body.done { animation:blink .8s steps(1) infinite; --accent:#ff4d4d; }
+  @keyframes blink { 0%{background:#b00000} 50%{background:#400d0d} }
+
+  main { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2vw; min-height:0; }
+  #time {
+    font-size:34vw; line-height:1; font-weight:800; letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums; color:var(--accent);
+  }
+  #msg { font-size:6vw; font-weight:700; height:8vw; margin-top:1vw; }
+  #bar { width:90vw; height:3vw; background:rgba(255,255,255,.15); border-radius:2vw; overflow:hidden; margin-top:2vw; }
+  #fill { height:100%; width:0; background:var(--accent); transition:width .3s linear; }
+
+  footer {
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center;
+    padding:12px; background:rgba(0,0,0,.35); font-size:16px;
+  }
+  button, input {
+    font:inherit; font-size:18px; padding:10px 18px; border-radius:10px;
+    border:2px solid rgba(255,255,255,.35); background:rgba(255,255,255,.1); color:var(--fg);
+  }
+  button { cursor:pointer; font-weight:600; }
+  button:hover { background:rgba(255,255,255,.25); }
+  button.primary { background:var(--accent); color:#000; border-color:var(--accent); }
+  input[type=number] { width:90px; }
+  label { display:flex; align-items:center; gap:6px; cursor:pointer; }
+  input[type=checkbox] { width:20px; height:20px; padding:0; }
+  .sep { width:1px; height:30px; background:rgba(255,255,255,.3); margin:0 6px; }
+  #hint { color:#ffb3b3; min-width:12em; }
+  small { opacity:.6; }
+</style>
+</head>
+<body>
+<main>
+  <div id="time">05:00</div>
+  <div id="bar"><div id="fill"></div></div>
+  <div id="msg"></div>
+</main>
+
+<footer>
+  <button data-min="5">5 min</button>
+  <button data-min="10">10 min</button>
+  <button data-min="15">15 min</button>
+  <span class="sep"></span>
+  <input id="custom" type="number" min="1" max="180" step="1" placeholder="Minuten" aria-label="Eigene Zeit in Minuten">
+  <button id="setCustom">Übernehmen</button>
+  <span class="sep"></span>
+  <button id="start" class="primary">Start</button>
+  <button id="reset">Zurücksetzen</button>
+  <span class="sep"></span>
+  <label><input id="sound" type="checkbox"> Ton</label>
+  <button id="full">Vollbild</button>
+  <span id="hint" role="status"></span>
+  <small>Leertaste = Start/Pause · R = Zurücksetzen · F = Vollbild</small>
+</footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var totalMs = 5*60*1000;     // gewählte Dauer
+  var remaining = totalMs;     // Restzeit, wenn nicht laufend
+  var endAt = 0;               // Zielzeitpunkt, wenn laufend
+  var running = false, finished = false, tick = null, wake = null, audio = null;
+
+  function fmt(ms){
+    var s = Math.ceil(ms/1000), m = Math.floor(s/60);
+    s = s % 60;
+    return (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+  }
+  function hint(t){
+    $("hint").textContent = t;
+    if (t) setTimeout(function(){ if ($("hint").textContent===t) $("hint").textContent=""; }, 3000);
+  }
+  function render(){
+    var ms = running ? Math.max(0, endAt - performance.now()) : remaining;
+    $("time").textContent = fmt(ms);
+    $("fill").style.width = (totalMs ? (1 - ms/totalMs)*100 : 0) + "%";
+    var b = document.body.classList;
+    b.toggle("done", finished);
+    b.toggle("alarm", !finished && ms <= 10000 && (running || ms < totalMs));
+    b.toggle("warn", !finished && ms > 10000 && ms <= 60000 && (running || ms < totalMs));
+    $("msg").textContent = finished ? "Zeit ist um!" : "";
+    $("start").textContent = running ? "Pause" : (remaining < totalMs && !finished ? "Weiter" : "Start");
+    document.title = (running ? fmt(ms)+" – " : "") + "Tafel-Timer";
+    if (running && ms <= 0) finish();
+  }
+  function finish(){
+    running = false; finished = true; remaining = 0;
+    clearInterval(tick); releaseWake(); beep(); render();
+  }
+  function start(){
+    if (running) return;
+    if (finished) { finished = false; remaining = totalMs; }
+    if (remaining <= 0) remaining = totalMs;
+    endAt = performance.now() + remaining; running = true;
+    clearInterval(tick); tick = setInterval(render, 200);
+    requestWake(); render();
+  }
+  function pause(){
+    if (!running) return;
+    remaining = Math.max(0, endAt - performance.now());
+    running = false; clearInterval(tick); releaseWake(); render();
+  }
+  function reset(){
+    running = false; finished = false; clearInterval(tick); releaseWake();
+    remaining = totalMs; render();
+  }
+  function setMinutes(min){
+    totalMs = min*60*1000; reset();
+  }
+  function toggle(){ running ? pause() : start(); }
+
+  function requestWake(){
+    try {
+      if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function(l){ wake = l; }, function(){});
+    } catch(e){}
+  }
+  function releaseWake(){ try { if (wake) { wake.release(); wake = null; } } catch(e){} }
+  document.addEventListener("visibilitychange", function(){
+    if (running && document.visibilityState === "visible") requestWake();
+  });
+
+  function beep(){
+    if (!$("sound").checked) return;
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      for (var i=0;i<3;i++){
+        var o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime + i*0.5;
+        o.frequency.value = 880; o.connect(g); g.connect(audio.destination);
+        g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.4, t+0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t+0.4);
+        o.start(t); o.stop(t+0.45);
+      }
+    } catch(e){}
+  }
+  // Audio-Kontext beim Aktivieren des Tons freischalten (Browser verlangen eine Nutzeraktion)
+  $("sound").addEventListener("change", function(){
+    if (this.checked) {
+      try { audio = audio || new (window.AudioContext || window.webkitAudioContext)(); audio.resume(); } catch(e){}
+    }
+  });
+
+  function toggleFull(){
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function(){});
+  }
+
+  document.querySelectorAll("button[data-min]").forEach(function(b){
+    b.addEventListener("click", function(){ setMinutes(+b.dataset.min); b.blur(); });
+  });
+  function applyCustom(){
+    var raw = $("custom").value.trim(), v = Number(raw);
+    if (raw === "" || !Number.isInteger(v) || v < 1 || v > 180) {
+      hint("Bitte ganze Minuten von 1 bis 180 eingeben."); return;
+    }
+    setMinutes(v);
+  }
+  $("setCustom").addEventListener("click", applyCustom);
+  $("custom").addEventListener("keydown", function(e){
+    if (e.key === "Enter") { e.preventDefault(); applyCustom(); this.blur(); }
+  });
+  $("start").addEventListener("click", function(){ toggle(); this.blur(); });
+  $("reset").addEventListener("click", function(){ reset(); this.blur(); });
+  $("full").addEventListener("click", function(){ toggleFull(); this.blur(); });
+
+  document.addEventListener("keydown", function(e){
+    if (e.target.tagName === "INPUT" && e.target.type === "number") return;
+    if (e.target.tagName === "BUTTON" && e.code === "Space") { e.preventDefault(); }
+    if (e.code === "Space") { e.preventDefault(); toggle(); }
+    else if (e.key === "r" || e.key === "R") reset();
+    else if (e.key === "f" || e.key === "F") toggleFull();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

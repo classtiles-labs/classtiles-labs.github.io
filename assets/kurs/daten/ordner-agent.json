@@ -1,0 +1,105 @@
+{
+  "ordner": "Klassenfahrt-Belege",
+  "auftrag": "Benenne die Belege einheitlich um, leg eine Übersicht mit Summe an und räum doppelte Dateien weg.",
+  "dateien": [
+    "IMG_4471.jpg",
+    "Scan 2026-10-12.pdf",
+    "rechnung(1).pdf",
+    "rechnung(1) Kopie.pdf",
+    "WhatsApp Image 2026-10-13.jpeg",
+    "notizen.txt"
+  ],
+  "belege": [
+    {
+      "datei": "IMG_4471.jpg",
+      "datum": "2026-10-12",
+      "art": "Bahn",
+      "cent": 3840
+    },
+    {
+      "datei": "Scan 2026-10-12.pdf",
+      "datum": "2026-10-12",
+      "art": "Jugendherberge",
+      "cent": 6300
+    },
+    {
+      "datei": "rechnung(1).pdf",
+      "datum": "2026-10-13",
+      "art": "Museum",
+      "cent": 600
+    },
+    {
+      "datei": "WhatsApp Image 2026-10-13.jpeg",
+      "datum": "2026-10-13",
+      "art": "Bus",
+      "cent": 420
+    }
+  ],
+  "summeCent": 11160,
+  "rechte": [
+    {
+      "id": "lesen",
+      "name": "Dateien lesen",
+      "an": true
+    },
+    {
+      "id": "anlegen",
+      "name": "Neue Dateien anlegen",
+      "an": true
+    },
+    {
+      "id": "verschieben",
+      "name": "Umbenennen und verschieben",
+      "an": true
+    },
+    {
+      "id": "loeschen",
+      "name": "Löschen",
+      "an": false
+    }
+  ],
+  "schritte": [
+    {
+      "art": "lesen",
+      "recht": "lesen",
+      "text": "Liest die 6 Dateien: 4 Belege, eine Notiz und eine doppelte Rechnung."
+    },
+    {
+      "art": "umbenennen",
+      "recht": "verschieben",
+      "text": "Benennt die 4 Belege nach Datum, Art und Betrag um.",
+      "paare": [
+        [
+          "IMG_4471.jpg",
+          "2026-10-12_Bahn_38,40.jpg"
+        ],
+        [
+          "Scan 2026-10-12.pdf",
+          "2026-10-12_Jugendherberge_63,00.pdf"
+        ],
+        [
+          "rechnung(1).pdf",
+          "2026-10-13_Museum_6,00.pdf"
+        ],
+        [
+          "WhatsApp Image 2026-10-13.jpeg",
+          "2026-10-13_Bus_4,20.jpeg"
+        ]
+      ]
+    },
+    {
+      "art": "duplikat",
+      "recht": "loeschen",
+      "ausweich": "verschieben",
+      "datei": "rechnung(1) Kopie.pdf",
+      "text": "Findet die doppelte Rechnung „rechnung(1) Kopie.pdf“."
+    },
+    {
+      "art": "anlegen",
+      "recht": "anlegen",
+      "datei": "Übersicht.csv",
+      "text": "Legt „Übersicht.csv“ mit Datum, Art, Betrag und Summe an."
+    }
+  ],
+  "hinweis": "Beispiel, nachgestellt: Dateien und Beträge erfunden, angelehnt an Lehrer-Hack #33 (Reisekosten aus dem Ordner)."
+}

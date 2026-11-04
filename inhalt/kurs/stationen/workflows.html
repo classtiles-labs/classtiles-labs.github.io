@@ -1,0 +1,33 @@
+      <section class="erlebnis" data-erlebnis="workflow-baukasten">
+        <h2>Bau deinen ersten Workflow</h2>
+        <p>Sechs Schritte für ein Arbeitsblatt mit Lösung, durcheinander. Mit JavaScript ordnest du
+        sie hier, die Seite prüft die Reihenfolge und schreibt daraus eine fertige Datei SKILL.md
+        für Claude Code oder Codex.</p>
+      </section>
+
+      <section class="einordnung">
+        <h2>Was ein Workflow ist</h2>
+        <p>Ein Workflow ist eine feste Abfolge von Schritten für eine Aufgabe, die immer
+        wiederkommt. Du beschreibst sie einmal, der Agent arbeitet sie jedes Mal gleich ab. In
+        Claude Code und Codex speicherst du so einen Ablauf als Skill: einen Ordner mit einer Datei
+        SKILL.md. Darin stehen ein Name, eine Beschreibung, wann der Skill passt, und die Schritte.
+        Beide folgen demselben offenen Standard (Stand: November 2026).</p>
+        <p>Claude Code liest Skills aus dem Ordner .claude/skills deines Projekts oder aus
+        ~/.claude/skills für alle Projekte. Du startest einen Skill mit /name, oder Claude nimmt ihn
+        von selbst, wenn die Beschreibung passt. Codex liest Skills aus .agents/skills, aufrufen
+        kannst du sie mit $name oder über /skills.</p>
+        <p>Ein guter Workflow hat zwei Bremsen: eine Freigabe, bevor etwas entsteht, und eine
+        Prüfung, bevor etwas abgelegt wird. Beide kosten dich eine Minute und ersparen dir die
+        Fehlersuche im fertigen Blatt.</p>
+      </section>
+
+      <section class="ticket">
+        <h2>Zum Mitnehmen</h2>
+        <p>Für eine Aufgabe, die bei dir jede Woche wiederkommt. Der Agent schreibt den Skill
+        selbst.</p>
+        <pre class="ticket-prompt">Ich mache diese Aufgabe regelmäßig: [Aufgabe].
+Meine Schritte sind: [Schritt 1], [Schritt 2], [Schritt 3].
+Leg dafür in diesem Projekt einen Skill an, den ich mit /[name] aufrufen kann.
+Bau eine Freigabe ein, bevor du etwas erstellst, und eine Prüfung, bevor du etwas ablegst.
+Zeig mir die SKILL.md, bevor du sie speicherst.</pre>
+      </section>

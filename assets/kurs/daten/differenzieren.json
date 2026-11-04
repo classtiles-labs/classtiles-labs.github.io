@@ -1,0 +1,38 @@
+{
+  "titel": "Wie ein Gewitter entsteht",
+  "lauf": {
+    "app": "ChatGPT",
+    "modell": "GPT-6, Denkaufwand Medium",
+    "modus": "temporärer Chat, nicht personalisiert",
+    "datum": "2026-11-04",
+    "auftrag": "Schreib den folgenden Sachtext aus Klasse 8 in drei Fassungen um: für Klasse 5, für Klasse 6/7 und für Klasse 10. Der Inhalt bleibt gleich, und die Begriffe Aufwind, Gewitterwolke, Blitz und Donner kommen in jeder Fassung vor. Klasse 5: kurze Sätze, ein Gedanke pro Satz, schwierige Wörter in Klammern erklärt. Klasse 6/7: einfache Sätze, Fachwörter kurz erklärt. Klasse 10: anspruchsvoller, zusätzlich mit den Fachbegriffen Kondensation und Ladungstrennung. Jede Fassung höchstens 120 Wörter. Gib nur die drei Texte mit einer Überschrift für die Klassenstufe aus."
+  },
+  "stufen": [
+    {
+      "klasse": "5",
+      "quelle": "lauf",
+      "text": "An heißen Sommertagen scheint die Sonne stark. Sie erwärmt den Boden und die Luft. Warme, feuchte Luft steigt nach oben. Das nennt man Aufwind (aufsteigende Luft). Weiter oben wird die Luft kälter. Aus Wasserdampf werden kleine Wassertropfen. Eine große Gewitterwolke entsteht. Ganz oben ist es sehr kalt. Dort bilden sich kleine Eisstücke. Sie stoßen oft zusammen. Dabei entsteht elektrische Ladung (eine Art elektrische Energie). Oben ist die Wolke positiv geladen, unten negativ. Ein Blitz gleicht den Unterschied aus. Er erhitzt die Luft auf bis zu 30 000 Grad. Die Luft breitet sich plötzlich aus. So entsteht der Donner. Licht ist schneller als Schall (das Geräusch). Drei Sekunden zwischen Blitz und Donner bedeuten etwa einen Kilometer Entfernung."
+    },
+    {
+      "klasse": "6/7",
+      "quelle": "lauf",
+      "text": "An heißen Sommertagen erwärmt die Sonne den Boden und die Luft darüber. Warme, feuchte Luft steigt durch einen kräftigen Aufwind nach oben. In der Höhe kühlt sie ab. Der Wasserdampf verwandelt sich in kleine Wassertröpfchen. So entsteht eine hohe Gewitterwolke. Im kalten oberen Teil bilden sich Eiskristalle und Graupelkörner (kleine gefrorene Kügelchen). Diese stoßen im Aufwind zusammen und laden sich elektrisch auf. Oben entsteht eine positive, unten eine negative Ladung. Wird der Unterschied zu groß, entsteht ein Blitz. Er erhitzt die Luft plötzlich auf bis zu 30 000 Grad. Die Luft dehnt sich explosionsartig aus und erzeugt den Donner. Da Schall langsamer als Licht ist, hören wir ihn später. Drei Sekunden Unterschied entsprechen etwa einem Kilometer Entfernung."
+    },
+    {
+      "klasse": "8",
+      "quelle": "ausgangstext",
+      "text": "An heißen Sommertagen erwärmt die Sonne den Boden und die Luft darüber. Die warme, feuchte Luft steigt in einem kräftigen Aufwind nach oben. In der Höhe kühlt sie ab, und der Wasserdampf wird zu winzigen Tröpfchen: Es bildet sich eine hoch aufragende Gewitterwolke. In ihrem oberen Teil ist es so kalt, dass Eiskristalle und Graupelkörner entstehen. Sie stoßen im Aufwind ständig zusammen und laden sich dabei elektrisch auf, oben positiv, unten negativ. Wird der Unterschied zu groß, gleicht ein Blitz ihn aus. Er erhitzt die Luft schlagartig auf bis zu 30 000 Grad. Die Luft dehnt sich explosionsartig aus, und wir hören den Donner. Weil der Schall langsamer ist als das Licht, kommt er später an: Etwa drei Sekunden Abstand bedeuten einen Kilometer Entfernung."
+    },
+    {
+      "klasse": "10",
+      "quelle": "lauf",
+      "text": "An heißen Sommertagen erwärmt die Sonneneinstrahlung den Boden und die darüberliegende Luft. Die warme, feuchte Luft steigt durch einen kräftigen Aufwind auf und kühlt dabei ab. Durch Kondensation, also die Umwandlung von Wasserdampf in Wassertröpfchen, entsteht eine hoch aufragende Gewitterwolke. In den kalten oberen Bereichen bilden sich Eiskristalle und Graupelkörner. Ihre Zusammenstöße im Aufwind führen zur elektrischen Ladungstrennung: Der obere Wolkenbereich wird positiv, der untere negativ geladen. Überschreitet der Ladungsunterschied eine bestimmte Grenze, erfolgt ein elektrischer Ausgleich durch einen Blitz. Dieser erhitzt die Luft schlagartig auf bis zu 30 000 Grad. Ihre explosionsartige Ausdehnung erzeugt den Donner. Da sich Schall langsamer als Licht ausbreitet, entspricht eine Verzögerung von drei Sekunden ungefähr einem Kilometer Entfernung."
+    }
+  ],
+  "pruefstelle": {
+    "klasse": "5",
+    "zitat": "Dabei entsteht elektrische Ladung (eine Art elektrische Energie).",
+    "erklaerung": "Fachlich schief: Elektrische Ladung ist keine Form von Energie. Die Erklärung in Klammern klingt griffig, stimmt aber nicht. Besser wäre etwa: „Dabei laden sich die Eisteilchen elektrisch auf, so wie ein Luftballon, den man an einem Pullover reibt.“"
+  },
+  "hinweis": "Ausgangstext für Klasse 8: von ClassTiles geschrieben. Fassungen für Klasse 5, 6/7 und 10: ChatGPT, ungekürzt."
+}

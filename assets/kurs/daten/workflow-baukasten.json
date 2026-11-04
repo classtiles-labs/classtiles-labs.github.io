@@ -1,0 +1,71 @@
+{
+  "kopf": {
+    "name": "arbeitsblatt-mit-loesung",
+    "titel": "Arbeitsblatt mit Lösung",
+    "beschreibung": "Erstellt aus dem Material im Ordner ein Arbeitsblatt mit Lösungsblatt. Nutzen, wenn ich ein Arbeitsblatt mit Lösung haben möchte."
+  },
+  "schritte": {
+    "material": "Lies das Material im Ordner und nenne mir Thema, Klasse und Umfang.",
+    "plan": "Zeig mir den Aufbau des Arbeitsblatts in Stichpunkten und warte auf mein OK.",
+    "blatt": "Erstelle das Arbeitsblatt mit drei Aufgaben in steigender Schwierigkeit.",
+    "loesung": "Erstelle ein Lösungsblatt mit vollständigen Lösungswegen.",
+    "pruefen": "Löse jede Aufgabe noch einmal selbst, vergleiche mit dem Lösungsblatt und nenne mir jede Abweichung.",
+    "ablegen": "Lege beide Dateien im Unterordner „fertig“ ab und nenne mir die Dateinamen."
+  },
+  "kurz": {
+    "material": "Material lesen",
+    "plan": "Plan zeigen, auf OK warten",
+    "blatt": "Arbeitsblatt erstellen",
+    "loesung": "Lösungsblatt erstellen",
+    "pruefen": "Selbst nachrechnen und vergleichen",
+    "ablegen": "Im Ordner „fertig“ ablegen"
+  },
+  "start": [
+    "blatt",
+    "material",
+    "ablegen",
+    "plan",
+    "pruefen",
+    "loesung"
+  ],
+  "regeln": [
+    {
+      "vor": "material",
+      "nach": "plan",
+      "text": "Erst das Material lesen, dann planen"
+    },
+    {
+      "vor": "plan",
+      "nach": "blatt",
+      "text": "Freigabe, bevor etwas entsteht: Plan vor Arbeitsblatt"
+    },
+    {
+      "vor": "blatt",
+      "nach": "loesung",
+      "text": "Das Lösungsblatt folgt dem Arbeitsblatt"
+    },
+    {
+      "vor": "loesung",
+      "nach": "pruefen",
+      "text": "Prüfen, wenn beides da ist"
+    },
+    {
+      "vor": "pruefen",
+      "nach": "ablegen",
+      "text": "Prüfung, bevor etwas abgelegt wird"
+    }
+  ],
+  "ablage": [
+    {
+      "app": "Claude Code",
+      "pfad": ".claude/skills/arbeitsblatt-mit-loesung/SKILL.md",
+      "aufruf": "/arbeitsblatt-mit-loesung"
+    },
+    {
+      "app": "Codex",
+      "pfad": ".agents/skills/arbeitsblatt-mit-loesung/SKILL.md",
+      "aufruf": "$arbeitsblatt-mit-loesung"
+    }
+  ],
+  "stand": "Stand: November 2026"
+}

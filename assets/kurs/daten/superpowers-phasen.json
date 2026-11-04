@@ -1,0 +1,60 @@
+{
+  "beispiel": "Vokabel-Quiz für Englisch, Klasse 6",
+  "phasen": [
+    {
+      "id": "fragen",
+      "titel": "Fragen",
+      "skills": [
+        "brainstorming"
+      ],
+      "so": "Bevor eine Zeile Code entsteht, fragt der Agent nach: Wer übt damit, die Klasse am Tablet oder du am Beamer? Woher kommen die Vokabeln? Soll es Punkte geben? Die Antworten: Die Klasse übt am Tablet, die Wörter kommen aus der Liste der aktuellen Unit, Punkte gibt es keine, falsche Wörter kommen später noch einmal.",
+      "ohne": "Der Agent baut sofort, was er für gemeint hält, zum Beispiel ein Quiz mit Punktestand und Rangliste. Genau das sollte es nicht werden."
+    },
+    {
+      "id": "entwurf",
+      "titel": "Entwurf",
+      "skills": [
+        "brainstorming"
+      ],
+      "so": "Ein kurzer Entwurf mit Zielen, Nicht-Zielen und Anti-Zielen, etwa: „Das Quiz speichert keine Namen und keine Ergebnisse.“ Ein Prüfer ohne Vorwissen liest ihn und fragt nach: Zählt „to go“ als richtig, wenn nach „gehen“ gefragt ist? Entscheidung: ja.",
+      "ohne": "Entscheidungen fallen nebenbei im Code. Später weiß niemand mehr, warum etwas so ist, und die nächste Änderung reißt es wieder ein."
+    },
+    {
+      "id": "plan",
+      "titel": "Plan",
+      "skills": [
+        "writing-plans"
+      ],
+      "so": "Sechs kleine Aufgaben, jede mit Dateien, Tests und dem Befehl, der sie prüft. Dazu Fälle, die leicht übersehen werden, etwa: Ein Kind tippt ein Leerzeichen hinter das Wort.",
+      "ohne": "Alles in einem Rutsch. Wenn dann etwas nicht stimmt, ist unklar, wo es herkommt."
+    },
+    {
+      "id": "bauen",
+      "titel": "Bauen mit Tests",
+      "skills": [
+        "executing-plans",
+        "test-driven-development"
+      ],
+      "so": "In jeder Aufgabe zuerst ein Test, der scheitert, etwa: „‚to go‘ und ‚go‘ gelten beide als richtig.“ Erst danach der Code, bis der Test besteht.",
+      "ohne": "Ob etwas funktioniert, zeigt sich erst, wenn ein Kind den Fehler findet."
+    },
+    {
+      "id": "pruefung",
+      "titel": "Prüfung",
+      "skills": [
+        "requesting-code-review"
+      ],
+      "so": "Ein frischer Prüfer ohne Vorwissen liest den ganzen Code und findet, was beim Bauen niemandem auffiel: Auf dem Tablet verdeckt die Bildschirmtastatur das Eingabefeld. Der Fehler wird behoben, bevor das Quiz in die Klasse geht.",
+      "ohne": "Wer gebaut hat, prüft sich selbst und übersieht seine eigenen blinden Flecken."
+    }
+  ],
+  "bilanz": {
+    "titel": "Was am Ende anders ist",
+    "zeilen": [
+      "Das Quiz tut, was die Klasse braucht, nicht was der Agent vermutet hat",
+      "Jede Entscheidung steht im Entwurf und lässt sich nachlesen",
+      "Der Fehler mit der Tastatur fällt vor der Stunde auf, nicht in ihr"
+    ]
+  },
+  "hinweis": "Beispiel, nachgestellt: So läuft ein Vorhaben mit Superpowers ab. Phasen und Skill-Namen stammen aus Superpowers 7.0, die Inhalte sind erfunden."
+}

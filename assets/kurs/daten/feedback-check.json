@@ -1,0 +1,55 @@
+{
+  "schuelertext": "Ich finde, an unserer Schule sollte es kein komplettes Handyverbot geben. Erstens kann man mit dem Handy im Unterricht schnell etwas nachschauen, wenn man ein Wort nicht versteht, das geht viel schneller als mit einem Buch. Zweitens brauchen manche Schüler das Handy, um ihre Eltern zu erreichen. Außerdem ist ein Verbot einfach total unfair, weil die Lehrer ihre Handys ja auch benutzen. Deshalb bin ich gegen das Verbot.",
+  "laeufe": [
+    {
+      "id": "schlicht",
+      "titel": "Antwort 1: schlichte Bitte",
+      "prompt": "Gib Feedback zu diesem Text einer Schülerin aus Klasse 7.",
+      "text": "Die Schülerin hat eine klare Meinung und baut ihren Text sinnvoll auf. Hier ist mein Feedback, aufgeteilt in Stärken und Verbesserungsmöglichkeiten.\n\nWas schon gut gelungen ist\nKlare Position: Gleich im ersten Satz steht, wofür sie ist. Am Ende greift sie ihre Meinung wieder auf. So hat der Text einen Rahmen.\nGliederung: Mit „Erstens“, „Zweitens“, „Außerdem“ und „Deshalb“ verbindet sie ihre Gedanken. Dadurch lässt sich der Text leicht verfolgen.\nNachvollziehbare Argumente: Die ersten beiden Gründe (Nachschlagen, Eltern erreichen) sind realistisch und überzeugend gewählt.\nWas sie noch verbessern kann\n\n1. Argumente ausbauen. Jedes Argument besteht bisher nur aus einer Behauptung. Stärker wird es nach dem Muster Behauptung, Begründung, Beispiel. Ein Beispiel für das zweite Argument wäre: „Zweitens brauchen manche Schüler das Handy, um ihre Eltern zu erreichen. Wenn zum Beispiel eine Stunde ausfällt oder der Bus nicht kommt, müssen sie schnell Bescheid sagen können.“\n\n2. Das dritte Argument überarbeiten. „Total unfair, weil die Lehrer ihre Handys ja auch benutzen“ ist das schwächste Argument. Es wirkt eher emotional als sachlich, und man kann leicht widersprechen: Lehrkräfte sind Erwachsene und nutzen das Handy oft beruflich. Sie könnte es sachlicher formulieren („Regeln sollten für alle nachvollziehbar sein“) oder durch ein stärkeres Argument ersetzen, etwa den Umgang mit Medien zu lernen statt sie zu verbieten.\n\n3. Ein Gegenargument aufgreifen. Ein überzeugender Argumentationstext zeigt, dass man die andere Seite kennt. Sie könnte schreiben: „Natürlich lenken Handys manchmal vom Unterricht ab. Aber …“ Damit entkräftet sie den wichtigsten Einwand gleich selbst.\n\n4. Die eigene Position genauer machen. Am Anfang schreibt sie, es solle kein komplettes Handyverbot geben. Am Ende ist sie „gegen das Verbot“. Das ist nicht ganz dasselbe. Besser wäre ein konkreter Vorschlag, zum Beispiel: „Das Handy sollte im Unterricht nur benutzt werden, wenn die Lehrkraft es erlaubt.“ So wird der Schluss stärker.\n\n5. Sprache und Satzbau.\n\n„einfach total“ ist Umgangssprache. In einem Argumentationstext passt „sehr“ besser, oder man lässt es ganz weg.\nDer zweite Satz ist sehr lang und durch Kommas aneinandergehängt. Besser: „… wenn man ein Wort nicht versteht. Das geht viel schneller als mit einem Buch.“ Oder mit „denn“ verbinden.\nKurz zusammengefasst\n\nDer Text hat eine gute Grundstruktur und eine klare Meinung. Am meisten würde er gewinnen, wenn die Schülerin ihre Argumente mit Beispielen ausbaut, ein Gegenargument aufgreift und am Schluss einen konkreten Vorschlag macht.\n\nSoll ich das Feedback in einer kürzeren, direkt an die Schülerin gerichteten Fassung formulieren?",
+      "modus": "Inkognito-Chat",
+      "fragen": {
+        "wohin": false,
+        "stand": true,
+        "weiter": true
+      },
+      "app": "Claude",
+      "modell": "Opus 5.5, Denkaufwand Mittel",
+      "datum": "2026-11-04",
+      "schritte": 5
+    },
+    {
+      "id": "gezielt",
+      "titel": "Antwort 2: mit Kriterien und Form",
+      "prompt": "Gib Feedback zu diesem argumentierenden Text einer Schülerin aus Klasse 7. Kriterien: These im ersten Satz, jedes Argument mit Begründung und Beispiel, sachlicher Ton, Schluss fasst die Argumente zusammen.\nGib das Feedback in drei Teilen:\n1. Ziel: Was soll der Text leisten? (ein Satz)\n2. Stand: Was gelingt schon, was noch nicht? Nenne jeweils die Textstelle.\n3. Nächster Schritt: eine konkrete Aufgabe für die Überarbeitung.\nSprich die Schülerin direkt mit „du“ an. Höchstens 8 Sätze. Kein allgemeines Lob, keine Note.",
+      "text": "1. Ziel: Dein Text soll Leser mit begründeten Argumenten und Beispielen davon überzeugen, dass es an deiner Schule kein komplettes Handyverbot geben sollte.\n\n2. Stand: Deine These steht klar im ersten Satz („Ich finde, an unserer Schule sollte es kein komplettes Handyverbot geben“). Beim ersten Argument begründest du mit „das geht viel schneller als mit einem Buch“ und nennst mit dem unbekannten Wort eine passende Situation. Beim zweiten Argument („um ihre Eltern zu erreichen“) fehlen Begründung und Beispiel: Warum und in welcher Situation ist das nötig? Beim dritten Argument klingt „einfach total unfair“ nicht sachlich. Dein Schluss „Deshalb bin ich gegen das Verbot“ wiederholt nur deine Meinung, statt die Argumente zusammenzufassen.\n\n3. Nächster Schritt: Schreib beim zweiten Argument zwei Sätze dazu: einen, der erklärt, warum Schüler ihre Eltern erreichen müssen, und einen mit einem konkreten Beispiel, etwa wenn eine Stunde ausfällt und jemand abgeholt werden muss.",
+      "modus": "neuer Inkognito-Chat",
+      "fragen": {
+        "wohin": true,
+        "stand": true,
+        "weiter": true
+      },
+      "app": "Claude",
+      "modell": "Opus 5.5, Denkaufwand Mittel",
+      "datum": "2026-11-04",
+      "schritte": 1
+    }
+  ],
+  "entscheidung": {
+    "frage": "Gibst du Antwort 1 so an die Schülerin weiter?",
+    "optionen": [
+      {
+        "text": "Ja, so weitergeben",
+        "erklaerung": "Inhaltlich trifft vieles. Aber die Antwort spricht über die Schülerin statt mit ihr, und fünf Baustellen auf einmal schafft in Klasse 7 kaum jemand. Sie ist eine gute Vorlage für dich, kein Feedback für sie."
+      },
+      {
+        "text": "Kürzen und selbst umschreiben",
+        "erklaerung": "Das geht, kostet aber Zeit, und bei 28 Texten summiert sie sich. Schneller ist es, gleich so zu fragen, dass die Antwort für die Schülerin passt. Claude bietet das am Ende sogar selbst an."
+      },
+      {
+        "text": "Neu fragen, mit Kriterien und Form",
+        "erklaerung": "Genau. Sag der KI, woran du misst, in welchen drei Teilen sie antworten soll und wen sie anspricht. Antwort 2 zeigt, was dann kommt."
+      }
+    ]
+  },
+  "hinweis": "Schülertext erfunden. Beide Antworten wörtlich, jede in einem eigenen neuen Chat."
+}

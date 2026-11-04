@@ -1,0 +1,48 @@
+{
+  "werkzeug": "Tafel-Timer",
+  "lauf": {
+    "app": "Claude Code",
+    "version": "2.1.318",
+    "modell": "Claude Sonnet 5.5",
+    "datum": "2026-11-04",
+    "modus": "im Terminal, leerer Ordner, ohne eigene Einstellungen und Erweiterungen"
+  },
+  "schritte": [
+    {
+      "id": "plan",
+      "titel": "1 · Auftrag und Plan",
+      "prompt": "Ich möchte einen Tafel-Timer für meinen Unterricht in Klasse 7. Er soll Arbeitsphasen herunterzählen: Ich wähle 5, 10 oder 15 Minuten oder gebe eine eigene Zeit ein, und die verbleibende Zeit steht groß auf dem Whiteboard. Bedient wird er von mir am Laptop, der am Beamer hängt.\nEs soll eine einzelne HTML-Datei sein, offline laufen und nichts speichern.\nZeig mir zuerst deinen Plan in Stichpunkten und warte auf mein OK.\nArbeite nur in diesem Ordner.",
+      "antwort": "Plan: Tafel-Timer (eine Datei tafel-timer.html)\n\nBedienung\n• Drei große Buttons für 5, 10 und 15 Minuten.\n• Ein Feld für eine eigene Zeit in Minuten, mit einem Button zum Übernehmen.\n• Start/Pause, Fortsetzen und Zurücksetzen.\n• Tastenkürzel für dich am Laptop: Leertaste startet und pausiert, R setzt zurück, F schaltet Vollbild um.\n\nAnzeige für den Beamer\n• Die Restzeit steht riesig in der Mitte (MM:SS) und füllt die Breite des Bildschirms. Die Schrift ist fett, ohne Serifen und gut lesbar.\n• Das Design ist hell auf dunkel, mit hohem Kontrast, damit es auf dem Whiteboard gut zu sehen ist.\n• Ein breiter Fortschrittsbalken zeigt, wie viel Zeit schon vergangen ist.\n• Die Bedienelemente bleiben klein und unauffällig am Rand. Die Zeit ist das Einzige, was auffällt.\n\nAblauf und Warnungen\n• Die Farbe wechselt von grün über gelb (letzte Minute) zu rot (letzte 10 Sekunden).\n• Bei 0:00 blinkt der Bildschirm, und es erscheint „Zeit ist um!“.\n• Optional ertönt ein kurzer Signalton, der im Browser erzeugt wird. Du kannst ihn mit einem Schalter ausschalten, damit er den Unterricht nicht stört.\n\nTechnik\n• Reines HTML, CSS und JavaScript, ohne externe Bibliotheken, Schriften oder Netzwerkzugriffe. Die Datei läuft per Doppelklick offline.\n• Die Zeit wird über die Systemuhr berechnet, nicht über einen einfachen Sekundenzähler. Dadurch bleibt sie auch bei Ruckeln oder in einem Hintergrund-Tab genau.\n• Es wird nichts gespeichert: kein localStorage, keine Cookies. Nach dem Neuladen ist alles wieder auf Anfang.\n• Der Bildschirm soll nicht in den Ruhezustand gehen, solange der Timer läuft (Wake Lock, soweit der Browser es erlaubt).\n• Eingaben werden geprüft: Es sind nur ganze Minuten von 1 bis 180 erlaubt, sonst erscheint ein kurzer Hinweis.\n\nVorgehen\n• Ich lege nur tafel-timer.html in diesem Ordner an und arbeite nirgendwo sonst.\n• Danach teste ich die Datei im Browser und lese die Werte ab, bevor ich dir das Ergebnis melde.\n\nFragen, falls du etwas anders willst\n• Soll die eigene Zeit auch Sekunden erlauben (z. B. 7:30) oder reichen ganze Minuten?\n• Soll der Signalton standardmäßig an oder aus sein?\n\nMit „OK“ lege ich los. Ohne Antwort auf die Fragen nehme ich ganze Minuten und den Ton standardmäßig aus.",
+      "sekunden": 13,
+      "kommentar": "Der Agent baut noch nichts. Er zeigt seinen Plan und stellt zwei Rückfragen. Hier korrigierst du am billigsten: Was im Plan nicht stimmt, ist noch nicht gebaut."
+    },
+    {
+      "id": "bau",
+      "titel": "2 · Freigabe und Bau",
+      "prompt": "OK, leg los. Ganze Minuten reichen, und der Ton ist standardmäßig aus.",
+      "antwort": "Ich habe tafel-timer.html geschrieben, aber noch nicht getestet. Weder ein Browser noch eine Syntaxprüfung des JavaScripts ließ sich ausführen. Ich soll nur in diesem Ordner arbeiten, und mein Prüfbefehl hätte außerhalb geschrieben.\n\nDie Datei liegt in: …/tafel-timer.html\n\nSie hat alles aus dem Plan, mit den Einstellungen, die du gewählt hast:\n• Zeiten: Buttons für 5, 10 und 15 Minuten. Die eigene Zeit gibst du in ganzen Minuten von 1 bis 180 ein, sonst erscheint ein Hinweis.\n• Steuerung: Start/Pause/Weiter und Zurücksetzen. Mit der Leertaste startest und pausierst du, R setzt zurück und F schaltet Vollbild um.\n• Anzeige: Die Restzeit steht sehr groß in der Mitte, darunter ein Fortschrittsbalken. Die Farbe wechselt in der letzten Minute auf gelb und in den letzten 10 Sekunden auf rot. Bei 0:00 blinkt der Bildschirm mit „Zeit ist um!“.\n• Ton: Er ist standardmäßig aus und lässt sich mit dem Schalter „Ton“ einschalten.\n• Offline und ohne Speicherung: Die Datei braucht keine Bibliotheken und kein Netz und speichert nichts.\n• Bildschirm: Er soll während des Countdowns nicht in den Ruhezustand gehen, soweit der Browser das erlaubt.\n\nBitte öffne die Datei einmal per Doppelklick und probiere sie vor der Stunde aus. Probier am besten diese Punkte:\n• eine Zeit wählen und starten\n• pausieren und weiterlaufen lassen\n• eine eigene Zeit eingeben\n• Vollbild einschalten\n• den Ton einschalten und eine Minute durchlaufen lassen\n\nWenn etwas nicht stimmt, sag mir, was du siehst, dann korrigiere ich es. Soll ich die Datei stattdessen selbst im Browser testen, brauche ich dafür deine Erlaubnis, außerhalb des Ordners zu arbeiten, zum Beispiel für node oder Chrome.",
+      "sekunden": 36,
+      "datei": "assets/kurs/werkzeuge/tafel-timer-v1.html",
+      "oeffnen": "Version 1 öffnen",
+      "kommentar": "Er sagt offen, dass er die Datei nicht im Browser testen konnte. Testen ist deine Aufgabe, und zwar so, wie du das Werkzeug im Unterricht nutzt."
+    },
+    {
+      "id": "nachbessern",
+      "titel": "3 · Testen und nachbessern",
+      "prompt": "Ich habe den Timer am Beamer getestet. Er läuft gut, drei Änderungen:\n1. Im Feld für die eigene Zeit steht nur „Minu“, das Wort ist abgeschnitten.\n2. Solange der Timer läuft, soll die Knopfleiste unten verschwinden und erst wieder auftauchen, wenn ich die Maus bewege oder eine Taste drücke. Die Klasse soll nur die Zeit sehen.\n3. Ich möchte vor dem Start einen kurzen Arbeitsauftrag eintippen können, zum Beispiel „Aufgabe 3, S. 47, Partnerarbeit“. Er soll groß unter der Zeit stehen.",
+      "antwort": "Ich habe alle drei Änderungen in tafel-timer.html eingebaut. Getestet habe ich sie nicht, denn auch diesmal konnte ich keinen Browser starten. Bitte probier die Datei am Beamer aus.\n\n1. Abgeschnittenes „Minuten“: Das Zahlenfeld war zu schmal, weil die kleinen Pfeile rechts im Feld Platz brauchten. Ich habe es auf 190 px verbreitert, damit das ganze Wort passt.\n\n2. Knopfleiste verschwindet:\n   • Ausblenden: Sobald der Timer läuft, blendet sich die Leiste nach 3 Sekunden aus. Der Mauszeiger verschwindet dann auch.\n   • Einblenden: Bei Mausbewegung, Mausklick oder Tastendruck erscheint sie wieder und verschwindet nach 3 Sekunden ohne Eingabe erneut. Solange der Mauszeiger auf der Leiste steht, bleibt sie sichtbar.\n   • Pause und Ende: Bei Pause und bei Zeitende bleibt sie dauerhaft sichtbar.\n   • Layout: Die Leiste liegt jetzt über dem Bild. Die Zeit springt also nicht, wenn sie erscheint oder verschwindet. Unten habe ich dafür etwas Platz freigelassen.\n\n3. Arbeitsauftrag:\n   • Eingabe: In der Leiste gibt es ein neues Textfeld (bis 120 Zeichen). Der Text erscheint beim Tippen groß unter der Zeit und umbricht bei Bedarf auf zwei Zeilen.\n   • Entfernen und Zurücksetzen: Ist das Feld leer, bleibt die Zeile weg. „Zurücksetzen“ lässt den Auftrag stehen, damit du ihn für die nächste Runde nicht neu eintippen musst.\n   • Tastenkürzel: In den Textfeldern lösen Leertaste, R und F nichts aus, du kannst also ungestört schreiben.\n\nDie Schriftgrößen skalieren jetzt auch nach der Bildschirmhöhe, damit Zeit, Auftrag und Balken zusammen auf den Beamer passen. Falls dir die Zeit dadurch zu klein geworden ist, sag Bescheid. Dann gebe ich ihr wieder mehr Platz.",
+      "sekunden": 34,
+      "datei": "assets/kurs/werkzeuge/tafel-timer-v2.html",
+      "oeffnen": "Version 2 öffnen",
+      "kommentar": "Jede Änderung nennt, was zu sehen war und was stattdessen passieren soll. So trifft der Agent beim ersten Versuch. Danach testest du wieder, denn auch Version 2 hat Claude Code nicht im Browser geprüft."
+    }
+  ],
+  "pruefliste": [
+    "Öffnet sich die Datei per Doppelklick, auch ohne Internet?",
+    "Ist die Zeit aus der letzten Reihe lesbar?",
+    "Geht alles mit der Tastatur (Leertaste, R, F)?",
+    "Was passiert bei Unsinn im Zeitfeld, etwa 0 oder 500?",
+    "Ist nach dem Neuladen alles wieder auf Anfang?"
+  ],
+  "hinweis": "Echte Sitzung, drei Nachrichten nacheinander. Antworten wörtlich, nur Formatierung entfernt und ein lokaler Pfad gekürzt. Beide Werkzeugdateien unverändert."
+}

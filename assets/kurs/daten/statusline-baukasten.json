@@ -1,0 +1,61 @@
+{
+  "bausteine": [
+    {
+      "id": "modell",
+      "name": "Modell"
+    },
+    {
+      "id": "ordner",
+      "name": "Ordner"
+    },
+    {
+      "id": "kontext",
+      "name": "Kontext belegt"
+    },
+    {
+      "id": "kosten",
+      "name": "Kosten (geschätzt)"
+    },
+    {
+      "id": "woche",
+      "name": "Wochenlimit"
+    },
+    {
+      "id": "denkstufe",
+      "name": "Denkstufe"
+    }
+  ],
+  "start": [
+    "modell",
+    "ordner",
+    "kontext"
+  ],
+  "beispiel": {
+    "model": {
+      "id": "claude-opus-5-5",
+      "display_name": "Opus"
+    },
+    "workspace": {
+      "current_dir": "/Users/lehrkraft/unterricht",
+      "project_dir": "/Users/lehrkraft/unterricht"
+    },
+    "version": "2.1.90",
+    "cost": {
+      "total_cost_usd": 0.01234
+    },
+    "context_window": {
+      "used_percentage": 8,
+      "remaining_percentage": 92,
+      "context_window_size": 200000
+    },
+    "rate_limits": {
+      "seven_day": {
+        "used_percentage": 41
+      }
+    },
+    "effort": {
+      "level": "high"
+    }
+  },
+  "stand": "Stand: November 2026"
+}

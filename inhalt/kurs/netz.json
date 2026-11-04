@@ -103,25 +103,28 @@
       "id": "differenzieren",
       "linie": "A",
       "titel": "Differenzieren",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "differenzieren",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie A: Ein Sachtext in vier Klassenstufen, per Regler umgeschaltet. Mit Lesbarkeitswerten, einer Prüfstelle und dem Prompt zum Mitnehmen."
     },
     {
       "id": "feedback",
       "linie": "A",
       "titel": "Feedback geben",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "feedback-check",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie A: Zwei echte KI-Antworten auf denselben Schülertext im Vergleich. Wie Feedback für die Schülerin statt über sie entsteht, mit Prompt."
     },
     {
       "id": "agent-im-ordner",
       "linie": "A",
       "titel": "Agent im Ordner",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": "terminal"
+      "status": "gebaut",
+      "erlebnis": "ordner-agent",
+      "umstieg": "terminal",
+      "beschreibung": "KI-Kurs, Linie A: Ein Agent räumt einen Belegordner auf. Du wählst seine Rechte und siehst, was mit den Dateien passiert. Cowork und ChatGPT Work."
     },
     {
       "id": "terminal",
@@ -145,33 +148,37 @@
       "id": "erstes-tool",
       "linie": "B",
       "titel": "Erstes Tool",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "werkstatt",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Eine echte Claude-Code-Sitzung vom Auftrag bis zum Tafel-Timer, mit Plan, Test und Nachbessern. Beide Fassungen zum Ausprobieren."
     },
     {
       "id": "workflows",
       "linie": "B",
       "titel": "Workflows",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "workflow-baukasten",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Was ein Workflow ist. Schritte ordnen, Regeln live prüfen und daraus eine fertige SKILL.md für Claude Code oder Codex kopieren."
     },
     {
       "id": "superpowers",
       "linie": "B",
       "titel": "Superpowers",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "superpowers-phasen",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Was Superpowers ist und wie ein Vorhaben damit abläuft. Fünf Phasen an einem Beispiel, Installation in Claude Code und Codex."
     },
     {
       "id": "statusline",
       "linie": "B",
       "titel": "Statusline",
-      "status": "geplant",
-      "erlebnis": null,
-      "umstieg": null
+      "status": "gebaut",
+      "erlebnis": "statusline-baukasten",
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie B: Die Statusline in Claude Code. Bausteine antippen, die Zeile live sehen und das fertige, geprüfte Skript samt Eintrag kopieren."
     }
   ]
 }

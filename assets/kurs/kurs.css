@@ -334,3 +334,119 @@ button.btn{min-height:44px}
 .netz-legende .lg-besucht{background:var(--ink-3)}
 .netz-legende .lg-offen{background:var(--tile)}
 .netz-legende .lg-geplant{background:var(--tile);border-style:dashed;opacity:.6}
+
+/* ---------- Erlebnis: Differenzieren ---------- */
+.df-anleitung{color:var(--ink-2);margin:0 0 12px}
+.df-stufe{margin:12px 0 0;font-size:.95rem}
+.df-titel{margin:8px 0 4px;font-size:1.05rem}
+.df-text{line-height:1.6;margin:0 0 12px;min-height:9em;hyphens:auto;-webkit-hyphens:auto}
+.df-mark{background:color-mix(in srgb,var(--hb-warn) 45%,transparent);color:inherit;border-radius:4px;padding:0 2px}
+.df-pruef{padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile));margin:0 0 12px;font-size:.92rem}
+.df-zahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin:0}
+.df-zahlen div{background:var(--sunk);border-radius:10px;padding:8px 10px}
+.df-zahlen dt{font-size:.72rem;color:var(--ink-3);font-weight:600}
+.df-zahlen dd{margin:2px 0 0;font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ---------- Erlebnis: Feedback geben ---------- */
+.fc-anleitung{color:var(--ink-2);margin:0 0 12px}
+.fc-schalter button[aria-pressed="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.fc-schalter button:disabled{opacity:.45;cursor:default}
+.fc-prompt{white-space:pre-wrap}
+.fc-raster{display:grid;gap:12px}
+@media (min-width:760px){.fc-raster{grid-template-columns:3fr 2fr;align-items:start}}
+.fc-antwort{max-height:26em;overflow:auto}
+.fc-check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.fc-check li{display:grid;gap:2px;padding:8px 10px 8px 34px;border-radius:10px;background:var(--sunk);position:relative;font-size:.88rem}
+.fc-check li::before{position:absolute;left:10px;top:8px;font-weight:800}
+.fc-check li.ok::before{content:"✓";color:var(--linie-e)}
+.fc-check li.nein::before{content:"!";color:var(--linie-b)}
+.fc-check li span{color:var(--ink-3);font-size:.75rem;font-weight:600}
+.fc-entscheidung{margin-top:16px;padding:14px;border-radius:12px;border:1px solid var(--hair)}
+.fc-entscheidung p{margin:0 0 10px}
+.fc-optionen{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.fc-optionen button[aria-pressed="true"]{border-color:var(--lf);background:color-mix(in srgb,var(--lf) 14%,var(--tile))}
+.fc-erklaerung{padding:10px 12px;border-radius:10px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile))}
+
+/* ---------- Erlebnis: Agent im Ordner ---------- */
+.oa-anleitung{color:var(--ink-2);margin:0 0 12px}
+.oa-rechte{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.oa-raster{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0 0}
+@media (min-width:640px){.oa-raster{grid-template-columns:1fr 1fr}}
+.oa-ordner{list-style:none;margin:0;padding:8px;border-radius:12px;background:var(--sunk);font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.8rem;display:grid;gap:4px;min-height:9em}
+.oa-ordner li{padding:4px 8px;border-radius:6px;background:var(--tile);overflow-wrap:anywhere}
+.oa-ordner li.neu{background:color-mix(in srgb,var(--lf) 18%,var(--tile))}
+.oa-ordner li.leer{background:none;color:var(--ink-3);font-family:inherit}
+.oa-protokoll{margin:14px 0 0;padding-left:1.4em;font-size:.92rem;display:grid;gap:4px}
+.oa-tabelle{border-collapse:collapse;margin:14px 0 0;font-size:.88rem;width:100%;max-width:380px}
+.oa-tabelle caption{text-align:left;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.8rem;color:var(--ink-3);padding-bottom:4px}
+.oa-tabelle th,.oa-tabelle td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--hair)}
+.oa-tabelle td:last-child,.oa-tabelle tfoot td{text-align:right;font-variant-numeric:tabular-nums}
+.oa-fazit{margin-top:14px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile))}
+
+/* ---------- Erlebnis: Erstes Tool ---------- */
+.wk-anleitung{color:var(--ink-2);margin:0 0 12px}
+.wk-schritte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--sunk);padding:4px;border-radius:12px;margin:0 0 6px}
+.wk-schritte button{font:inherit;font-size:.82rem;font-weight:600;min-height:44px;min-width:0;border:none;border-radius:9px;background:none;color:var(--ink-2);cursor:pointer;padding:6px;hyphens:auto;-webkit-hyphens:auto}
+.wk-schritte button[aria-pressed="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.wk-prompt{white-space:pre-wrap}
+.wk-antwort{max-height:22em;overflow:auto}
+.wk-kommentar{margin:12px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile))}
+.wk-pruefen{margin-top:18px;padding:14px;border-radius:12px;border:1px solid var(--hair)}
+.wk-pruefen p{margin:0 0 10px}
+.wk-stand{display:block;font-weight:400;color:var(--ink-3);font-size:.85rem;margin-top:2px}
+.wk-liste{display:grid;gap:6px}
+.wk-punkt{font:inherit;font-size:.9rem;text-align:left;min-height:44px;padding:8px 12px 8px 40px;border-radius:10px;border:1px solid var(--hair);background:var(--tile);color:var(--ink);cursor:pointer;position:relative}
+.wk-punkt::before{content:"";position:absolute;left:12px;top:50%;width:18px;height:18px;margin-top:-9px;border:2px solid var(--ink-3);border-radius:5px}
+.wk-punkt[aria-pressed="true"]::before{content:"✓";border-color:var(--linie-e);background:var(--linie-e);color:#fff;font-size:12px;line-height:18px;text-align:center;font-weight:800}
+
+/* ---------- Erlebnis: Workflows ---------- */
+.wf-anleitung{color:var(--ink-2);margin:0 0 12px}
+.wf-raster{display:grid;gap:12px}
+@media (min-width:700px){.wf-raster{grid-template-columns:3fr 2fr;align-items:start}}
+.wf-reihe{margin:0;padding:0;list-style:none;counter-reset:wf;display:grid;gap:6px}
+.wf-reihe li{counter-increment:wf;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 10px;border-radius:10px;background:var(--sunk)}
+.wf-reihe li::before{content:counter(wf);font-weight:800;color:var(--lf);min-width:1.2em}
+.wf-text{flex:1;min-width:0;font-size:.92rem;hyphens:auto;-webkit-hyphens:auto}
+.wf-pfeile{display:flex;gap:4px}
+.wf-pfeile button{font:inherit;font-weight:700;width:44px;height:44px;border-radius:9px;border:1px solid var(--hair);background:var(--tile);color:var(--ink);cursor:pointer}
+.wf-pfeile button:disabled{opacity:.3;cursor:default}
+.wf-regeln{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.wf-regeln li{padding:8px 10px 8px 32px;border-radius:10px;background:var(--sunk);position:relative;font-size:.86rem}
+.wf-regeln li::before{position:absolute;left:10px;top:8px;font-weight:800}
+.wf-regeln li.ok::before{content:"✓";color:var(--linie-e)}
+.wf-regeln li.nein::before{content:"!";color:var(--linie-b)}
+.wf-datei{white-space:pre-wrap;font-size:.78rem}
+.wf-kopieren{margin:8px 0 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wf-meldung{font-size:.85rem;color:var(--ink-2)}
+.wf-ablage{margin:12px 0 0;padding-left:1.2em;font-size:.86rem;display:grid;gap:4px}
+.wf-ablage code{font-size:.8rem;overflow-wrap:anywhere}
+
+/* ---------- Erlebnis: Superpowers ---------- */
+.sp-anleitung{color:var(--ink-2);margin:0 0 12px}
+.sp-phasen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;background:var(--sunk);padding:4px;border-radius:12px;margin:0 0 10px}
+.sp-phasen button{font:inherit;font-size:.74rem;font-weight:600;min-height:52px;min-width:0;border:none;border-radius:9px;background:none;color:var(--ink-2);cursor:pointer;padding:4px 1px;display:grid;gap:2px;justify-items:center;align-content:start;line-height:1.2}
+.sp-phasen em{font-style:normal}
+@media (max-width:380px){.sp-phasen em{display:none}.sp-phasen button{min-height:44px}}
+.sp-titel{margin:0 0 8px;font-weight:700}
+.sp-phasen button span{font-weight:800;color:var(--lf);font-size:.9rem}
+.sp-phasen button[aria-pressed="true"]{background:var(--tile);color:var(--ink);box-shadow:var(--sh-1)}
+.sp-karte{padding:14px;border-radius:12px;border:1px solid var(--hair);margin:0 0 12px}
+.sp-skills{margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px}
+.sp-skills code{font-size:.78rem;background:var(--sunk);border-radius:6px;padding:2px 8px}
+.sp-so{margin:0 0 12px;line-height:1.55}
+.sp-ohne{margin:10px 0 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--hb-warn) 22%,var(--tile))}
+.sp-bilanz{margin-top:14px;padding:14px;border-radius:12px;background:color-mix(in srgb,var(--lf) 12%,var(--tile))}
+.sp-bilanz p{margin:0 0 6px}
+.sp-bilanz ul{margin:0;padding-left:1.2em}
+
+/* ---------- Erlebnis: Statusline ---------- */
+.sl-anleitung{color:var(--ink-2);margin:0 0 12px}
+.sl-bausteine{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.sl-terminal{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.85rem;background:#15171c;color:#e8e6e1;border-radius:12px;padding:14px 14px 12px;margin:0 0 14px;min-height:3.2em;border-bottom:3px solid var(--lf);overflow-wrap:anywhere}
+.sl-eingabe{color:#8b8fa3}
+.sl-zeile{color:#cfe3d4}
+.sl-code{white-space:pre-wrap;font-size:.76rem;overflow-wrap:anywhere}
+.sl-kopieren{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 0}
+.sl-meldung{font-size:.85rem;color:var(--ink-2)}
+.sl-hinweis{font-size:.85rem;color:var(--ink-2);margin:6px 0 0}
+.pb-label code{text-transform:none;letter-spacing:0;font-size:.95em}

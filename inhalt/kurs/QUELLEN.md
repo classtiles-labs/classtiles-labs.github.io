@@ -190,3 +190,132 @@ Abgerufen am 04.11.2026.
   individuelle GPTs“. ChatGPT, Pläne und Preise (gelesen im angemeldeten Browser).
   https://chatgpt.com/de-DE/pricing/
 - Projekte in beiden Apps: siehe „fahrkarte“.
+
+## differenzieren
+
+Abgerufen am 04.11.2026.
+
+- Echter Lauf: ChatGPT, temporärer Chat, „Nicht personalisiert“, Modell GPT-6, Denkaufwand
+  Medium, 04.11.2026. Auftrag und Antwort wörtlich in `assets/kurs/daten/differenzieren.json`.
+  Ausgangstext (Klasse 8) von ClassTiles geschrieben.
+- Fachinhalt des Ausgangstexts: Deutscher Wetterdienst, Thema des Tages „Wie entstehen Blitz und
+  Donner?“ (15.06.2019): starke Aufwinde in der Gewitterwolke, Ladungstrennung durch
+  Zusammenstöße, „positive Ladung im oberen Teil, während die untere Hälfte negativ geladen ist“,
+  „Der Blitz erwärmt die Luft auf bis zu 30.000 °C“, Sekunden zwischen Blitz und Donner durch drei
+  ergeben ungefähr die Entfernung in Kilometern.
+  https://www.dwd.de/DE/wetter/thema_des_tages/2019/6/15.html
+  — Sonneneinstrahlung als thermischer Auslöser: DWD-Glossar „Gewitter“.
+  https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv3=101028&lv2=100932
+- Prüfstelle „eine Art elektrische Energie“: Ladung und Energie sind verschiedene physikalische
+  Größen (Einheiten Coulomb und Joule im SI).
+- LIX: Björnsson, C.-H. (1968). *Läsbarhet*. Stockholm: Liber. Formel Wörter/Sätze + 100 · lange
+  Wörter/Wörter, lang = mehr als sechs Buchstaben. https://de.wikipedia.org/wiki/Lix_(Lesbarkeitsindex)
+  Die Seite zählt Sätze vereinfacht an Punkt, Ausrufe- und Fragezeichen.
+- Leichte und Einfache Sprache: DIN Media, Themenseite „Leichte und Einfache Sprache“: Leichte
+  Sprache „richtet sich an Menschen mit Lernschwierigkeiten und kognitiven Beeinträchtigungen“,
+  Regelwerk DIN SPEC 33429:2025-03; Einfache Sprache nach DIN 8581-1:2024-05.
+  https://www.dinmedia.de/de/themenseiten/leichte-und-einfache-sprache
+  — Prüfung durch die Zielgruppe: „übersetzte Texte immer von mindestens zwei Personen aus der
+  Zielgruppe auf Verständlichkeit überprüft“. Bundesregierung, Was ist Leichte Sprache?
+  (28.05.2026). https://www.bundesregierung.de/breg-de/service/fragen-und-anworten/faq-leichte-sprache-2189214
+
+## feedback
+
+Abgerufen am 04.11.2026.
+
+- Echte Läufe: Claude, Inkognito-Chat, Opus 5.5, Denkaufwand Mittel, 04.11.2026; jeder Prompt in
+  einem eigenen neuen Chat. Wörtlich in `assets/kurs/daten/feedback-check.json`. Schülertext
+  erfunden.
+- Hattie, J., & Timperley, H. (2007). The Power of Feedback. *Review of Educational Research*,
+  77(1), 81–112. https://doi.org/10.3102/003465430298487 (Volltext hinter Bezahlschranke; die
+  folgenden frei zugänglichen Artikel mit Hattie als Mitautor belegen die Aussagen):
+- Drei Fragen: „Where am I going? How am I going? and Where to next?“ Hattie, Crivelli, Van Gompel,
+  West-Smith & Wike (2021), Frontiers in Education 6. https://doi.org/10.3389/feduc.2021.645758
+- Lob: „the least effective is self or praise feedback (Hattie and Timperley, 2007)“; die
+  Selbst-Ebene ist „often praise about the person“. Wisniewski, Zierer & Hattie (2020), The Power
+  of Feedback Revisited, Frontiers in Psychology 10. https://doi.org/10.3389/fpsyg.2019.03087
+
+## agent-im-ordner
+
+Abgerufen am 04.11.2026.
+
+- Cowork: „brings Claude Code's agentic capabilities to knowledge work beyond coding“; „available
+  to paid Claude plans (Pro, Max, Ultra, Team, Enterprise) only“; „Claude can only read and write
+  files in folders you've connected“; „Claude requires your explicit permission before permanently
+  deleting any files“; für lokale Dateien „The Claude Desktop app for macOS or Windows, open and
+  connected“. Anthropic Help Center, Get started with Claude Cowork.
+  https://support.claude.com/en/articles/13345190-getting-started-with-cowork
+- Ausführung auf Servern von Anthropic seit 07.07.2026: „Cowork runs your tasks in the cloud.
+  Claude's work runs on Anthropic's servers, in an isolated environment“. Anthropic Release Notes.
+  https://support.claude.com/en/articles/12138966-release-notes
+- ChatGPT Work: „ChatGPT Work is a way to delegate real work to ChatGPT.“ „On the desktop app,
+  ChatGPT Work can also use local files, apps, and the browser when those tools are available.“
+  https://learn.chatgpt.com/docs/get-started-with-work — Desktop-App, Ordner öffnen:
+  https://learn.chatgpt.com/docs/app
+- Erlebnis: Beispiel, nachgestellt; Dateien und Beträge erfunden, angelehnt an Lehrer-Hack #33.
+- ClassTiles-Handbuch Cowork: `ki-handbuch-cowork.html`, Stand August 2026.
+
+## erstes-tool
+
+Abgerufen am 04.11.2026.
+
+- Echte Sitzung: Claude Code 2.1.318 im Terminal, Modell Claude Sonnet 5.5, 04.11.2026, leerer
+  Ordner, ohne eigene Einstellungen und Erweiterungen (`--setting-sources project
+  --disable-slash-commands`, Rechte „acceptEdits“). Drei Nachrichten nacheinander, Laufzeiten aus
+  dem Ergebnis der Sitzung: 13, 36 und 34 Sekunden. Antworten wörtlich in
+  `assets/kurs/daten/werkstatt.json` (Formatierung entfernt, ein lokaler Pfad gekürzt).
+- Werkzeugdateien `assets/kurs/werkzeuge/tafel-timer-v1.html` und `-v2.html` unverändert aus der
+  Sitzung; Version 1 aus dem Sitzungsprotokoll wiederhergestellt, weil Schritt 3 die Datei an Ort
+  und Stelle geändert hat.
+- Die Testbefunde (abgeschnittenes „Minuten“, sichtbare Knopfleiste) stammen aus einem eigenen Test
+  von Version 1 im Browser bei 1280 × 900 px.
+
+## workflows
+
+Abgerufen am 04.11.2026.
+
+- Claude Code Skills: Ablage `~/.claude/skills/<skill-name>/SKILL.md` („All your projects on this
+  machine“) und `.claude/skills/<skill-name>/SKILL.md` im Projekt; „Claude uses skills when
+  relevant, or you can invoke one directly with /skill-name“; „All fields are optional. Only
+  description is recommended“; „Custom commands have been merged into skills“; „Claude Code skills
+  follow the Agent Skills open standard“. Claude Code Docs, Extend Claude with skills.
+  https://code.claude.com/docs/en/skills
+- Codex Skills: Ablage `.agents/skills` im Projekt (bis zur Repo-Wurzel) und `$HOME/.agents/skills`;
+  „The SKILL.md file must include name and description“; „In Codex CLI or the IDE extension, run
+  /skills or type $ to mention a skill“; „Skills build on the open agent skills standard.“
+  https://learn.chatgpt.com/docs/build-skills
+- Deshalb schreibt der Baukasten `name` und `description`: Das genügt beiden.
+- Die Schritte und Regeln im Erlebnis sind ein Beispiel von ClassTiles.
+
+## superpowers
+
+Abgerufen am 04.11.2026.
+
+- Superpowers: „a complete software development methodology for your coding agents, built on top
+  of a set of composable skills“; Autor Jesse Vincent; MIT-Lizenz; Installation in Claude Code
+  `/plugin install superpowers@claude-plugins-official`, in Codex CLI über `/plugins`, Suche
+  „superpowers“, „Install Plugin“; Ablauf brainstorming → using-git-worktrees → writing-plans →
+  subagent-driven-development oder executing-plans → test-driven-development →
+  requesting-code-review → finishing-a-development-branch; „Small changes get agreed in chat;
+  projects get a written design document“. README und LICENSE, Fassung 7.0.0 (installiert) und
+  GitHub (7.0.2 vom 03.11.2026). https://github.com/obra/superpowers
+- Die 15 Skill-Namen im Test stammen aus dem Ordner `skills/` der Fassung 7.0.0.
+- Erlebnis: Beispiel, nachgestellt (Vokabel-Quiz). Phasen und Skill-Namen nach Superpowers 7.0.0,
+  Inhalte erfunden. „Ohne diese Phase“ ist eine Einschätzung von ClassTiles, kein Messergebnis.
+
+## statusline
+
+Abgerufen am 04.11.2026.
+
+- Claude Code Docs, Customize your status line: „Claude Code runs your script with JSON session
+  data on stdin and displays whatever the script prints to stdout“; Eintrag `statusLine` mit
+  `"type": "command"` in `~/.claude/settings.json`; Felder `model.display_name`,
+  `workspace.current_dir`, `context_window.used_percentage` („Pre-calculated percentage of context
+  window used“, kann früh `null` sein), `cost.total_cost_usd` („Estimated session cost in USD … May
+  differ from your actual bill“), `rate_limits.seven_day.used_percentage` (nur Pro/Max/Ultra),
+  `effort.level`; `/statusline` mit Wunschbeschreibung legt Skript und Eintrag selbst an; Beispiele
+  brauchen jq; Windows über Git Bash. https://code.claude.com/docs/en/statusline
+- Codex: `/statusline` wählt aus festen Bausteinen, gespeichert unter `tui.status_line` in
+  `config.toml`. https://learn.chatgpt.com/docs/developer-commands?surface=cli
+- Das erzeugte Skript ist im Test mit bash und jq 1.7.1 gegen die Vorschau geprüft
+  (`tools/tests/kurs/statusline-baukasten.test.mjs`). Beispieldaten in der Vorschau erfunden.

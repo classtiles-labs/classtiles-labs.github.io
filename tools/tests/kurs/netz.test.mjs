@@ -58,10 +58,17 @@ test('Stationslinks im gezeichneten Netz tragen den Stand mit (Schlussprüfung, 
   assert.match(leer, /href="ki-kurs-wie-ki-schreibt\.html"/);
 });
 
-test('unter dem Netz steht eine Legende, die „in Planung“ erklärt', async () => {
+test('unter dem Netz steht eine Legende, „in Planung“ nur bei geplanten Stationen', async () => {
   const {netzSvg} = await import('../../../assets/kurs/netz.js');
-  const html = netzSvg(N, {linie: null, start: null, besucht: []}, '', 390);
+  const mitPlan = structuredClone(N);
+  mitPlan.stationen[mitPlan.stationen.length - 1].status = 'geplant';
+  const html = netzSvg(mitPlan, {linie: null, start: null, besucht: []}, '', 390);
   assert.match(html, /class="netz-legende"/);
   assert.match(html, /in Planung/);
   assert.match(html, /besucht/);
+  const fertig = structuredClone(N);
+  for (const s of fertig.stationen) s.status = 'gebaut';
+  const ohne = netzSvg(fertig, {linie: null, start: null, besucht: []}, '', 390);
+  assert.match(ohne, /besucht/);
+  assert.doesNotMatch(ohne, /in Planung/);
 });
