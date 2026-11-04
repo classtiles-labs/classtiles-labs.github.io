@@ -403,6 +403,46 @@ class TestKeinSpeicherAufDemGeraet(unittest.TestCase):
                 treffer = self.ZUGRIFF.findall(skript)
                 self.assertEqual(treffer, [], f"{p} greift auf den Browser-Speicher zu")
 
+    # In Skriptdateien gilt die strengere Form: schon das Wort ist verdächtig, auch ohne „.“
+    # oder „[“ dahinter — `const s = localStorage;` wäre sonst unsichtbar.
+    DATEI_ZUGRIFF = re.compile(r'\b(?:localStorage|sessionStorage|indexedDB)\b'
+                               r'|\bdocument\s*\.\s*cookie')
+    # Die eine Ausnahme: der Kursspeicher, der erst nach „Fortschritt auf diesem Gerät merken"
+    # schreibt (Task 2 des KI-Kurses, Datenschutzerklärung). Nur localStorage, nichts sonst.
+    KURSSPEICHER = "assets/kurs/speicher.js"
+
+    @staticmethod
+    def skriptdateien():
+        """Jede lokale .js-Datei unter assets/ und die Skripte jeder .html unter assets/kurs/
+        (z. B. Lernspiele des Kurses). Seiten binden sie ein — der Scan der <script>-Blöcke
+        allein sähe sie nicht."""
+        out = {}
+        for wurzel, _, namen in os.walk(os.path.join(REPO, "assets")):
+            for n in namen:
+                pfad = os.path.join(wurzel, n)
+                rel = os.path.relpath(pfad, REPO).replace(os.sep, "/")
+                if n.endswith((".js", ".mjs")):
+                    out[rel] = open(pfad, encoding="utf-8").read()
+                elif n.endswith(".html") and rel.startswith("assets/kurs/"):
+                    text = open(pfad, encoding="utf-8").read()
+                    out[rel] = "\n".join(TestKeinSpeicherAufDemGeraet.SKRIPTE.findall(text))
+        return out
+
+    def test_auch_eingebundene_skriptdateien_werden_geprueft(self):
+        dateien = self.skriptdateien()
+        self.assertIn("assets/kurs/kurs.js", dateien, "der Scan sieht die Kursdateien nicht")
+        for rel, text in dateien.items():
+            if rel == self.KURSSPEICHER:
+                continue
+            self.assertEqual(self.DATEI_ZUGRIFF.findall(text), [],
+                             f"{rel} greift auf den Browser-Speicher zu")
+
+    def test_nur_der_kursspeicher_darf_zugreifen_und_nur_auf_localstorage(self):
+        text = self.skriptdateien().get(self.KURSSPEICHER)
+        self.assertIsNotNone(text, f"{self.KURSSPEICHER} fehlt")
+        treffer = set(self.DATEI_ZUGRIFF.findall(text))
+        self.assertEqual(treffer, {"localStorage"}, f"{self.KURSSPEICHER}: {treffer}")
+
     def test_keine_seite_hat_eingebettete_ereignis_handler(self):
         """Ein onclick="…" im Markup wäre ein Skript, das an den <script>-Blöcken vorbeiliefe —
         und damit an der Prüfung darüber."""

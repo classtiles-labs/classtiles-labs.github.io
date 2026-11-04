@@ -78,6 +78,9 @@ erzeugte HTML und die PDFs unter `assets/ki/`. Welcher Band aus welcher Datei ko
   die Kursseiten zum KI-Bereich gehören.
 - **Quellen:** Jede Tatsachenbehauptung einer Station steht belegt in `inhalt/kurs/QUELLEN.md`
   unter `## <id>`.
+- **Logik und Tests:** Reine Logik liegt in Modulen ohne DOM-Zugriff (`stand.js`, `einstufung.js`,
+  `speicher.js` …) und wird mit `node --test tools/tests/kurs/*.test.mjs` geprüft;
+  `tools/tests/test_kurs_js.py` ruft das auf und überspringt sich ohne Node.
 - **Verhalten:** `assets/kurs/` (Stil, Netz, Fortschritt, Erlebnisse). Ohne JavaScript bleiben
   alle gebauten Stationen als Links und alle Tickets als Text lesbar.
 
@@ -169,6 +172,12 @@ Skript, und daran hängen drei Regeln:
   würde das Cookie-Banner erzwingen. `TestKeinSpeicherAufDemGeraet` prüft das für alle Seiten,
   und zwar nur innerhalb von `<script>`-Blöcken: Die KI-Seiten zeigen Prompts, die dem Modell
   genau das verbieten — im Fließtext ist das Wort ein Verbot, kein Zugriff.
+  Lokale Skriptdateien unter `assets/` (und die Skripte der HTML-Dateien unter `assets/kurs/`)
+  prüft derselbe Test strenger: Dort ist schon das Wort verdächtig. **Einzige Ausnahme** ist
+  `assets/kurs/speicher.js`: Der KI-Kurs legt seinen Fortschritt unter `classtiles-kurs` in
+  `localStorage` ab, aber erst, nachdem die Lehrkraft „Fortschritt auf diesem Gerät merken“
+  angetippt hat (Node-Tests in `tools/tests/kurs/`, Abschnitt zum Kurs in der
+  Datenschutzerklärung).
 - **Das Skript darf nicht mit `(function()` beginnen.** `apply-shell.py` erkennt seinen
   Skriptblock daran; ein zweites Skript mit demselben Anfang würde den Ersatz auf sich ziehen
   und alles bis zum Cloudflare-Kommentar verschlucken, Fußzeile inklusive
