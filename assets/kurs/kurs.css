@@ -1,1 +1,115 @@
-/* KI-Kurs: Stil. Wird in Task 3 gefüllt. */
+/* KI-Kurs „Anschluss behalten“. Baut auf den Tokens aus tools/shell/site.css auf; die
+   Linienfarben sind die einzigen kräftigen Farben des Kurses. */
+:root{--linie-e:#3f8a57;--linie-a:#2f5fb3;--linie-b:#d0573f}
+@media (prefers-color-scheme: dark){:root{--linie-e:#6fbf86;--linie-a:#6f9be6;--linie-b:#ec8a73}}
+
+.linie-e{--lf:var(--linie-e)} .linie-a{--lf:var(--linie-a)} .linie-b{--lf:var(--linie-b)}
+.kurs-linie[data-linie="E"]{--lf:var(--linie-e)} .kurs-linie[data-linie="A"]{--lf:var(--linie-a)}
+.kurs-linie[data-linie="B"]{--lf:var(--linie-b)}
+main.station[data-linie="E"]{--lf:var(--linie-e)} main.station[data-linie="A"]{--lf:var(--linie-a)}
+main.station[data-linie="B"]{--lf:var(--linie-b)}
+
+.linie-badge{display:inline-flex;align-items:center;justify-content:center;min-width:1.55em;height:1.55em;
+  padding:0 .3em;border-radius:6px;background:var(--lf);color:#fff;font-weight:800;font-size:.85em;
+  letter-spacing:0;vertical-align:.08em}
+@media (prefers-color-scheme: dark){.linie-badge{color:#0f1016}}
+.kurs-geplant{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;border:1px dashed var(--hair-2);
+  font-size:.75rem;color:var(--ink-3);font-weight:600;white-space:nowrap}
+
+/* ---------- Übersicht ---------- */
+/* Die Website gibt jedem <section> 52–76 px Polster; im Kurs stehen Abschnitte dichter. */
+.kurs-fahrkarte,.kurs-netz,.kurs-fahrplan,main.station>section{padding:0}
+.kurs-kopf h1{font-size:clamp(1.65rem,4.6vw,2.6rem);line-height:1.15;letter-spacing:-.02em;max-width:24ch}
+.kurs-fahrkarte{margin:30px 0 0}
+.kurs-fahrkarte>[data-erlebnis]{position:relative;background:var(--navy);color:var(--paper);border-radius:var(--r);
+  padding:22px 22px 22px 26px;box-shadow:var(--sh-2);overflow:hidden}
+.kurs-fahrkarte>[data-erlebnis]::after{content:"";position:absolute;top:14px;bottom:14px;right:64px;
+  border-left:2px dashed color-mix(in srgb,var(--paper) 35%,transparent)}
+.kurs-fahrkarte h2{margin:0 0 6px;color:inherit}
+.kurs-fahrkarte p{margin:0;max-width:52ch;padding-right:64px;opacity:.88}
+
+.kurs-netz{margin:44px 0 0}
+#liniennetz{background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);box-shadow:var(--sh-1);
+  padding:8px 10px 0;margin:0 0 22px;max-width:780px}
+#liniennetz svg{display:block;overflow:visible}
+.netz-linie{stroke:var(--lf);stroke-width:8;stroke-linecap:round}
+.netz-umstieg{fill:none;stroke:var(--ink-3);stroke-width:3;stroke-dasharray:2 6;stroke-linecap:round;opacity:.7}
+.netz-schild rect{fill:var(--lf)} .netz-schild text{fill:#fff;font-weight:800;font-size:13px;text-anchor:middle}
+@media (prefers-color-scheme: dark){.netz-schild text{fill:#0f1016}}
+.netz-station{fill:var(--tile);stroke:var(--lf);stroke-width:3}
+.netz-station.besucht{fill:var(--lf);stroke:var(--tile)}
+.netz-station.umsteige{stroke:var(--ink)}
+.netz-station.umsteige.besucht{fill:var(--ink)}
+.netz-station.geplant{stroke-dasharray:3 3;opacity:.6}
+#liniennetz a .netz-station{cursor:pointer}
+#liniennetz a:hover .netz-station{stroke-width:5}
+.netz-label{font-size:11px;fill:var(--ink);font-family:inherit}
+.netz-label.geplant{fill:var(--ink-3)}
+.netz-zug rect{fill:var(--navy)} .netz-zug text{fill:var(--paper);font-size:10px;font-weight:800;text-anchor:middle}
+.netz-puls{fill:var(--lf);opacity:.35;transform-box:fill-box;transform-origin:center;animation:netzpuls 1.8s ease-out infinite}
+@keyframes netzpuls{0%{opacity:.5;transform:scale(1)}100%{opacity:0;transform:scale(2.3)}}
+
+.kurs-listen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kurs-linie{background:var(--tile);border:1px solid var(--hair);border-top:6px solid var(--lf);border-radius:var(--r);
+  padding:18px 18px 12px;box-shadow:var(--sh-1)}
+.kurs-linie h3{margin:0 0 4px;font-size:1.05rem;display:flex;gap:8px;align-items:center}
+.kurs-linie>p{margin:0 0 10px;color:var(--ink-2);font-size:.9rem}
+.kurs-liste{list-style:none;margin:0;padding:0;counter-reset:st}
+.kurs-liste li{counter-increment:st;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;padding:9px 0;
+  border-top:1px solid var(--hair);font-size:.95rem}
+.kurs-liste li::before{content:counter(st);width:1.5em;color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:.8rem}
+.kurs-liste li a{color:var(--ink);text-decoration:none;font-weight:600;min-height:28px;display:inline-flex;align-items:center}
+.kurs-liste li a:hover{text-decoration:underline}
+.kurs-liste li.geplant{color:var(--ink-3)}
+.kurs-umstieg-hinweis{font-size:.75rem;color:var(--ink-3);display:inline-flex;gap:4px;align-items:center}
+.kurs-fahrplan{margin:40px 0 0;max-width:64ch}
+.kurs-fahrplan>p{color:var(--ink-2)}
+
+/* ---------- Station ---------- */
+main.station{max-width:780px;margin:0 auto;padding:6px 0 30px}
+.station-kopf{margin:34px 0 24px}
+.station-kopf .eyebrow{margin-bottom:10px;color:var(--ink-2)}
+.station-kopf .eyebrow::before{display:none}
+.station-kopf h1{font-size:clamp(1.8rem,5vw,2.5rem);letter-spacing:-.02em;line-height:1.12}
+main.station>section{margin:0 0 28px}
+main.station>section>h2{font-size:1.2rem}
+.erlebnis{background:var(--tile);border:1px solid var(--hair);border-left:5px solid var(--lf);border-radius:var(--r);
+  padding:20px;box-shadow:var(--sh-2)}
+.einordnung{max-width:64ch;font-size:1.04rem;line-height:1.6}
+.einordnung p{margin:0 0 12px}
+.in-der-app figure{margin:0 0 18px}
+.in-der-app img{display:block;max-width:100%;height:auto;border:1px solid var(--hair);border-radius:12px;box-shadow:var(--sh-1)}
+.in-der-app figcaption{font-size:.85rem;color:var(--ink-3);margin-top:6px}
+.ticket{position:relative;background:var(--sunk);border:1px solid var(--hair-2);border-radius:var(--r);
+  padding:20px 22px 18px 30px}
+.ticket::before{content:"";position:absolute;left:12px;top:16px;bottom:16px;border-left:2px dashed var(--hair-2)}
+.ticket h2{margin:0 0 4px}
+.ticket>p{margin:0 0 10px;color:var(--ink-2)}
+.ticket-prompt{white-space:pre-wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.86rem;line-height:1.5;
+  background:var(--tile);border:1px solid var(--hair);border-radius:12px;padding:14px;margin:0 0 12px;color:var(--ink)}
+.ticket-meldung,.fortschritt-meldung{display:inline-block;margin-left:10px;font-size:.88rem;color:var(--ink-2)}
+.station-nav{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;border-top:1px solid var(--hair);padding:18px 0 0;margin:8px 0 22px}
+.station-nav a{color:var(--ink);font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.station-nav a[rel="next"]{margin-left:auto;background:var(--navy);color:var(--paper);padding:0 18px;border-radius:11px}
+.station-nav a:hover{text-decoration:underline}
+.kurs-umstieg{flex-basis:100%;margin:0;padding:10px 14px;border:1px dashed var(--hair-2);border-radius:12px;
+  display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:.95rem}
+
+/* ---------- Fortschritt ---------- */
+.fortschritt-box{background:var(--tile);border:1px solid var(--hair);border-radius:var(--r);padding:16px 18px;
+  margin:26px 0 40px;box-shadow:var(--sh-1)}
+.fortschritt-zeile{margin:0 0 10px}
+.fortschritt-knoepfe{display:flex;flex-wrap:wrap;gap:8px}
+.fortschritt-hinweis{margin:10px 0 0;font-size:.85rem;color:var(--ink-3)}
+.fortschritt-linkfeld{display:block;width:100%;margin-top:10px;padding:10px;border:1px solid var(--hair-2);
+  border-radius:10px;font:inherit;font-size:.85rem;background:var(--sunk);color:var(--ink)}
+
+button.btn{min-height:44px}
+
+@media (max-width:920px){.kurs-listen{grid-template-columns:1fr}}
+@media (max-width:520px){
+  .kurs-fahrkarte p{padding-right:0}
+  .kurs-fahrkarte>[data-erlebnis]::after{display:none}
+  .station-nav a[rel="next"]{margin-left:0}
+}
+@media (prefers-reduced-motion: reduce){.netz-puls{animation:none;opacity:.3}}

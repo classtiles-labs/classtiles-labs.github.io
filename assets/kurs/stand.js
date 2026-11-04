@@ -51,3 +51,13 @@ export function ausFragment(hash, bekannteIds) {
   }
   return dekodiere(roh, bekannteIds);
 }
+
+// Fortschritt aus dem Link und gemerkter Fortschritt ergänzen sich: Linie und Einstieg nimmt
+// der erste, der sie kennt; besuchte Stationen werden zusammengelegt.
+export function vereinige(a, b) {
+  if (!a) return b ?? null;
+  if (!b) return a;
+  const besucht = [...a.besucht];
+  for (const id of b.besucht) if (!besucht.includes(id)) besucht.push(id);
+  return {linie: a.linie ?? b.linie, start: a.start ?? b.start, besucht};
+}

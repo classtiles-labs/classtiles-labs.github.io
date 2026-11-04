@@ -51,3 +51,14 @@ test('Fragment hin und zurück', () => {
   assert.equal(ausFragment('#fahrkarte', IDS), null);
   assert.equal(ausFragment('#stand=%E0%A4%A', IDS), null);
 });
+
+test('vereinige: Fragment und gemerkter Stand ergänzen sich', async () => {
+  const {vereinige} = await import('../../../assets/kurs/stand.js');
+  const a = {linie: 'E', start: 'wie-ki-schreibt', besucht: ['wie-ki-schreibt', 'die-apps']};
+  const b = {linie: 'A', start: 'eigenes-material', besucht: ['die-apps', 'gut-fragen']};
+  assert.deepEqual(vereinige(a, b), {linie: 'E', start: 'wie-ki-schreibt', besucht: ['wie-ki-schreibt', 'die-apps', 'gut-fragen']});
+  assert.deepEqual(vereinige(null, b), b);
+  assert.deepEqual(vereinige(a, null), a);
+  assert.deepEqual(vereinige({linie: null, start: null, besucht: []}, b).linie, 'A');
+  assert.equal(vereinige(null, null), null);
+});
