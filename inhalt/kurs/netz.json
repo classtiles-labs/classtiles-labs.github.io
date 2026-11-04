@@ -48,17 +48,19 @@
       "id": "gut-fragen",
       "linie": "E",
       "titel": "Gut fragen",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "prompt-baukasten",
-      "umstieg": "eigenes-material"
+      "umstieg": "eigenes-material",
+      "beschreibung": "KI-Kurs, Linie E: Mit vier Bausteinen wird aus einer Lexikon-Antwort ein Arbeitsblatt. Mit echten Antworten zum Vergleich und einer Vorlage."
     },
     {
       "id": "ki-erwischen",
       "linie": "E",
       "titel": "KI erwischen",
-      "status": "geplant",
+      "status": "gebaut",
       "erlebnis": "erwisch-die-ki",
-      "umstieg": null
+      "umstieg": null,
+      "beschreibung": "KI-Kurs, Linie E: Finde die drei Fehler im Elternbrief. Worauf du bei KI-Texten achtest: Daten, Rechnungen, Quellen. Mit Prüf-Prompt."
     },
     {
       "id": "datenschutz",

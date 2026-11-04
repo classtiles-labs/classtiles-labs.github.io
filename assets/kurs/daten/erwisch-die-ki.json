@@ -1,0 +1,72 @@
+{
+  "titel": "Elternbrief Klasse 7b",
+  "hinweis": "Beispiel mit eingebauten Fehlern. Der Text ist für diese Übung geschrieben, nicht von einer KI erzeugt.",
+  "absaetze": [
+    [
+      "Liebe Eltern der 7b,"
+    ],
+    [
+      "unsere Klassenfahrt nach Lüneburg beginnt am ",
+      {
+        "id": "start",
+        "text": "Montag, 14. März 2027",
+        "art": "fehler",
+        "erklaerung": "Der 14. März 2027 ist ein Sonntag. Wochentag und Datum passen nicht zusammen.",
+        "pruefe": {
+          "datum": "2027-03-14",
+          "behauptet": "Montag"
+        }
+      },
+      " und endet am ",
+      {
+        "id": "ende",
+        "text": "Freitag, 19. März 2027",
+        "art": "ablenker",
+        "erklaerung": "Stimmt: Der 19. März 2027 ist ein Freitag. Gut, dass du nachsiehst.",
+        "pruefe": {
+          "datum": "2027-03-19",
+          "behauptet": "Freitag"
+        }
+      },
+      ". Wir fahren mit dem ",
+      {
+        "id": "zug",
+        "text": "Zug ab dem Hauptbahnhof",
+        "art": "ablenker",
+        "erklaerung": "Daran ist nichts falsch. Misstrauen ist gut, aber nicht jede Angabe ist ein Fehler."
+      },
+      "."
+    ],
+    [
+      "Für die Unterkunft fallen ",
+      {
+        "id": "kosten",
+        "text": "4 Übernachtungen × 46 € = 194 €",
+        "art": "fehler",
+        "erklaerung": "4 × 46 € sind 184 €, nicht 194 €. Rechnungen in Texten immer nachrechnen.",
+        "pruefe": {
+          "faktoren": [
+            4,
+            46
+          ],
+          "behauptet": 194
+        }
+      },
+      " pro Kind an. Bitte überweisen Sie den Betrag bis zum 15. Januar 2027."
+    ],
+    [
+      {
+        "id": "studie",
+        "text": "Laut einer Studie der Universität Hamburg (2024) stärken Klassenfahrten das Gemeinschaftsgefühl um 37 %.",
+        "art": "fehler",
+        "erklaerung": "Diese Studie ist für das Beispiel erfunden. Erfundene Quellen sehen aus wie echte: Hochschule, Jahr, genaue Zahl. Eine Quelle zählt erst, wenn du sie gefunden und geöffnet hast."
+      }
+    ],
+    [
+      "Mit freundlichen Grüßen",
+      "\n",
+      "Ihre Klassenleitung"
+    ]
+  ],
+  "aufloesung": "Alle drei gefunden. Daten, Beträge und Quellen sind die Stellen, an denen sich Fehler am leichtesten verstecken."
+}

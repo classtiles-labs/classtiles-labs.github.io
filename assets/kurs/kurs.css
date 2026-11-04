@@ -174,3 +174,31 @@ button.btn{min-height:44px}
 .begriffe dt{font-weight:700;margin-top:10px}
 .begriffe dd{margin:2px 0 0;color:var(--ink-2)}
 @media (prefers-reduced-motion: reduce){.ew-spur span,.kf-spur span{transition:none}}
+
+/* ---------- Erlebnis: Prompt-Baukasten ---------- */
+.pb-anleitung,.ek-anleitung{color:var(--ink-2);margin:0 0 12px}
+.pb-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.pb-chip{font:inherit;font-size:.9rem;font-weight:600;padding:8px 14px;min-height:40px;border-radius:999px;cursor:pointer;
+  border:1.5px dashed var(--hair-2);background:var(--tile);color:var(--ink)}
+.pb-chip.an{border-style:solid;border-color:var(--lf);background:color-mix(in srgb,var(--lf) 16%,var(--tile))}
+.pb-chip.an::before{content:"✓ ";color:var(--lf)}
+.pb-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:12px 0 4px}
+.pb-label .pb-quelle{text-transform:none;letter-spacing:0;font-weight:500}
+.pb-prompt{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.84rem;background:var(--sunk);border-radius:10px;padding:10px 12px;margin:0}
+.pb-antwort{white-space:pre-line;font-size:.92rem;line-height:1.5;border-left:3px solid var(--lf);padding:4px 0 4px 12px;min-height:8em}
+.pb-meter{height:8px;border-radius:4px;background:var(--sunk);overflow:hidden;margin:14px 0 6px}
+.pb-meter span{display:block;height:100%;background:linear-gradient(90deg,var(--linie-b),var(--hb-warn),var(--linie-e));transition:width .4s}
+.pb-urteil{font-weight:600;margin:0}
+
+/* ---------- Erlebnis: Erwisch die KI ---------- */
+.ek-brief{background:var(--paper);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;line-height:1.75;font-size:.98rem}
+.ek-titel{font-weight:700;margin:0 0 8px}
+.ek-brief p{margin:0 0 10px}
+.ek-stelle{cursor:pointer;border-radius:4px;padding:1px 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  text-decoration:underline dotted var(--ink-3);text-underline-offset:4px}
+.ek-stelle:hover{background:var(--sunk)}
+.ek-stelle.ek-fehler{background:color-mix(in srgb,var(--linie-b) 25%,transparent);text-decoration:line-through}
+.ek-stelle.ek-ok{background:color-mix(in srgb,var(--linie-e) 22%,transparent);text-decoration:none}
+.ek-meldung{margin:12px 0 4px;min-height:2.6em}
+.ek-zaehler{font-weight:600;margin:0}
+@media (prefers-reduced-motion: reduce){.pb-meter span{transition:none}}

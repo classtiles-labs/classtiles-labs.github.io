@@ -1,0 +1,61 @@
+{
+  "thema": "Photosynthese",
+  "basis": "Erkläre Photosynthese.",
+  "bausteine": [
+    {
+      "name": "Rolle",
+      "text": "Du bist Biologielehrkraft an einer Realschule.",
+      "vorne": true
+    },
+    {
+      "name": "Klasse und Niveau",
+      "text": "Meine Klasse 7 liest eher langsam: kurze Sätze, Fachwörter erklären."
+    },
+    {
+      "name": "Format",
+      "text": "Mach daraus 5 Aufgaben für ein Arbeitsblatt, von leicht nach schwer."
+    },
+    {
+      "name": "Lösungen",
+      "text": "Schreib die Lösungen getrennt darunter."
+    }
+  ],
+  "antworten": [
+    {
+      "text": "Photosynthese ist der Prozess, bei dem Pflanzen, Algen und manche Bakterien Lichtenergie in chemische Energie umwandeln. Sie bauen dabei aus Kohlendioxid und Wasser energiereichen Zucker auf und setzen Sauerstoff frei.\n\nGesamtgleichung: 6 CO₂ + 6 H₂O + Lichtenergie → C₆H₁₂O₆ + 6 O₂\n\n…\n\nDie zwei Phasen\n1. Lichtreaktion (in den Thylakoidmembranen): Chlorophyll absorbiert Licht. Wasser wird gespalten (Photolyse) …",
+      "urteil": "Ein Lexikonartikel für Erwachsene, mit Thylakoidmembranen und Photolyse.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    },
+    {
+      "text": "Grüne Pflanzen, Algen und manche Bakterien stellen mithilfe von Licht aus anorganischen Stoffen energiereichen Traubenzucker (Glucose) her. Dabei entsteht außerdem Sauerstoff. Pflanzen ernähren sich also selbst. Man nennt sie autotroph.\n\nWortgleichung: Kohlenstoffdioxid + Wasser → (Licht, Chlorophyll) → Traubenzucker + Sauerstoff\n\n…\n\nWo findet sie statt? Hauptsächlich in den Laubblättern, in den Zellen des Palisaden- und …",
+      "urteil": "Fachlich und schulnah, aber für eine Klasse 7 mit langsamen Lesern zu schwer.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    },
+    {
+      "text": "Pflanzen stellen ihre Nahrung selbst her. Dafür brauchen sie Licht. Diesen Vorgang nennt man Photosynthese.\n\nErklärung des Wortes: „Photo“ bedeutet Licht. „Synthese“ bedeutet etwas herstellen. Photosynthese heißt also: mit Licht etwas herstellen.\n\nWas braucht die Pflanze?\n1. Licht (Sonnenlicht). Es liefert die Energie.\n2. Wasser. Die Wurzeln nehmen es aus dem Boden auf. …",
+      "urteil": "Passende Sprache, Fachwörter erklärt. Aber noch ein Erklärtext, kein Material.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    },
+    {
+      "text": "Arbeitsblatt: Photosynthese\n\nAufgabe 1 (leicht): Wörter zuordnen …\nAufgabe 2 (leicht bis mittel): Lückentext\nEine Pflanze braucht Licht von der ______. Die Wurzeln nehmen ______ aus dem Boden auf. …\nAufgabe 3 (mittel): Fragen beantworten …\nAufgabe 4 (mittel bis schwer): Schema beschriften …\nAufgabe 5 (schwer): Nachdenken und begründen\nDu stellst zwei gleiche Pflanzen ans Fenster. Eine Pflanze bekommt Licht. Die andere stellst du eine Woche lang in einen dunklen Schrank. …",
+      "urteil": "Fünf gestufte Aufgaben. In diesem Lauf hat die KI von sich aus Lösungen angehängt, verlassen kannst du dich darauf nicht.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    },
+    {
+      "text": "Aufgabe 1 (leicht): Lückentext\nPflanzen machen ihre Nahrung selbst. Das heißt ______. Sie brauchen dafür ______ von der Sonne und ______ aus dem Boden. …\nAufgabe 2 (leicht bis mittel): Richtig oder falsch? …\n…\n\nLösungen\nAufgabe 1: Photosynthese, Licht, Wasser, Sauerstoff\nAufgabe 2: a) richtig b) falsch. Richtig: Pflanzen nehmen Kohlenstoffdioxid auf und geben Sauerstoff ab. …",
+      "urteil": "Arbeitsblatt mit Lösungen, bereit zum Durchsehen und Kopieren.",
+      "app": "Claude, über Claude Code ohne App-Vorgaben",
+      "modell": "Claude Sonnet 5.5",
+      "datum": "2026-11-04"
+    }
+  ],
+  "hinweis": "Echte Antworten, gekürzt (…). Jede Stufe ist ein eigener, neuer Lauf mit genau dem gezeigten Prompt."
+}

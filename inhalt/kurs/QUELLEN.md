@@ -60,3 +60,30 @@ Abgerufen am 04.11.2026.
   Anthropic (2024), Building effective agents. https://www.anthropic.com/engineering/building-effective-agents
 - Halluzination: siehe „wie-ki-schreibt“.
 - Das Chat-Beispiel ist vereinfacht (kleine Zahlen, im Erlebnis so gekennzeichnet).
+
+## gut-fragen
+
+Abgerufen am 04.11.2026.
+
+- „Think of Claude as a brilliant but new employee who lacks context on your norms and workflows.
+  The more precisely you explain what you want, the better the result.“ — Rolle: „Setting a role
+  in the system prompt focuses Claude’s behavior and tone … Even a single sentence makes a
+  difference“ — Beispiele: „Examples are one of the most reliable ways to steer Claude’s output
+  format, tone, and structure.“ Anthropic, Prompting best practices.
+  https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
+- Antworten im Erlebnis: fünf echte, voneinander unabhängige Läufe am 04.11.2026 mit Claude Sonnet
+  5.5 über Claude Code (`claude -p`, neutraler Systemprompt „Du bist Claude, ein hilfreicher
+  KI-Assistent.“, ohne Werkzeuge), je mit genau dem gezeigten Prompt; Antworten wörtlich gekürzt,
+  Markdown-Zeichen entfernt. Grund: Die Chrome-Erweiterung für Läufe in claude.ai war an diesem
+  Tag nicht verbunden; die Läufe lassen sich in der App wiederholen.
+
+## ki-erwischen
+
+Abgerufen am 04.11.2026.
+
+- Der Elternbrief ist ein konstruiertes Beispiel (im Erlebnis so gekennzeichnet). Geprüft per
+  Test: 14.03.2027 ist ein Sonntag, 19.03.2027 ein Freitag, 4 × 46 = 184.
+- Erfundene Quellen sehen aus wie echte: Walters & Wilder (2023), siehe „fahrkarte“ (55 % / 18 %
+  erfundene Literaturangaben, die übrigen oft mit Fehlern).
+- Stichtag des Wissens: Modelle haben einen „training data cutoff“. Anthropic, Models overview.
+  https://platform.claude.com/docs/en/about-claude/models/overview
